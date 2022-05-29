@@ -1,8 +1,8 @@
 extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
-#const TEST_CASES = "link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = "delta_timer"
+#const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
+const TEST_CASES = "dt_two_subs"
 
 func _init():
 	for test_case in TEST_CASES.split(","):
@@ -20,22 +20,22 @@ func _test_link_to():
 	subscriber.queue_free()
 
 func _test_ready():
-	GDRP_BasicStreamBuilder.BuildReadyStream().subscribe(
+	GDRP_BasicStreamBuilder.BuildReadyStream(self).subscribe(
 		self, func(__): print("Hello GDRP!")).link_to(self)
 
 func _test_process():
-	GDRP_BasicStreamBuilder.BuildOnProcessStream().subscribe(
+	GDRP_BasicStreamBuilder.BuildOnProcessStream(self).subscribe(
 		self, func(delta): print("Process dt> ", delta)).link_to(self)
 
 func _test_physics_process():
-	GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream().subscribe(
+	GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream(self).subscribe(
 		self, func(delta): print("Physics Process dt> ", delta)).link_to(self)
 
 func _test_process_death():
-	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildOnProcessStream()
+	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildOnProcessStream(self)
 	stream.subscribe(self, func(delta):
 		print("Process Callback dt> ", delta)
-		stream.unsubscribe(self))
+		stream.unsubscribe(self)).link_to(self)
 
 func _test_timer1():
 	var subscriber : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
@@ -92,10 +92,29 @@ func _test_delta_timer():
 	subscriber.name = "DeltaTimerSubscriber"
 	add_child(subscriber)
 	var timer = GDRP_DeltaTimerStream.new(
-		subscriber,
+		self,
 		GDRP_DeltaTimerStream.EProcessType.PROCESS)
 	timer.subscribe(subscriber, func(__): 
 		print("Delta Timer expired!")
-		timer.unsubscribe(subscriber)
-		timer.restart()
-	).start(3.0).link_to(subscriber)
+		timer.start(3.0)).link_to(subscriber)
+	timer.start(3.0)
+
+func _test_dt_two_subs():
+	var sub1 : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
+	sub1.name = "DeltaTimerSubscriber1"
+	add_child(sub1)
+	var sub2 : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
+	sub2.name = "DeltaTimerSubscriber2"
+	add_child(sub2)
+	var timer = GDRP_DeltaTimerStream.new(
+		self,
+		GDRP_DeltaTimerStream.EProcessType.PROCESS)
+	timer.subscribe(sub1, func(__): 
+		print("Delta Timer expired for sub 1!")
+		remove_child(sub1)
+		sub1.queue_free()).link_to(sub1)
+	timer.subscribe(sub2, func(__): 
+		print("Delta Timer expired for sub 2!")
+		timer.unsubscribe(sub2)
+		timer.start(2.0)).link_to(sub2)
+	timer.start(3.0)

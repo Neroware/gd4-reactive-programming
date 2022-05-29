@@ -8,16 +8,19 @@ class_name GDRP_BasicStreamBuilder
 ##
 
 
-static func BuildReadyStream() -> GDRP_EngineHookStream:
+static func BuildReadyStream(node : Node) -> GDRP_EngineHookStream:
 	return GDRP_EngineHookStream.new(
+		node,
 		GDRP_EngineHookStream.ECallbackName.READY)
 
-static func BuildOnProcessStream() -> GDRP_EngineHookStream:
+static func BuildOnProcessStream(node : Node) -> GDRP_EngineHookStream:
 	return GDRP_EngineHookStream.new(
+		node,
 		GDRP_EngineHookStream.ECallbackName.PROCESS)
 
-static func BuildOnPhysicsProcessStream() -> GDRP_EngineHookStream:
+static func BuildOnPhysicsProcessStream(node : Node) -> GDRP_EngineHookStream:
 	return GDRP_EngineHookStream.new(
+		node,
 		GDRP_EngineHookStream.ECallbackName.PHYSICS_PROCESS)
 
 static func BuildTimerStream(timer_parent : Node, wait_time = 1.0, 

@@ -14,6 +14,8 @@ func _init(parent : Node, time_sec = 1.0, autostart = false, one_shot = false):
 	parent.add_child(_timer)
 
 func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("****")
 	if what == NOTIFICATION_PREDELETE and _timer != null:
 		_timer.get_parent().remove_child(_timer)
 		_timer.queue_free()

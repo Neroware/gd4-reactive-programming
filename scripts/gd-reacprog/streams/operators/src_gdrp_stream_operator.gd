@@ -38,3 +38,6 @@ func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	_stream_listeners.erase(subscriber)
 	listener.queue_free()
 	return super.unsubscribe(subscriber)
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE: print("op-death!")
