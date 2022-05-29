@@ -2,7 +2,7 @@ extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
 #const TEST_CASES = "link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = "reactive_field"
+const TEST_CASES = "delta_timer"
 
 func _init():
 	for test_case in TEST_CASES.split(","):
@@ -87,6 +87,15 @@ func _test_reactive_field():
 		print(i.from(), " -> ", i.to()) ; foo.unsubscribe(self))
 	foo.Set(42)
 
-#func _test_delta_timer():
-#	var timer = GDRP_DeltaTimerStream.new(self)
-#	timer.subscribe(self, func(__): print("Delta Timer expired!")).link_to(self)
+func _test_delta_timer():
+	var subscriber : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
+	subscriber.name = "DeltaTimerSubscriber"
+	add_child(subscriber)
+	var timer = GDRP_DeltaTimerStream.new(
+		subscriber,
+		GDRP_DeltaTimerStream.EProcessType.PROCESS)
+	timer.subscribe(subscriber, func(__): 
+		print("Delta Timer expired!")
+		timer.unsubscribe(subscriber)
+		timer.restart()
+	).start(3.0).link_to(subscriber)

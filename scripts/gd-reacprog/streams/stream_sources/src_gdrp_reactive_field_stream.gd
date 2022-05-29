@@ -37,10 +37,17 @@ func with_setter(setter : Callable = func(old_v, new_v): return new_v):
 	self._setter = setter
 	return self
 
+func with_condition(cond = func(v_old, v_new): return v_old != v_new):
+	self._cond = cond
+	return self
+
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	disconnect("_on_changed", _connections_on_changed[subscriber])
 	_connections_on_changed.erase(subscriber)
 	return super.unsubscribe(subscriber)
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE: print("*")
 
 func subscribe(
 	subscriber : GDRP_Subscriber,

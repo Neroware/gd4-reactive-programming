@@ -51,6 +51,8 @@ func subscribe(
 					_connections_tree_exiting[subscriber])
 		return super.subscribe(subscriber, what, comp, err)
 
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE: print("**")
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	subscriber.disconnect("notified", _connections_notified[subscriber])
