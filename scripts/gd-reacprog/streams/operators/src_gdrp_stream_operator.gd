@@ -40,4 +40,4 @@ func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	return super.unsubscribe(subscriber)
 
 func _notification(what):
-	if what == NOTIFICATION_PREDELETE: print("op-death!")
+	if what == NOTIFICATION_PREDELETE: print("<*>")

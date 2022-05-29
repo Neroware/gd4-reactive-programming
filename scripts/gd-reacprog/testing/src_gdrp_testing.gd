@@ -10,9 +10,6 @@ func _init():
 			print("Run Test Case '" + test_case + "'...")
 			call("_test_" + test_case)
 
-func _process(delta): pass
-func _physics_process(delta): pass
-
 func _test_link_to():
 	var stream : GDRP_BasicStream = GDRP_BasicStream.new()
 	var subscriber : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
@@ -20,12 +17,21 @@ func _test_link_to():
 	subscriber.queue_free()
 
 func _test_ready():
-	GDRP_BasicStreamBuilder.BuildReadyStream(self).subscribe(
-		self, func(__): print("Hello GDRP!")).link_to(self)
+	var stream = GDRP_BasicStreamBuilder.BuildReadyStream(self)
+	stream.subscribe(self, 
+		func(__): print("Hello GDRP!"), 
+		func(): stream.unsubscribe(self)).link_to(self)
 
 func _test_process():
 	GDRP_BasicStreamBuilder.BuildOnProcessStream(self).subscribe(
 		self, func(delta): print("Process dt> ", delta)).link_to(self)
+
+func _test_process_rand_disconnect():
+	var stream = GDRP_BasicStreamBuilder.BuildOnProcessStream(
+		self).filter(
+			func(__): return randi() % 100).where(
+				func(i): return i == 99)
+	stream.subscribe(self, func(__): print("Disconnected!") ; stream.unsubscribe(self))
 
 func _test_physics_process():
 	GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream(self).subscribe(
@@ -54,7 +60,7 @@ func _test_timer2():
 	subscriber.name = "Timer2Subscriber"
 	add_child(subscriber)
 	var timer : GDRP_TimerStream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		subscriber, 8.0, true, false).subscribe(
+		subscriber, 4.0, true, false).subscribe(
 		subscriber, func(__): 
 			print("Repeating timer expired!")
 	).link_to(subscriber)
@@ -92,11 +98,11 @@ func _test_delta_timer():
 	subscriber.name = "DeltaTimerSubscriber"
 	add_child(subscriber)
 	var timer = GDRP_DeltaTimerStream.new(
-		self,
-		GDRP_DeltaTimerStream.EProcessType.PROCESS)
+		subscriber, GDRP_DeltaTimerStream.EProcessType.PROCESS)
 	timer.subscribe(subscriber, func(__): 
 		print("Delta Timer expired!")
-		timer.start(3.0)).link_to(subscriber)
+		timer.start(3.0)
+		timer.unsubscribe(subscriber)).link_to(subscriber)
 	timer.start(3.0)
 
 func _test_dt_two_subs():

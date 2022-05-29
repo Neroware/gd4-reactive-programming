@@ -12,12 +12,6 @@ class_name GDRP_Subscriber
 ## 		Note: Also see descriptions of on_completed() and on_error().
 ##
 
-signal on_delete
-
-func _notification(what):
-	if what == NOTIFICATION_PREDELETE:
-		emit_signal("on_delete")
-
 func on_next(item):
 	push_error("No implementation here!")
 

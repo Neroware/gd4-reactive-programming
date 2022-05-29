@@ -36,13 +36,13 @@ func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	_on_completed.erase(subscriber)
 	_on_error.erase(subscriber)
 	if _link_connections.has(subscriber):
-		subscriber.disconnect("on_delete", _link_connections[subscriber])
+		subscriber.disconnect("_on_delete", _link_connections[subscriber])
 		_link_connections.erase(subscriber)
 	return self
 
-func link_to(what : GDRP_Subscriber) -> GDRP_Stream:
+func link_to(what : GDRP_BasicSubscriber) -> GDRP_Stream:
 	_link_connections[what] = func(): unsubscribe(what)
-	what.connect("on_delete", _link_connections[what])
+	what.connect("_on_delete", _link_connections[what])
 	return self
 
 # ============================================================================ #
