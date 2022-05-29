@@ -18,14 +18,18 @@ var _listener : _StreamListener
 func _init(node : Node, process_type : EProcessType):
 	_time = GDRP_ReactiveField.With(0.0)
 	_listener = _StreamListener.new()
-	_callback = GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream(node)
+	if process_type == EProcessType.PROCESS:
+		_callback = GDRP_BasicStreamBuilder.BuildOnProcessStream(node)
+	else:
+		_callback = GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream(node)
 	_callback.subscribe(_listener, _timer_callback)
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
+		print("*DeltaTimer")
+	if what == NOTIFICATION_PREDELETE:
 		_callback.unsubscribe(_listener)
 		_listener.queue_free()
-		print("*DeltaTimer")
 
 func subscribe(
 	subscriber : GDRP_Subscriber,

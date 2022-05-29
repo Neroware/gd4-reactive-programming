@@ -33,7 +33,7 @@ func subscribe(
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:
 	_node.disconnect("on_process", _open_process_connections[subscriber])
 	_open_process_connections.erase(subscriber)
-	_node.disconnect("tree_exiting", _open_tree_exit_connections[subscriber])
+	subscriber.disconnect("tree_exiting", _open_tree_exit_connections[subscriber])
 	_open_tree_exit_connections.erase(subscriber)
 	return super.unsubscribe(subscriber)
 

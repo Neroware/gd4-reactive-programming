@@ -2,7 +2,7 @@ extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
 #const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = "dt_two_subs"
+const TEST_CASES = "delta_timer"
 
 func _init():
 	for test_case in TEST_CASES.split(","):
@@ -114,7 +114,7 @@ func _test_dt_two_subs():
 	add_child(sub2)
 	var timer = GDRP_DeltaTimerStream.new(
 		self,
-		GDRP_DeltaTimerStream.EProcessType.PROCESS)
+		GDRP_DeltaTimerStream.EProcessType.PHYSICS_PROCESS)
 	timer.subscribe(sub1, func(__): 
 		print("Delta Timer expired for sub 1!")
 		remove_child(sub1)
