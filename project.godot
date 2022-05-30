@@ -69,6 +69,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_on_ready_stream.gd"
 }, {
+"base": "GDRP_StreamItem",
+"class": &"GDRP_PackedStreamItem",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_items/src_grdp_packed_stream_item.gd"
+}, {
 "base": "RefCounted",
 "class": &"GDRP_ReactiveField",
 "language": &"GDScript",
@@ -109,6 +114,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_timer_stream.gd"
 }, {
+"base": "GDRP_BasicStream",
+"class": &"GDRP_TreeProcessStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_tree_process_stream.gd"
+}, {
 "base": "GDRP_StreamOperator",
 "class": &"GDRP_WhereOperator",
 "language": &"GDScript",
@@ -127,6 +137,7 @@ _global_script_class_icons={
 "GDRP_OnPhysicsProcessStream": "",
 "GDRP_OnProcessStream": "",
 "GDRP_OnReadyStream": "",
+"GDRP_PackedStreamItem": "",
 "GDRP_ReactiveField": "",
 "GDRP_ReactiveFieldStream": "",
 "GDRP_Stream": "",
@@ -135,6 +146,7 @@ _global_script_class_icons={
 "GDRP_Subscriber": "",
 "GDRP_Testing": "",
 "GDRP_TimerStream": "",
+"GDRP_TreeProcessStream": "",
 "GDRP_WhereOperator": ""
 }
 

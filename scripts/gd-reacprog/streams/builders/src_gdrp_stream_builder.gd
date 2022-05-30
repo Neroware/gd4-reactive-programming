@@ -20,3 +20,11 @@ static func BuildOnPhysicsProcessStream(
 static func BuildTimerStream(timer_parent : Node, wait_time = 1.0, 
 	autostart = false, one_shot = true) -> GDRP_TimerStream:
 		return GDRP_TimerStream.new(timer_parent,wait_time,autostart,one_shot)
+
+
+static func OnReady(node : Node) -> GDRP_OnReadyStream:
+	return BuildReadyStream(node)
+static func OnProcess(tree : SceneTree) -> GDRP_TreeProcessStream:
+	return GDRP_TreeProcessStream.new(tree, GDRP_TreeProcessStream.EProcessMode.PROCESS)
+static func OnPhysics(tree : SceneTree) -> GDRP_TreeProcessStream:
+	return GDRP_TreeProcessStream.new(tree, GDRP_TreeProcessStream.EProcessMode.PHYSICS_PROCESS)

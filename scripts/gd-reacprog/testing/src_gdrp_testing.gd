@@ -2,13 +2,18 @@ extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
 #const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = "delta_timer"
+const TEST_CASES = ""
 
 func _init():
 	for test_case in TEST_CASES.split(","):
 		if has_method("_test_" + test_case):
 			print("Run Test Case '" + test_case + "'...")
 			call("_test_" + test_case)
+
+func _ready():
+	var stream = GDRP_BasicStreamBuilder.OnPhysics(get_tree())
+	stream.subscribe(self, func(delta): 
+		print("DT> ", delta) ; stream.unsubscribe(self))
 
 func _test_link_to():
 	var stream : GDRP_BasicStream = GDRP_BasicStream.new()
