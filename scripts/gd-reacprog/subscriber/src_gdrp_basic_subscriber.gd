@@ -9,6 +9,10 @@ signal _on_delete
 signal on_process(delta : float)
 signal on_physics(delta : float)
 
+signal _on_next(sub : GDRP_Subscriber, item)
+signal _on_completed(sub : GDRP_Subscriber)
+signal _on_error(sub : GDRP_Subscriber, e)
+
 func _notification(what):
 	match what:
 		NOTIFICATION_PREDELETE: 
@@ -31,10 +35,10 @@ func OnPhysicsProcessStream() -> GDRP_OnPhysicsProcessStream:
 	return STREAM_BUILDER.BuildOnPhysicsProcessStream(self)
 
 func on_next(i):
-	pass
+	emit_signal("_on_next", self, i)
 
 func on_completed():
-	pass
+	emit_signal("_on_completed", self)
 
 func on_error(e):
-	pass
+	emit_signal("_on_error", self, e)

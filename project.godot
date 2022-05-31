@@ -30,6 +30,11 @@ _global_script_classes=[{
 "path": "res://scripts/gd-reacprog/streams/stream_items/src_gdrp_changed_value_stream_item.gd.gd"
 }, {
 "base": "GDRP_BasicStream",
+"class": &"GDRP_CustomStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/src_gdrp_custom_stream.gd"
+}, {
+"base": "GDRP_BasicStream",
 "class": &"GDRP_DeltaTimerStream",
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_delta_timer_stream.gd"
@@ -53,6 +58,11 @@ _global_script_classes=[{
 "class": &"GDRP_InvalidAccessError",
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/errors/src_gdrp_invalid_access_error.gd"
+}, {
+"base": "GDRP_Error",
+"class": &"GDRP_MissingSubscriptionError",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/errors/src_gdrp_missing_subscription_error.gd"
 }, {
 "base": "GDRP_BasicStream",
 "class": &"GDRP_OnPhysicsProcessStream",
@@ -129,11 +139,13 @@ _global_script_class_icons={
 "GDRP_BasicStreamBuilder": "",
 "GDRP_BasicSubscriber": "",
 "GDRP_ChangedValueStreamItem": "",
+"GDRP_CustomStream": "",
 "GDRP_DeltaTimerStream": "",
 "GDRP_Error": "",
 "GDRP_FilterOperator": "",
 "GDRP_IdentityOperator": "",
 "GDRP_InvalidAccessError": "",
+"GDRP_MissingSubscriptionError": "",
 "GDRP_OnPhysicsProcessStream": "",
 "GDRP_OnProcessStream": "",
 "GDRP_OnReadyStream": "",

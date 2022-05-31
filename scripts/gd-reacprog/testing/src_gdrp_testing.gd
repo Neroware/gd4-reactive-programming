@@ -9,6 +9,10 @@ func _init():
 		if has_method("_test_" + test_case):
 			print("Run Test Case '" + test_case + "'...")
 			call("_test_" + test_case)
+	
+	var s = GDRP_CustomStream.Create(func(subscriber : GDRP_Subscriber):
+		subscriber.on_completed()).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
+	s.unsubscribe(self)
 
 func _ready():
 	var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())
