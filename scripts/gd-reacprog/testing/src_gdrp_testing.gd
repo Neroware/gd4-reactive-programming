@@ -4,6 +4,8 @@ class_name GDRP_Testing
 #const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
 const TEST_CASES = ""
 
+var _recent_value = GDRP_ReactiveField.ChangedValue(false)
+
 func _init():
 	for test_case in TEST_CASES.split(","):
 		if has_method("_test_" + test_case):
@@ -13,6 +15,10 @@ func _init():
 	var s = GDRP_CustomStream.Create(func(subscriber : GDRP_Subscriber):
 		subscriber.on_completed()).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
 	s.unsubscribe(self)
+	
+	var jump_stream : GDRP_Stream = GDRPStream.Basic.BuildInputButtonStream("btn_jump")
+	jump_stream.subscribe(self, func(input): _recent_value.Set(input.get_value()))
+	_recent_value.where(func(i): return i.from() == false).subscribe(self, func(i : GDRP_ChangedValueStreamItem): print(i.from(), " -> ", i.to()))
 
 func _ready():
 	var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())

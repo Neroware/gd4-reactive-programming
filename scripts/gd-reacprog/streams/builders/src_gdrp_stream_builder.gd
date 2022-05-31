@@ -33,6 +33,9 @@ static func BuildTimerStream(timer_parent : Node, wait_time = 1.0,
 static func BuildDeltaTimerStream(node : Node, type=0) -> GDRP_DeltaTimerStream:
 	return GDRP_DeltaTimerStream.new(node, type)
 
+static func BuildInputButtonStream(action : String) -> GDRP_InputButtonPress:
+	return GDRP_InputButtonPress.new(action)
+
 ### Some nice shortcuts
 static func OnReady(node : Node) -> GDRP_OnReadyStream:
 	return BuildReadyStream(node)

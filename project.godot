@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "RefCounted",
+"class": &"GDRPStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/builders/src_gdrp_builders.gd"
+}, {
 "base": "GDRP_Stream",
 "class": &"GDRP_BasicStream",
 "language": &"GDScript",
@@ -54,15 +59,15 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/operators/src_gdrp_identity_operator.gd"
 }, {
-"base": "GDRP_Error",
-"class": &"GDRP_InvalidAccessError",
+"base": "GDRP_StreamItem",
+"class": &"GDRP_InputActionStreamItem",
 "language": &"GDScript",
-"path": "res://scripts/gd-reacprog/streams/errors/src_gdrp_invalid_access_error.gd"
+"path": "res://scripts/gd-reacprog/streams/stream_items/src_gdrp_input_action_stream_item.gd"
 }, {
-"base": "GDRP_Error",
-"class": &"GDRP_MissingSubscriptionError",
+"base": "GDRP_BasicStream",
+"class": &"GDRP_InputButtonPress",
 "language": &"GDScript",
-"path": "res://scripts/gd-reacprog/streams/errors/src_gdrp_missing_subscription_error.gd"
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_button_press.gd"
 }, {
 "base": "GDRP_BasicStream",
 "class": &"GDRP_OnPhysicsProcessStream",
@@ -135,6 +140,7 @@ _global_script_classes=[{
 "path": "res://scripts/gd-reacprog/streams/operators/src_gdrp_where_operator.gd"
 }]
 _global_script_class_icons={
+"GDRPStream": "",
 "GDRP_BasicStream": "",
 "GDRP_BasicStreamBuilder": "",
 "GDRP_BasicSubscriber": "",
@@ -144,8 +150,8 @@ _global_script_class_icons={
 "GDRP_Error": "",
 "GDRP_FilterOperator": "",
 "GDRP_IdentityOperator": "",
-"GDRP_InvalidAccessError": "",
-"GDRP_MissingSubscriptionError": "",
+"GDRP_InputActionStreamItem": "",
+"GDRP_InputButtonPress": "",
 "GDRP_OnPhysicsProcessStream": "",
 "GDRP_OnProcessStream": "",
 "GDRP_OnReadyStream": "",
@@ -168,3 +174,11 @@ config/name="gd-reacprog"
 run/main_scene="res://scenes/scn_main.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[input]
+
+btn_jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"unicode":0,"echo":false,"script":null)
+]
+}
