@@ -11,7 +11,7 @@ func _init():
 			call("_test_" + test_case)
 
 func _ready():
-	var stream = GDRP_BasicStreamBuilder.OnPhysics(get_tree())
+	var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())
 	stream.subscribe(self, func(delta): 
 		print("DT> ", delta) ; stream.unsubscribe(self))
 

@@ -19,9 +19,9 @@ func _init(node : Node, process_type : EProcessType):
 	_time = GDRP_ReactiveField.With(0.0)
 	_listener = _StreamListener.new()
 	if process_type == EProcessType.PROCESS:
-		_callback = GDRP_BasicStreamBuilder.BuildOnProcessStream(node)
+		_callback = GDRP_OnProcessStream.new(node)
 	else:
-		_callback = GDRP_BasicStreamBuilder.BuildOnPhysicsProcessStream(node)
+		_callback = GDRP_OnPhysicsProcessStream.new(node)
 	_callback.subscribe(_listener, _timer_callback)
 
 func _notification(what):
