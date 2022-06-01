@@ -14,6 +14,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/builders/src_gdrp_builders.gd"
 }, {
+"base": "GDRP_BasicStream",
+"class": &"GDRP_AnimationPlayerStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_animation_player_stream.gd"
+}, {
+"base": "GDRP_StreamItem",
+"class": &"GDRP_AnimationPlayerStreamItem",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_items/src_gdrp_animation_player_item.gd"
+}, {
 "base": "GDRP_Stream",
 "class": &"GDRP_BasicStream",
 "language": &"GDScript",
@@ -176,6 +186,8 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "GDRP": "",
+"GDRP_AnimationPlayerStream": "",
+"GDRP_AnimationPlayerStreamItem": "",
 "GDRP_BasicStream": "",
 "GDRP_BasicStreamBuilder": "",
 "GDRP_BasicSubscriber": "",
