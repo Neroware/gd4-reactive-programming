@@ -57,6 +57,9 @@ static func BuildInputMagnetometerStream() -> GDRP_InputMagnetometerStream:
 static func BuildInputGravityStream() -> GDRP_InputGravityStream:
 	return GDRP_InputGravityStream.new()
 
+static func BuildJoystickDeviceStream(device : int, joy_axis : int) -> GDRP_JoystickDeviceStream:
+	return GDRP_JoystickDeviceStream.new(device, joy_axis)
+
 ### Some nice shortcuts
 static func OnReady(node : Node) -> GDRP_OnReadyStream:
 	return BuildReadyStream(node)

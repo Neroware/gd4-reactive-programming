@@ -100,6 +100,11 @@ _global_script_classes=[{
 "path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_magnetometer_stream.gd"
 }, {
 "base": "GDRP_BasicStream",
+"class": &"GDRP_JoystickDeviceStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_joystick_device_stream.gd"
+}, {
+"base": "GDRP_BasicStream",
 "class": &"GDRP_OnPhysicsProcessStream",
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_on_physics_process_stream.gd"
@@ -188,6 +193,7 @@ _global_script_class_icons={
 "GDRP_InputGyroStream": "",
 "GDRP_InputJoystickStream": "",
 "GDRP_InputMagnetometerStream": "",
+"GDRP_JoystickDeviceStream": "",
 "GDRP_OnPhysicsProcessStream": "",
 "GDRP_OnProcessStream": "",
 "GDRP_OnReadyStream": "",
