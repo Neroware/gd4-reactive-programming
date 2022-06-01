@@ -16,8 +16,8 @@ func _init():
 		subscriber.on_completed()).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
 	s.unsubscribe(self)
 	
-	var jump_stream : GDRP_Stream = GDRPStream.Basic.BuildInputButtonStream("btn_jump")
-	jump_stream.subscribe(self, func(input): _recent_value.Set(input.get_value()))
+	var jump_stream : GDRP_Stream = GDRP.Basic.BuildInputButtonStream("btn_jump")
+	jump_stream.subscribe(self, func(input): _recent_value.Set(input.value()))
 	_recent_value.where(func(i): return i.from() == false).subscribe(self, func(i : GDRP_ChangedValueStreamItem): print(i.from(), " -> ", i.to()))
 
 func _ready():

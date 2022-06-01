@@ -10,7 +10,7 @@ config_version=5
 
 _global_script_classes=[{
 "base": "RefCounted",
-"class": &"GDRPStream",
+"class": &"GDRP",
 "language": &"GDScript",
 "path": "res://scripts/gd-reacprog/streams/builders/src_gdrp_builders.gd"
 }, {
@@ -65,9 +65,19 @@ _global_script_classes=[{
 "path": "res://scripts/gd-reacprog/streams/stream_items/src_gdrp_input_action_stream_item.gd"
 }, {
 "base": "GDRP_BasicStream",
-"class": &"GDRP_InputButtonPress",
+"class": &"GDRP_InputAxisStream",
 "language": &"GDScript",
-"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_button_press.gd"
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_axis_stream.gd"
+}, {
+"base": "GDRP_BasicStream",
+"class": &"GDRP_InputButtonPressStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_button_press_stream.gd"
+}, {
+"base": "GDRP_BasicStream",
+"class": &"GDRP_InputJoystickStream",
+"language": &"GDScript",
+"path": "res://scripts/gd-reacprog/streams/stream_sources/src_gdrp_input_joystick_stream.gd"
 }, {
 "base": "GDRP_BasicStream",
 "class": &"GDRP_OnPhysicsProcessStream",
@@ -140,7 +150,7 @@ _global_script_classes=[{
 "path": "res://scripts/gd-reacprog/streams/operators/src_gdrp_where_operator.gd"
 }]
 _global_script_class_icons={
-"GDRPStream": "",
+"GDRP": "",
 "GDRP_BasicStream": "",
 "GDRP_BasicStreamBuilder": "",
 "GDRP_BasicSubscriber": "",
@@ -151,7 +161,9 @@ _global_script_class_icons={
 "GDRP_FilterOperator": "",
 "GDRP_IdentityOperator": "",
 "GDRP_InputActionStreamItem": "",
-"GDRP_InputButtonPress": "",
+"GDRP_InputAxisStream": "",
+"GDRP_InputButtonPressStream": "",
+"GDRP_InputJoystickStream": "",
 "GDRP_OnPhysicsProcessStream": "",
 "GDRP_OnProcessStream": "",
 "GDRP_OnReadyStream": "",

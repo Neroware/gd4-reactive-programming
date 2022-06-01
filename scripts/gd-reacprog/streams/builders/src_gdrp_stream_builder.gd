@@ -33,8 +33,17 @@ static func BuildTimerStream(timer_parent : Node, wait_time = 1.0,
 static func BuildDeltaTimerStream(node : Node, type=0) -> GDRP_DeltaTimerStream:
 	return GDRP_DeltaTimerStream.new(node, type)
 
-static func BuildInputButtonStream(action : String) -> GDRP_InputButtonPress:
-	return GDRP_InputButtonPress.new(action)
+static func BuildInputButtonStream(action : String) -> GDRP_InputButtonPressStream:
+	return GDRP_InputButtonPressStream.new(action)
+
+static func BuildInputAxisStream(
+	action_neg : String, action_pos : String) -> GDRP_InputAxisStream:
+		return GDRP_InputAxisStream.new(action_neg, action_pos)
+
+static func BuildInputJoystickStream(
+	a0_neg : String, a0_pos : String, 
+	a1_neg : String, a1_pos : String) -> GDRP_InputJoystickStream:
+		return GDRP_InputJoystickStream.new(a0_neg, a0_pos, a1_neg, a1_pos)
 
 ### Some nice shortcuts
 static func OnReady(node : Node) -> GDRP_OnReadyStream:
@@ -47,3 +56,9 @@ static func OnTreeProcess(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreeProcessStream(tree)
 static func OnTreePhysics(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreePhsyicsStream(tree)
+static func JoystickStream(action_prefix) -> GDRP_InputJoystickStream:
+	var a0_neg = action_prefix + "_axis-0-neg"
+	var a0_pos = action_prefix + "_axis-0-pos"
+	var a1_neg = action_prefix + "_axis-1-neg"
+	var a1_pos = action_prefix + "_axis-1-pos"
+	return BuildInputJoystickStream(a0_neg, a0_pos, a1_neg, a1_pos)

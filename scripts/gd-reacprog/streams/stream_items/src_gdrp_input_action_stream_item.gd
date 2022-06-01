@@ -5,8 +5,8 @@ class_name GDRP_InputActionStreamItem
 func _init(input_action : String, value):
 	super._init({"input_action" : input_action, "value" : value})
 
-func get_action() -> String:
+func action() -> String:
 	return _payload["input_action"]
 
-func get_value():
+func value():
 	return _payload["value"]
