@@ -44,20 +44,23 @@ static func BuildInputJoystickStream(
 	a1_neg : String, a1_pos : String) -> GDRP_InputJoystickStream:
 		return GDRP_InputJoystickStream.new(a0_neg, a0_pos, a1_neg, a1_pos)
 
-#static func BuildInputAccelerometerStream() -> GDRP_InputAccelerometerStream:
-#	return GDRP_InputAccelerometerStream.new()
+static func BuildInputAccelerometerStream() -> GDRP_InputAccelerometerStream:
+	return GDRP_InputAccelerometerStream.new()
 
-#static func BuildInputGyroscopeStream() -> GDRP_InputGyroStream:
-#	return GDRP_InputGyroStream.new()
+static func BuildInputGyroscopeStream() -> GDRP_InputGyroStream:
+	return GDRP_InputGyroStream.new()
 
-#static func BuildInputMagnetometerStream() -> GDRP_InputMagnetometerStream:
-#	return GDRP_InputMagnetometerStream.new()
+static func BuildInputMagnetometerStream() -> GDRP_InputMagnetometerStream:
+	return GDRP_InputMagnetometerStream.new()
 
-#static func BuildInputGravityStream() -> GDRP_InputGravityStream:
-#	return GDRP_InputGravityStream.new()
+static func BuildInputGravityStream() -> GDRP_InputGravityStream:
+	return GDRP_InputGravityStream.new()
 
-#static func BuildJoystickDeviceStream(device : int, joy_axis : int) -> GDRP_JoystickDeviceStream:
-#	return GDRP_JoystickDeviceStream.new(device, joy_axis)
+static func BuildJoystickDeviceStream(device : int, joy_axis : int) -> GDRP_JoystickDeviceStream:
+	return GDRP_JoystickDeviceStream.new(device, joy_axis)
+
+static func BuildAnimationPlayerStream(animation_player : AnimationPlayer):
+	return GDRP_AnimationPlayerStream.new(animation_player)
 
 ### Some nice shortcuts
 static func OnReady(node : Node) -> GDRP_OnReadyStream:
@@ -70,9 +73,9 @@ static func OnTreeProcess(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreeProcessStream(tree)
 static func OnTreePhysics(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreePhsyicsStream(tree)
-#static func JoystickStream(action_prefix) -> GDRP_InputJoystickStream:
-#	var a0_neg = action_prefix + "_axis-0-neg"
-#	var a0_pos = action_prefix + "_axis-0-pos"
-#	var a1_neg = action_prefix + "_axis-1-neg"
-#	var a1_pos = action_prefix + "_axis-1-pos"
-#	return BuildInputJoystickStream(a0_neg, a0_pos, a1_neg, a1_pos)
+static func JoystickStream(action_prefix) -> GDRP_InputJoystickStream:
+	var a0_neg = action_prefix + "_axis-0-neg"
+	var a0_pos = action_prefix + "_axis-0-pos"
+	var a1_neg = action_prefix + "_axis-1-neg"
+	var a1_pos = action_prefix + "_axis-1-pos"
+	return BuildInputJoystickStream(a0_neg, a0_pos, a1_neg, a1_pos)

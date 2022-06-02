@@ -2,7 +2,7 @@ extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
 #const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = "dt_two_subs"
+const TEST_CASES = "anim"
 
 var _recent_value = GDRP_ReactiveField.ChangedValue(false)
 
@@ -19,17 +19,25 @@ func _ready():
 	for child in get_children():
 		if child is Timer: child.start(3.0)
 	
-	var s = GDRP_CustomStream.Create(func(stream : GDRP_Stream, subscriber : GDRP_Subscriber):
-		subscriber.on_completed(stream)).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
-	s.unsubscribe(self)
+	#var s = GDRP_CustomStream.Create(func(stream : GDRP_Stream, subscriber : GDRP_Subscriber):
+	#	subscriber.on_completed(stream)).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
+	#s.unsubscribe(self)
 	
-	var jump_stream : GDRP_Stream = GDRP.Basic.BuildInputButtonStream("btn_jump")
-	jump_stream.subscribe(self, func(input): _recent_value.Set(input.value()))
-	_recent_value.where(func(i): return i.from() == false).subscribe(self, func(i : GDRP_ChangedValueStreamItem): print(i.from(), " -> ", i.to()))
+	#var jump_stream : GDRP_Stream = GDRP.Basic.BuildInputButtonStream("btn_jump")
+	#jump_stream.subscribe(self, func(input): _recent_value.Set(input.value()))
+	#_recent_value.where(func(i): return i.from() == false).subscribe(self, func(i : GDRP_ChangedValueStreamItem): print(i.from(), " -> ", i.to()))
 	
-	var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())
-	stream.subscribe(self, func(delta): 
-		print("DT> ", delta) ; stream.unsubscribe(self))
+	#var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())
+	#stream.subscribe(self, func(delta): 
+	#	print("DT> ", delta) ; stream.unsubscribe(self))
+	
+	var anim : AnimationPlayer = get_node("AnimationPlayer")
+	var stream = GDRP.Basic.BuildAnimationPlayerStream(anim)
+	stream.subscribe(
+		self, func(i : GDRP_AnimationPlayerStreamItem):
+			print(i.playback_time_sec()), 
+		func(): stream.unsubscribe(self) ; print("!")).link_to(self)
+	anim.play("foo")
 
 func _new_timer(n) -> Timer:
 	var timer : Timer = Timer.new()
