@@ -13,4 +13,4 @@ static func Where(source : GDRP_BasicStream, with = func(i): return true):
 	return GDRP_WhereOperator.new(source, with)
 
 func _forward_on_next(subscriber, i):
-	if _what.call(i): _invoke_on_next(subscriber, i)
+	if _what.call(i): subscriber.on_next(self, i)

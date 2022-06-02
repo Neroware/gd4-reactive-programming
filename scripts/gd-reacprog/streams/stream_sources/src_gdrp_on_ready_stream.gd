@@ -14,8 +14,9 @@ func subscribe(
 	comp : Callable = func(): return,
 	err : Callable = func(e): return) -> GDRP_Stream:
 		_open_ready_connections[subscriber] = func():
-			_invoke_on_next(subscriber, GDRP_StreamItem.empty())
-			_invoke_on_completed(subscriber)
+			subscriber.on_next(self, GDRP_StreamItem.empty())
+			if _open_ready_connections.has(subscriber):
+				subscriber.on_completed(self)
 		_node.connect("ready", _open_ready_connections[subscriber])
 		return super.subscribe(subscriber, what, comp, err)
 

@@ -2,7 +2,7 @@ extends GDRP_BasicSubscriber
 class_name GDRP_Testing
 
 #const TEST_CASES = "ready,link_to,process_death,timer1,timer2,forward,fwd_death,filter_where,delta_timer"
-const TEST_CASES = ""
+const TEST_CASES = "dt_two_subs"
 
 var _recent_value = GDRP_ReactiveField.ChangedValue(false)
 
@@ -12,18 +12,30 @@ func _init():
 			print("Run Test Case '" + test_case + "'...")
 			call("_test_" + test_case)
 	
-	var s = GDRP_CustomStream.Create(func(subscriber : GDRP_Subscriber):
-		subscriber.on_completed()).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
+#	var foo : GDRP_Stream 
+#	foo = GDRP.Basic.Create(func(sub : GDRP_Subscriber): sub.on_next(foo))
+
+func _ready():
+	for child in get_children():
+		if child is Timer: child.start(3.0)
+	
+	var s = GDRP_CustomStream.Create(func(stream : GDRP_Stream, subscriber : GDRP_Subscriber):
+		subscriber.on_completed(stream)).subscribe(self, func(__): return, func(): print("!!!")).link_to(self)
 	s.unsubscribe(self)
 	
 	var jump_stream : GDRP_Stream = GDRP.Basic.BuildInputButtonStream("btn_jump")
 	jump_stream.subscribe(self, func(input): _recent_value.Set(input.value()))
 	_recent_value.where(func(i): return i.from() == false).subscribe(self, func(i : GDRP_ChangedValueStreamItem): print(i.from(), " -> ", i.to()))
-
-func _ready():
+	
 	var stream = GDRP_BasicStreamBuilder.OnTreeProcess(get_tree())
 	stream.subscribe(self, func(delta): 
 		print("DT> ", delta) ; stream.unsubscribe(self))
+
+func _new_timer(n) -> Timer:
+	var timer : Timer = Timer.new()
+	timer.name = n
+	add_child(timer)
+	return timer
 
 func _test_link_to():
 	var stream : GDRP_BasicStream = GDRP_BasicStream.new()
@@ -59,51 +71,35 @@ func _test_process_death():
 		stream.unsubscribe(self)).link_to(self)
 
 func _test_timer1():
-	var subscriber : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
-	subscriber.name = "Timer1Subscriber"
-	add_child(subscriber)
-	var timer : GDRP_TimerStream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		subscriber, 10.0, true).subscribe(
-		subscriber, func(__): 
-			print("Timer expired!")
-			subscriber.get_parent().remove_child(subscriber)
-			subscriber.queue_free()
-	).link_to(subscriber)
-
-func _test_timer2():
-	var subscriber : GDRP_BasicSubscriber = GDRP_BasicSubscriber.new()
-	subscriber.name = "Timer2Subscriber"
-	add_child(subscriber)
-	var timer : GDRP_TimerStream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		subscriber, 4.0, true, false).subscribe(
-		subscriber, func(__): 
-			print("Repeating timer expired!")
-	).link_to(subscriber)
+	var timer : Timer = _new_timer("Timer1")
+	var stream : GDRP_TimerStream = GDRP.Basic.BuildTimerStream(timer)
+	stream.subscribe(self, func(i): print("Timer exprired!"), #; timer.queue_free(),
+	func(): print("Timer dead!!!") ; stream.unsubscribe(self)).link_to(self)
 
 func _test_forward():
-	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		self, 3.0, true, false).forward().subscribe(self, func(__): 
+	var timer : Timer = _new_timer("Timer2")
+	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(timer).forward().subscribe(self, func(__): 
 			print("Successfully forwarded item through stream!")
 	).link_to(self)
 
 func _test_fwd_death():
-	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		self, 3.0, true, false).forward()
+	var timer : Timer = _new_timer("Timer3")
+	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(timer).forward()
 	stream.subscribe(self, func(__): 
 			print("Successfully forwarded item through stream!")
 			stream.unsubscribe(self)
 	).link_to(self)
 
 func _test_filter_where():
-	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(
-		self, 3.0, true, false).filter(
+	var timer : Timer = _new_timer("Timer4")
+	var stream : GDRP_Stream = GDRP_BasicStreamBuilder.BuildTimerStream(timer).filter(
 			func(__): return randi() % 3).where(
 				func(i): return i % 2 == 0).subscribe(
 					self, func(i): assert(i % 2 == 0); print("> ", i)
 	).link_to(self)
 
 func _test_reactive_field():
-	var foo : GDRP_ReactiveFieldStream = GDRP_ReactiveField.ChangedValue(123)
+	var foo : GDRP_ReactiveFieldStream = GDRP.ReactiveField.ChangedValue(123)
 	foo.subscribe(self, func(i : GDRP_ChangedValueStreamItem):
 		print(i.from(), " -> ", i.to()) ; foo.unsubscribe(self))
 	foo.Set(42)
@@ -116,8 +112,7 @@ func _test_delta_timer():
 		subscriber, GDRP_DeltaTimerStream.EProcessType.PROCESS)
 	timer.subscribe(subscriber, func(__): 
 		print("Delta Timer expired!")
-		timer.start(3.0)
-		timer.unsubscribe(subscriber)).link_to(subscriber)
+		timer.start(3.0) ; subscriber.queue_free()).link_to(subscriber)
 	timer.start(3.0)
 
 func _test_dt_two_subs():

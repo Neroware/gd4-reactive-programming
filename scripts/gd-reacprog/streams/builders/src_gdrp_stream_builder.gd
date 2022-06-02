@@ -26,9 +26,8 @@ static func BuildTreePhsyicsStream(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return GDRP_TreeProcessStream.new(
 		tree, GDRP_TreeProcessStream.EProcessMode.PHYSICS_PROCESS)
 
-static func BuildTimerStream(timer_parent : Node, wait_time = 1.0, 
-	autostart = false, one_shot = true) -> GDRP_TimerStream:
-		return GDRP_TimerStream.new(timer_parent,wait_time,autostart,one_shot)
+static func BuildTimerStream(timer : Timer) -> GDRP_TimerStream:
+		return GDRP_TimerStream.new(timer)
 
 static func BuildDeltaTimerStream(node : Node, type=0) -> GDRP_DeltaTimerStream:
 	return GDRP_DeltaTimerStream.new(node, type)
@@ -45,20 +44,20 @@ static func BuildInputJoystickStream(
 	a1_neg : String, a1_pos : String) -> GDRP_InputJoystickStream:
 		return GDRP_InputJoystickStream.new(a0_neg, a0_pos, a1_neg, a1_pos)
 
-static func BuildInputAccelerometerStream() -> GDRP_InputAccelerometerStream:
-	return GDRP_InputAccelerometerStream.new()
+#static func BuildInputAccelerometerStream() -> GDRP_InputAccelerometerStream:
+#	return GDRP_InputAccelerometerStream.new()
 
-static func BuildInputGyroscopeStream() -> GDRP_InputGyroStream:
-	return GDRP_InputGyroStream.new()
+#static func BuildInputGyroscopeStream() -> GDRP_InputGyroStream:
+#	return GDRP_InputGyroStream.new()
 
-static func BuildInputMagnetometerStream() -> GDRP_InputMagnetometerStream:
-	return GDRP_InputMagnetometerStream.new()
+#static func BuildInputMagnetometerStream() -> GDRP_InputMagnetometerStream:
+#	return GDRP_InputMagnetometerStream.new()
 
-static func BuildInputGravityStream() -> GDRP_InputGravityStream:
-	return GDRP_InputGravityStream.new()
+#static func BuildInputGravityStream() -> GDRP_InputGravityStream:
+#	return GDRP_InputGravityStream.new()
 
-static func BuildJoystickDeviceStream(device : int, joy_axis : int) -> GDRP_JoystickDeviceStream:
-	return GDRP_JoystickDeviceStream.new(device, joy_axis)
+#static func BuildJoystickDeviceStream(device : int, joy_axis : int) -> GDRP_JoystickDeviceStream:
+#	return GDRP_JoystickDeviceStream.new(device, joy_axis)
 
 ### Some nice shortcuts
 static func OnReady(node : Node) -> GDRP_OnReadyStream:
@@ -71,9 +70,9 @@ static func OnTreeProcess(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreeProcessStream(tree)
 static func OnTreePhysics(tree : SceneTree) -> GDRP_TreeProcessStream:
 	return BuildTreePhsyicsStream(tree)
-static func JoystickStream(action_prefix) -> GDRP_InputJoystickStream:
-	var a0_neg = action_prefix + "_axis-0-neg"
-	var a0_pos = action_prefix + "_axis-0-pos"
-	var a1_neg = action_prefix + "_axis-1-neg"
-	var a1_pos = action_prefix + "_axis-1-pos"
-	return BuildInputJoystickStream(a0_neg, a0_pos, a1_neg, a1_pos)
+#static func JoystickStream(action_prefix) -> GDRP_InputJoystickStream:
+#	var a0_neg = action_prefix + "_axis-0-neg"
+#	var a0_pos = action_prefix + "_axis-0-pos"
+#	var a1_neg = action_prefix + "_axis-1-neg"
+#	var a1_pos = action_prefix + "_axis-1-pos"
+#	return BuildInputJoystickStream(a0_neg, a0_pos, a1_neg, a1_pos)

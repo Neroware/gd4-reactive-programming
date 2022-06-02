@@ -37,7 +37,7 @@ func subscribe(
 	comp : Callable = func(): return,
 	err : Callable = func(e): return) -> GDRP_Stream:
 		_time.subscribe(subscriber, func(__):
-			_invoke_on_next(subscriber, GDRP_StreamItem.empty()))
+			subscriber.on_next(self, GDRP_StreamItem.empty()))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

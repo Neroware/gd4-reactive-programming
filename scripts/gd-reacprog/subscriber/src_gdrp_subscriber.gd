@@ -12,11 +12,15 @@ class_name GDRP_Subscriber
 ## 		Note: Also see descriptions of on_completed() and on_error().
 ##
 
-func on_next(item):
+signal on_next_(stream : GDRP_Stream, subscriber : GDRP_Subscriber, i)
+signal on_completed_(stream : GDRP_Stream, subscriber : GDRP_Subscriber)
+signal on_error_(stream : GDRP_Stream, subscriber : GDRP_Subscriber, e)
+
+func on_next(stream : GDRP_Stream, item):
 	push_error("No implementation here!")
 
-func on_completed():
+func on_completed(stream : GDRP_Stream):
 	push_error("No implementation here!")
 
-func on_error(e):
+func on_error(stream : GDRP_Stream, e):
 	push_error("No implementation here!")

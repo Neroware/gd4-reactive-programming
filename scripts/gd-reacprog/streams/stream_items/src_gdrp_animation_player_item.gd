@@ -15,7 +15,7 @@ func _init(animation_player : AnimationPlayer, animation_name : String,
 			"prev_animation_name" : prev_animation_name
 			})
 
-func player() -> AnimationPlayer:
+func animation_player() -> AnimationPlayer:
 	return _payload["animation_player"]
 
 func animation_name() -> String:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdr5iyoaem51"]
 
-[ext_resource type="Script" path="res://scripts/gd-reacprog/testing/src_gdrp_testing.gd" id="1_0nlf5"]
+[ext_resource type="Script" path="res://scripts/gd-reacprog/testing/src_gdrp_testing.gd" id="1_wya7f"]
 
 [node name="TesterRunner" type="Node"]
-script = ExtResource( "1_0nlf5" )
+script = ExtResource( "1_wya7f" )

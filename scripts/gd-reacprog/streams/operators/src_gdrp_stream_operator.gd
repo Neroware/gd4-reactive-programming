@@ -8,13 +8,13 @@ class _StreamListener extends GDRP_BasicSubscriber:
 	pass
 
 func _forward_on_next(subscriber : GDRP_Subscriber, i):
-	_invoke_on_next(subscriber, i)
+	subscriber.on_next(self, i)
 
 func _forward_on_completed(subscriber : GDRP_Subscriber):
-	_invoke_on_completed(subscriber)
+	subscriber.on_completed(self)
 
 func _forward_on_error(subscriber : GDRP_Subscriber, e):
-	_invoke_on_error(subscriber, e)
+	subscriber.on_error(self, e)
 
 func _init(source : GDRP_Stream):
 	_source = source

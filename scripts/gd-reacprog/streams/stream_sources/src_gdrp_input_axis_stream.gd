@@ -24,7 +24,7 @@ func subscribe(
 			var item = GDRP_InputActionStreamItem.new(
 				_positive_action + "$" + _negative_action,
 				Input.get_axis(_negative_action, _positive_action))
-			_invoke_on_next(subscriber, item))
+			subscriber.on_next(self, item))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

@@ -30,7 +30,7 @@ func subscribe(
 			var axis1 = Input.get_axis(_joystick[2], _joystick[3])
 			var item = GDRP_InputActionStreamItem.new(
 				_joystick_name, Vector2(axis0, axis1))
-			_invoke_on_next(subscriber, item))
+			subscriber.on_next(self, item))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

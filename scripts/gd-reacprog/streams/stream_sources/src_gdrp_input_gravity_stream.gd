@@ -16,7 +16,7 @@ func subscribe(
 		_process_streams[subscriber].subscribe(subscriber, func(__):
 			var item = GDRP_InputActionStreamItem.new(
 				"gravity", Input.get_gravity())
-			_invoke_on_next(subscriber, item))
+			subscriber.on_next(self, item))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

@@ -22,7 +22,7 @@ func subscribe(
 	err : Callable = func(e): return) -> GDRP_Stream:
 		_process_streams[subscriber] = GDRP_OnProcessStream.new(subscriber)
 		_process_streams[subscriber].subscribe(subscriber, func(__):
-			_invoke_on_next(subscriber, Input.get_joy_axis(_device, _joy_axis)))
+			subscriber.on_next(self, Input.get_joy_axis(_device, _joy_axis)))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

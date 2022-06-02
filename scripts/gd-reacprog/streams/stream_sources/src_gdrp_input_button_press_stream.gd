@@ -21,7 +21,7 @@ func subscribe(
 		_process_streams[subscriber].subscribe(subscriber, func(__):
 			var item = GDRP_InputActionStreamItem.new(
 				_action, Input.is_action_pressed(_action))
-			_invoke_on_next(subscriber, item))
+			subscriber.on_next(self, item))
 		return super.subscribe(subscriber, what, comp, err)
 
 func unsubscribe(subscriber : GDRP_Subscriber) -> GDRP_Stream:

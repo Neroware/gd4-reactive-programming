@@ -28,7 +28,7 @@ func subscribe(
 				delta = subscriber.get_process_delta_time()
 			else:
 				delta = subscriber.get_physics_process_delta_time()
-			_invoke_on_next(subscriber, delta)
+			subscriber.on_next(self, delta)
 		pass
 		if _mode == EProcessMode.PROCESS: 
 			_tree.connect("process_frame", _process_connections[subscriber])

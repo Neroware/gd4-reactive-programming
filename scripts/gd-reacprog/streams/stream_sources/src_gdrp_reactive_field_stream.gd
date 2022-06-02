@@ -57,6 +57,6 @@ func subscribe(
 		_connections_on_changed[subscriber] = func(v_old, v_new):
 			if _cond.call(v_old, v_new): 
 				var i = GDRP_ChangedValueStreamItem.new(v_old, v_new)
-				_invoke_on_next(subscriber, i)
+				subscriber.on_next(self, i)
 		connect("_on_changed", _connections_on_changed[subscriber])
 		return super.subscribe(subscriber, what, comp, err)
