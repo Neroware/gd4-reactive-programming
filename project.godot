@@ -17,7 +17,12 @@ _global_script_classes=[{
 "base": "DisposableBase",
 "class": &"BooleanDisposable",
 "language": &"GDScript",
-"path": "res://scripts/gdrx/disposable/boolean_disposable.gd"
+"path": "res://scripts/gdrx/disposable/booleandisposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"CompositedDisposable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/disposable/compositeddisposable.gd"
 }, {
 "base": "DisposableBase",
 "class": &"Disposable",
@@ -44,7 +49,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gdrx/abc/observer.gd"
 }, {
-"base": "Disposable",
+"base": "DisposableBase",
 "class": &"SingleAssignmentDisposable",
 "language": &"GDScript",
 "path": "res://scripts/gdrx/disposable/singleassignmentdisposable.gd"
@@ -52,6 +57,7 @@ _global_script_classes=[{
 _global_script_class_icons={
 "AutoDetachObserver": "",
 "BooleanDisposable": "",
+"CompositedDisposable": "",
 "Disposable": "",
 "DisposableBase": "",
 "ObservableBase": "",

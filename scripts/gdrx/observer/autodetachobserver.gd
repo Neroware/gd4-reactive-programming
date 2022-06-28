@@ -3,7 +3,7 @@ class_name AutoDetachObserver
 
 
 var _stopped : bool
-var _subscription #: SingleAssignmentDisposable
+var _subscription : SingleAssignmentDisposable
 
 
 func _init(
@@ -40,7 +40,7 @@ func on_completed():
 	self.dispose()
 
 func set_disposable(value : DisposableBase):
-	self._subscription.disposable = value
+	self._subscription.set_disposable(value)
 
 func dispose():
 	self._stopped = true
