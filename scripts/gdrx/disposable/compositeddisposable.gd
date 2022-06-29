@@ -44,6 +44,7 @@ func dispose():
 		return
 	
 	_lock.lock()
+	var should_free = !self._disposed
 	self._disposed = true
 	var current_disposable = self._disposable
 	self._disposable = []
@@ -51,7 +52,9 @@ func dispose():
 	
 	for disp in current_disposable:
 		disp.dispose()
-	free()
+	
+	if should_free:
+		free()
 
 func clear():
 	_lock.lock()

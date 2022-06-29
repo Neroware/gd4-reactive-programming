@@ -22,6 +22,7 @@ func dispose():
 		dispose = true
 		self._disposed = true
 	_lock.unlock()
+	
 	if dispose:
 		self._action.call()
 		free()
