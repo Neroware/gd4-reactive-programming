@@ -39,6 +39,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gdrx/disposable/multipleassignmentdisposable.gd"
 }, {
+"base": "ObservableBase",
+"class": &"Observable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/observable.gd"
+}, {
 "base": "RefCounted",
 "class": &"ObservableBase",
 "language": &"GDScript",
@@ -68,6 +73,11 @@ _global_script_classes=[{
 "class": &"SingleAssignmentDisposable",
 "language": &"GDScript",
 "path": "res://scripts/gdrx/disposable/singleassignmentdisposable.gd"
+}, {
+"base": "RefCounted",
+"class": &"Subscription",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/abc/subscription.gd"
 }]
 _global_script_class_icons={
 "AutoDetachObserver": "",
@@ -76,12 +86,14 @@ _global_script_class_icons={
 "Disposable": "",
 "DisposableBase": "",
 "MultipleAssignmentDisposable": "",
+"Observable": "",
 "ObservableBase": "",
 "Observer": "",
 "ObserverBase": "",
 "RefCountDisposable": "",
 "SerialDisposable": "",
-"SingleAssignmentDisposable": ""
+"SingleAssignmentDisposable": "",
+"Subscription": ""
 }
 
 [application]

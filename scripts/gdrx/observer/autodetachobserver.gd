@@ -13,12 +13,11 @@ func _init(
 		self._on_next = on_next
 		self._on_completed = on_completed
 		self._on_error = on_error
+		self._subscription = SingleAssignmentDisposable.new()
 		self._stopped = false
-
 
 func is_stopped() -> bool:
 	return _stopped
-
 
 func on_next(i):
 	if self._stopped:
@@ -41,6 +40,9 @@ func on_completed():
 
 func set_disposable(value : DisposableBase):
 	self._subscription.set_disposable(value)
+
+func set_subscription(subscription : DisposableBase):
+	set_disposable(subscription)
 
 func dispose():
 	self._stopped = true
