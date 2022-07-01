@@ -14,6 +14,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gdrx/observer/autodetachobserver.gd"
 }, {
+"base": "GDRxError",
+"class": &"BadMappingError",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/error/badmappingerror.gd"
+}, {
 "base": "DisposableBase",
 "class": &"BooleanDisposable",
 "language": &"GDScript",
@@ -109,6 +114,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gdrx/abc/subscription.gd"
 }, {
+"base": "Observable",
+"class": &"TimerObservable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/engine/timer.gd"
+}, {
 "base": "RefCounted",
 "class": &"Unit",
 "language": &"GDScript",
@@ -116,6 +126,7 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "AutoDetachObserver": "",
+"BadMappingError": "",
 "BooleanDisposable": "",
 "CompositedDisposable": "",
 "Disposable": "",
@@ -135,6 +146,7 @@ _global_script_class_icons={
 "SerialDisposable": "",
 "SingleAssignmentDisposable": "",
 "Subscription": "",
+"TimerObservable": "",
 "Unit": ""
 }
 
