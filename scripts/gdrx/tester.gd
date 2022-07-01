@@ -1,6 +1,11 @@
 extends Node
 
+var sub1 : DisposableBase
 
 func _ready():
-	var observable = ProcessFrameObservable.new(get_tree())
-	observable.subscribe(func(i): print("!!"))
+	test1()
+
+
+func test1():
+	var observable = ProcessFrameObservable.new(self)
+	sub1 = observable.subscribe(func(i): print("!> ", i) ; sub1.dispose())

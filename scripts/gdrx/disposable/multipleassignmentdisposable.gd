@@ -31,7 +31,6 @@ func dispose():
 	var old : DisposableBase = null
 	
 	self._lock.lock()
-	var should_free = !self._disposed
 	if not _disposed:
 		self._disposed = true
 		old = self._current
@@ -40,5 +39,3 @@ func dispose():
 	
 	if old != null:
 		old.dispose()
-	if should_free:
-		free()

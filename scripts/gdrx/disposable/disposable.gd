@@ -25,4 +25,3 @@ func dispose():
 	
 	if dispose:
 		self._action.call()
-		free()

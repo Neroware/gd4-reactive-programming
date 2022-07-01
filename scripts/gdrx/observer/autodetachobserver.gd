@@ -50,7 +50,6 @@ func set_subscription(subscription : DisposableBase):
 func dispose():
 	self._stopped = true
 	self._subscription.dispose()
-	free()
 
 func fail(e) -> bool:
 	if self._stopped:
@@ -58,3 +57,7 @@ func fail(e) -> bool:
 	self._stopped = true
 	self._on_error.call(e)
 	return true
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("NOTIFICATION_PREDELETE")

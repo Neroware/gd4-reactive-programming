@@ -54,7 +54,6 @@ func _on_completed_core():
 
 func dispose():
 	self._stopped = true
-	free()
 
 func fail(error) -> bool:
 	if not self._stopped:

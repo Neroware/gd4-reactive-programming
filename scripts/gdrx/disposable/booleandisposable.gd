@@ -14,4 +14,3 @@ func is_disposed() -> bool:
 
 func dispose():
 	_disposed = true
-	free()
