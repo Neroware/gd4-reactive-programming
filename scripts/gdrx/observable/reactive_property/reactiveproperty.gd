@@ -1,5 +1,5 @@
 extends Observable
-class_name ReactiveProperty
+class_name ReactivePropertyObservable
 
 
 signal _on_changed(v_old, v_new)

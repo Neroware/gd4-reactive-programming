@@ -6,7 +6,7 @@ var sub2 : DisposableBase
 var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 
-var reacprop1 : ReactiveProperty = ReactiveProperties.ChangedValue(42)
+var reacprop1 : ReactivePropertyObservable = ReactiveProperty.ChangedValue(42)
 
 func _init():
 	test_ready()
