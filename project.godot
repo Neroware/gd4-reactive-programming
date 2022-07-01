@@ -80,6 +80,11 @@ _global_script_classes=[{
 "path": "res://scripts/gdrx/abc/observer.gd"
 }, {
 "base": "Observable",
+"class": &"PhysicsProcessFrameObservable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/engine/physics_process.gd"
+}, {
+"base": "Observable",
 "class": &"ProcessFrameObservable",
 "language": &"GDScript",
 "path": "res://scripts/gdrx/observable/engine/process.gd"
@@ -124,6 +129,7 @@ _global_script_class_icons={
 "ObservableBase": "",
 "Observer": "",
 "ObserverBase": "",
+"PhysicsProcessFrameObservable": "",
 "ProcessFrameObservable": "",
 "RefCountDisposable": "",
 "SerialDisposable": "",
