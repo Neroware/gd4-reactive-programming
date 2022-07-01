@@ -1,14 +1,21 @@
 extends Node
 
+var sub0 : DisposableBase
 var sub1 : DisposableBase
 var sub2 : DisposableBase
 var sub3 : DisposableBase
+
+func _init():
+	test_ready()
 
 func _ready():
 	#test_process()
 	test_physics()
 	test_timer()
 
+func test_ready():
+	var observable = NodeReadyObservable.new(self)
+	sub0 = observable.subscribe(func(i): print("Ready!"))
 
 func test_process():
 	var observable = ProcessFrameObservable.new(self)
