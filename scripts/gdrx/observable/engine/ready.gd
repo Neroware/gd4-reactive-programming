@@ -1,5 +1,5 @@
 extends Observable
-class_name NodeReadyObservable
+class_name OnReadyObservable
 
 
 func _init(node : Node):

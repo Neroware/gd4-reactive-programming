@@ -1,5 +1,5 @@
 extends Observable
-class_name ProcessFrameObservable
+class_name OnProcessFrameObservable
 
 
 func _init(node : Node):

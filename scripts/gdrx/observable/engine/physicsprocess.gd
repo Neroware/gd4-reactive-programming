@@ -1,5 +1,5 @@
 extends Observable
-class_name PhysicsProcessFrameObservable
+class_name OnPhysicsProcessFrameObservable
 
 
 func _init(node : Node):
