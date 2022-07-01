@@ -5,7 +5,7 @@ class_name Observable
 var _lock : Mutex
 var _subscribe : Subscription
 
-func _init(subscribe : Subscription):
+func _init(subscribe : Subscription = null):
 	self._lock = Mutex.new()
 	self._subscribe = subscribe
 
@@ -22,6 +22,11 @@ func subscribe(
 			on_next = obv.on_next
 			on_error = obv.on_error
 			on_completed = obv.on_completed
+		elif on_next is Object:
+			var obj : Object = on_next
+			on_next = obj.on_next
+			on_error = obj.on_error
+			on_completed = obj.on_completed
 		
 		var auto_detach_observer : AutoDetachObserver = AutoDetachObserver.new(
 			on_next, on_error, on_completed
@@ -36,7 +41,11 @@ func subscribe(
 		
 		var set_disposable = func():
 			var subscriber = self._subscribe_core(auto_detach_observer)
-			auto_detach_observer.set_subscription(fix_subscriber.call(subscriber))
+			if subscriber == null:
+				if not auto_detach_observer.fail(FailedSubscriptionError.new(self)):
+					push_error("Subscription failed!")
+			else:
+				auto_detach_observer.set_subscription(fix_subscriber.call(subscriber))
 		
 		set_disposable.call()
 		

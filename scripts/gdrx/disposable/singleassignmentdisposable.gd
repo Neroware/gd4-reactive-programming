@@ -30,6 +30,7 @@ func set_disposable(value : DisposableBase):
 	var should_dispose = self._disposed
 	if not should_dispose:
 		self._current = value
+	_lock.unlock()
 	
 	if self._disposed and value != null:
 		value.dispose()

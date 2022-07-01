@@ -14,12 +14,16 @@ class InnerDisposable extends DisposableBase:
 	
 	func dispose():
 		self._lock.lock()
+		var should_free = !self._disposed
+		self._disposed = true
 		var parent = self._parent
 		self._parent = null
 		self._lock.unlock()
 		
 		if parent != null:
 			parent.release()
+		if should_free:
+			free()
 
 var _underlying_disposable : DisposableBase
 var _is_primary_disposed : bool
