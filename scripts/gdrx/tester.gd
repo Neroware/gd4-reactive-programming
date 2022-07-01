@@ -6,6 +6,8 @@ var sub2 : DisposableBase
 var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 
+var reacprop1 : ReactiveProperty = ReactiveProperties.ChangedValue(42)
+
 func _init():
 	test_ready()
 
@@ -14,6 +16,7 @@ func _ready():
 	test_physics()
 	test_timer()
 	test_timer_node()
+	test_reactive_property()
 
 func test_ready():
 	var observable = OnReadyObservable.new(self)
@@ -50,3 +53,10 @@ func test_timer_node():
 		print("2:Repeated timer expired!")
 		_counter += 1
 	)
+
+func test_reactive_property():
+	reacprop1.subscribe(
+		func(i): print("Reactive Property changed to: ", i.to()) ; reacprop1.dispose()
+	)
+	reacprop1.Set(123)
+	assert(reacprop1.Get() == null)
