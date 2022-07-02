@@ -25,3 +25,10 @@ func dispose():
 	
 	if dispose:
 		self._action.call()
+
+func link_to(node : Node):
+	var callback : Callable
+	callback = func(): 
+		self.dispose()
+		node.disconnect("tree_exiting", callback)
+	node.connect("tree_exiting", callback)

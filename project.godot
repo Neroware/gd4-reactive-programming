@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Observable",
+"class": &"AnimationPlayerObservable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/engine/animationplayer.gd"
+}, {
+"base": "StreamItem",
+"class": &"AnimationPlayerStreamItem",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/item/animationplayeritem.gd"
+}, {
 "base": "ObserverBase",
 "class": &"AutoDetachObserver",
 "language": &"GDScript",
@@ -62,7 +72,7 @@ _global_script_classes=[{
 "base": "Observable",
 "class": &"NeverObservable",
 "language": &"GDScript",
-"path": "res://scripts/gdrx/observable/never.gd"
+"path": "res://scripts/gdrx/observable/operator/never.gd"
 }, {
 "base": "ObservableBase",
 "class": &"Observable",
@@ -155,6 +165,8 @@ _global_script_classes=[{
 "path": "res://scripts/gdrx/item/unit.gd"
 }]
 _global_script_class_icons={
+"AnimationPlayerObservable": "",
+"AnimationPlayerStreamItem": "",
 "AutoDetachObserver": "",
 "BadMappingError": "",
 "BooleanDisposable": "",

@@ -5,6 +5,7 @@ var sub1 : DisposableBase
 var sub2 : DisposableBase
 var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
+var sub5 : DisposableBase
 
 var reacprop1 : ReactivePropertyObservable = ReactiveProperty.ChangedValue(42)
 
@@ -13,10 +14,11 @@ func _init():
 
 func _ready():
 	#test_process()
-	test_physics()
-	test_timer()
-	test_timer_node()
-	test_reactive_property()
+	#test_physics()
+	#test_timer()
+	#test_timer_node()
+	#test_reactive_property()
+	test_animation_player()
 
 func test_ready():
 	var observable = OnReadyObservable.new(self)
@@ -60,3 +62,15 @@ func test_reactive_property():
 	)
 	reacprop1.Set(123)
 	assert(reacprop1.Get() == null)
+
+func test_animation_player():
+	var anim : AnimationPlayer = get_node("AnimationPlayer")
+	var observable = AnimationPlayerObservable.new(anim)
+	sub5 = observable.subscribe(func(i): 
+		if i.emitted_on_anim_start():
+			print("Started Animation: ", i.animation_name())
+		elif i.emitted_on_anim_finished():
+			print("Finished Animation: ", i.animation_name())
+		elif i.emitted_on_anim_changed():
+			print("Changed Animation from ", i.prev_animation_name(), " to ", i.animation_name()))
+	anim.play("foo")
