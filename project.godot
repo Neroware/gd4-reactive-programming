@@ -137,7 +137,7 @@ _global_script_classes=[{
 "base": "Observable",
 "class": &"ReactiveSignal",
 "language": &"GDScript",
-"path": "res://scripts/gdrx/observable/engine/reactivesignal.gd"
+"path": "res://scripts/gdrx/observable/reactivesignal/reactivesignal.gd"
 }, {
 "base": "ReactiveProperty",
 "class": &"ReadOnlyReactiveProperty",
@@ -153,6 +153,11 @@ _global_script_classes=[{
 "class": &"SerialDisposable",
 "language": &"GDScript",
 "path": "res://scripts/gdrx/disposable/serialdisposable.gd"
+}, {
+"base": "Observable",
+"class": &"SignalObservable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/reactivesignal/signal.gd"
 }, {
 "base": "DisposableBase",
 "class": &"SingleAssignmentDisposable",
@@ -214,6 +219,7 @@ _global_script_class_icons={
 "ReadOnlyReactiveProperty": "",
 "RefCountDisposable": "",
 "SerialDisposable": "",
+"SignalObservable": "",
 "SingleAssignmentDisposable": "",
 "StreamItem": "",
 "Subscription": "",

@@ -7,6 +7,7 @@ var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 var sub5 : DisposableBase
 var sub6 : DisposableBase
+#var sub7 : DisposableBase
 
 var reacprop1 : ReactiveProperty = ReactiveProperty.ChangedValue(42)
 var reacprop2 : ReactiveProperty = ReactiveProperty.ChangedValue("foo")
@@ -15,6 +16,9 @@ var ro_reacprop1 : ReadOnlyReactiveProperty = ReadOnlyReactiveProperty.FromReact
 
 func _process(delta): if has_signal("_on_process"): emit_signal("_on_process", delta)
 func _physics_process(delta): if has_signal("_on_physics_process"): emit_signal("_on_physics_process", delta)
+
+signal test_signal1(x : int, y : int, z : int)
+var reactive_signal : ReactiveSignal = ReactiveSignal.new("reactive_signal", self, [{"par1":TYPE_INT}, {"par2":TYPE_INT}])
 
 #func _init():
 #	test_ready()
@@ -28,6 +32,8 @@ func _ready():
 	#test_animation_player()
 	#test_node_process()
 	#test_node_physics_process()
+	#test_signal_as_observable()
+	test_reactive_signal()
 	pass
 
 func test_ready():
@@ -94,3 +100,27 @@ func test_node_physics_process():
 	var observable = OnPhysicsProcessObservable.new(self)
 	print("> ", has_signal("_on_physics_process"))
 	sub6 = observable.subscribe(func(i): print("pdt> ", i))
+
+func test_signal_as_observable():
+	var observable : SignalObservable = SignalObservable.new("test_signal1", self, 3)
+	observable.subscribe(func(i : PackedStreamItem): print("Sum: ", i.at(0) + i.at(1) + i.at(2)) ; observable.dispose())
+	emit_signal("test_signal1", 1, 2, 3)
+
+var _counter2 = 0
+func test_reactive_signal():
+	reactive_signal.subscribe(func(i : PackedStreamItem): 
+		print("Rational: ", i.at(0) / i.at(1))
+		_counter2 += 1
+		if _counter2 == 3: reactive_signal.dispose()
+	)
+	reactive_signal.subscribe(func(i : PackedStreamItem): 
+		print("Product: ", i.at(0) * i.at(1))
+		_counter2 += 1
+		if _counter2 == 3: reactive_signal.dispose()
+	)
+	reactive_signal.subscribe(func(i : PackedStreamItem):
+		print("Sum: ", i.at(0) + i.at(1))
+		_counter2 += 1
+		if _counter2 == 3: reactive_signal.dispose()
+	)
+	reactive_signal.emit([64, 32])
