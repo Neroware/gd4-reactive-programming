@@ -7,13 +7,11 @@ func _init(reactive_property : ReactiveProperty):
 	self._reactive_property = reactive_property
 	
 	var subscribe = func(observer : ObserverBase) -> DisposableBase:
-		var ident =  func(): return
-		observer.add_user_signal("__")
-		observer.connect("__", ident)
-		var d = _reactive_property.subscribe(observer)
+		var observer_ = observer
+		var d = _reactive_property.subscribe(observer_)
 		return Disposable.new(func():
 			d.dispose()
-			observer.disconnect("__", ident)
+			observer_ = null
 		)
 	
 	self._lock = Mutex.new()

@@ -13,6 +13,7 @@ func _init(
 	on_next : Callable = func(i): return,
 	on_error : Callable = func(e): return,
 	on_completed : Callable = func(): return):
+		print("NOTIFICATION_CREATE")
 		self._on_next = on_next
 		self._on_error = on_error
 		self._on_completed = on_completed
