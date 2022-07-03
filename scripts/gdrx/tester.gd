@@ -7,7 +7,7 @@ var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 var sub5 : DisposableBase
 var sub6 : DisposableBase
-#var sub7 : DisposableBase
+var sub7 : DisposableBase
 
 var reacprop1 : ReactiveProperty = ReactiveProperty.ChangedValue(42)
 var reacprop2 : ReactiveProperty = ReactiveProperty.ChangedValue("foo")
@@ -18,7 +18,7 @@ func _process(delta): if has_signal("_on_process"): emit_signal("_on_process", d
 func _physics_process(delta): if has_signal("_on_physics_process"): emit_signal("_on_physics_process", delta)
 
 signal test_signal1(x : int, y : int, z : int)
-var reactive_signal : ReactiveSignal = ReactiveSignal.new("reactive_signal", self, [{"par1":TYPE_INT}, {"par2":TYPE_INT}])
+var reactive_signal : ReactiveSignal = ReactiveSignal.new("reactive_signal1", self, [{"par1":TYPE_INT}, {"par2":TYPE_INT}])
 
 #func _init():
 #	test_ready()
@@ -33,7 +33,8 @@ func _ready():
 	#test_node_process()
 	#test_node_physics_process()
 	#test_signal_as_observable()
-	test_reactive_signal()
+	#test_reactive_signal()
+	test_input()
 	pass
 
 func test_ready():
@@ -124,3 +125,12 @@ func test_reactive_signal():
 		if _counter2 == 3: reactive_signal.dispose()
 	)
 	reactive_signal.emit([64, 32])
+
+var _counter3 = 0
+func test_input():
+	var observable : InputEventObservable = InputEventObservable.new(self)
+	sub7 = observable.subscribe(func(i): 
+		print("input: ", i)
+		_counter3 += 1
+		if _counter3 > 100: sub7.dispose()
+	)
