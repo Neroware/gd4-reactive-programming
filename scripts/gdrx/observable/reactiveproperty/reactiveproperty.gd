@@ -1,5 +1,5 @@
 extends Observable
-class_name ReactivePropertyObservable
+class_name ReactiveProperty
 
 
 signal _on_changed(v_old, v_new)
@@ -56,7 +56,7 @@ func _init(value, cond = func(v_old, v_new): return v_old != v_new):
 	_setter = func(old_v, new_v): return new_v
 	
 	var subscribe = func(observer : ObserverBase) -> DisposableBase:
-		var sub = func(v_old, v_new): 
+		var sub = func(v_old, v_new):
 			observer.on_next(ReactivePropertyItem.new(v_old, v_new))
 		connect("_on_changed", sub)
 		connect("_on_dispose", observer.on_completed)
@@ -66,3 +66,39 @@ func _init(value, cond = func(v_old, v_new): return v_old != v_new):
 		)
 	
 	super._init(Subscription.new(subscribe))
+
+
+static func ChangedValue(value = null):
+	return ReactiveProperty.new(value, func(o, n): return o != n)
+
+static func ValueInCollection(value = null, collection = []):
+	return ReactiveProperty.new(value, func(__, n): return n in collection)
+
+static func NotValueInCollection(value = null, collection = []):
+	return ReactiveProperty.new(value, func(__, n): return not n in collection)
+
+static func GreaterThan(value = null, what = 0):
+	return ReactiveProperty.new(value, func(__, n): return n > what)
+
+static func GreaterEquals(value = null, what = 0):
+	return ReactiveProperty.new(value, func(__, n): return n >= what)
+
+static func LessThan(value = null, what = 0):
+	return ReactiveProperty.new(value, func(__, n): return n < what)
+
+static func LessEquals(value = null, what = 0):
+	return ReactiveProperty.new(value, func(__, n): return n <= what)
+
+static func NotEquals(value = null, what = 0):
+	return ReactiveProperty.new(value, func(__, n): return n != what)
+
+static func InsideRange(value = 0, r_min = -1, r_max = 1):
+	return ReactiveProperty.new(value, func(__, n): 
+		return n >= r_min and n <= r_max)
+
+static func OutsideRange(value = 0, r_min = -1, r_max = 1):
+	return ReactiveProperty.new(value, func(__, n): 
+		return not (n >= r_min and n <= r_max))
+
+static func With(value = null, cond = func(o, n): return o != n):
+	return ReactiveProperty.new(value, cond)

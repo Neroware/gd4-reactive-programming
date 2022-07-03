@@ -7,18 +7,21 @@ var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 var sub5 : DisposableBase
 
-var reacprop1 : ReactivePropertyObservable = ReactiveProperty.ChangedValue(42)
+var reacprop1 : ReactiveProperty = ReactiveProperty.ChangedValue(42)
+var reacprop2 : ReactiveProperty = ReactiveProperty.ChangedValue("foo")
 
-func _init():
-	test_ready()
+var ro_reacprop1 : ReadOnlyReactiveProperty = ReadOnlyReactiveProperty.FromReactiveProperty(reacprop1)
+
+#func _init():
+#	test_ready()
 
 func _ready():
 	#test_process()
 	#test_physics()
 	#test_timer()
 	#test_timer_node()
-	#test_reactive_property()
-	test_animation_player()
+	test_reactive_property()
+	#test_animation_player()
 
 func test_ready():
 	var observable = OnReadyObservable.new(self)
@@ -57,10 +60,14 @@ func test_timer_node():
 	)
 
 func test_reactive_property():
-	reacprop1.subscribe(
+	var d = ro_reacprop1.subscribe(
 		func(i): print("Reactive Property changed to: ", i.to()) ; reacprop1.dispose()
 	)
 	reacprop1.Set(123)
+	#reacprop1.Set(456)
+	#reacprop1.Set(789)
+	#print("> ", ro_reacprop1.Get())
+	#reacprop2.Set("bar")
 	assert(reacprop1.Get() == null)
 
 func test_animation_player():
