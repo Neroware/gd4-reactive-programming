@@ -6,11 +6,15 @@ var sub2 : DisposableBase
 var sub3 : DisposableBase
 var sub4_1 : DisposableBase ; var sub4_2 : DisposableBase
 var sub5 : DisposableBase
+var sub6 : DisposableBase
 
 var reacprop1 : ReactiveProperty = ReactiveProperty.ChangedValue(42)
 var reacprop2 : ReactiveProperty = ReactiveProperty.ChangedValue("foo")
 
 var ro_reacprop1 : ReadOnlyReactiveProperty = ReadOnlyReactiveProperty.FromReactiveProperty(reacprop1)
+
+func _process(delta): if has_signal("_on_process"): emit_signal("_on_process", delta)
+func _physics_process(delta): if has_signal("_on_physics_process"): emit_signal("_on_physics_process", delta)
 
 #func _init():
 #	test_ready()
@@ -20,8 +24,11 @@ func _ready():
 	#test_physics()
 	#test_timer()
 	#test_timer_node()
-	test_reactive_property()
+	#test_reactive_property()
 	#test_animation_player()
+	#test_node_process()
+	#test_node_physics_process()
+	pass
 
 func test_ready():
 	var observable = OnReadyObservable.new(self)
@@ -64,11 +71,7 @@ func test_reactive_property():
 		func(i): print("Reactive Property changed to: ", i.to()) ; reacprop1.dispose()
 	)
 	reacprop1.Set(123)
-	#reacprop1.Set(456)
-	#reacprop1.Set(789)
-	#print("> ", ro_reacprop1.Get())
-	#reacprop2.Set("bar")
-	assert(reacprop1.Get() == null)
+	assert(reacprop1._disposed)
 
 func test_animation_player():
 	var anim : AnimationPlayer = get_node("AnimationPlayer")
@@ -81,3 +84,13 @@ func test_animation_player():
 		elif i.emitted_on_anim_changed():
 			print("Changed Animation from ", i.prev_animation_name(), " to ", i.animation_name()))
 	anim.play("foo")
+
+func test_node_process():
+	var observable = OnProcessObservable.new(self)
+	print("> ", has_signal("_on_process"))
+	sub6 = observable.subscribe(func(i): print("dt> ", i))
+
+func test_node_physics_process():
+	var observable = OnPhysicsProcessObservable.new(self)
+	print("> ", has_signal("_on_physics_process"))
+	sub6 = observable.subscribe(func(i): print("pdt> ", i))
