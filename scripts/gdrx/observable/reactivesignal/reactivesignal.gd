@@ -45,10 +45,10 @@ func emit(args : Array = []):
 		7: self._signal_owner.emit_signal(self._signal_name, args[0], args[1], args[2], args[3], args[4], args[5], args[6])
 		8: self._signal_owner.emit_signal(self._signal_name, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7])
 
-func connect_(callable : Callable):
+func add_connection(callable : Callable):
 	self._signal_owner.connect(self._signal_name, callable)
 
-func disconnect_(callable : Callable):
+func remove_connection(callable : Callable):
 	self._signal_owner.disconnect(self._signal_name, callable)
 
 func dispose():

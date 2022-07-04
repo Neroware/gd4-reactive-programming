@@ -8,5 +8,5 @@ func _init(_playload):
 static func IsUnit() -> bool:
 	return false
 
-static func Unit_() -> Unit:
+static func GetUnit() -> Unit:
 	return load("res://scripts/gdrx/item/unit.gd").new()
