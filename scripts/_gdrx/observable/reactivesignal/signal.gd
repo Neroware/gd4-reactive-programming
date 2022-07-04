@@ -48,6 +48,3 @@ func dispose():
 		return
 	_disposed = true
 	emit_signal("_on_dispose")
-
-static func SignalAsObservable(signal_name : StringName, signal_owner : Object, n_pars : int) -> SignalObservable:
-	return SignalObservable.new(signal_name, signal_owner, n_pars)
