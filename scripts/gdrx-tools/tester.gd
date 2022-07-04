@@ -3,6 +3,7 @@ class_name GDRxTester
 
 var sub1 : DisposableBase
 var sub2 : DisposableBase
+var sub3 : DisposableBase
 
 
 func _init():
@@ -11,6 +12,8 @@ func _init():
 func _ready():
 	test_animation_player()
 	#test_timer()
+	#test_input()
+	#test_physics_process()
 
 func test_animation_player():
 	var anim : AnimationPlayer = get_node("AnimationPlayer")
@@ -24,3 +27,15 @@ func test_animation_player():
 func test_timer():
 	var observable : Observable = GDRx.Interval(get_tree(), 5.0)
 	sub2 = observable.subscribe(func(i): print(":)"))
+
+func test_input():
+	var observable : Observable = GDRx.RxNode.OnInputAsObservable(self)
+	observable.subscribe(
+		func(i : InputEvent): print("> ", i.as_text())
+	)
+
+func test_physics_process():
+	var observable : Observable = GDRx.RxNode.OnPhysicsProcessAsObservable(self)
+	observable.subscribe(
+		func(i : float): print("> ", i)
+	)
