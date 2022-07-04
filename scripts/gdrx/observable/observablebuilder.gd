@@ -1,7 +1,10 @@
 class_name GDRx
 
-class GDRxSignal:
+class RxSignal extends _RxSignal:
 	pass
 
-class GDRxProperty:
+class RxProperty:
+	pass
+
+class RxClass:
 	pass
