@@ -24,6 +24,7 @@ var reactive_signal : ReactiveSignal = ReactiveSignal.new("reactive_signal1", se
 #	test_ready()
 
 func _ready():
+	print("> ", get_node("AnimationPlayer").get_signal_list())
 	#test_process()
 	#test_physics()
 	#test_timer()
@@ -34,7 +35,7 @@ func _ready():
 	#test_node_physics_process()
 	#test_signal_as_observable()
 	#test_reactive_signal()
-	test_input()
+	#test_input()
 	pass
 
 func test_ready():
