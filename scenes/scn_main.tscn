@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdr5iyoaem51"]
+[gd_scene load_steps=6 format=3 uid="uid://bdr5iyoaem51"]
 
 [ext_resource type="Script" path="res://scripts/gdrx-tools/codegen.gd" id="1_o0hmf"]
+[ext_resource type="Script" path="res://scripts/gdrx-tools/tester.gd" id="1_oc4ru"]
 
 [sub_resource type="Animation" id="Animation_e7luw"]
 resource_name = "bar"
@@ -44,6 +45,7 @@ _data = {
 }
 
 [node name="TesterRunner" type="Node"]
+script = ExtResource("1_oc4ru")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
