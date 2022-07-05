@@ -3,35 +3,46 @@ extends Observable
 
 var _obs : ObservableBase
 var _buffer_data : Array
-var _timespan_scheduler : ObservableBase
-
-signal _on_timespan
+var _buffer_lock : Mutex
+var _scheduler : Observable
 
 func _init(obs : ObservableBase, time_span : TimeSpan = TimeSpan.new(TimeSpan.ETimeSpanType.PROCESS)):
 	self._obs = obs
-	self._buffer = []
-
-#func _init(obs : ObservableBase, buffer_size : int):
-#	self._obs = obs
-#	self._buffer_size = buffer_size
-#	self._buffer = []
-#	self._buffer_lock = Mutex.new()
-#	
-#	var subscribe : Callable = func(observer : ObserverBase) -> DisposableBase:
-#		var on_next : Callable = func(i):
-#			var i_next : Array
-#			self._buffer_lock.lock()
-#			_buffer_data.append(i)
-#			if _buffer_data.size() > buffer_size:
-#				_buffer_data.pop_front()
-#			i_next = _buffer_data.duplicate()
-#			self._buffer_lock.unlock()
-#			observer.on_next(i_next)
-#		var observer_ = observer
-#		var d = _obs.subscribe(on_next, observer.on_error, observer.on_completed)
-#		return Disposable.new(func():
-#			d.dispose()
-#			observer_ = null
-#		)
-#	
-#	super._init(Subscription.new(subscribe))
+	self._buffer_data = []
+	self._buffer_lock = Mutex.new()
+	
+	var subscribe : Callable = func(observer : ObserverBase) -> DisposableBase:
+		var observer_ = observer
+		
+		match time_span.get_type():
+			TimeSpan.ETimeSpanType.PROCESS:
+				self._scheduler = GDRx.OnFrameProcessAsObservable()
+			TimeSpan.ETimeSpanType.PHYSICS:
+				self._scheduler = GDRx.OnFrameProcessAsObservable()
+			TimeSpan.ETimeSpanType.INTERVAL:
+				var dt = time_span.get_time()
+				if time_span.get_time_unit_type() == TimeSpan.ETimeUnit.MS:
+					dt /= 1000.0
+				self._scheduler = GDRx.CreateRepeatedTimer(dt)
+		
+		var d1 = self._obs.subscribe(func(i):
+			_buffer_lock.lock()
+			_buffer_data.append(i)
+			_buffer_lock.unlock()
+		)
+		var d2 = self._scheduler.subscribe(
+			func(__):
+				_buffer_lock.lock()
+				var buf = self._buffer_data.duplicate()
+				_buffer_data.clear()
+				_buffer_lock.unlock()
+				observer.on_next(buf), observer.on_error, observer.on_completed
+		)
+		
+		return Disposable.new(func():
+			d1.dispose()
+			d2.dispose()
+			observer_ = null
+		)
+	
+	super._init(Subscription.new(subscribe))

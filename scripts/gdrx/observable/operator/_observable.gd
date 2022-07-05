@@ -21,5 +21,5 @@ func select(what : Callable = func(i): return i) -> Observable:
 func where(what : Callable = func(i): return true) -> Observable:
 	return _where.new(self, what)
 
-func buffer(buffer_size : int) -> Observable:
-	return _buffer.new(self, buffer_size)
+func buffer(time_span : TimeSpan = TimeSpan.new(TimeSpan.ETimeSpanType.PROCESS)) -> Observable:
+	return _buffer.new(self, time_span)

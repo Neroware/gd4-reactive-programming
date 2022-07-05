@@ -16,11 +16,11 @@ func _init(type : ETimeSpanType, time : float = -1.0, unit_type : ETimeUnit = ET
 	self._time = time
 	self._unit_type = unit_type
 
-func get_type() -> ETimeSpanType:
+func get_type():
 	return self._type
 
 func get_time() -> float:
 	return self._time
 
-func get_time_unit_type() -> ETimeUnit:
+func get_time_unit_type():
 	return self._unit_type

@@ -134,6 +134,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/gdrx/disposable/refcountdisposable.gd"
 }, {
+"base": "Observable",
+"class": &"RepeatedTimerObservable",
+"language": &"GDScript",
+"path": "res://scripts/gdrx/observable/repeat.gd"
+}, {
 "base": "DisposableBase",
 "class": &"SerialDisposable",
 "language": &"GDScript",
@@ -167,7 +172,7 @@ _global_script_classes=[{
 "base": "Observable",
 "class": &"TimerObservable",
 "language": &"GDScript",
-"path": "res://scripts/gdrx/observable/engine/timer.gd"
+"path": "res://scripts/gdrx/observable/timer.gd"
 }, {
 "base": "StreamItem",
 "class": &"Unit",
@@ -210,6 +215,7 @@ _global_script_class_icons={
 "ReactiveSignal": "",
 "ReadOnlyReactiveProperty": "",
 "RefCountDisposable": "",
+"RepeatedTimerObservable": "",
 "SerialDisposable": "",
 "SignalObservable": "",
 "SingleAssignmentDisposable": "",
@@ -228,6 +234,10 @@ config/name="gd-reacprog"
 run/main_scene="res://scenes/scn_main.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
+
+[autoload]
+
+GDRxSingleton="*res://scripts/gdrx/singleton/singleton.gd"
 
 [input]
 

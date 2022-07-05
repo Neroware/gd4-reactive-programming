@@ -48,5 +48,14 @@ class RxNode:
 static func Empty() -> Never:
 	return Never.new()
 
-static func CreateTimer(tree : SceneTree, time_sec : float, process_always : bool = true) -> TimerObservable:
-	return TimerObservable.new(tree, time_sec, process_always)
+static func CreateTimer(time_sec : float, process_always : bool = true) -> TimerObservable:
+	return TimerObservable.new(GDRxSingleton.get_tree(), time_sec, process_always)
+
+static func CreateRepeatedTimer(time_sec : float, process_always : bool = true) -> RepeatedTimerObservable:
+	return RepeatedTimerObservable.new(GDRxSingleton.get_tree(), time_sec, process_always)
+
+static func OnFrameProcessAsObservable() -> Observable:
+	return RxSignal.RxSceneTree.ProcessFrameAsObservable(GDRxSingleton.get_tree())
+
+static func OnFramePhysicsAsObservable() -> Observable:
+	return RxSignal.RxSceneTree.PhysicsFrameAsObservable(GDRxSingleton.get_tree())
