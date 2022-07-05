@@ -29,10 +29,6 @@ class RxProperty:
 	static func With(value = null, cond = func(o, n): return o != n) -> ReactiveProperty:
 		return ReactiveProperty.new(value, cond)
 
-class RxTime:
-	static func Interval(tree : SceneTree, time_sec : float, process_always : bool = true) -> TimerObservable:
-		return TimerObservable.new(tree, time_sec, process_always)
-
 class RxNode:
 	static func OnReadyAsObservable(node : Node) -> SignalObservable:
 		return _RxSignal.RxNode.ReadyAsObservable(node)
@@ -48,3 +44,9 @@ class RxNode:
 		return NodeLifecycleObservable.new(node, NodeLifecycleObservable.ECallbackType.UNHANDLED_KEY_INPUT)
 	static func OnShortcutInputAsObservable(node : Node) -> NodeLifecycleObservable:
 		return NodeLifecycleObservable.new(node, NodeLifecycleObservable.ECallbackType.SHORTCUT_INPUT)
+
+static func Empty() -> Never:
+	return Never.new()
+
+static func CreateTimer(tree : SceneTree, time_sec : float, process_always : bool = true) -> TimerObservable:
+	return TimerObservable.new(tree, time_sec, process_always)
