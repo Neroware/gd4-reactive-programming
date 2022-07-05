@@ -14,7 +14,8 @@ func _ready():
 	#test_timer()
 	#test_input()
 	#test_physics_process()
-	test_select_where()
+	#test_select_where()
+	test_buffer()
 
 func test_animation_player():
 	var anim : AnimationPlayer = get_node("AnimationPlayer")
@@ -46,3 +47,13 @@ func test_select_where():
 	var o : Observable = GDRx.RxSignal.RxTimer.TimeoutAsObservable(timer)
 	o.select(func(__): return randi() % 4).where(func(i): return i != 0).subscribe(func(i): print("> ", i)).link_to(timer)
 	var timer2 = GDRx.RxTime.Interval(get_tree(), 10.0).subscribe(func(__): timer.queue_free())
+
+func test_buffer():
+	var timer : Timer = get_node("Timer")
+	var o : Observable = GDRx.RxSignal.RxTimer.TimeoutAsObservable(timer)
+	o.select(func(__): return randi() % 4).buffer(4).subscribe(func(i):
+		var m = ""
+		for n in i:
+			m += str(n) + ", "
+		print(m)
+	).link_to(timer)

@@ -7,6 +7,7 @@ var _never = load("res://scripts/gdrx/observable/operator/_never.gd")
 var _forward = load("res://scripts/gdrx/observable/operator/_forward.gd")
 var _select = load("res://scripts/gdrx/observable/operator/_select.gd")
 var _where = load("res://scripts/gdrx/observable/operator/_where.gd")
+var _buffer = load("res://scripts/gdrx/observable/operator/_buffer.gd")
 
 func never() -> Observable:
 	return _never.new()
@@ -19,3 +20,6 @@ func select(what : Callable = func(i): return i) -> Observable:
 
 func where(what : Callable = func(i): return true) -> Observable:
 	return _where.new(self, what)
+
+func buffer(buffer_size : int) -> Observable:
+	return _buffer.new(self, buffer_size)
