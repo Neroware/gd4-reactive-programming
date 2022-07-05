@@ -1,33 +1,34 @@
 ### ================================================ ###
-# WARNING! Files was generated automatically!
+# WARNING! File was generated automatically!
 # DO NOT EDIT
 ### ================================================ ###
 class_name _RxSignal
-class RxResourceFormatLoader:
+class NodeAsObservableBuilder: pass
+class RxResourceFormatLoader extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceFormatLoader) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceFormatLoader) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxObject:
+class RxObject extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Object) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Object) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRefCounted:
+class RxRefCounted extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RefCounted) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RefCounted) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourceFormatSaver:
+class RxResourceFormatSaver extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceFormatSaver) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceFormatSaver) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResource:
+class RxResource extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Resource) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Resource) -> SignalObservable:
@@ -37,7 +38,7 @@ class RxResource:
 	static func PropertyListChangedAsObservable(owner : Resource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScript:
+class RxScript extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Script) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Script) -> SignalObservable:
@@ -47,13 +48,13 @@ class RxScript:
 	static func PropertyListChangedAsObservable(owner : Script) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptLanguage:
+class RxScriptLanguage extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ScriptLanguage) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ScriptLanguage) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptExtension:
+class RxScriptExtension extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ScriptExtension) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ScriptExtension) -> SignalObservable:
@@ -63,19 +64,19 @@ class RxScriptExtension:
 	static func PropertyListChangedAsObservable(owner : ScriptExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptLanguageExtension:
+class RxScriptLanguageExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ScriptLanguageExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ScriptLanguageExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWeakRef:
+class RxWeakRef extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : WeakRef) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : WeakRef) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMissingResource:
+class RxMissingResource extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : MissingResource) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : MissingResource) -> SignalObservable:
@@ -85,7 +86,7 @@ class RxMissingResource:
 	static func PropertyListChangedAsObservable(owner : MissingResource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImage:
+class RxImage extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Image) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Image) -> SignalObservable:
@@ -95,7 +96,7 @@ class RxImage:
 	static func PropertyListChangedAsObservable(owner : Image) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShortcut:
+class RxShortcut extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Shortcut) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Shortcut) -> SignalObservable:
@@ -105,7 +106,7 @@ class RxShortcut:
 	static func PropertyListChangedAsObservable(owner : Shortcut) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEvent:
+class RxInputEvent extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEvent) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEvent) -> SignalObservable:
@@ -115,7 +116,7 @@ class RxInputEvent:
 	static func PropertyListChangedAsObservable(owner : InputEvent) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventFromWindow:
+class RxInputEventFromWindow extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventFromWindow) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventFromWindow) -> SignalObservable:
@@ -125,7 +126,7 @@ class RxInputEventFromWindow:
 	static func PropertyListChangedAsObservable(owner : InputEventFromWindow) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventWithModifiers:
+class RxInputEventWithModifiers extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventWithModifiers) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventWithModifiers) -> SignalObservable:
@@ -135,7 +136,7 @@ class RxInputEventWithModifiers:
 	static func PropertyListChangedAsObservable(owner : InputEventWithModifiers) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventKey:
+class RxInputEventKey extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventKey) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventKey) -> SignalObservable:
@@ -145,7 +146,7 @@ class RxInputEventKey:
 	static func PropertyListChangedAsObservable(owner : InputEventKey) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventShortcut:
+class RxInputEventShortcut extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventShortcut) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventShortcut) -> SignalObservable:
@@ -155,7 +156,7 @@ class RxInputEventShortcut:
 	static func PropertyListChangedAsObservable(owner : InputEventShortcut) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventMouse:
+class RxInputEventMouse extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventMouse) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventMouse) -> SignalObservable:
@@ -165,7 +166,7 @@ class RxInputEventMouse:
 	static func PropertyListChangedAsObservable(owner : InputEventMouse) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventMouseButton:
+class RxInputEventMouseButton extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventMouseButton) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventMouseButton) -> SignalObservable:
@@ -175,7 +176,7 @@ class RxInputEventMouseButton:
 	static func PropertyListChangedAsObservable(owner : InputEventMouseButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventMouseMotion:
+class RxInputEventMouseMotion extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventMouseMotion) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventMouseMotion) -> SignalObservable:
@@ -185,7 +186,7 @@ class RxInputEventMouseMotion:
 	static func PropertyListChangedAsObservable(owner : InputEventMouseMotion) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventJoypadButton:
+class RxInputEventJoypadButton extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventJoypadButton) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventJoypadButton) -> SignalObservable:
@@ -195,7 +196,7 @@ class RxInputEventJoypadButton:
 	static func PropertyListChangedAsObservable(owner : InputEventJoypadButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventJoypadMotion:
+class RxInputEventJoypadMotion extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventJoypadMotion) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventJoypadMotion) -> SignalObservable:
@@ -205,7 +206,7 @@ class RxInputEventJoypadMotion:
 	static func PropertyListChangedAsObservable(owner : InputEventJoypadMotion) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventScreenDrag:
+class RxInputEventScreenDrag extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventScreenDrag) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventScreenDrag) -> SignalObservable:
@@ -215,7 +216,7 @@ class RxInputEventScreenDrag:
 	static func PropertyListChangedAsObservable(owner : InputEventScreenDrag) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventScreenTouch:
+class RxInputEventScreenTouch extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventScreenTouch) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventScreenTouch) -> SignalObservable:
@@ -225,7 +226,7 @@ class RxInputEventScreenTouch:
 	static func PropertyListChangedAsObservable(owner : InputEventScreenTouch) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventAction:
+class RxInputEventAction extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventAction) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventAction) -> SignalObservable:
@@ -235,7 +236,7 @@ class RxInputEventAction:
 	static func PropertyListChangedAsObservable(owner : InputEventAction) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventGesture:
+class RxInputEventGesture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventGesture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventGesture) -> SignalObservable:
@@ -245,7 +246,7 @@ class RxInputEventGesture:
 	static func PropertyListChangedAsObservable(owner : InputEventGesture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventMagnifyGesture:
+class RxInputEventMagnifyGesture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventMagnifyGesture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventMagnifyGesture) -> SignalObservable:
@@ -255,7 +256,7 @@ class RxInputEventMagnifyGesture:
 	static func PropertyListChangedAsObservable(owner : InputEventMagnifyGesture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventPanGesture:
+class RxInputEventPanGesture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventPanGesture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventPanGesture) -> SignalObservable:
@@ -265,7 +266,7 @@ class RxInputEventPanGesture:
 	static func PropertyListChangedAsObservable(owner : InputEventPanGesture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputEventMIDI:
+class RxInputEventMIDI extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : InputEventMIDI) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : InputEventMIDI) -> SignalObservable:
@@ -275,91 +276,91 @@ class RxInputEventMIDI:
 	static func PropertyListChangedAsObservable(owner : InputEventMIDI) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxIP:
+class RxIP extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : IP) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : IP) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStreamPeer:
+class RxStreamPeer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : StreamPeer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : StreamPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStreamPeerExtension:
+class RxStreamPeerExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : StreamPeerExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : StreamPeerExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStreamPeerBuffer:
+class RxStreamPeerBuffer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : StreamPeerBuffer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : StreamPeerBuffer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStreamPeerTCP:
+class RxStreamPeerTCP extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : StreamPeerTCP) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : StreamPeerTCP) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTCPServer:
+class RxTCPServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TCPServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TCPServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPacketPeer:
+class RxPacketPeer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PacketPeer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PacketPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPacketPeerExtension:
+class RxPacketPeerExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PacketPeerExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PacketPeerExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPacketPeerStream:
+class RxPacketPeerStream extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PacketPeerStream) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PacketPeerStream) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPacketPeerUDP:
+class RxPacketPeerUDP extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PacketPeerUDP) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PacketPeerUDP) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxUDPServer:
+class RxUDPServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : UDPServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : UDPServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHTTPClient:
+class RxHTTPClient extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : HTTPClient) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : HTTPClient) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHashingContext:
+class RxHashingContext extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : HashingContext) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : HashingContext) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAESContext:
+class RxAESContext extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AESContext) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AESContext) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxX509Certificate:
+class RxX509Certificate extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : X509Certificate) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : X509Certificate) -> SignalObservable:
@@ -369,7 +370,7 @@ class RxX509Certificate:
 	static func PropertyListChangedAsObservable(owner : X509Certificate) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCryptoKey:
+class RxCryptoKey extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CryptoKey) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CryptoKey) -> SignalObservable:
@@ -379,37 +380,37 @@ class RxCryptoKey:
 	static func PropertyListChangedAsObservable(owner : CryptoKey) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHMACContext:
+class RxHMACContext extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : HMACContext) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : HMACContext) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCrypto:
+class RxCrypto extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Crypto) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Crypto) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStreamPeerSSL:
+class RxStreamPeerSSL extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : StreamPeerSSL) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : StreamPeerSSL) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPacketPeerDTLS:
+class RxPacketPeerDTLS extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PacketPeerDTLS) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PacketPeerDTLS) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDTLSServer:
+class RxDTLSServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : DTLSServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : DTLSServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiplayerPeer:
+class RxMultiplayerPeer extends NodeAsObservableBuilder:
 	static func PeerConnectedAsObservable(owner : MultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("peer_connected", owner, 1)
 	static func PeerDisconnectedAsObservable(owner : MultiplayerPeer) -> SignalObservable:
@@ -425,7 +426,7 @@ class RxMultiplayerPeer:
 	static func PropertyListChangedAsObservable(owner : MultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiplayerPeerExtension:
+class RxMultiplayerPeerExtension extends NodeAsObservableBuilder:
 	static func PeerConnectedAsObservable(owner : MultiplayerPeerExtension) -> SignalObservable:
 		return SignalObservable.new("peer_connected", owner, 1)
 	static func PeerDisconnectedAsObservable(owner : MultiplayerPeerExtension) -> SignalObservable:
@@ -441,7 +442,7 @@ class RxMultiplayerPeerExtension:
 	static func PropertyListChangedAsObservable(owner : MultiplayerPeerExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiplayerAPI:
+class RxMultiplayerAPI extends NodeAsObservableBuilder:
 	static func PeerConnectedAsObservable(owner : MultiplayerAPI) -> SignalObservable:
 		return SignalObservable.new("peer_connected", owner, 1)
 	static func PeerDisconnectedAsObservable(owner : MultiplayerAPI) -> SignalObservable:
@@ -459,7 +460,7 @@ class RxMultiplayerAPI:
 	static func PropertyListChangedAsObservable(owner : MultiplayerAPI) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMainLoop:
+class RxMainLoop extends NodeAsObservableBuilder:
 	static func OnRequestPermissionsResultAsObservable(owner : MainLoop) -> SignalObservable:
 		return SignalObservable.new("on_request_permissions_result", owner, 2)
 	static func ScriptChangedAsObservable(owner : MainLoop) -> SignalObservable:
@@ -467,7 +468,7 @@ class RxMainLoop:
 	static func PropertyListChangedAsObservable(owner : MainLoop) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTranslation:
+class RxTranslation extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Translation) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Translation) -> SignalObservable:
@@ -477,7 +478,7 @@ class RxTranslation:
 	static func PropertyListChangedAsObservable(owner : Translation) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOptimizedTranslation:
+class RxOptimizedTranslation extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OptimizedTranslation) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OptimizedTranslation) -> SignalObservable:
@@ -487,7 +488,7 @@ class RxOptimizedTranslation:
 	static func PropertyListChangedAsObservable(owner : OptimizedTranslation) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxUndoRedo:
+class RxUndoRedo extends NodeAsObservableBuilder:
 	static func VersionChangedAsObservable(owner : UndoRedo) -> SignalObservable:
 		return SignalObservable.new("version_changed", owner, 0)
 	static func ScriptChangedAsObservable(owner : UndoRedo) -> SignalObservable:
@@ -495,67 +496,67 @@ class RxUndoRedo:
 	static func PropertyListChangedAsObservable(owner : UndoRedo) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTriangleMesh:
+class RxTriangleMesh extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TriangleMesh) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TriangleMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFile:
+class RxFile extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : File) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : File) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDirectory:
+class RxDirectory extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Directory) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Directory) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxThread:
+class RxThread extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Thread) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Thread) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMutex:
+class RxMutex extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Mutex) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Mutex) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSemaphore:
+class RxSemaphore extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Semaphore) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Semaphore) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXMLParser:
+class RxXMLParser extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : XMLParser) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : XMLParser) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJSON:
+class RxJSON extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JSON) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JSON) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConfigFile:
+class RxConfigFile extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ConfigFile) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ConfigFile) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPCKPacker:
+class RxPCKPacker extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PCKPacker) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PCKPacker) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPackedDataContainer:
+class RxPackedDataContainer extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PackedDataContainer) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PackedDataContainer) -> SignalObservable:
@@ -565,43 +566,43 @@ class RxPackedDataContainer:
 	static func PropertyListChangedAsObservable(owner : PackedDataContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPackedDataContainerRef:
+class RxPackedDataContainerRef extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PackedDataContainerRef) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PackedDataContainerRef) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAStar3D:
+class RxAStar3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AStar3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AStar3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAStar2D:
+class RxAStar2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AStar2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AStar2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEncodedObjectAsID:
+class RxEncodedObjectAsID extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EncodedObjectAsID) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EncodedObjectAsID) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRandomNumberGenerator:
+class RxRandomNumberGenerator extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RandomNumberGenerator) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RandomNumberGenerator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourceImporter:
+class RxResourceImporter extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceImporter) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceImporter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNativeExtension:
+class RxNativeExtension extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : NativeExtension) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : NativeExtension) -> SignalObservable:
@@ -611,109 +612,109 @@ class RxNativeExtension:
 	static func PropertyListChangedAsObservable(owner : NativeExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNativeExtensionManager:
+class RxNativeExtensionManager extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : NativeExtensionManager) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : NativeExtensionManager) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourceUID:
+class RxResourceUID extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceUID) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceUID) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEngineProfiler:
+class RxEngineProfiler extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EngineProfiler) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EngineProfiler) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGeometry2D:
+class RxGeometry2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Geometry2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Geometry2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGeometry3D:
+class RxGeometry3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Geometry3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Geometry3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourceLoader:
+class RxResourceLoader extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceLoader) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceLoader) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourceSaver:
+class RxResourceSaver extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ResourceSaver) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ResourceSaver) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOS:
+class RxOS extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : OS) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : OS) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEngine:
+class RxEngine extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Engine) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Engine) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxClassDB:
+class RxClassDB extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ClassDB) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ClassDB) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMarshalls:
+class RxMarshalls extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Marshalls) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Marshalls) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEngineDebugger:
+class RxEngineDebugger extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EngineDebugger) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EngineDebugger) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInputMap:
+class RxInputMap extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : InputMap) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : InputMap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTime:
+class RxTime extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Time) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Time) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxProjectSettings:
+class RxProjectSettings extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ProjectSettings) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ProjectSettings) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTranslationServer:
+class RxTranslationServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TranslationServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TranslationServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPerformance:
+class RxPerformance extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Performance) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Performance) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGDScript:
+class RxGDScript extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GDScript) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GDScript) -> SignalObservable:
@@ -723,7 +724,7 @@ class RxGDScript:
 	static func PropertyListChangedAsObservable(owner : GDScript) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextServerManager:
+class RxTextServerManager extends NodeAsObservableBuilder:
 	static func InterfaceAddedAsObservable(owner : TextServerManager) -> SignalObservable:
 		return SignalObservable.new("interface_added", owner, 1)
 	static func InterfaceRemovedAsObservable(owner : TextServerManager) -> SignalObservable:
@@ -733,31 +734,31 @@ class RxTextServerManager:
 	static func PropertyListChangedAsObservable(owner : TextServerManager) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextServerDummy:
+class RxTextServerDummy extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextServerDummy) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextServerDummy) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextServer:
+class RxTextServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextServerExtension:
+class RxTextServerExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextServerExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextServerExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDisplayServer:
+class RxDisplayServer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : DisplayServer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : DisplayServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRenderingServer:
+class RxRenderingServer extends NodeAsObservableBuilder:
 	static func FramePreDrawAsObservable(owner : RenderingServer) -> SignalObservable:
 		return SignalObservable.new("frame_pre_draw", owner, 0)
 	static func FramePostDrawAsObservable(owner : RenderingServer) -> SignalObservable:
@@ -767,7 +768,7 @@ class RxRenderingServer:
 	static func PropertyListChangedAsObservable(owner : RenderingServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioServer:
+class RxAudioServer extends NodeAsObservableBuilder:
 	static func BusLayoutChangedAsObservable(owner : AudioServer) -> SignalObservable:
 		return SignalObservable.new("bus_layout_changed", owner, 0)
 	static func ScriptChangedAsObservable(owner : AudioServer) -> SignalObservable:
@@ -775,55 +776,55 @@ class RxAudioServer:
 	static func PropertyListChangedAsObservable(owner : AudioServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsServer2D:
+class RxPhysicsServer2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsServer2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsServer2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsServer3D:
+class RxPhysicsServer3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsServer3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsServer3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsServer3DExtension:
+class RxPhysicsServer3DExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsServer3DExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsServer3DExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectSpaceState3D:
+class RxPhysicsDirectSpaceState3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectSpaceState3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectSpaceState3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectBodyState3D:
+class RxPhysicsDirectBodyState3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectBodyState3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectBodyState3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectBodyState3DExtension:
+class RxPhysicsDirectBodyState3DExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectBodyState3DExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectBodyState3DExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectSpaceState3DExtension:
+class RxPhysicsDirectSpaceState3DExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectSpaceState3DExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectSpaceState3DExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsServer3DRenderingServerHandler:
+class RxPhysicsServer3DRenderingServerHandler extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsServer3DRenderingServerHandler) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsServer3DRenderingServerHandler) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationServer2D:
+class RxNavigationServer2D extends NodeAsObservableBuilder:
 	static func MapChangedAsObservable(owner : NavigationServer2D) -> SignalObservable:
 		return SignalObservable.new("map_changed", owner, 1)
 	static func ScriptChangedAsObservable(owner : NavigationServer2D) -> SignalObservable:
@@ -831,7 +832,7 @@ class RxNavigationServer2D:
 	static func PropertyListChangedAsObservable(owner : NavigationServer2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationServer3D:
+class RxNavigationServer3D extends NodeAsObservableBuilder:
 	static func MapChangedAsObservable(owner : NavigationServer3D) -> SignalObservable:
 		return SignalObservable.new("map_changed", owner, 1)
 	static func ScriptChangedAsObservable(owner : NavigationServer3D) -> SignalObservable:
@@ -839,7 +840,7 @@ class RxNavigationServer3D:
 	static func PropertyListChangedAsObservable(owner : NavigationServer3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRServer:
+class RxXRServer extends NodeAsObservableBuilder:
 	static func InterfaceAddedAsObservable(owner : XRServer) -> SignalObservable:
 		return SignalObservable.new("interface_added", owner, 1)
 	static func InterfaceRemovedAsObservable(owner : XRServer) -> SignalObservable:
@@ -855,7 +856,7 @@ class RxXRServer:
 	static func PropertyListChangedAsObservable(owner : XRServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCameraServer:
+class RxCameraServer extends NodeAsObservableBuilder:
 	static func CameraFeedAddedAsObservable(owner : CameraServer) -> SignalObservable:
 		return SignalObservable.new("camera_feed_added", owner, 1)
 	static func CameraFeedRemovedAsObservable(owner : CameraServer) -> SignalObservable:
@@ -865,19 +866,19 @@ class RxCameraServer:
 	static func PropertyListChangedAsObservable(owner : CameraServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRenderingDevice:
+class RxRenderingDevice extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RenderingDevice) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RenderingDevice) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineSpecializationConstant:
+class RxRDPipelineSpecializationConstant extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineSpecializationConstant) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineSpecializationConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRInterface:
+class RxXRInterface extends NodeAsObservableBuilder:
 	static func PlayAreaChangedAsObservable(owner : XRInterface) -> SignalObservable:
 		return SignalObservable.new("play_area_changed", owner, 1)
 	static func ScriptChangedAsObservable(owner : XRInterface) -> SignalObservable:
@@ -885,7 +886,7 @@ class RxXRInterface:
 	static func PropertyListChangedAsObservable(owner : XRInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRInterfaceExtension:
+class RxXRInterfaceExtension extends NodeAsObservableBuilder:
 	static func PlayAreaChangedAsObservable(owner : XRInterfaceExtension) -> SignalObservable:
 		return SignalObservable.new("play_area_changed", owner, 1)
 	static func ScriptChangedAsObservable(owner : XRInterfaceExtension) -> SignalObservable:
@@ -893,13 +894,13 @@ class RxXRInterfaceExtension:
 	static func PropertyListChangedAsObservable(owner : XRInterfaceExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRPose:
+class RxXRPose extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : XRPose) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : XRPose) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRPositionalTracker:
+class RxXRPositionalTracker extends NodeAsObservableBuilder:
 	static func PoseChangedAsObservable(owner : XRPositionalTracker) -> SignalObservable:
 		return SignalObservable.new("pose_changed", owner, 1)
 	static func ButtonPressedAsObservable(owner : XRPositionalTracker) -> SignalObservable:
@@ -917,7 +918,7 @@ class RxXRPositionalTracker:
 	static func PropertyListChangedAsObservable(owner : XRPositionalTracker) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStream:
+class RxAudioStream extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStream) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStream) -> SignalObservable:
@@ -927,19 +928,19 @@ class RxAudioStream:
 	static func PropertyListChangedAsObservable(owner : AudioStream) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlayback:
+class RxAudioStreamPlayback extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioStreamPlayback) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlayback) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlaybackResampled:
+class RxAudioStreamPlaybackResampled extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioStreamPlaybackResampled) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlaybackResampled) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamMicrophone:
+class RxAudioStreamMicrophone extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamMicrophone) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamMicrophone) -> SignalObservable:
@@ -949,7 +950,7 @@ class RxAudioStreamMicrophone:
 	static func PropertyListChangedAsObservable(owner : AudioStreamMicrophone) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamRandomizer:
+class RxAudioStreamRandomizer extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamRandomizer) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamRandomizer) -> SignalObservable:
@@ -959,7 +960,7 @@ class RxAudioStreamRandomizer:
 	static func PropertyListChangedAsObservable(owner : AudioStreamRandomizer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffect:
+class RxAudioEffect extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffect) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffect) -> SignalObservable:
@@ -969,13 +970,13 @@ class RxAudioEffect:
 	static func PropertyListChangedAsObservable(owner : AudioEffect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectInstance:
+class RxAudioEffectInstance extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioEffectInstance) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioEffectInstance) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectEQ:
+class RxAudioEffectEQ extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectEQ) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectEQ) -> SignalObservable:
@@ -985,7 +986,7 @@ class RxAudioEffectEQ:
 	static func PropertyListChangedAsObservable(owner : AudioEffectEQ) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectFilter:
+class RxAudioEffectFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectFilter) -> SignalObservable:
@@ -995,7 +996,7 @@ class RxAudioEffectFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioBusLayout:
+class RxAudioBusLayout extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioBusLayout) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioBusLayout) -> SignalObservable:
@@ -1005,7 +1006,7 @@ class RxAudioBusLayout:
 	static func PropertyListChangedAsObservable(owner : AudioBusLayout) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamGenerator:
+class RxAudioStreamGenerator extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamGenerator) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamGenerator) -> SignalObservable:
@@ -1015,13 +1016,13 @@ class RxAudioStreamGenerator:
 	static func PropertyListChangedAsObservable(owner : AudioStreamGenerator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamGeneratorPlayback:
+class RxAudioStreamGeneratorPlayback extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioStreamGeneratorPlayback) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioStreamGeneratorPlayback) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectAmplify:
+class RxAudioEffectAmplify extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectAmplify) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectAmplify) -> SignalObservable:
@@ -1031,7 +1032,7 @@ class RxAudioEffectAmplify:
 	static func PropertyListChangedAsObservable(owner : AudioEffectAmplify) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectReverb:
+class RxAudioEffectReverb extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectReverb) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectReverb) -> SignalObservable:
@@ -1041,7 +1042,7 @@ class RxAudioEffectReverb:
 	static func PropertyListChangedAsObservable(owner : AudioEffectReverb) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectLowPassFilter:
+class RxAudioEffectLowPassFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectLowPassFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectLowPassFilter) -> SignalObservable:
@@ -1051,7 +1052,7 @@ class RxAudioEffectLowPassFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectLowPassFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectHighPassFilter:
+class RxAudioEffectHighPassFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectHighPassFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectHighPassFilter) -> SignalObservable:
@@ -1061,7 +1062,7 @@ class RxAudioEffectHighPassFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectHighPassFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectBandPassFilter:
+class RxAudioEffectBandPassFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectBandPassFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectBandPassFilter) -> SignalObservable:
@@ -1071,7 +1072,7 @@ class RxAudioEffectBandPassFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectBandPassFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectNotchFilter:
+class RxAudioEffectNotchFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectNotchFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectNotchFilter) -> SignalObservable:
@@ -1081,7 +1082,7 @@ class RxAudioEffectNotchFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectNotchFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectBandLimitFilter:
+class RxAudioEffectBandLimitFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectBandLimitFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectBandLimitFilter) -> SignalObservable:
@@ -1091,7 +1092,7 @@ class RxAudioEffectBandLimitFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectBandLimitFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectLowShelfFilter:
+class RxAudioEffectLowShelfFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectLowShelfFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectLowShelfFilter) -> SignalObservable:
@@ -1101,7 +1102,7 @@ class RxAudioEffectLowShelfFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectLowShelfFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectHighShelfFilter:
+class RxAudioEffectHighShelfFilter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectHighShelfFilter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectHighShelfFilter) -> SignalObservable:
@@ -1111,7 +1112,7 @@ class RxAudioEffectHighShelfFilter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectHighShelfFilter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectEQ6:
+class RxAudioEffectEQ6 extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectEQ6) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectEQ6) -> SignalObservable:
@@ -1121,7 +1122,7 @@ class RxAudioEffectEQ6:
 	static func PropertyListChangedAsObservable(owner : AudioEffectEQ6) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectEQ10:
+class RxAudioEffectEQ10 extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectEQ10) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectEQ10) -> SignalObservable:
@@ -1131,7 +1132,7 @@ class RxAudioEffectEQ10:
 	static func PropertyListChangedAsObservable(owner : AudioEffectEQ10) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectEQ21:
+class RxAudioEffectEQ21 extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectEQ21) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectEQ21) -> SignalObservable:
@@ -1141,7 +1142,7 @@ class RxAudioEffectEQ21:
 	static func PropertyListChangedAsObservable(owner : AudioEffectEQ21) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectDistortion:
+class RxAudioEffectDistortion extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectDistortion) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectDistortion) -> SignalObservable:
@@ -1151,7 +1152,7 @@ class RxAudioEffectDistortion:
 	static func PropertyListChangedAsObservable(owner : AudioEffectDistortion) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectStereoEnhance:
+class RxAudioEffectStereoEnhance extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectStereoEnhance) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectStereoEnhance) -> SignalObservable:
@@ -1161,7 +1162,7 @@ class RxAudioEffectStereoEnhance:
 	static func PropertyListChangedAsObservable(owner : AudioEffectStereoEnhance) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectPanner:
+class RxAudioEffectPanner extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectPanner) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectPanner) -> SignalObservable:
@@ -1171,7 +1172,7 @@ class RxAudioEffectPanner:
 	static func PropertyListChangedAsObservable(owner : AudioEffectPanner) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectChorus:
+class RxAudioEffectChorus extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectChorus) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectChorus) -> SignalObservable:
@@ -1181,7 +1182,7 @@ class RxAudioEffectChorus:
 	static func PropertyListChangedAsObservable(owner : AudioEffectChorus) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectDelay:
+class RxAudioEffectDelay extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectDelay) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectDelay) -> SignalObservable:
@@ -1191,7 +1192,7 @@ class RxAudioEffectDelay:
 	static func PropertyListChangedAsObservable(owner : AudioEffectDelay) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectCompressor:
+class RxAudioEffectCompressor extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectCompressor) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectCompressor) -> SignalObservable:
@@ -1201,7 +1202,7 @@ class RxAudioEffectCompressor:
 	static func PropertyListChangedAsObservable(owner : AudioEffectCompressor) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectLimiter:
+class RxAudioEffectLimiter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectLimiter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectLimiter) -> SignalObservable:
@@ -1211,7 +1212,7 @@ class RxAudioEffectLimiter:
 	static func PropertyListChangedAsObservable(owner : AudioEffectLimiter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectPitchShift:
+class RxAudioEffectPitchShift extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectPitchShift) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectPitchShift) -> SignalObservable:
@@ -1221,7 +1222,7 @@ class RxAudioEffectPitchShift:
 	static func PropertyListChangedAsObservable(owner : AudioEffectPitchShift) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectPhaser:
+class RxAudioEffectPhaser extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectPhaser) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectPhaser) -> SignalObservable:
@@ -1231,7 +1232,7 @@ class RxAudioEffectPhaser:
 	static func PropertyListChangedAsObservable(owner : AudioEffectPhaser) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectRecord:
+class RxAudioEffectRecord extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectRecord) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectRecord) -> SignalObservable:
@@ -1241,7 +1242,7 @@ class RxAudioEffectRecord:
 	static func PropertyListChangedAsObservable(owner : AudioEffectRecord) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectSpectrumAnalyzer:
+class RxAudioEffectSpectrumAnalyzer extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectSpectrumAnalyzer) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectSpectrumAnalyzer) -> SignalObservable:
@@ -1251,13 +1252,13 @@ class RxAudioEffectSpectrumAnalyzer:
 	static func PropertyListChangedAsObservable(owner : AudioEffectSpectrumAnalyzer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectSpectrumAnalyzerInstance:
+class RxAudioEffectSpectrumAnalyzerInstance extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioEffectSpectrumAnalyzerInstance) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioEffectSpectrumAnalyzerInstance) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioEffectCapture:
+class RxAudioEffectCapture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioEffectCapture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioEffectCapture) -> SignalObservable:
@@ -1267,85 +1268,85 @@ class RxAudioEffectCapture:
 	static func PropertyListChangedAsObservable(owner : AudioEffectCapture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDTextureFormat:
+class RxRDTextureFormat extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDTextureFormat) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDTextureFormat) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDTextureView:
+class RxRDTextureView extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDTextureView) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDTextureView) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDAttachmentFormat:
+class RxRDAttachmentFormat extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDAttachmentFormat) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDAttachmentFormat) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDFramebufferPass:
+class RxRDFramebufferPass extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDFramebufferPass) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDFramebufferPass) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDSamplerState:
+class RxRDSamplerState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDSamplerState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDSamplerState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDVertexAttribute:
+class RxRDVertexAttribute extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDVertexAttribute) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDVertexAttribute) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDUniform:
+class RxRDUniform extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDUniform) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineRasterizationState:
+class RxRDPipelineRasterizationState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineRasterizationState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineRasterizationState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineMultisampleState:
+class RxRDPipelineMultisampleState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineMultisampleState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineMultisampleState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineDepthStencilState:
+class RxRDPipelineDepthStencilState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineDepthStencilState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineDepthStencilState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineColorBlendStateAttachment:
+class RxRDPipelineColorBlendStateAttachment extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineColorBlendStateAttachment) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineColorBlendStateAttachment) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDPipelineColorBlendState:
+class RxRDPipelineColorBlendState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDPipelineColorBlendState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDPipelineColorBlendState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDShaderSource:
+class RxRDShaderSource extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RDShaderSource) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RDShaderSource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDShaderSPIRV:
+class RxRDShaderSPIRV extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : RDShaderSPIRV) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : RDShaderSPIRV) -> SignalObservable:
@@ -1355,7 +1356,7 @@ class RxRDShaderSPIRV:
 	static func PropertyListChangedAsObservable(owner : RDShaderSPIRV) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRDShaderFile:
+class RxRDShaderFile extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : RDShaderFile) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : RDShaderFile) -> SignalObservable:
@@ -1365,43 +1366,43 @@ class RxRDShaderFile:
 	static func PropertyListChangedAsObservable(owner : RDShaderFile) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCameraFeed:
+class RxCameraFeed extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : CameraFeed) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : CameraFeed) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectBodyState2D:
+class RxPhysicsDirectBodyState2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectBodyState2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectBodyState2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsDirectSpaceState2D:
+class RxPhysicsDirectSpaceState2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsDirectSpaceState2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsDirectSpaceState2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsRayQueryParameters2D:
+class RxPhysicsRayQueryParameters2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsRayQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsRayQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsPointQueryParameters2D:
+class RxPhysicsPointQueryParameters2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsPointQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsPointQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsShapeQueryParameters2D:
+class RxPhysicsShapeQueryParameters2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsShapeQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsShapeQueryParameters2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShape2D:
+class RxShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Shape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Shape2D) -> SignalObservable:
@@ -1411,37 +1412,37 @@ class RxShape2D:
 	static func PropertyListChangedAsObservable(owner : Shape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsTestMotionParameters2D:
+class RxPhysicsTestMotionParameters2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsTestMotionParameters2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsTestMotionParameters2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsTestMotionResult2D:
+class RxPhysicsTestMotionResult2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsTestMotionResult2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsTestMotionResult2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsRayQueryParameters3D:
+class RxPhysicsRayQueryParameters3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsRayQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsRayQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsPointQueryParameters3D:
+class RxPhysicsPointQueryParameters3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsPointQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsPointQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsShapeQueryParameters3D:
+class RxPhysicsShapeQueryParameters3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsShapeQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsShapeQueryParameters3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShape3D:
+class RxShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Shape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Shape3D) -> SignalObservable:
@@ -1451,25 +1452,25 @@ class RxShape3D:
 	static func PropertyListChangedAsObservable(owner : Shape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsTestMotionParameters3D:
+class RxPhysicsTestMotionParameters3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsTestMotionParameters3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsTestMotionParameters3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsTestMotionResult3D:
+class RxPhysicsTestMotionResult3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : PhysicsTestMotionResult3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : PhysicsTestMotionResult3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMovieWriter:
+class RxMovieWriter extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : MovieWriter) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : MovieWriter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebRTCPeerConnection:
+class RxWebRTCPeerConnection extends NodeAsObservableBuilder:
 	static func SessionDescriptionCreatedAsObservable(owner : WebRTCPeerConnection) -> SignalObservable:
 		return SignalObservable.new("session_description_created", owner, 2)
 	static func IceCandidateCreatedAsObservable(owner : WebRTCPeerConnection) -> SignalObservable:
@@ -1481,25 +1482,25 @@ class RxWebRTCPeerConnection:
 	static func PropertyListChangedAsObservable(owner : WebRTCPeerConnection) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorTranslationParserPlugin:
+class RxEditorTranslationParserPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorTranslationParserPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorTranslationParserPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationMeshGenerator:
+class RxNavigationMeshGenerator extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : NavigationMeshGenerator) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : NavigationMeshGenerator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextServerAdvanced:
+class RxTextServerAdvanced extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextServerAdvanced) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextServerAdvanced) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScript:
+class RxVisualScript extends NodeAsObservableBuilder:
 	static func NodePortsChangedAsObservable(owner : VisualScript) -> SignalObservable:
 		return SignalObservable.new("node_ports_changed", owner, 1)
 	static func ChangedAsObservable(owner : VisualScript) -> SignalObservable:
@@ -1511,7 +1512,7 @@ class RxVisualScript:
 	static func PropertyListChangedAsObservable(owner : VisualScript) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptNode:
+class RxVisualScriptNode extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptNode) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptNode) -> SignalObservable:
@@ -1523,13 +1524,13 @@ class RxVisualScriptNode:
 	static func PropertyListChangedAsObservable(owner : VisualScriptNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptFunctionState:
+class RxVisualScriptFunctionState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : VisualScriptFunctionState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : VisualScriptFunctionState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptFunction:
+class RxVisualScriptFunction extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptFunction) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptFunction) -> SignalObservable:
@@ -1541,7 +1542,7 @@ class RxVisualScriptFunction:
 	static func PropertyListChangedAsObservable(owner : VisualScriptFunction) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptLists:
+class RxVisualScriptLists extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptLists) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptLists) -> SignalObservable:
@@ -1553,7 +1554,7 @@ class RxVisualScriptLists:
 	static func PropertyListChangedAsObservable(owner : VisualScriptLists) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptComposeArray:
+class RxVisualScriptComposeArray extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptComposeArray) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptComposeArray) -> SignalObservable:
@@ -1565,7 +1566,7 @@ class RxVisualScriptComposeArray:
 	static func PropertyListChangedAsObservable(owner : VisualScriptComposeArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptOperator:
+class RxVisualScriptOperator extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptOperator) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptOperator) -> SignalObservable:
@@ -1577,7 +1578,7 @@ class RxVisualScriptOperator:
 	static func PropertyListChangedAsObservable(owner : VisualScriptOperator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptVariableSet:
+class RxVisualScriptVariableSet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptVariableSet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptVariableSet) -> SignalObservable:
@@ -1589,7 +1590,7 @@ class RxVisualScriptVariableSet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptVariableSet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptVariableGet:
+class RxVisualScriptVariableGet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptVariableGet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptVariableGet) -> SignalObservable:
@@ -1601,7 +1602,7 @@ class RxVisualScriptVariableGet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptVariableGet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptConstant:
+class RxVisualScriptConstant extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptConstant) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptConstant) -> SignalObservable:
@@ -1613,7 +1614,7 @@ class RxVisualScriptConstant:
 	static func PropertyListChangedAsObservable(owner : VisualScriptConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptIndexGet:
+class RxVisualScriptIndexGet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptIndexGet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptIndexGet) -> SignalObservable:
@@ -1625,7 +1626,7 @@ class RxVisualScriptIndexGet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptIndexGet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptIndexSet:
+class RxVisualScriptIndexSet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptIndexSet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptIndexSet) -> SignalObservable:
@@ -1637,7 +1638,7 @@ class RxVisualScriptIndexSet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptIndexSet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptGlobalConstant:
+class RxVisualScriptGlobalConstant extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptGlobalConstant) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptGlobalConstant) -> SignalObservable:
@@ -1649,7 +1650,7 @@ class RxVisualScriptGlobalConstant:
 	static func PropertyListChangedAsObservable(owner : VisualScriptGlobalConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptClassConstant:
+class RxVisualScriptClassConstant extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptClassConstant) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptClassConstant) -> SignalObservable:
@@ -1661,7 +1662,7 @@ class RxVisualScriptClassConstant:
 	static func PropertyListChangedAsObservable(owner : VisualScriptClassConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptMathConstant:
+class RxVisualScriptMathConstant extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptMathConstant) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptMathConstant) -> SignalObservable:
@@ -1673,7 +1674,7 @@ class RxVisualScriptMathConstant:
 	static func PropertyListChangedAsObservable(owner : VisualScriptMathConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptBasicTypeConstant:
+class RxVisualScriptBasicTypeConstant extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptBasicTypeConstant) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptBasicTypeConstant) -> SignalObservable:
@@ -1685,7 +1686,7 @@ class RxVisualScriptBasicTypeConstant:
 	static func PropertyListChangedAsObservable(owner : VisualScriptBasicTypeConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptEngineSingleton:
+class RxVisualScriptEngineSingleton extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptEngineSingleton) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptEngineSingleton) -> SignalObservable:
@@ -1697,7 +1698,7 @@ class RxVisualScriptEngineSingleton:
 	static func PropertyListChangedAsObservable(owner : VisualScriptEngineSingleton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSceneNode:
+class RxVisualScriptSceneNode extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSceneNode) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSceneNode) -> SignalObservable:
@@ -1709,7 +1710,7 @@ class RxVisualScriptSceneNode:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSceneNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSceneTree:
+class RxVisualScriptSceneTree extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSceneTree) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSceneTree) -> SignalObservable:
@@ -1721,7 +1722,7 @@ class RxVisualScriptSceneTree:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSceneTree) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptResourcePath:
+class RxVisualScriptResourcePath extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptResourcePath) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptResourcePath) -> SignalObservable:
@@ -1733,7 +1734,7 @@ class RxVisualScriptResourcePath:
 	static func PropertyListChangedAsObservable(owner : VisualScriptResourcePath) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSelf:
+class RxVisualScriptSelf extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSelf) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSelf) -> SignalObservable:
@@ -1745,7 +1746,7 @@ class RxVisualScriptSelf:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSelf) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptCustomNode:
+class RxVisualScriptCustomNode extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptCustomNode) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptCustomNode) -> SignalObservable:
@@ -1757,7 +1758,7 @@ class RxVisualScriptCustomNode:
 	static func PropertyListChangedAsObservable(owner : VisualScriptCustomNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSubCall:
+class RxVisualScriptSubCall extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSubCall) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSubCall) -> SignalObservable:
@@ -1769,7 +1770,7 @@ class RxVisualScriptSubCall:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSubCall) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptComment:
+class RxVisualScriptComment extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptComment) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptComment) -> SignalObservable:
@@ -1781,7 +1782,7 @@ class RxVisualScriptComment:
 	static func PropertyListChangedAsObservable(owner : VisualScriptComment) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptConstructor:
+class RxVisualScriptConstructor extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptConstructor) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptConstructor) -> SignalObservable:
@@ -1793,7 +1794,7 @@ class RxVisualScriptConstructor:
 	static func PropertyListChangedAsObservable(owner : VisualScriptConstructor) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptLocalVar:
+class RxVisualScriptLocalVar extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptLocalVar) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptLocalVar) -> SignalObservable:
@@ -1805,7 +1806,7 @@ class RxVisualScriptLocalVar:
 	static func PropertyListChangedAsObservable(owner : VisualScriptLocalVar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptLocalVarSet:
+class RxVisualScriptLocalVarSet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptLocalVarSet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptLocalVarSet) -> SignalObservable:
@@ -1817,7 +1818,7 @@ class RxVisualScriptLocalVarSet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptLocalVarSet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptInputAction:
+class RxVisualScriptInputAction extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptInputAction) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptInputAction) -> SignalObservable:
@@ -1829,7 +1830,7 @@ class RxVisualScriptInputAction:
 	static func PropertyListChangedAsObservable(owner : VisualScriptInputAction) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptDeconstruct:
+class RxVisualScriptDeconstruct extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptDeconstruct) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptDeconstruct) -> SignalObservable:
@@ -1841,7 +1842,7 @@ class RxVisualScriptDeconstruct:
 	static func PropertyListChangedAsObservable(owner : VisualScriptDeconstruct) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptPreload:
+class RxVisualScriptPreload extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptPreload) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptPreload) -> SignalObservable:
@@ -1853,7 +1854,7 @@ class RxVisualScriptPreload:
 	static func PropertyListChangedAsObservable(owner : VisualScriptPreload) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptTypeCast:
+class RxVisualScriptTypeCast extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptTypeCast) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptTypeCast) -> SignalObservable:
@@ -1865,7 +1866,7 @@ class RxVisualScriptTypeCast:
 	static func PropertyListChangedAsObservable(owner : VisualScriptTypeCast) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptFunctionCall:
+class RxVisualScriptFunctionCall extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptFunctionCall) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptFunctionCall) -> SignalObservable:
@@ -1877,7 +1878,7 @@ class RxVisualScriptFunctionCall:
 	static func PropertyListChangedAsObservable(owner : VisualScriptFunctionCall) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptPropertySet:
+class RxVisualScriptPropertySet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptPropertySet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptPropertySet) -> SignalObservable:
@@ -1889,7 +1890,7 @@ class RxVisualScriptPropertySet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptPropertySet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptPropertyGet:
+class RxVisualScriptPropertyGet extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptPropertyGet) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptPropertyGet) -> SignalObservable:
@@ -1901,7 +1902,7 @@ class RxVisualScriptPropertyGet:
 	static func PropertyListChangedAsObservable(owner : VisualScriptPropertyGet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptEmitSignal:
+class RxVisualScriptEmitSignal extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptEmitSignal) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptEmitSignal) -> SignalObservable:
@@ -1913,7 +1914,7 @@ class RxVisualScriptEmitSignal:
 	static func PropertyListChangedAsObservable(owner : VisualScriptEmitSignal) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptReturn:
+class RxVisualScriptReturn extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptReturn) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptReturn) -> SignalObservable:
@@ -1925,7 +1926,7 @@ class RxVisualScriptReturn:
 	static func PropertyListChangedAsObservable(owner : VisualScriptReturn) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptCondition:
+class RxVisualScriptCondition extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptCondition) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptCondition) -> SignalObservable:
@@ -1937,7 +1938,7 @@ class RxVisualScriptCondition:
 	static func PropertyListChangedAsObservable(owner : VisualScriptCondition) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptWhile:
+class RxVisualScriptWhile extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptWhile) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptWhile) -> SignalObservable:
@@ -1949,7 +1950,7 @@ class RxVisualScriptWhile:
 	static func PropertyListChangedAsObservable(owner : VisualScriptWhile) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptIterator:
+class RxVisualScriptIterator extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptIterator) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptIterator) -> SignalObservable:
@@ -1961,7 +1962,7 @@ class RxVisualScriptIterator:
 	static func PropertyListChangedAsObservable(owner : VisualScriptIterator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSequence:
+class RxVisualScriptSequence extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSequence) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSequence) -> SignalObservable:
@@ -1973,7 +1974,7 @@ class RxVisualScriptSequence:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSequence) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSwitch:
+class RxVisualScriptSwitch extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSwitch) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSwitch) -> SignalObservable:
@@ -1985,7 +1986,7 @@ class RxVisualScriptSwitch:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSwitch) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptSelect:
+class RxVisualScriptSelect extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptSelect) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptSelect) -> SignalObservable:
@@ -1997,7 +1998,7 @@ class RxVisualScriptSelect:
 	static func PropertyListChangedAsObservable(owner : VisualScriptSelect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptYield:
+class RxVisualScriptYield extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptYield) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptYield) -> SignalObservable:
@@ -2009,7 +2010,7 @@ class RxVisualScriptYield:
 	static func PropertyListChangedAsObservable(owner : VisualScriptYield) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptYieldSignal:
+class RxVisualScriptYieldSignal extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptYieldSignal) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptYieldSignal) -> SignalObservable:
@@ -2021,7 +2022,7 @@ class RxVisualScriptYieldSignal:
 	static func PropertyListChangedAsObservable(owner : VisualScriptYieldSignal) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptBuiltinFunc:
+class RxVisualScriptBuiltinFunc extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptBuiltinFunc) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptBuiltinFunc) -> SignalObservable:
@@ -2033,7 +2034,7 @@ class RxVisualScriptBuiltinFunc:
 	static func PropertyListChangedAsObservable(owner : VisualScriptBuiltinFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptExpression:
+class RxVisualScriptExpression extends NodeAsObservableBuilder:
 	static func PortsChangedAsObservable(owner : VisualScriptExpression) -> SignalObservable:
 		return SignalObservable.new("ports_changed", owner, 0)
 	static func ChangedAsObservable(owner : VisualScriptExpression) -> SignalObservable:
@@ -2045,7 +2046,7 @@ class RxVisualScriptExpression:
 	static func PropertyListChangedAsObservable(owner : VisualScriptExpression) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInput:
+class RxInput extends NodeAsObservableBuilder:
 	static func JoyConnectionChangedAsObservable(owner : Input) -> SignalObservable:
 		return SignalObservable.new("joy_connection_changed", owner, 2)
 	static func ScriptChangedAsObservable(owner : Input) -> SignalObservable:
@@ -2053,13 +2054,13 @@ class RxInput:
 	static func PropertyListChangedAsObservable(owner : Input) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxExpression:
+class RxExpression extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Expression) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Expression) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNode:
+class RxNode extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : Node) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : Node) -> SignalObservable:
@@ -2079,7 +2080,7 @@ class RxNode:
 	static func PropertyListChangedAsObservable(owner : Node) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMissingNode:
+class RxMissingNode extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : MissingNode) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : MissingNode) -> SignalObservable:
@@ -2099,7 +2100,7 @@ class RxMissingNode:
 	static func PropertyListChangedAsObservable(owner : MissingNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxInstancePlaceholder:
+class RxInstancePlaceholder extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : InstancePlaceholder) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : InstancePlaceholder) -> SignalObservable:
@@ -2119,7 +2120,7 @@ class RxInstancePlaceholder:
 	static func PropertyListChangedAsObservable(owner : InstancePlaceholder) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxViewport:
+class RxViewport extends NodeAsObservableBuilder:
 	static func SizeChangedAsObservable(owner : Viewport) -> SignalObservable:
 		return SignalObservable.new("size_changed", owner, 0)
 	static func GuiFocusChangedAsObservable(owner : Viewport) -> SignalObservable:
@@ -2143,7 +2144,7 @@ class RxViewport:
 	static func PropertyListChangedAsObservable(owner : Viewport) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWorld3D:
+class RxWorld3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : World3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : World3D) -> SignalObservable:
@@ -2153,7 +2154,7 @@ class RxWorld3D:
 	static func PropertyListChangedAsObservable(owner : World3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWorld2D:
+class RxWorld2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : World2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : World2D) -> SignalObservable:
@@ -2163,7 +2164,7 @@ class RxWorld2D:
 	static func PropertyListChangedAsObservable(owner : World2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxControl:
+class RxControl extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : Control) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : Control) -> SignalObservable:
@@ -2209,7 +2210,7 @@ class RxControl:
 	static func PropertyListChangedAsObservable(owner : Control) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSubViewport:
+class RxSubViewport extends NodeAsObservableBuilder:
 	static func SizeChangedAsObservable(owner : SubViewport) -> SignalObservable:
 		return SignalObservable.new("size_changed", owner, 0)
 	static func GuiFocusChangedAsObservable(owner : SubViewport) -> SignalObservable:
@@ -2233,7 +2234,7 @@ class RxSubViewport:
 	static func PropertyListChangedAsObservable(owner : SubViewport) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTexture:
+class RxTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Texture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Texture) -> SignalObservable:
@@ -2243,7 +2244,7 @@ class RxTexture:
 	static func PropertyListChangedAsObservable(owner : Texture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTexture2D:
+class RxTexture2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Texture2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Texture2D) -> SignalObservable:
@@ -2253,7 +2254,7 @@ class RxTexture2D:
 	static func PropertyListChangedAsObservable(owner : Texture2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxViewportTexture:
+class RxViewportTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ViewportTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ViewportTexture) -> SignalObservable:
@@ -2263,7 +2264,7 @@ class RxViewportTexture:
 	static func PropertyListChangedAsObservable(owner : ViewportTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHTTPRequest:
+class RxHTTPRequest extends NodeAsObservableBuilder:
 	static func RequestCompletedAsObservable(owner : HTTPRequest) -> SignalObservable:
 		return SignalObservable.new("request_completed", owner, 4)
 	static func ReadyAsObservable(owner : HTTPRequest) -> SignalObservable:
@@ -2285,7 +2286,7 @@ class RxHTTPRequest:
 	static func PropertyListChangedAsObservable(owner : HTTPRequest) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiplayerSpawner:
+class RxMultiplayerSpawner extends NodeAsObservableBuilder:
 	static func DespawnedAsObservable(owner : MultiplayerSpawner) -> SignalObservable:
 		return SignalObservable.new("despawned", owner, 2)
 	static func SpawnedAsObservable(owner : MultiplayerSpawner) -> SignalObservable:
@@ -2309,7 +2310,7 @@ class RxMultiplayerSpawner:
 	static func PropertyListChangedAsObservable(owner : MultiplayerSpawner) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiplayerSynchronizer:
+class RxMultiplayerSynchronizer extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : MultiplayerSynchronizer) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : MultiplayerSynchronizer) -> SignalObservable:
@@ -2329,7 +2330,7 @@ class RxMultiplayerSynchronizer:
 	static func PropertyListChangedAsObservable(owner : MultiplayerSynchronizer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSceneReplicationConfig:
+class RxSceneReplicationConfig extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SceneReplicationConfig) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SceneReplicationConfig) -> SignalObservable:
@@ -2339,7 +2340,7 @@ class RxSceneReplicationConfig:
 	static func PropertyListChangedAsObservable(owner : SceneReplicationConfig) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTimer:
+class RxTimer extends NodeAsObservableBuilder:
 	static func TimeoutAsObservable(owner : Timer) -> SignalObservable:
 		return SignalObservable.new("timeout", owner, 0)
 	static func ReadyAsObservable(owner : Timer) -> SignalObservable:
@@ -2361,7 +2362,7 @@ class RxTimer:
 	static func PropertyListChangedAsObservable(owner : Timer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasLayer:
+class RxCanvasLayer extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CanvasLayer) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CanvasLayer) -> SignalObservable:
@@ -2383,7 +2384,7 @@ class RxCanvasLayer:
 	static func PropertyListChangedAsObservable(owner : CanvasLayer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasItem:
+class RxCanvasItem extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CanvasItem) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CanvasItem) -> SignalObservable:
@@ -2411,7 +2412,7 @@ class RxCanvasItem:
 	static func PropertyListChangedAsObservable(owner : CanvasItem) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNode2D:
+class RxNode2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Node2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Node2D) -> SignalObservable:
@@ -2439,7 +2440,7 @@ class RxNode2D:
 	static func PropertyListChangedAsObservable(owner : Node2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasModulate:
+class RxCanvasModulate extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CanvasModulate) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CanvasModulate) -> SignalObservable:
@@ -2467,7 +2468,7 @@ class RxCanvasModulate:
 	static func PropertyListChangedAsObservable(owner : CanvasModulate) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxResourcePreloader:
+class RxResourcePreloader extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : ResourcePreloader) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : ResourcePreloader) -> SignalObservable:
@@ -2487,7 +2488,7 @@ class RxResourcePreloader:
 	static func PropertyListChangedAsObservable(owner : ResourcePreloader) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWindow:
+class RxWindow extends NodeAsObservableBuilder:
 	static func WindowInputAsObservable(owner : Window) -> SignalObservable:
 		return SignalObservable.new("window_input", owner, 1)
 	static func FilesDroppedAsObservable(owner : Window) -> SignalObservable:
@@ -2533,7 +2534,7 @@ class RxWindow:
 	static func PropertyListChangedAsObservable(owner : Window) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTheme:
+class RxTheme extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Theme) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Theme) -> SignalObservable:
@@ -2543,7 +2544,7 @@ class RxTheme:
 	static func PropertyListChangedAsObservable(owner : Theme) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxButtonGroup:
+class RxButtonGroup extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : ButtonGroup) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 1)
 	static func ChangedAsObservable(owner : ButtonGroup) -> SignalObservable:
@@ -2555,7 +2556,7 @@ class RxButtonGroup:
 	static func PropertyListChangedAsObservable(owner : ButtonGroup) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBaseButton:
+class RxBaseButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : BaseButton) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : BaseButton) -> SignalObservable:
@@ -2609,7 +2610,7 @@ class RxBaseButton:
 	static func PropertyListChangedAsObservable(owner : BaseButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxButton:
+class RxButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : Button) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : Button) -> SignalObservable:
@@ -2663,7 +2664,7 @@ class RxButton:
 	static func PropertyListChangedAsObservable(owner : Button) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLabel:
+class RxLabel extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : Label) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : Label) -> SignalObservable:
@@ -2709,7 +2710,7 @@ class RxLabel:
 	static func PropertyListChangedAsObservable(owner : Label) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRange:
+class RxRange extends NodeAsObservableBuilder:
 	static func ValueChangedAsObservable(owner : Range) -> SignalObservable:
 		return SignalObservable.new("value_changed", owner, 1)
 	static func ChangedAsObservable(owner : Range) -> SignalObservable:
@@ -2759,7 +2760,7 @@ class RxRange:
 	static func PropertyListChangedAsObservable(owner : Range) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScrollBar:
+class RxScrollBar extends NodeAsObservableBuilder:
 	static func ScrollingAsObservable(owner : ScrollBar) -> SignalObservable:
 		return SignalObservable.new("scrolling", owner, 0)
 	static func ValueChangedAsObservable(owner : ScrollBar) -> SignalObservable:
@@ -2811,7 +2812,7 @@ class RxScrollBar:
 	static func PropertyListChangedAsObservable(owner : ScrollBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHScrollBar:
+class RxHScrollBar extends NodeAsObservableBuilder:
 	static func ScrollingAsObservable(owner : HScrollBar) -> SignalObservable:
 		return SignalObservable.new("scrolling", owner, 0)
 	static func ValueChangedAsObservable(owner : HScrollBar) -> SignalObservable:
@@ -2863,7 +2864,7 @@ class RxHScrollBar:
 	static func PropertyListChangedAsObservable(owner : HScrollBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVScrollBar:
+class RxVScrollBar extends NodeAsObservableBuilder:
 	static func ScrollingAsObservable(owner : VScrollBar) -> SignalObservable:
 		return SignalObservable.new("scrolling", owner, 0)
 	static func ValueChangedAsObservable(owner : VScrollBar) -> SignalObservable:
@@ -2915,7 +2916,7 @@ class RxVScrollBar:
 	static func PropertyListChangedAsObservable(owner : VScrollBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxProgressBar:
+class RxProgressBar extends NodeAsObservableBuilder:
 	static func ValueChangedAsObservable(owner : ProgressBar) -> SignalObservable:
 		return SignalObservable.new("value_changed", owner, 1)
 	static func ChangedAsObservable(owner : ProgressBar) -> SignalObservable:
@@ -2965,7 +2966,7 @@ class RxProgressBar:
 	static func PropertyListChangedAsObservable(owner : ProgressBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSlider:
+class RxSlider extends NodeAsObservableBuilder:
 	static func DragStartedAsObservable(owner : Slider) -> SignalObservable:
 		return SignalObservable.new("drag_started", owner, 0)
 	static func DragEndedAsObservable(owner : Slider) -> SignalObservable:
@@ -3019,7 +3020,7 @@ class RxSlider:
 	static func PropertyListChangedAsObservable(owner : Slider) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHSlider:
+class RxHSlider extends NodeAsObservableBuilder:
 	static func DragStartedAsObservable(owner : HSlider) -> SignalObservable:
 		return SignalObservable.new("drag_started", owner, 0)
 	static func DragEndedAsObservable(owner : HSlider) -> SignalObservable:
@@ -3073,7 +3074,7 @@ class RxHSlider:
 	static func PropertyListChangedAsObservable(owner : HSlider) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVSlider:
+class RxVSlider extends NodeAsObservableBuilder:
 	static func DragStartedAsObservable(owner : VSlider) -> SignalObservable:
 		return SignalObservable.new("drag_started", owner, 0)
 	static func DragEndedAsObservable(owner : VSlider) -> SignalObservable:
@@ -3127,7 +3128,7 @@ class RxVSlider:
 	static func PropertyListChangedAsObservable(owner : VSlider) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPopup:
+class RxPopup extends NodeAsObservableBuilder:
 	static func PopupHideAsObservable(owner : Popup) -> SignalObservable:
 		return SignalObservable.new("popup_hide", owner, 0)
 	static func WindowInputAsObservable(owner : Popup) -> SignalObservable:
@@ -3175,7 +3176,7 @@ class RxPopup:
 	static func PropertyListChangedAsObservable(owner : Popup) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPopupPanel:
+class RxPopupPanel extends NodeAsObservableBuilder:
 	static func PopupHideAsObservable(owner : PopupPanel) -> SignalObservable:
 		return SignalObservable.new("popup_hide", owner, 0)
 	static func WindowInputAsObservable(owner : PopupPanel) -> SignalObservable:
@@ -3223,7 +3224,7 @@ class RxPopupPanel:
 	static func PropertyListChangedAsObservable(owner : PopupPanel) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMenuButton:
+class RxMenuButton extends NodeAsObservableBuilder:
 	static func AboutToPopupAsObservable(owner : MenuButton) -> SignalObservable:
 		return SignalObservable.new("about_to_popup", owner, 0)
 	static func PressedAsObservable(owner : MenuButton) -> SignalObservable:
@@ -3279,7 +3280,7 @@ class RxMenuButton:
 	static func PropertyListChangedAsObservable(owner : MenuButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCheckBox:
+class RxCheckBox extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : CheckBox) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : CheckBox) -> SignalObservable:
@@ -3333,7 +3334,7 @@ class RxCheckBox:
 	static func PropertyListChangedAsObservable(owner : CheckBox) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCheckButton:
+class RxCheckButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : CheckButton) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : CheckButton) -> SignalObservable:
@@ -3387,7 +3388,7 @@ class RxCheckButton:
 	static func PropertyListChangedAsObservable(owner : CheckButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLinkButton:
+class RxLinkButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : LinkButton) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : LinkButton) -> SignalObservable:
@@ -3441,7 +3442,7 @@ class RxLinkButton:
 	static func PropertyListChangedAsObservable(owner : LinkButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPanel:
+class RxPanel extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : Panel) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : Panel) -> SignalObservable:
@@ -3487,7 +3488,7 @@ class RxPanel:
 	static func PropertyListChangedAsObservable(owner : Panel) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextureRect:
+class RxTextureRect extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : TextureRect) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : TextureRect) -> SignalObservable:
@@ -3533,7 +3534,7 @@ class RxTextureRect:
 	static func PropertyListChangedAsObservable(owner : TextureRect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxColorRect:
+class RxColorRect extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : ColorRect) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : ColorRect) -> SignalObservable:
@@ -3579,7 +3580,7 @@ class RxColorRect:
 	static func PropertyListChangedAsObservable(owner : ColorRect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNinePatchRect:
+class RxNinePatchRect extends NodeAsObservableBuilder:
 	static func TextureChangedAsObservable(owner : NinePatchRect) -> SignalObservable:
 		return SignalObservable.new("texture_changed", owner, 0)
 	static func ResizedAsObservable(owner : NinePatchRect) -> SignalObservable:
@@ -3627,7 +3628,7 @@ class RxNinePatchRect:
 	static func PropertyListChangedAsObservable(owner : NinePatchRect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxReferenceRect:
+class RxReferenceRect extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : ReferenceRect) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : ReferenceRect) -> SignalObservable:
@@ -3673,7 +3674,7 @@ class RxReferenceRect:
 	static func PropertyListChangedAsObservable(owner : ReferenceRect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxContainer:
+class RxContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : Container) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : Container) -> SignalObservable:
@@ -3723,7 +3724,7 @@ class RxContainer:
 	static func PropertyListChangedAsObservable(owner : Container) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAspectRatioContainer:
+class RxAspectRatioContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : AspectRatioContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : AspectRatioContainer) -> SignalObservable:
@@ -3773,7 +3774,7 @@ class RxAspectRatioContainer:
 	static func PropertyListChangedAsObservable(owner : AspectRatioContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTabContainer:
+class RxTabContainer extends NodeAsObservableBuilder:
 	static func TabChangedAsObservable(owner : TabContainer) -> SignalObservable:
 		return SignalObservable.new("tab_changed", owner, 1)
 	static func TabSelectedAsObservable(owner : TabContainer) -> SignalObservable:
@@ -3831,7 +3832,7 @@ class RxTabContainer:
 	static func PropertyListChangedAsObservable(owner : TabContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTabBar:
+class RxTabBar extends NodeAsObservableBuilder:
 	static func TabSelectedAsObservable(owner : TabBar) -> SignalObservable:
 		return SignalObservable.new("tab_selected", owner, 1)
 	static func TabChangedAsObservable(owner : TabBar) -> SignalObservable:
@@ -3893,7 +3894,7 @@ class RxTabBar:
 	static func PropertyListChangedAsObservable(owner : TabBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSeparator:
+class RxSeparator extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : Separator) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : Separator) -> SignalObservable:
@@ -3939,7 +3940,7 @@ class RxSeparator:
 	static func PropertyListChangedAsObservable(owner : Separator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHSeparator:
+class RxHSeparator extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : HSeparator) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : HSeparator) -> SignalObservable:
@@ -3985,7 +3986,7 @@ class RxHSeparator:
 	static func PropertyListChangedAsObservable(owner : HSeparator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVSeparator:
+class RxVSeparator extends NodeAsObservableBuilder:
 	static func ResizedAsObservable(owner : VSeparator) -> SignalObservable:
 		return SignalObservable.new("resized", owner, 0)
 	static func GuiInputAsObservable(owner : VSeparator) -> SignalObservable:
@@ -4031,7 +4032,7 @@ class RxVSeparator:
 	static func PropertyListChangedAsObservable(owner : VSeparator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextureButton:
+class RxTextureButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : TextureButton) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ButtonUpAsObservable(owner : TextureButton) -> SignalObservable:
@@ -4085,7 +4086,7 @@ class RxTextureButton:
 	static func PropertyListChangedAsObservable(owner : TextureButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBitMap:
+class RxBitMap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : BitMap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : BitMap) -> SignalObservable:
@@ -4095,7 +4096,7 @@ class RxBitMap:
 	static func PropertyListChangedAsObservable(owner : BitMap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBoxContainer:
+class RxBoxContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : BoxContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : BoxContainer) -> SignalObservable:
@@ -4145,7 +4146,7 @@ class RxBoxContainer:
 	static func PropertyListChangedAsObservable(owner : BoxContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHBoxContainer:
+class RxHBoxContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : HBoxContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : HBoxContainer) -> SignalObservable:
@@ -4195,7 +4196,7 @@ class RxHBoxContainer:
 	static func PropertyListChangedAsObservable(owner : HBoxContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightOccluder2D:
+class RxLightOccluder2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : LightOccluder2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : LightOccluder2D) -> SignalObservable:
@@ -4223,7 +4224,7 @@ class RxLightOccluder2D:
 	static func PropertyListChangedAsObservable(owner : LightOccluder2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOccluderPolygon2D:
+class RxOccluderPolygon2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OccluderPolygon2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OccluderPolygon2D) -> SignalObservable:
@@ -4233,7 +4234,7 @@ class RxOccluderPolygon2D:
 	static func PropertyListChangedAsObservable(owner : OccluderPolygon2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVBoxContainer:
+class RxVBoxContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : VBoxContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : VBoxContainer) -> SignalObservable:
@@ -4283,7 +4284,7 @@ class RxVBoxContainer:
 	static func PropertyListChangedAsObservable(owner : VBoxContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGridContainer:
+class RxGridContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : GridContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : GridContainer) -> SignalObservable:
@@ -4333,7 +4334,7 @@ class RxGridContainer:
 	static func PropertyListChangedAsObservable(owner : GridContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCenterContainer:
+class RxCenterContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : CenterContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : CenterContainer) -> SignalObservable:
@@ -4383,7 +4384,7 @@ class RxCenterContainer:
 	static func PropertyListChangedAsObservable(owner : CenterContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScrollContainer:
+class RxScrollContainer extends NodeAsObservableBuilder:
 	static func ScrollStartedAsObservable(owner : ScrollContainer) -> SignalObservable:
 		return SignalObservable.new("scroll_started", owner, 0)
 	static func ScrollEndedAsObservable(owner : ScrollContainer) -> SignalObservable:
@@ -4437,7 +4438,7 @@ class RxScrollContainer:
 	static func PropertyListChangedAsObservable(owner : ScrollContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPanelContainer:
+class RxPanelContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : PanelContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : PanelContainer) -> SignalObservable:
@@ -4487,7 +4488,7 @@ class RxPanelContainer:
 	static func PropertyListChangedAsObservable(owner : PanelContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFlowContainer:
+class RxFlowContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : FlowContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : FlowContainer) -> SignalObservable:
@@ -4537,7 +4538,7 @@ class RxFlowContainer:
 	static func PropertyListChangedAsObservable(owner : FlowContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHFlowContainer:
+class RxHFlowContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : HFlowContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : HFlowContainer) -> SignalObservable:
@@ -4587,7 +4588,7 @@ class RxHFlowContainer:
 	static func PropertyListChangedAsObservable(owner : HFlowContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVFlowContainer:
+class RxVFlowContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : VFlowContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : VFlowContainer) -> SignalObservable:
@@ -4637,7 +4638,7 @@ class RxVFlowContainer:
 	static func PropertyListChangedAsObservable(owner : VFlowContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextureProgressBar:
+class RxTextureProgressBar extends NodeAsObservableBuilder:
 	static func ValueChangedAsObservable(owner : TextureProgressBar) -> SignalObservable:
 		return SignalObservable.new("value_changed", owner, 1)
 	static func ChangedAsObservable(owner : TextureProgressBar) -> SignalObservable:
@@ -4687,7 +4688,7 @@ class RxTextureProgressBar:
 	static func PropertyListChangedAsObservable(owner : TextureProgressBar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxItemList:
+class RxItemList extends NodeAsObservableBuilder:
 	static func ItemSelectedAsObservable(owner : ItemList) -> SignalObservable:
 		return SignalObservable.new("item_selected", owner, 1)
 	static func EmptyClickedAsObservable(owner : ItemList) -> SignalObservable:
@@ -4743,7 +4744,7 @@ class RxItemList:
 	static func PropertyListChangedAsObservable(owner : ItemList) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLineEdit:
+class RxLineEdit extends NodeAsObservableBuilder:
 	static func TextChangedAsObservable(owner : LineEdit) -> SignalObservable:
 		return SignalObservable.new("text_changed", owner, 1)
 	static func TextChangeRejectedAsObservable(owner : LineEdit) -> SignalObservable:
@@ -4795,7 +4796,7 @@ class RxLineEdit:
 	static func PropertyListChangedAsObservable(owner : LineEdit) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVideoStreamPlayer:
+class RxVideoStreamPlayer extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : VideoStreamPlayer) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ResizedAsObservable(owner : VideoStreamPlayer) -> SignalObservable:
@@ -4843,7 +4844,7 @@ class RxVideoStreamPlayer:
 	static func PropertyListChangedAsObservable(owner : VideoStreamPlayer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVideoStream:
+class RxVideoStream extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : VideoStream) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : VideoStream) -> SignalObservable:
@@ -4853,7 +4854,7 @@ class RxVideoStream:
 	static func PropertyListChangedAsObservable(owner : VideoStream) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAcceptDialog:
+class RxAcceptDialog extends NodeAsObservableBuilder:
 	static func ConfirmedAsObservable(owner : AcceptDialog) -> SignalObservable:
 		return SignalObservable.new("confirmed", owner, 0)
 	static func CancelledAsObservable(owner : AcceptDialog) -> SignalObservable:
@@ -4905,7 +4906,7 @@ class RxAcceptDialog:
 	static func PropertyListChangedAsObservable(owner : AcceptDialog) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConfirmationDialog:
+class RxConfirmationDialog extends NodeAsObservableBuilder:
 	static func ConfirmedAsObservable(owner : ConfirmationDialog) -> SignalObservable:
 		return SignalObservable.new("confirmed", owner, 0)
 	static func CancelledAsObservable(owner : ConfirmationDialog) -> SignalObservable:
@@ -4957,7 +4958,7 @@ class RxConfirmationDialog:
 	static func PropertyListChangedAsObservable(owner : ConfirmationDialog) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFileDialog:
+class RxFileDialog extends NodeAsObservableBuilder:
 	static func FileSelectedAsObservable(owner : FileDialog) -> SignalObservable:
 		return SignalObservable.new("file_selected", owner, 1)
 	static func FilesSelectedAsObservable(owner : FileDialog) -> SignalObservable:
@@ -5015,7 +5016,7 @@ class RxFileDialog:
 	static func PropertyListChangedAsObservable(owner : FileDialog) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPopupMenu:
+class RxPopupMenu extends NodeAsObservableBuilder:
 	static func IdPressedAsObservable(owner : PopupMenu) -> SignalObservable:
 		return SignalObservable.new("id_pressed", owner, 1)
 	static func IdFocusedAsObservable(owner : PopupMenu) -> SignalObservable:
@@ -5069,7 +5070,7 @@ class RxPopupMenu:
 	static func PropertyListChangedAsObservable(owner : PopupMenu) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTree:
+class RxTree extends NodeAsObservableBuilder:
 	static func ItemSelectedAsObservable(owner : Tree) -> SignalObservable:
 		return SignalObservable.new("item_selected", owner, 0)
 	static func CellSelectedAsObservable(owner : Tree) -> SignalObservable:
@@ -5147,13 +5148,13 @@ class RxTree:
 	static func PropertyListChangedAsObservable(owner : Tree) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTreeItem:
+class RxTreeItem extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TreeItem) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TreeItem) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextEdit:
+class RxTextEdit extends NodeAsObservableBuilder:
 	static func TextSetAsObservable(owner : TextEdit) -> SignalObservable:
 		return SignalObservable.new("text_set", owner, 0)
 	static func TextChangedAsObservable(owner : TextEdit) -> SignalObservable:
@@ -5213,7 +5214,7 @@ class RxTextEdit:
 	static func PropertyListChangedAsObservable(owner : TextEdit) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSyntaxHighlighter:
+class RxSyntaxHighlighter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SyntaxHighlighter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SyntaxHighlighter) -> SignalObservable:
@@ -5223,7 +5224,7 @@ class RxSyntaxHighlighter:
 	static func PropertyListChangedAsObservable(owner : SyntaxHighlighter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCodeEdit:
+class RxCodeEdit extends NodeAsObservableBuilder:
 	static func BreakpointToggledAsObservable(owner : CodeEdit) -> SignalObservable:
 		return SignalObservable.new("breakpoint_toggled", owner, 1)
 	static func CodeCompletionRequestedAsObservable(owner : CodeEdit) -> SignalObservable:
@@ -5291,7 +5292,7 @@ class RxCodeEdit:
 	static func PropertyListChangedAsObservable(owner : CodeEdit) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCodeHighlighter:
+class RxCodeHighlighter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CodeHighlighter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CodeHighlighter) -> SignalObservable:
@@ -5301,7 +5302,7 @@ class RxCodeHighlighter:
 	static func PropertyListChangedAsObservable(owner : CodeHighlighter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOptionButton:
+class RxOptionButton extends NodeAsObservableBuilder:
 	static func ItemSelectedAsObservable(owner : OptionButton) -> SignalObservable:
 		return SignalObservable.new("item_selected", owner, 1)
 	static func ItemFocusedAsObservable(owner : OptionButton) -> SignalObservable:
@@ -5359,7 +5360,7 @@ class RxOptionButton:
 	static func PropertyListChangedAsObservable(owner : OptionButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSpinBox:
+class RxSpinBox extends NodeAsObservableBuilder:
 	static func ValueChangedAsObservable(owner : SpinBox) -> SignalObservable:
 		return SignalObservable.new("value_changed", owner, 1)
 	static func ChangedAsObservable(owner : SpinBox) -> SignalObservable:
@@ -5409,7 +5410,7 @@ class RxSpinBox:
 	static func PropertyListChangedAsObservable(owner : SpinBox) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxColorPicker:
+class RxColorPicker extends NodeAsObservableBuilder:
 	static func ColorChangedAsObservable(owner : ColorPicker) -> SignalObservable:
 		return SignalObservable.new("color_changed", owner, 1)
 	static func PresetAddedAsObservable(owner : ColorPicker) -> SignalObservable:
@@ -5465,7 +5466,7 @@ class RxColorPicker:
 	static func PropertyListChangedAsObservable(owner : ColorPicker) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxColorPickerButton:
+class RxColorPickerButton extends NodeAsObservableBuilder:
 	static func ColorChangedAsObservable(owner : ColorPickerButton) -> SignalObservable:
 		return SignalObservable.new("color_changed", owner, 1)
 	static func PopupClosedAsObservable(owner : ColorPickerButton) -> SignalObservable:
@@ -5525,7 +5526,7 @@ class RxColorPickerButton:
 	static func PropertyListChangedAsObservable(owner : ColorPickerButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRichTextLabel:
+class RxRichTextLabel extends NodeAsObservableBuilder:
 	static func MetaClickedAsObservable(owner : RichTextLabel) -> SignalObservable:
 		return SignalObservable.new("meta_clicked", owner, 1)
 	static func MetaHoverStartedAsObservable(owner : RichTextLabel) -> SignalObservable:
@@ -5579,13 +5580,13 @@ class RxRichTextLabel:
 	static func PropertyListChangedAsObservable(owner : RichTextLabel) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCharFXTransform:
+class RxCharFXTransform extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : CharFXTransform) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : CharFXTransform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRichTextEffect:
+class RxRichTextEffect extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : RichTextEffect) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : RichTextEffect) -> SignalObservable:
@@ -5595,7 +5596,7 @@ class RxRichTextEffect:
 	static func PropertyListChangedAsObservable(owner : RichTextEffect) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMarginContainer:
+class RxMarginContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : MarginContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : MarginContainer) -> SignalObservable:
@@ -5645,7 +5646,7 @@ class RxMarginContainer:
 	static func PropertyListChangedAsObservable(owner : MarginContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSubViewportContainer:
+class RxSubViewportContainer extends NodeAsObservableBuilder:
 	static func PreSortChildrenAsObservable(owner : SubViewportContainer) -> SignalObservable:
 		return SignalObservable.new("pre_sort_children", owner, 0)
 	static func SortChildrenAsObservable(owner : SubViewportContainer) -> SignalObservable:
@@ -5695,7 +5696,7 @@ class RxSubViewportContainer:
 	static func PropertyListChangedAsObservable(owner : SubViewportContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSplitContainer:
+class RxSplitContainer extends NodeAsObservableBuilder:
 	static func DraggedAsObservable(owner : SplitContainer) -> SignalObservable:
 		return SignalObservable.new("dragged", owner, 1)
 	static func PreSortChildrenAsObservable(owner : SplitContainer) -> SignalObservable:
@@ -5747,7 +5748,7 @@ class RxSplitContainer:
 	static func PropertyListChangedAsObservable(owner : SplitContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHSplitContainer:
+class RxHSplitContainer extends NodeAsObservableBuilder:
 	static func DraggedAsObservable(owner : HSplitContainer) -> SignalObservable:
 		return SignalObservable.new("dragged", owner, 1)
 	static func PreSortChildrenAsObservable(owner : HSplitContainer) -> SignalObservable:
@@ -5799,7 +5800,7 @@ class RxHSplitContainer:
 	static func PropertyListChangedAsObservable(owner : HSplitContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVSplitContainer:
+class RxVSplitContainer extends NodeAsObservableBuilder:
 	static func DraggedAsObservable(owner : VSplitContainer) -> SignalObservable:
 		return SignalObservable.new("dragged", owner, 1)
 	static func PreSortChildrenAsObservable(owner : VSplitContainer) -> SignalObservable:
@@ -5851,7 +5852,7 @@ class RxVSplitContainer:
 	static func PropertyListChangedAsObservable(owner : VSplitContainer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGraphNode:
+class RxGraphNode extends NodeAsObservableBuilder:
 	static func PositionOffsetChangedAsObservable(owner : GraphNode) -> SignalObservable:
 		return SignalObservable.new("position_offset_changed", owner, 0)
 	static func SlotUpdatedAsObservable(owner : GraphNode) -> SignalObservable:
@@ -5913,7 +5914,7 @@ class RxGraphNode:
 	static func PropertyListChangedAsObservable(owner : GraphNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGraphEdit:
+class RxGraphEdit extends NodeAsObservableBuilder:
 	static func ConnectionRequestAsObservable(owner : GraphEdit) -> SignalObservable:
 		return SignalObservable.new("connection_request", owner, 4)
 	static func DisconnectionRequestAsObservable(owner : GraphEdit) -> SignalObservable:
@@ -5991,7 +5992,7 @@ class RxGraphEdit:
 	static func PropertyListChangedAsObservable(owner : GraphEdit) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationPlayer:
+class RxAnimationPlayer extends NodeAsObservableBuilder:
 	static func AnimationFinishedAsObservable(owner : AnimationPlayer) -> SignalObservable:
 		return SignalObservable.new("animation_finished", owner, 1)
 	static func AnimationChangedAsObservable(owner : AnimationPlayer) -> SignalObservable:
@@ -6019,7 +6020,7 @@ class RxAnimationPlayer:
 	static func PropertyListChangedAsObservable(owner : AnimationPlayer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTween:
+class RxTween extends NodeAsObservableBuilder:
 	static func StepFinishedAsObservable(owner : Tween) -> SignalObservable:
 		return SignalObservable.new("step_finished", owner, 1)
 	static func LoopFinishedAsObservable(owner : Tween) -> SignalObservable:
@@ -6031,7 +6032,7 @@ class RxTween:
 	static func PropertyListChangedAsObservable(owner : Tween) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTweener:
+class RxTweener extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : Tweener) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ScriptChangedAsObservable(owner : Tweener) -> SignalObservable:
@@ -6039,7 +6040,7 @@ class RxTweener:
 	static func PropertyListChangedAsObservable(owner : Tweener) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPropertyTweener:
+class RxPropertyTweener extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : PropertyTweener) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ScriptChangedAsObservable(owner : PropertyTweener) -> SignalObservable:
@@ -6047,7 +6048,7 @@ class RxPropertyTweener:
 	static func PropertyListChangedAsObservable(owner : PropertyTweener) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxIntervalTweener:
+class RxIntervalTweener extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : IntervalTweener) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ScriptChangedAsObservable(owner : IntervalTweener) -> SignalObservable:
@@ -6055,7 +6056,7 @@ class RxIntervalTweener:
 	static func PropertyListChangedAsObservable(owner : IntervalTweener) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCallbackTweener:
+class RxCallbackTweener extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : CallbackTweener) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ScriptChangedAsObservable(owner : CallbackTweener) -> SignalObservable:
@@ -6063,7 +6064,7 @@ class RxCallbackTweener:
 	static func PropertyListChangedAsObservable(owner : CallbackTweener) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMethodTweener:
+class RxMethodTweener extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : MethodTweener) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ScriptChangedAsObservable(owner : MethodTweener) -> SignalObservable:
@@ -6071,7 +6072,7 @@ class RxMethodTweener:
 	static func PropertyListChangedAsObservable(owner : MethodTweener) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationTree:
+class RxAnimationTree extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : AnimationTree) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : AnimationTree) -> SignalObservable:
@@ -6091,7 +6092,7 @@ class RxAnimationTree:
 	static func PropertyListChangedAsObservable(owner : AnimationTree) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationRootNode:
+class RxAnimationRootNode extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationRootNode) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationRootNode) -> SignalObservable:
@@ -6105,7 +6106,7 @@ class RxAnimationRootNode:
 	static func PropertyListChangedAsObservable(owner : AnimationRootNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNode:
+class RxAnimationNode extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNode) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNode) -> SignalObservable:
@@ -6119,7 +6120,7 @@ class RxAnimationNode:
 	static func PropertyListChangedAsObservable(owner : AnimationNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeBlendTree:
+class RxAnimationNodeBlendTree extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeBlendTree) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeBlendTree) -> SignalObservable:
@@ -6133,7 +6134,7 @@ class RxAnimationNodeBlendTree:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeBlendTree) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeBlendSpace1D:
+class RxAnimationNodeBlendSpace1D extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeBlendSpace1D) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeBlendSpace1D) -> SignalObservable:
@@ -6147,7 +6148,7 @@ class RxAnimationNodeBlendSpace1D:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeBlendSpace1D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeBlendSpace2D:
+class RxAnimationNodeBlendSpace2D extends NodeAsObservableBuilder:
 	static func TrianglesUpdatedAsObservable(owner : AnimationNodeBlendSpace2D) -> SignalObservable:
 		return SignalObservable.new("triangles_updated", owner, 0)
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeBlendSpace2D) -> SignalObservable:
@@ -6163,7 +6164,7 @@ class RxAnimationNodeBlendSpace2D:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeBlendSpace2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeStateMachine:
+class RxAnimationNodeStateMachine extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeStateMachine) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeStateMachine) -> SignalObservable:
@@ -6177,7 +6178,7 @@ class RxAnimationNodeStateMachine:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeStateMachine) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeStateMachinePlayback:
+class RxAnimationNodeStateMachinePlayback extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AnimationNodeStateMachinePlayback) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AnimationNodeStateMachinePlayback) -> SignalObservable:
@@ -6187,7 +6188,7 @@ class RxAnimationNodeStateMachinePlayback:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeStateMachinePlayback) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeStateMachineTransition:
+class RxAnimationNodeStateMachineTransition extends NodeAsObservableBuilder:
 	static func AdvanceConditionChangedAsObservable(owner : AnimationNodeStateMachineTransition) -> SignalObservable:
 		return SignalObservable.new("advance_condition_changed", owner, 0)
 	static func ChangedAsObservable(owner : AnimationNodeStateMachineTransition) -> SignalObservable:
@@ -6199,7 +6200,7 @@ class RxAnimationNodeStateMachineTransition:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeStateMachineTransition) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeOutput:
+class RxAnimationNodeOutput extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeOutput) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeOutput) -> SignalObservable:
@@ -6213,7 +6214,7 @@ class RxAnimationNodeOutput:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeOutput) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeOneShot:
+class RxAnimationNodeOneShot extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeOneShot) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeOneShot) -> SignalObservable:
@@ -6227,7 +6228,7 @@ class RxAnimationNodeOneShot:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeOneShot) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeAnimation:
+class RxAnimationNodeAnimation extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeAnimation) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeAnimation) -> SignalObservable:
@@ -6241,7 +6242,7 @@ class RxAnimationNodeAnimation:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeAnimation) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeAdd2:
+class RxAnimationNodeAdd2 extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeAdd2) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeAdd2) -> SignalObservable:
@@ -6255,7 +6256,7 @@ class RxAnimationNodeAdd2:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeAdd2) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeAdd3:
+class RxAnimationNodeAdd3 extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeAdd3) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeAdd3) -> SignalObservable:
@@ -6269,7 +6270,7 @@ class RxAnimationNodeAdd3:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeAdd3) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeBlend2:
+class RxAnimationNodeBlend2 extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeBlend2) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeBlend2) -> SignalObservable:
@@ -6283,7 +6284,7 @@ class RxAnimationNodeBlend2:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeBlend2) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeBlend3:
+class RxAnimationNodeBlend3 extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeBlend3) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeBlend3) -> SignalObservable:
@@ -6297,7 +6298,7 @@ class RxAnimationNodeBlend3:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeBlend3) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeTimeScale:
+class RxAnimationNodeTimeScale extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeTimeScale) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeTimeScale) -> SignalObservable:
@@ -6311,7 +6312,7 @@ class RxAnimationNodeTimeScale:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeTimeScale) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeTimeSeek:
+class RxAnimationNodeTimeSeek extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeTimeSeek) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeTimeSeek) -> SignalObservable:
@@ -6325,7 +6326,7 @@ class RxAnimationNodeTimeSeek:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeTimeSeek) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationNodeTransition:
+class RxAnimationNodeTransition extends NodeAsObservableBuilder:
 	static func RemovedFromGraphAsObservable(owner : AnimationNodeTransition) -> SignalObservable:
 		return SignalObservable.new("removed_from_graph", owner, 0)
 	static func TreeChangedAsObservable(owner : AnimationNodeTransition) -> SignalObservable:
@@ -6339,7 +6340,7 @@ class RxAnimationNodeTransition:
 	static func PropertyListChangedAsObservable(owner : AnimationNodeTransition) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShaderGlobalsOverride:
+class RxShaderGlobalsOverride extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : ShaderGlobalsOverride) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : ShaderGlobalsOverride) -> SignalObservable:
@@ -6359,7 +6360,7 @@ class RxShaderGlobalsOverride:
 	static func PropertyListChangedAsObservable(owner : ShaderGlobalsOverride) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNode3D:
+class RxNode3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Node3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Node3D) -> SignalObservable:
@@ -6381,13 +6382,13 @@ class RxNode3D:
 	static func PropertyListChangedAsObservable(owner : Node3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNode3DGizmo:
+class RxNode3DGizmo extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Node3DGizmo) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Node3DGizmo) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkin:
+class RxSkin extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Skin) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Skin) -> SignalObservable:
@@ -6397,13 +6398,13 @@ class RxSkin:
 	static func PropertyListChangedAsObservable(owner : Skin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkinReference:
+class RxSkinReference extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : SkinReference) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : SkinReference) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeleton3D:
+class RxSkeleton3D extends NodeAsObservableBuilder:
 	static func PoseUpdatedAsObservable(owner : Skeleton3D) -> SignalObservable:
 		return SignalObservable.new("pose_updated", owner, 0)
 	static func BonePoseChangedAsObservable(owner : Skeleton3D) -> SignalObservable:
@@ -6433,7 +6434,7 @@ class RxSkeleton3D:
 	static func PropertyListChangedAsObservable(owner : Skeleton3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImporterMesh:
+class RxImporterMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ImporterMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ImporterMesh) -> SignalObservable:
@@ -6443,7 +6444,7 @@ class RxImporterMesh:
 	static func PropertyListChangedAsObservable(owner : ImporterMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImporterMeshInstance3D:
+class RxImporterMeshInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : ImporterMeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : ImporterMeshInstance3D) -> SignalObservable:
@@ -6465,7 +6466,7 @@ class RxImporterMeshInstance3D:
 	static func PropertyListChangedAsObservable(owner : ImporterMeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualInstance3D:
+class RxVisualInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : VisualInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : VisualInstance3D) -> SignalObservable:
@@ -6487,7 +6488,7 @@ class RxVisualInstance3D:
 	static func PropertyListChangedAsObservable(owner : VisualInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGeometryInstance3D:
+class RxGeometryInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GeometryInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GeometryInstance3D) -> SignalObservable:
@@ -6509,7 +6510,7 @@ class RxGeometryInstance3D:
 	static func PropertyListChangedAsObservable(owner : GeometryInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCamera3D:
+class RxCamera3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Camera3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Camera3D) -> SignalObservable:
@@ -6531,7 +6532,7 @@ class RxCamera3D:
 	static func PropertyListChangedAsObservable(owner : Camera3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEnvironment:
+class RxEnvironment extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Environment) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Environment) -> SignalObservable:
@@ -6541,7 +6542,7 @@ class RxEnvironment:
 	static func PropertyListChangedAsObservable(owner : Environment) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCameraEffects:
+class RxCameraEffects extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CameraEffects) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CameraEffects) -> SignalObservable:
@@ -6551,7 +6552,7 @@ class RxCameraEffects:
 	static func PropertyListChangedAsObservable(owner : CameraEffects) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioListener3D:
+class RxAudioListener3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : AudioListener3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : AudioListener3D) -> SignalObservable:
@@ -6573,7 +6574,7 @@ class RxAudioListener3D:
 	static func PropertyListChangedAsObservable(owner : AudioListener3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRCamera3D:
+class RxXRCamera3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : XRCamera3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : XRCamera3D) -> SignalObservable:
@@ -6595,7 +6596,7 @@ class RxXRCamera3D:
 	static func PropertyListChangedAsObservable(owner : XRCamera3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRNode3D:
+class RxXRNode3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : XRNode3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : XRNode3D) -> SignalObservable:
@@ -6617,7 +6618,7 @@ class RxXRNode3D:
 	static func PropertyListChangedAsObservable(owner : XRNode3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRController3D:
+class RxXRController3D extends NodeAsObservableBuilder:
 	static func ButtonPressedAsObservable(owner : XRController3D) -> SignalObservable:
 		return SignalObservable.new("button_pressed", owner, 1)
 	static func ButtonReleasedAsObservable(owner : XRController3D) -> SignalObservable:
@@ -6647,7 +6648,7 @@ class RxXRController3D:
 	static func PropertyListChangedAsObservable(owner : XRController3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXRAnchor3D:
+class RxXRAnchor3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : XRAnchor3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : XRAnchor3D) -> SignalObservable:
@@ -6669,7 +6670,7 @@ class RxXRAnchor3D:
 	static func PropertyListChangedAsObservable(owner : XRAnchor3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxXROrigin3D:
+class RxXROrigin3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : XROrigin3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : XROrigin3D) -> SignalObservable:
@@ -6691,7 +6692,7 @@ class RxXROrigin3D:
 	static func PropertyListChangedAsObservable(owner : XROrigin3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMeshInstance3D:
+class RxMeshInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : MeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : MeshInstance3D) -> SignalObservable:
@@ -6713,7 +6714,7 @@ class RxMeshInstance3D:
 	static func PropertyListChangedAsObservable(owner : MeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMesh:
+class RxMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Mesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Mesh) -> SignalObservable:
@@ -6723,7 +6724,7 @@ class RxMesh:
 	static func PropertyListChangedAsObservable(owner : Mesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOccluderInstance3D:
+class RxOccluderInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : OccluderInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : OccluderInstance3D) -> SignalObservable:
@@ -6745,7 +6746,7 @@ class RxOccluderInstance3D:
 	static func PropertyListChangedAsObservable(owner : OccluderInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOccluder3D:
+class RxOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Occluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Occluder3D) -> SignalObservable:
@@ -6755,7 +6756,7 @@ class RxOccluder3D:
 	static func PropertyListChangedAsObservable(owner : Occluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxArrayOccluder3D:
+class RxArrayOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ArrayOccluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ArrayOccluder3D) -> SignalObservable:
@@ -6765,7 +6766,7 @@ class RxArrayOccluder3D:
 	static func PropertyListChangedAsObservable(owner : ArrayOccluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxQuadOccluder3D:
+class RxQuadOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : QuadOccluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : QuadOccluder3D) -> SignalObservable:
@@ -6775,7 +6776,7 @@ class RxQuadOccluder3D:
 	static func PropertyListChangedAsObservable(owner : QuadOccluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBoxOccluder3D:
+class RxBoxOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : BoxOccluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : BoxOccluder3D) -> SignalObservable:
@@ -6785,7 +6786,7 @@ class RxBoxOccluder3D:
 	static func PropertyListChangedAsObservable(owner : BoxOccluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSphereOccluder3D:
+class RxSphereOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SphereOccluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SphereOccluder3D) -> SignalObservable:
@@ -6795,7 +6796,7 @@ class RxSphereOccluder3D:
 	static func PropertyListChangedAsObservable(owner : SphereOccluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPolygonOccluder3D:
+class RxPolygonOccluder3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PolygonOccluder3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PolygonOccluder3D) -> SignalObservable:
@@ -6805,7 +6806,7 @@ class RxPolygonOccluder3D:
 	static func PropertyListChangedAsObservable(owner : PolygonOccluder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSpriteBase3D:
+class RxSpriteBase3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : SpriteBase3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : SpriteBase3D) -> SignalObservable:
@@ -6827,7 +6828,7 @@ class RxSpriteBase3D:
 	static func PropertyListChangedAsObservable(owner : SpriteBase3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSprite3D:
+class RxSprite3D extends NodeAsObservableBuilder:
 	static func FrameChangedAsObservable(owner : Sprite3D) -> SignalObservable:
 		return SignalObservable.new("frame_changed", owner, 0)
 	static func TextureChangedAsObservable(owner : Sprite3D) -> SignalObservable:
@@ -6853,7 +6854,7 @@ class RxSprite3D:
 	static func PropertyListChangedAsObservable(owner : Sprite3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimatedSprite3D:
+class RxAnimatedSprite3D extends NodeAsObservableBuilder:
 	static func FrameChangedAsObservable(owner : AnimatedSprite3D) -> SignalObservable:
 		return SignalObservable.new("frame_changed", owner, 0)
 	static func AnimationFinishedAsObservable(owner : AnimatedSprite3D) -> SignalObservable:
@@ -6879,7 +6880,7 @@ class RxAnimatedSprite3D:
 	static func PropertyListChangedAsObservable(owner : AnimatedSprite3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSpriteFrames:
+class RxSpriteFrames extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SpriteFrames) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SpriteFrames) -> SignalObservable:
@@ -6889,7 +6890,7 @@ class RxSpriteFrames:
 	static func PropertyListChangedAsObservable(owner : SpriteFrames) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLabel3D:
+class RxLabel3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Label3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Label3D) -> SignalObservable:
@@ -6911,7 +6912,7 @@ class RxLabel3D:
 	static func PropertyListChangedAsObservable(owner : Label3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFont:
+class RxFont extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Font) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Font) -> SignalObservable:
@@ -6921,7 +6922,7 @@ class RxFont:
 	static func PropertyListChangedAsObservable(owner : Font) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLight3D:
+class RxLight3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Light3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Light3D) -> SignalObservable:
@@ -6943,7 +6944,7 @@ class RxLight3D:
 	static func PropertyListChangedAsObservable(owner : Light3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDirectionalLight3D:
+class RxDirectionalLight3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : DirectionalLight3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : DirectionalLight3D) -> SignalObservable:
@@ -6965,7 +6966,7 @@ class RxDirectionalLight3D:
 	static func PropertyListChangedAsObservable(owner : DirectionalLight3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOmniLight3D:
+class RxOmniLight3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : OmniLight3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : OmniLight3D) -> SignalObservable:
@@ -6987,7 +6988,7 @@ class RxOmniLight3D:
 	static func PropertyListChangedAsObservable(owner : OmniLight3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSpotLight3D:
+class RxSpotLight3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : SpotLight3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : SpotLight3D) -> SignalObservable:
@@ -7009,7 +7010,7 @@ class RxSpotLight3D:
 	static func PropertyListChangedAsObservable(owner : SpotLight3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxReflectionProbe:
+class RxReflectionProbe extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : ReflectionProbe) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : ReflectionProbe) -> SignalObservable:
@@ -7031,7 +7032,7 @@ class RxReflectionProbe:
 	static func PropertyListChangedAsObservable(owner : ReflectionProbe) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDecal:
+class RxDecal extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Decal) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Decal) -> SignalObservable:
@@ -7053,7 +7054,7 @@ class RxDecal:
 	static func PropertyListChangedAsObservable(owner : Decal) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVoxelGI:
+class RxVoxelGI extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : VoxelGI) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : VoxelGI) -> SignalObservable:
@@ -7075,7 +7076,7 @@ class RxVoxelGI:
 	static func PropertyListChangedAsObservable(owner : VoxelGI) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVoxelGIData:
+class RxVoxelGIData extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : VoxelGIData) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : VoxelGIData) -> SignalObservable:
@@ -7085,7 +7086,7 @@ class RxVoxelGIData:
 	static func PropertyListChangedAsObservable(owner : VoxelGIData) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightmapGI:
+class RxLightmapGI extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : LightmapGI) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : LightmapGI) -> SignalObservable:
@@ -7107,7 +7108,7 @@ class RxLightmapGI:
 	static func PropertyListChangedAsObservable(owner : LightmapGI) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSky:
+class RxSky extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Sky) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Sky) -> SignalObservable:
@@ -7117,7 +7118,7 @@ class RxSky:
 	static func PropertyListChangedAsObservable(owner : Sky) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightmapGIData:
+class RxLightmapGIData extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : LightmapGIData) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : LightmapGIData) -> SignalObservable:
@@ -7127,7 +7128,7 @@ class RxLightmapGIData:
 	static func PropertyListChangedAsObservable(owner : LightmapGIData) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextureLayered:
+class RxTextureLayered extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TextureLayered) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TextureLayered) -> SignalObservable:
@@ -7137,7 +7138,7 @@ class RxTextureLayered:
 	static func PropertyListChangedAsObservable(owner : TextureLayered) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightmapProbe:
+class RxLightmapProbe extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : LightmapProbe) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : LightmapProbe) -> SignalObservable:
@@ -7159,13 +7160,13 @@ class RxLightmapProbe:
 	static func PropertyListChangedAsObservable(owner : LightmapProbe) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightmapper:
+class RxLightmapper extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : Lightmapper) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : Lightmapper) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticles3D:
+class RxGPUParticles3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticles3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticles3D) -> SignalObservable:
@@ -7187,7 +7188,7 @@ class RxGPUParticles3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticles3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesCollision3D:
+class RxGPUParticlesCollision3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesCollision3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesCollision3D) -> SignalObservable:
@@ -7209,7 +7210,7 @@ class RxGPUParticlesCollision3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesCollision3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesCollisionBox3D:
+class RxGPUParticlesCollisionBox3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesCollisionBox3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesCollisionBox3D) -> SignalObservable:
@@ -7231,7 +7232,7 @@ class RxGPUParticlesCollisionBox3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesCollisionBox3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesCollisionSphere3D:
+class RxGPUParticlesCollisionSphere3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesCollisionSphere3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesCollisionSphere3D) -> SignalObservable:
@@ -7253,7 +7254,7 @@ class RxGPUParticlesCollisionSphere3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesCollisionSphere3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesCollisionSDF3D:
+class RxGPUParticlesCollisionSDF3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesCollisionSDF3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesCollisionSDF3D) -> SignalObservable:
@@ -7275,7 +7276,7 @@ class RxGPUParticlesCollisionSDF3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesCollisionSDF3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTexture3D:
+class RxTexture3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Texture3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Texture3D) -> SignalObservable:
@@ -7285,7 +7286,7 @@ class RxTexture3D:
 	static func PropertyListChangedAsObservable(owner : Texture3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesCollisionHeightField3D:
+class RxGPUParticlesCollisionHeightField3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesCollisionHeightField3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesCollisionHeightField3D) -> SignalObservable:
@@ -7307,7 +7308,7 @@ class RxGPUParticlesCollisionHeightField3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesCollisionHeightField3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesAttractor3D:
+class RxGPUParticlesAttractor3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesAttractor3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesAttractor3D) -> SignalObservable:
@@ -7329,7 +7330,7 @@ class RxGPUParticlesAttractor3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesAttractor3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesAttractorBox3D:
+class RxGPUParticlesAttractorBox3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesAttractorBox3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesAttractorBox3D) -> SignalObservable:
@@ -7351,7 +7352,7 @@ class RxGPUParticlesAttractorBox3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesAttractorBox3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesAttractorSphere3D:
+class RxGPUParticlesAttractorSphere3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesAttractorSphere3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesAttractorSphere3D) -> SignalObservable:
@@ -7373,7 +7374,7 @@ class RxGPUParticlesAttractorSphere3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesAttractorSphere3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticlesAttractorVectorField3D:
+class RxGPUParticlesAttractorVectorField3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : GPUParticlesAttractorVectorField3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : GPUParticlesAttractorVectorField3D) -> SignalObservable:
@@ -7395,7 +7396,7 @@ class RxGPUParticlesAttractorVectorField3D:
 	static func PropertyListChangedAsObservable(owner : GPUParticlesAttractorVectorField3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCPUParticles3D:
+class RxCPUParticles3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CPUParticles3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CPUParticles3D) -> SignalObservable:
@@ -7417,7 +7418,7 @@ class RxCPUParticles3D:
 	static func PropertyListChangedAsObservable(owner : CPUParticles3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCurve:
+class RxCurve extends NodeAsObservableBuilder:
 	static func RangeChangedAsObservable(owner : Curve) -> SignalObservable:
 		return SignalObservable.new("range_changed", owner, 0)
 	static func ChangedAsObservable(owner : Curve) -> SignalObservable:
@@ -7429,7 +7430,7 @@ class RxCurve:
 	static func PropertyListChangedAsObservable(owner : Curve) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGradient:
+class RxGradient extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Gradient) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Gradient) -> SignalObservable:
@@ -7439,7 +7440,7 @@ class RxGradient:
 	static func PropertyListChangedAsObservable(owner : Gradient) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPosition3D:
+class RxPosition3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Position3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Position3D) -> SignalObservable:
@@ -7461,7 +7462,7 @@ class RxPosition3D:
 	static func PropertyListChangedAsObservable(owner : Position3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRootMotionView:
+class RxRootMotionView extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : RootMotionView) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : RootMotionView) -> SignalObservable:
@@ -7483,7 +7484,7 @@ class RxRootMotionView:
 	static func PropertyListChangedAsObservable(owner : RootMotionView) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionObject3D:
+class RxCollisionObject3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : CollisionObject3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : CollisionObject3D) -> SignalObservable:
@@ -7511,7 +7512,7 @@ class RxCollisionObject3D:
 	static func PropertyListChangedAsObservable(owner : CollisionObject3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsBody3D:
+class RxPhysicsBody3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : PhysicsBody3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : PhysicsBody3D) -> SignalObservable:
@@ -7539,7 +7540,7 @@ class RxPhysicsBody3D:
 	static func PropertyListChangedAsObservable(owner : PhysicsBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStaticBody3D:
+class RxStaticBody3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : StaticBody3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : StaticBody3D) -> SignalObservable:
@@ -7567,7 +7568,7 @@ class RxStaticBody3D:
 	static func PropertyListChangedAsObservable(owner : StaticBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsMaterial:
+class RxPhysicsMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PhysicsMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PhysicsMaterial) -> SignalObservable:
@@ -7577,7 +7578,7 @@ class RxPhysicsMaterial:
 	static func PropertyListChangedAsObservable(owner : PhysicsMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimatableBody3D:
+class RxAnimatableBody3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : AnimatableBody3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : AnimatableBody3D) -> SignalObservable:
@@ -7605,7 +7606,7 @@ class RxAnimatableBody3D:
 	static func PropertyListChangedAsObservable(owner : AnimatableBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRigidDynamicBody3D:
+class RxRigidDynamicBody3D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : RigidDynamicBody3D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : RigidDynamicBody3D) -> SignalObservable:
@@ -7643,13 +7644,13 @@ class RxRigidDynamicBody3D:
 	static func PropertyListChangedAsObservable(owner : RigidDynamicBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxKinematicCollision3D:
+class RxKinematicCollision3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : KinematicCollision3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : KinematicCollision3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCharacterBody3D:
+class RxCharacterBody3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : CharacterBody3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : CharacterBody3D) -> SignalObservable:
@@ -7677,7 +7678,7 @@ class RxCharacterBody3D:
 	static func PropertyListChangedAsObservable(owner : CharacterBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSpringArm3D:
+class RxSpringArm3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : SpringArm3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : SpringArm3D) -> SignalObservable:
@@ -7699,7 +7700,7 @@ class RxSpringArm3D:
 	static func PropertyListChangedAsObservable(owner : SpringArm3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicalBone3D:
+class RxPhysicalBone3D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : PhysicalBone3D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 5)
 	static func MouseEnteredAsObservable(owner : PhysicalBone3D) -> SignalObservable:
@@ -7727,7 +7728,7 @@ class RxPhysicalBone3D:
 	static func PropertyListChangedAsObservable(owner : PhysicalBone3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSoftDynamicBody3D:
+class RxSoftDynamicBody3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : SoftDynamicBody3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : SoftDynamicBody3D) -> SignalObservable:
@@ -7749,7 +7750,7 @@ class RxSoftDynamicBody3D:
 	static func PropertyListChangedAsObservable(owner : SoftDynamicBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonIK3D:
+class RxSkeletonIK3D extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : SkeletonIK3D) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : SkeletonIK3D) -> SignalObservable:
@@ -7769,7 +7770,7 @@ class RxSkeletonIK3D:
 	static func PropertyListChangedAsObservable(owner : SkeletonIK3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBoneAttachment3D:
+class RxBoneAttachment3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : BoneAttachment3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : BoneAttachment3D) -> SignalObservable:
@@ -7791,7 +7792,7 @@ class RxBoneAttachment3D:
 	static func PropertyListChangedAsObservable(owner : BoneAttachment3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVehicleBody3D:
+class RxVehicleBody3D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : VehicleBody3D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : VehicleBody3D) -> SignalObservable:
@@ -7829,7 +7830,7 @@ class RxVehicleBody3D:
 	static func PropertyListChangedAsObservable(owner : VehicleBody3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVehicleWheel3D:
+class RxVehicleWheel3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : VehicleWheel3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : VehicleWheel3D) -> SignalObservable:
@@ -7851,7 +7852,7 @@ class RxVehicleWheel3D:
 	static func PropertyListChangedAsObservable(owner : VehicleWheel3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxArea3D:
+class RxArea3D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : Area3D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : Area3D) -> SignalObservable:
@@ -7895,7 +7896,7 @@ class RxArea3D:
 	static func PropertyListChangedAsObservable(owner : Area3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionShape3D:
+class RxCollisionShape3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CollisionShape3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CollisionShape3D) -> SignalObservable:
@@ -7917,7 +7918,7 @@ class RxCollisionShape3D:
 	static func PropertyListChangedAsObservable(owner : CollisionShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionPolygon3D:
+class RxCollisionPolygon3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CollisionPolygon3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CollisionPolygon3D) -> SignalObservable:
@@ -7939,7 +7940,7 @@ class RxCollisionPolygon3D:
 	static func PropertyListChangedAsObservable(owner : CollisionPolygon3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRayCast3D:
+class RxRayCast3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : RayCast3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : RayCast3D) -> SignalObservable:
@@ -7961,7 +7962,7 @@ class RxRayCast3D:
 	static func PropertyListChangedAsObservable(owner : RayCast3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiMeshInstance3D:
+class RxMultiMeshInstance3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : MultiMeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : MultiMeshInstance3D) -> SignalObservable:
@@ -7983,7 +7984,7 @@ class RxMultiMeshInstance3D:
 	static func PropertyListChangedAsObservable(owner : MultiMeshInstance3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiMesh:
+class RxMultiMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : MultiMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : MultiMesh) -> SignalObservable:
@@ -7993,7 +7994,7 @@ class RxMultiMesh:
 	static func PropertyListChangedAsObservable(owner : MultiMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCurve3D:
+class RxCurve3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Curve3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Curve3D) -> SignalObservable:
@@ -8003,7 +8004,7 @@ class RxCurve3D:
 	static func PropertyListChangedAsObservable(owner : Curve3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPath3D:
+class RxPath3D extends NodeAsObservableBuilder:
 	static func CurveChangedAsObservable(owner : Path3D) -> SignalObservable:
 		return SignalObservable.new("curve_changed", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Path3D) -> SignalObservable:
@@ -8027,7 +8028,7 @@ class RxPath3D:
 	static func PropertyListChangedAsObservable(owner : Path3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPathFollow3D:
+class RxPathFollow3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : PathFollow3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : PathFollow3D) -> SignalObservable:
@@ -8049,7 +8050,7 @@ class RxPathFollow3D:
 	static func PropertyListChangedAsObservable(owner : PathFollow3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisibleOnScreenNotifier3D:
+class RxVisibleOnScreenNotifier3D extends NodeAsObservableBuilder:
 	static func ScreenEnteredAsObservable(owner : VisibleOnScreenNotifier3D) -> SignalObservable:
 		return SignalObservable.new("screen_entered", owner, 0)
 	static func ScreenExitedAsObservable(owner : VisibleOnScreenNotifier3D) -> SignalObservable:
@@ -8075,7 +8076,7 @@ class RxVisibleOnScreenNotifier3D:
 	static func PropertyListChangedAsObservable(owner : VisibleOnScreenNotifier3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisibleOnScreenEnabler3D:
+class RxVisibleOnScreenEnabler3D extends NodeAsObservableBuilder:
 	static func ScreenEnteredAsObservable(owner : VisibleOnScreenEnabler3D) -> SignalObservable:
 		return SignalObservable.new("screen_entered", owner, 0)
 	static func ScreenExitedAsObservable(owner : VisibleOnScreenEnabler3D) -> SignalObservable:
@@ -8101,7 +8102,7 @@ class RxVisibleOnScreenEnabler3D:
 	static func PropertyListChangedAsObservable(owner : VisibleOnScreenEnabler3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWorldEnvironment:
+class RxWorldEnvironment extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : WorldEnvironment) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : WorldEnvironment) -> SignalObservable:
@@ -8121,7 +8122,7 @@ class RxWorldEnvironment:
 	static func PropertyListChangedAsObservable(owner : WorldEnvironment) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFogVolume:
+class RxFogVolume extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : FogVolume) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : FogVolume) -> SignalObservable:
@@ -8143,7 +8144,7 @@ class RxFogVolume:
 	static func PropertyListChangedAsObservable(owner : FogVolume) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMaterial:
+class RxMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Material) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Material) -> SignalObservable:
@@ -8153,7 +8154,7 @@ class RxMaterial:
 	static func PropertyListChangedAsObservable(owner : Material) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFogMaterial:
+class RxFogMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : FogMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : FogMaterial) -> SignalObservable:
@@ -8163,7 +8164,7 @@ class RxFogMaterial:
 	static func PropertyListChangedAsObservable(owner : FogMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRemoteTransform3D:
+class RxRemoteTransform3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : RemoteTransform3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : RemoteTransform3D) -> SignalObservable:
@@ -8185,7 +8186,7 @@ class RxRemoteTransform3D:
 	static func PropertyListChangedAsObservable(owner : RemoteTransform3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJoint3D:
+class RxJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Joint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Joint3D) -> SignalObservable:
@@ -8207,7 +8208,7 @@ class RxJoint3D:
 	static func PropertyListChangedAsObservable(owner : Joint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPinJoint3D:
+class RxPinJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : PinJoint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : PinJoint3D) -> SignalObservable:
@@ -8229,7 +8230,7 @@ class RxPinJoint3D:
 	static func PropertyListChangedAsObservable(owner : PinJoint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHingeJoint3D:
+class RxHingeJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : HingeJoint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : HingeJoint3D) -> SignalObservable:
@@ -8251,7 +8252,7 @@ class RxHingeJoint3D:
 	static func PropertyListChangedAsObservable(owner : HingeJoint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSliderJoint3D:
+class RxSliderJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : SliderJoint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : SliderJoint3D) -> SignalObservable:
@@ -8273,7 +8274,7 @@ class RxSliderJoint3D:
 	static func PropertyListChangedAsObservable(owner : SliderJoint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConeTwistJoint3D:
+class RxConeTwistJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : ConeTwistJoint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : ConeTwistJoint3D) -> SignalObservable:
@@ -8295,7 +8296,7 @@ class RxConeTwistJoint3D:
 	static func PropertyListChangedAsObservable(owner : ConeTwistJoint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGeneric6DOFJoint3D:
+class RxGeneric6DOFJoint3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : Generic6DOFJoint3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : Generic6DOFJoint3D) -> SignalObservable:
@@ -8317,7 +8318,7 @@ class RxGeneric6DOFJoint3D:
 	static func PropertyListChangedAsObservable(owner : Generic6DOFJoint3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationRegion3D:
+class RxNavigationRegion3D extends NodeAsObservableBuilder:
 	static func NavigationMeshChangedAsObservable(owner : NavigationRegion3D) -> SignalObservable:
 		return SignalObservable.new("navigation_mesh_changed", owner, 0)
 	static func BakeFinishedAsObservable(owner : NavigationRegion3D) -> SignalObservable:
@@ -8343,7 +8344,7 @@ class RxNavigationRegion3D:
 	static func PropertyListChangedAsObservable(owner : NavigationRegion3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationMesh:
+class RxNavigationMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : NavigationMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : NavigationMesh) -> SignalObservable:
@@ -8353,7 +8354,7 @@ class RxNavigationMesh:
 	static func PropertyListChangedAsObservable(owner : NavigationMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationAgent3D:
+class RxNavigationAgent3D extends NodeAsObservableBuilder:
 	static func PathChangedAsObservable(owner : NavigationAgent3D) -> SignalObservable:
 		return SignalObservable.new("path_changed", owner, 0)
 	static func TargetReachedAsObservable(owner : NavigationAgent3D) -> SignalObservable:
@@ -8381,7 +8382,7 @@ class RxNavigationAgent3D:
 	static func PropertyListChangedAsObservable(owner : NavigationAgent3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationObstacle3D:
+class RxNavigationObstacle3D extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : NavigationObstacle3D) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : NavigationObstacle3D) -> SignalObservable:
@@ -8401,7 +8402,7 @@ class RxNavigationObstacle3D:
 	static func PropertyListChangedAsObservable(owner : NavigationObstacle3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShader:
+class RxShader extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Shader) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Shader) -> SignalObservable:
@@ -8411,7 +8412,7 @@ class RxShader:
 	static func PropertyListChangedAsObservable(owner : Shader) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShader:
+class RxVisualShader extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : VisualShader) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : VisualShader) -> SignalObservable:
@@ -8421,7 +8422,7 @@ class RxVisualShader:
 	static func PropertyListChangedAsObservable(owner : VisualShader) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNode:
+class RxVisualShaderNode extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNode) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNode) -> SignalObservable:
@@ -8433,7 +8434,7 @@ class RxVisualShaderNode:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNode) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCustom:
+class RxVisualShaderNodeCustom extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCustom) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCustom) -> SignalObservable:
@@ -8445,7 +8446,7 @@ class RxVisualShaderNodeCustom:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCustom) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeInput:
+class RxVisualShaderNodeInput extends NodeAsObservableBuilder:
 	static func InputTypeChangedAsObservable(owner : VisualShaderNodeInput) -> SignalObservable:
 		return SignalObservable.new("input_type_changed", owner, 0)
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeInput) -> SignalObservable:
@@ -8459,7 +8460,7 @@ class RxVisualShaderNodeInput:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeInput) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeOutput:
+class RxVisualShaderNodeOutput extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeOutput) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeOutput) -> SignalObservable:
@@ -8471,7 +8472,7 @@ class RxVisualShaderNodeOutput:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeOutput) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeResizableBase:
+class RxVisualShaderNodeResizableBase extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeResizableBase) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeResizableBase) -> SignalObservable:
@@ -8483,7 +8484,7 @@ class RxVisualShaderNodeResizableBase:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeResizableBase) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeGroupBase:
+class RxVisualShaderNodeGroupBase extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeGroupBase) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeGroupBase) -> SignalObservable:
@@ -8495,7 +8496,7 @@ class RxVisualShaderNodeGroupBase:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeGroupBase) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeConstant:
+class RxVisualShaderNodeConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeConstant) -> SignalObservable:
@@ -8507,7 +8508,7 @@ class RxVisualShaderNodeConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorBase:
+class RxVisualShaderNodeVectorBase extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorBase) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorBase) -> SignalObservable:
@@ -8519,7 +8520,7 @@ class RxVisualShaderNodeVectorBase:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorBase) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeComment:
+class RxVisualShaderNodeComment extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeComment) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeComment) -> SignalObservable:
@@ -8531,7 +8532,7 @@ class RxVisualShaderNodeComment:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeComment) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFloatConstant:
+class RxVisualShaderNodeFloatConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFloatConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFloatConstant) -> SignalObservable:
@@ -8543,7 +8544,7 @@ class RxVisualShaderNodeFloatConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFloatConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIntConstant:
+class RxVisualShaderNodeIntConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIntConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIntConstant) -> SignalObservable:
@@ -8555,7 +8556,7 @@ class RxVisualShaderNodeIntConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIntConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeBooleanConstant:
+class RxVisualShaderNodeBooleanConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeBooleanConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeBooleanConstant) -> SignalObservable:
@@ -8567,7 +8568,7 @@ class RxVisualShaderNodeBooleanConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeBooleanConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeColorConstant:
+class RxVisualShaderNodeColorConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeColorConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeColorConstant) -> SignalObservable:
@@ -8579,7 +8580,7 @@ class RxVisualShaderNodeColorConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeColorConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec2Constant:
+class RxVisualShaderNodeVec2Constant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec2Constant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec2Constant) -> SignalObservable:
@@ -8591,7 +8592,7 @@ class RxVisualShaderNodeVec2Constant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec2Constant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec3Constant:
+class RxVisualShaderNodeVec3Constant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec3Constant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec3Constant) -> SignalObservable:
@@ -8603,7 +8604,7 @@ class RxVisualShaderNodeVec3Constant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec3Constant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec4Constant:
+class RxVisualShaderNodeVec4Constant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec4Constant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec4Constant) -> SignalObservable:
@@ -8615,7 +8616,7 @@ class RxVisualShaderNodeVec4Constant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec4Constant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformConstant:
+class RxVisualShaderNodeTransformConstant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformConstant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformConstant) -> SignalObservable:
@@ -8627,7 +8628,7 @@ class RxVisualShaderNodeTransformConstant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformConstant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFloatOp:
+class RxVisualShaderNodeFloatOp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFloatOp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFloatOp) -> SignalObservable:
@@ -8639,7 +8640,7 @@ class RxVisualShaderNodeFloatOp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFloatOp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIntOp:
+class RxVisualShaderNodeIntOp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIntOp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIntOp) -> SignalObservable:
@@ -8651,7 +8652,7 @@ class RxVisualShaderNodeIntOp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIntOp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorOp:
+class RxVisualShaderNodeVectorOp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorOp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorOp) -> SignalObservable:
@@ -8663,7 +8664,7 @@ class RxVisualShaderNodeVectorOp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorOp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeColorOp:
+class RxVisualShaderNodeColorOp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeColorOp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeColorOp) -> SignalObservable:
@@ -8675,7 +8676,7 @@ class RxVisualShaderNodeColorOp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeColorOp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformOp:
+class RxVisualShaderNodeTransformOp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformOp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformOp) -> SignalObservable:
@@ -8687,7 +8688,7 @@ class RxVisualShaderNodeTransformOp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformOp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformVecMult:
+class RxVisualShaderNodeTransformVecMult extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformVecMult) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformVecMult) -> SignalObservable:
@@ -8699,7 +8700,7 @@ class RxVisualShaderNodeTransformVecMult:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformVecMult) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFloatFunc:
+class RxVisualShaderNodeFloatFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFloatFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFloatFunc) -> SignalObservable:
@@ -8711,7 +8712,7 @@ class RxVisualShaderNodeFloatFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFloatFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIntFunc:
+class RxVisualShaderNodeIntFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIntFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIntFunc) -> SignalObservable:
@@ -8723,7 +8724,7 @@ class RxVisualShaderNodeIntFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIntFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorFunc:
+class RxVisualShaderNodeVectorFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorFunc) -> SignalObservable:
@@ -8735,7 +8736,7 @@ class RxVisualShaderNodeVectorFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeColorFunc:
+class RxVisualShaderNodeColorFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeColorFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeColorFunc) -> SignalObservable:
@@ -8747,7 +8748,7 @@ class RxVisualShaderNodeColorFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeColorFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformFunc:
+class RxVisualShaderNodeTransformFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformFunc) -> SignalObservable:
@@ -8759,7 +8760,7 @@ class RxVisualShaderNodeTransformFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeUVFunc:
+class RxVisualShaderNodeUVFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeUVFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeUVFunc) -> SignalObservable:
@@ -8771,7 +8772,7 @@ class RxVisualShaderNodeUVFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeUVFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeDotProduct:
+class RxVisualShaderNodeDotProduct extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeDotProduct) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeDotProduct) -> SignalObservable:
@@ -8783,7 +8784,7 @@ class RxVisualShaderNodeDotProduct:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeDotProduct) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorLen:
+class RxVisualShaderNodeVectorLen extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorLen) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorLen) -> SignalObservable:
@@ -8795,7 +8796,7 @@ class RxVisualShaderNodeVectorLen:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorLen) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeDeterminant:
+class RxVisualShaderNodeDeterminant extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeDeterminant) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeDeterminant) -> SignalObservable:
@@ -8807,7 +8808,7 @@ class RxVisualShaderNodeDeterminant:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeDeterminant) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeDerivativeFunc:
+class RxVisualShaderNodeDerivativeFunc extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeDerivativeFunc) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeDerivativeFunc) -> SignalObservable:
@@ -8819,7 +8820,7 @@ class RxVisualShaderNodeDerivativeFunc:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeDerivativeFunc) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeClamp:
+class RxVisualShaderNodeClamp extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeClamp) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeClamp) -> SignalObservable:
@@ -8831,7 +8832,7 @@ class RxVisualShaderNodeClamp:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeClamp) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFaceForward:
+class RxVisualShaderNodeFaceForward extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFaceForward) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFaceForward) -> SignalObservable:
@@ -8843,7 +8844,7 @@ class RxVisualShaderNodeFaceForward:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFaceForward) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeOuterProduct:
+class RxVisualShaderNodeOuterProduct extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeOuterProduct) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeOuterProduct) -> SignalObservable:
@@ -8855,7 +8856,7 @@ class RxVisualShaderNodeOuterProduct:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeOuterProduct) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeSmoothStep:
+class RxVisualShaderNodeSmoothStep extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeSmoothStep) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeSmoothStep) -> SignalObservable:
@@ -8867,7 +8868,7 @@ class RxVisualShaderNodeSmoothStep:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeSmoothStep) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeStep:
+class RxVisualShaderNodeStep extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeStep) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeStep) -> SignalObservable:
@@ -8879,7 +8880,7 @@ class RxVisualShaderNodeStep:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeStep) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorDistance:
+class RxVisualShaderNodeVectorDistance extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorDistance) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorDistance) -> SignalObservable:
@@ -8891,7 +8892,7 @@ class RxVisualShaderNodeVectorDistance:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorDistance) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorRefract:
+class RxVisualShaderNodeVectorRefract extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorRefract) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorRefract) -> SignalObservable:
@@ -8903,7 +8904,7 @@ class RxVisualShaderNodeVectorRefract:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorRefract) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeMix:
+class RxVisualShaderNodeMix extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeMix) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeMix) -> SignalObservable:
@@ -8915,7 +8916,7 @@ class RxVisualShaderNodeMix:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeMix) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorCompose:
+class RxVisualShaderNodeVectorCompose extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorCompose) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorCompose) -> SignalObservable:
@@ -8927,7 +8928,7 @@ class RxVisualShaderNodeVectorCompose:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorCompose) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformCompose:
+class RxVisualShaderNodeTransformCompose extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformCompose) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformCompose) -> SignalObservable:
@@ -8939,7 +8940,7 @@ class RxVisualShaderNodeTransformCompose:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformCompose) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVectorDecompose:
+class RxVisualShaderNodeVectorDecompose extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVectorDecompose) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVectorDecompose) -> SignalObservable:
@@ -8951,7 +8952,7 @@ class RxVisualShaderNodeVectorDecompose:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVectorDecompose) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformDecompose:
+class RxVisualShaderNodeTransformDecompose extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformDecompose) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformDecompose) -> SignalObservable:
@@ -8963,7 +8964,7 @@ class RxVisualShaderNodeTransformDecompose:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformDecompose) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTexture:
+class RxVisualShaderNodeTexture extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTexture) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTexture) -> SignalObservable:
@@ -8975,7 +8976,7 @@ class RxVisualShaderNodeTexture:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCurveTexture:
+class RxVisualShaderNodeCurveTexture extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCurveTexture) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCurveTexture) -> SignalObservable:
@@ -8987,7 +8988,7 @@ class RxVisualShaderNodeCurveTexture:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCurveTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCurveTexture:
+class RxCurveTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CurveTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CurveTexture) -> SignalObservable:
@@ -8997,7 +8998,7 @@ class RxCurveTexture:
 	static func PropertyListChangedAsObservable(owner : CurveTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCurveXYZTexture:
+class RxVisualShaderNodeCurveXYZTexture extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCurveXYZTexture) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCurveXYZTexture) -> SignalObservable:
@@ -9009,7 +9010,7 @@ class RxVisualShaderNodeCurveXYZTexture:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCurveXYZTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCurveXYZTexture:
+class RxCurveXYZTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CurveXYZTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CurveXYZTexture) -> SignalObservable:
@@ -9019,7 +9020,7 @@ class RxCurveXYZTexture:
 	static func PropertyListChangedAsObservable(owner : CurveXYZTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeSample3D:
+class RxVisualShaderNodeSample3D extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeSample3D) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeSample3D) -> SignalObservable:
@@ -9031,7 +9032,7 @@ class RxVisualShaderNodeSample3D:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeSample3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTexture2DArray:
+class RxVisualShaderNodeTexture2DArray extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTexture2DArray) -> SignalObservable:
@@ -9043,7 +9044,7 @@ class RxVisualShaderNodeTexture2DArray:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTexture2DArray:
+class RxTexture2DArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Texture2DArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Texture2DArray) -> SignalObservable:
@@ -9053,7 +9054,7 @@ class RxTexture2DArray:
 	static func PropertyListChangedAsObservable(owner : Texture2DArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTexture3D:
+class RxVisualShaderNodeTexture3D extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTexture3D) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTexture3D) -> SignalObservable:
@@ -9065,7 +9066,7 @@ class RxVisualShaderNodeTexture3D:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTexture3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCubemap:
+class RxVisualShaderNodeCubemap extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCubemap) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCubemap) -> SignalObservable:
@@ -9077,7 +9078,7 @@ class RxVisualShaderNodeCubemap:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCubemap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCubemap:
+class RxCubemap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Cubemap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Cubemap) -> SignalObservable:
@@ -9087,7 +9088,7 @@ class RxCubemap:
 	static func PropertyListChangedAsObservable(owner : Cubemap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeUniform:
+class RxVisualShaderNodeUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeUniform) -> SignalObservable:
@@ -9099,7 +9100,7 @@ class RxVisualShaderNodeUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeUniformRef:
+class RxVisualShaderNodeUniformRef extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeUniformRef) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeUniformRef) -> SignalObservable:
@@ -9111,7 +9112,7 @@ class RxVisualShaderNodeUniformRef:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeUniformRef) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFloatUniform:
+class RxVisualShaderNodeFloatUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFloatUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFloatUniform) -> SignalObservable:
@@ -9123,7 +9124,7 @@ class RxVisualShaderNodeFloatUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFloatUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIntUniform:
+class RxVisualShaderNodeIntUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIntUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIntUniform) -> SignalObservable:
@@ -9135,7 +9136,7 @@ class RxVisualShaderNodeIntUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIntUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeBooleanUniform:
+class RxVisualShaderNodeBooleanUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeBooleanUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeBooleanUniform) -> SignalObservable:
@@ -9147,7 +9148,7 @@ class RxVisualShaderNodeBooleanUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeBooleanUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeColorUniform:
+class RxVisualShaderNodeColorUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeColorUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeColorUniform) -> SignalObservable:
@@ -9159,7 +9160,7 @@ class RxVisualShaderNodeColorUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeColorUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec2Uniform:
+class RxVisualShaderNodeVec2Uniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec2Uniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec2Uniform) -> SignalObservable:
@@ -9171,7 +9172,7 @@ class RxVisualShaderNodeVec2Uniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec2Uniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec3Uniform:
+class RxVisualShaderNodeVec3Uniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec3Uniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec3Uniform) -> SignalObservable:
@@ -9183,7 +9184,7 @@ class RxVisualShaderNodeVec3Uniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec3Uniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVec4Uniform:
+class RxVisualShaderNodeVec4Uniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVec4Uniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVec4Uniform) -> SignalObservable:
@@ -9195,7 +9196,7 @@ class RxVisualShaderNodeVec4Uniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVec4Uniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTransformUniform:
+class RxVisualShaderNodeTransformUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTransformUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTransformUniform) -> SignalObservable:
@@ -9207,7 +9208,7 @@ class RxVisualShaderNodeTransformUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTransformUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTextureUniform:
+class RxVisualShaderNodeTextureUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTextureUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTextureUniform) -> SignalObservable:
@@ -9219,7 +9220,7 @@ class RxVisualShaderNodeTextureUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTextureUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTextureUniformTriplanar:
+class RxVisualShaderNodeTextureUniformTriplanar extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTextureUniformTriplanar) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTextureUniformTriplanar) -> SignalObservable:
@@ -9231,7 +9232,7 @@ class RxVisualShaderNodeTextureUniformTriplanar:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTextureUniformTriplanar) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTexture2DArrayUniform:
+class RxVisualShaderNodeTexture2DArrayUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTexture2DArrayUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTexture2DArrayUniform) -> SignalObservable:
@@ -9243,7 +9244,7 @@ class RxVisualShaderNodeTexture2DArrayUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTexture2DArrayUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTexture3DUniform:
+class RxVisualShaderNodeTexture3DUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTexture3DUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTexture3DUniform) -> SignalObservable:
@@ -9255,7 +9256,7 @@ class RxVisualShaderNodeTexture3DUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTexture3DUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCubemapUniform:
+class RxVisualShaderNodeCubemapUniform extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCubemapUniform) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCubemapUniform) -> SignalObservable:
@@ -9267,7 +9268,7 @@ class RxVisualShaderNodeCubemapUniform:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCubemapUniform) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIf:
+class RxVisualShaderNodeIf extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIf) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIf) -> SignalObservable:
@@ -9279,7 +9280,7 @@ class RxVisualShaderNodeIf:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIf) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeSwitch:
+class RxVisualShaderNodeSwitch extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeSwitch) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeSwitch) -> SignalObservable:
@@ -9291,7 +9292,7 @@ class RxVisualShaderNodeSwitch:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeSwitch) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeFresnel:
+class RxVisualShaderNodeFresnel extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeFresnel) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeFresnel) -> SignalObservable:
@@ -9303,7 +9304,7 @@ class RxVisualShaderNodeFresnel:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeFresnel) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeExpression:
+class RxVisualShaderNodeExpression extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeExpression) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeExpression) -> SignalObservable:
@@ -9315,7 +9316,7 @@ class RxVisualShaderNodeExpression:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeExpression) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeGlobalExpression:
+class RxVisualShaderNodeGlobalExpression extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeGlobalExpression) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeGlobalExpression) -> SignalObservable:
@@ -9327,7 +9328,7 @@ class RxVisualShaderNodeGlobalExpression:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeGlobalExpression) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeIs:
+class RxVisualShaderNodeIs extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeIs) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeIs) -> SignalObservable:
@@ -9339,7 +9340,7 @@ class RxVisualShaderNodeIs:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeIs) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeCompare:
+class RxVisualShaderNodeCompare extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeCompare) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeCompare) -> SignalObservable:
@@ -9351,7 +9352,7 @@ class RxVisualShaderNodeCompare:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeCompare) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeMultiplyAdd:
+class RxVisualShaderNodeMultiplyAdd extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeMultiplyAdd) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeMultiplyAdd) -> SignalObservable:
@@ -9363,7 +9364,7 @@ class RxVisualShaderNodeMultiplyAdd:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeMultiplyAdd) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeBillboard:
+class RxVisualShaderNodeBillboard extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeBillboard) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeBillboard) -> SignalObservable:
@@ -9375,7 +9376,7 @@ class RxVisualShaderNodeBillboard:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeBillboard) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVarying:
+class RxVisualShaderNodeVarying extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVarying) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVarying) -> SignalObservable:
@@ -9387,7 +9388,7 @@ class RxVisualShaderNodeVarying:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVarying) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVaryingSetter:
+class RxVisualShaderNodeVaryingSetter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVaryingSetter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVaryingSetter) -> SignalObservable:
@@ -9399,7 +9400,7 @@ class RxVisualShaderNodeVaryingSetter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVaryingSetter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeVaryingGetter:
+class RxVisualShaderNodeVaryingGetter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeVaryingGetter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeVaryingGetter) -> SignalObservable:
@@ -9411,7 +9412,7 @@ class RxVisualShaderNodeVaryingGetter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeVaryingGetter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeSDFToScreenUV:
+class RxVisualShaderNodeSDFToScreenUV extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeSDFToScreenUV) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeSDFToScreenUV) -> SignalObservable:
@@ -9423,7 +9424,7 @@ class RxVisualShaderNodeSDFToScreenUV:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeSDFToScreenUV) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeScreenUVToSDF:
+class RxVisualShaderNodeScreenUVToSDF extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeScreenUVToSDF) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeScreenUVToSDF) -> SignalObservable:
@@ -9435,7 +9436,7 @@ class RxVisualShaderNodeScreenUVToSDF:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeScreenUVToSDF) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTextureSDF:
+class RxVisualShaderNodeTextureSDF extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTextureSDF) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTextureSDF) -> SignalObservable:
@@ -9447,7 +9448,7 @@ class RxVisualShaderNodeTextureSDF:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTextureSDF) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeTextureSDFNormal:
+class RxVisualShaderNodeTextureSDFNormal extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeTextureSDFNormal) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeTextureSDFNormal) -> SignalObservable:
@@ -9459,7 +9460,7 @@ class RxVisualShaderNodeTextureSDFNormal:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeTextureSDFNormal) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeSDFRaymarch:
+class RxVisualShaderNodeSDFRaymarch extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeSDFRaymarch) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeSDFRaymarch) -> SignalObservable:
@@ -9471,7 +9472,7 @@ class RxVisualShaderNodeSDFRaymarch:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeSDFRaymarch) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleOutput:
+class RxVisualShaderNodeParticleOutput extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleOutput) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleOutput) -> SignalObservable:
@@ -9483,7 +9484,7 @@ class RxVisualShaderNodeParticleOutput:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleOutput) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleEmitter:
+class RxVisualShaderNodeParticleEmitter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleEmitter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleEmitter) -> SignalObservable:
@@ -9495,7 +9496,7 @@ class RxVisualShaderNodeParticleEmitter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleEmitter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleSphereEmitter:
+class RxVisualShaderNodeParticleSphereEmitter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleSphereEmitter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleSphereEmitter) -> SignalObservable:
@@ -9507,7 +9508,7 @@ class RxVisualShaderNodeParticleSphereEmitter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleSphereEmitter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleBoxEmitter:
+class RxVisualShaderNodeParticleBoxEmitter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleBoxEmitter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleBoxEmitter) -> SignalObservable:
@@ -9519,7 +9520,7 @@ class RxVisualShaderNodeParticleBoxEmitter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleBoxEmitter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleRingEmitter:
+class RxVisualShaderNodeParticleRingEmitter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleRingEmitter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleRingEmitter) -> SignalObservable:
@@ -9531,7 +9532,7 @@ class RxVisualShaderNodeParticleRingEmitter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleRingEmitter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleMeshEmitter:
+class RxVisualShaderNodeParticleMeshEmitter extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleMeshEmitter) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleMeshEmitter) -> SignalObservable:
@@ -9543,7 +9544,7 @@ class RxVisualShaderNodeParticleMeshEmitter:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleMeshEmitter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleMultiplyByAxisAngle:
+class RxVisualShaderNodeParticleMultiplyByAxisAngle extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleMultiplyByAxisAngle) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleMultiplyByAxisAngle) -> SignalObservable:
@@ -9555,7 +9556,7 @@ class RxVisualShaderNodeParticleMultiplyByAxisAngle:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleMultiplyByAxisAngle) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleConeVelocity:
+class RxVisualShaderNodeParticleConeVelocity extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleConeVelocity) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleConeVelocity) -> SignalObservable:
@@ -9567,7 +9568,7 @@ class RxVisualShaderNodeParticleConeVelocity:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleConeVelocity) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleRandomness:
+class RxVisualShaderNodeParticleRandomness extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleRandomness) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleRandomness) -> SignalObservable:
@@ -9579,7 +9580,7 @@ class RxVisualShaderNodeParticleRandomness:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleRandomness) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleAccelerator:
+class RxVisualShaderNodeParticleAccelerator extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleAccelerator) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleAccelerator) -> SignalObservable:
@@ -9591,7 +9592,7 @@ class RxVisualShaderNodeParticleAccelerator:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleAccelerator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualShaderNodeParticleEmit:
+class RxVisualShaderNodeParticleEmit extends NodeAsObservableBuilder:
 	static func EditorRefreshRequestAsObservable(owner : VisualShaderNodeParticleEmit) -> SignalObservable:
 		return SignalObservable.new("editor_refresh_request", owner, 0)
 	static func ChangedAsObservable(owner : VisualShaderNodeParticleEmit) -> SignalObservable:
@@ -9603,7 +9604,7 @@ class RxVisualShaderNodeParticleEmit:
 	static func PropertyListChangedAsObservable(owner : VisualShaderNodeParticleEmit) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShaderMaterial:
+class RxShaderMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ShaderMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ShaderMaterial) -> SignalObservable:
@@ -9613,7 +9614,7 @@ class RxShaderMaterial:
 	static func PropertyListChangedAsObservable(owner : ShaderMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasTexture:
+class RxCanvasTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CanvasTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CanvasTexture) -> SignalObservable:
@@ -9623,7 +9624,7 @@ class RxCanvasTexture:
 	static func PropertyListChangedAsObservable(owner : CanvasTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasItemMaterial:
+class RxCanvasItemMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CanvasItemMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CanvasItemMaterial) -> SignalObservable:
@@ -9633,7 +9634,7 @@ class RxCanvasItemMaterial:
 	static func PropertyListChangedAsObservable(owner : CanvasItemMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCanvasGroup:
+class RxCanvasGroup extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CanvasGroup) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CanvasGroup) -> SignalObservable:
@@ -9661,7 +9662,7 @@ class RxCanvasGroup:
 	static func PropertyListChangedAsObservable(owner : CanvasGroup) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCPUParticles2D:
+class RxCPUParticles2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CPUParticles2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CPUParticles2D) -> SignalObservable:
@@ -9689,7 +9690,7 @@ class RxCPUParticles2D:
 	static func PropertyListChangedAsObservable(owner : CPUParticles2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGPUParticles2D:
+class RxGPUParticles2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : GPUParticles2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : GPUParticles2D) -> SignalObservable:
@@ -9717,7 +9718,7 @@ class RxGPUParticles2D:
 	static func PropertyListChangedAsObservable(owner : GPUParticles2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSprite2D:
+class RxSprite2D extends NodeAsObservableBuilder:
 	static func FrameChangedAsObservable(owner : Sprite2D) -> SignalObservable:
 		return SignalObservable.new("frame_changed", owner, 0)
 	static func TextureChangedAsObservable(owner : Sprite2D) -> SignalObservable:
@@ -9749,7 +9750,7 @@ class RxSprite2D:
 	static func PropertyListChangedAsObservable(owner : Sprite2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimatedSprite2D:
+class RxAnimatedSprite2D extends NodeAsObservableBuilder:
 	static func FrameChangedAsObservable(owner : AnimatedSprite2D) -> SignalObservable:
 		return SignalObservable.new("frame_changed", owner, 0)
 	static func AnimationFinishedAsObservable(owner : AnimatedSprite2D) -> SignalObservable:
@@ -9781,7 +9782,7 @@ class RxAnimatedSprite2D:
 	static func PropertyListChangedAsObservable(owner : AnimatedSprite2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPosition2D:
+class RxPosition2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Position2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Position2D) -> SignalObservable:
@@ -9809,7 +9810,7 @@ class RxPosition2D:
 	static func PropertyListChangedAsObservable(owner : Position2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLine2D:
+class RxLine2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Line2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Line2D) -> SignalObservable:
@@ -9837,7 +9838,7 @@ class RxLine2D:
 	static func PropertyListChangedAsObservable(owner : Line2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMeshInstance2D:
+class RxMeshInstance2D extends NodeAsObservableBuilder:
 	static func TextureChangedAsObservable(owner : MeshInstance2D) -> SignalObservable:
 		return SignalObservable.new("texture_changed", owner, 0)
 	static func DrawAsObservable(owner : MeshInstance2D) -> SignalObservable:
@@ -9867,7 +9868,7 @@ class RxMeshInstance2D:
 	static func PropertyListChangedAsObservable(owner : MeshInstance2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMultiMeshInstance2D:
+class RxMultiMeshInstance2D extends NodeAsObservableBuilder:
 	static func TextureChangedAsObservable(owner : MultiMeshInstance2D) -> SignalObservable:
 		return SignalObservable.new("texture_changed", owner, 0)
 	static func DrawAsObservable(owner : MultiMeshInstance2D) -> SignalObservable:
@@ -9897,7 +9898,7 @@ class RxMultiMeshInstance2D:
 	static func PropertyListChangedAsObservable(owner : MultiMeshInstance2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionObject2D:
+class RxCollisionObject2D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : CollisionObject2D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 3)
 	static func MouseEnteredAsObservable(owner : CollisionObject2D) -> SignalObservable:
@@ -9935,7 +9936,7 @@ class RxCollisionObject2D:
 	static func PropertyListChangedAsObservable(owner : CollisionObject2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicsBody2D:
+class RxPhysicsBody2D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : PhysicsBody2D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 3)
 	static func MouseEnteredAsObservable(owner : PhysicsBody2D) -> SignalObservable:
@@ -9973,7 +9974,7 @@ class RxPhysicsBody2D:
 	static func PropertyListChangedAsObservable(owner : PhysicsBody2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStaticBody2D:
+class RxStaticBody2D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : StaticBody2D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 3)
 	static func MouseEnteredAsObservable(owner : StaticBody2D) -> SignalObservable:
@@ -10011,7 +10012,7 @@ class RxStaticBody2D:
 	static func PropertyListChangedAsObservable(owner : StaticBody2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimatableBody2D:
+class RxAnimatableBody2D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : AnimatableBody2D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 3)
 	static func MouseEnteredAsObservable(owner : AnimatableBody2D) -> SignalObservable:
@@ -10049,7 +10050,7 @@ class RxAnimatableBody2D:
 	static func PropertyListChangedAsObservable(owner : AnimatableBody2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRigidDynamicBody2D:
+class RxRigidDynamicBody2D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : RigidDynamicBody2D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : RigidDynamicBody2D) -> SignalObservable:
@@ -10097,7 +10098,7 @@ class RxRigidDynamicBody2D:
 	static func PropertyListChangedAsObservable(owner : RigidDynamicBody2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCharacterBody2D:
+class RxCharacterBody2D extends NodeAsObservableBuilder:
 	static func InputEventAsObservable(owner : CharacterBody2D) -> SignalObservable:
 		return SignalObservable.new("input_event", owner, 3)
 	static func MouseEnteredAsObservable(owner : CharacterBody2D) -> SignalObservable:
@@ -10135,13 +10136,13 @@ class RxCharacterBody2D:
 	static func PropertyListChangedAsObservable(owner : CharacterBody2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxKinematicCollision2D:
+class RxKinematicCollision2D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : KinematicCollision2D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : KinematicCollision2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxArea2D:
+class RxArea2D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : Area2D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : Area2D) -> SignalObservable:
@@ -10195,7 +10196,7 @@ class RxArea2D:
 	static func PropertyListChangedAsObservable(owner : Area2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionShape2D:
+class RxCollisionShape2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CollisionShape2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CollisionShape2D) -> SignalObservable:
@@ -10223,7 +10224,7 @@ class RxCollisionShape2D:
 	static func PropertyListChangedAsObservable(owner : CollisionShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCollisionPolygon2D:
+class RxCollisionPolygon2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : CollisionPolygon2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : CollisionPolygon2D) -> SignalObservable:
@@ -10251,7 +10252,7 @@ class RxCollisionPolygon2D:
 	static func PropertyListChangedAsObservable(owner : CollisionPolygon2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRayCast2D:
+class RxRayCast2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : RayCast2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : RayCast2D) -> SignalObservable:
@@ -10279,7 +10280,7 @@ class RxRayCast2D:
 	static func PropertyListChangedAsObservable(owner : RayCast2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxShapeCast2D:
+class RxShapeCast2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : ShapeCast2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : ShapeCast2D) -> SignalObservable:
@@ -10307,7 +10308,7 @@ class RxShapeCast2D:
 	static func PropertyListChangedAsObservable(owner : ShapeCast2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisibleOnScreenNotifier2D:
+class RxVisibleOnScreenNotifier2D extends NodeAsObservableBuilder:
 	static func ScreenEnteredAsObservable(owner : VisibleOnScreenNotifier2D) -> SignalObservable:
 		return SignalObservable.new("screen_entered", owner, 0)
 	static func ScreenExitedAsObservable(owner : VisibleOnScreenNotifier2D) -> SignalObservable:
@@ -10339,7 +10340,7 @@ class RxVisibleOnScreenNotifier2D:
 	static func PropertyListChangedAsObservable(owner : VisibleOnScreenNotifier2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisibleOnScreenEnabler2D:
+class RxVisibleOnScreenEnabler2D extends NodeAsObservableBuilder:
 	static func ScreenEnteredAsObservable(owner : VisibleOnScreenEnabler2D) -> SignalObservable:
 		return SignalObservable.new("screen_entered", owner, 0)
 	static func ScreenExitedAsObservable(owner : VisibleOnScreenEnabler2D) -> SignalObservable:
@@ -10371,7 +10372,7 @@ class RxVisibleOnScreenEnabler2D:
 	static func PropertyListChangedAsObservable(owner : VisibleOnScreenEnabler2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPolygon2D:
+class RxPolygon2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Polygon2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Polygon2D) -> SignalObservable:
@@ -10399,7 +10400,7 @@ class RxPolygon2D:
 	static func PropertyListChangedAsObservable(owner : Polygon2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeleton2D:
+class RxSkeleton2D extends NodeAsObservableBuilder:
 	static func BoneSetupChangedAsObservable(owner : Skeleton2D) -> SignalObservable:
 		return SignalObservable.new("bone_setup_changed", owner, 0)
 	static func DrawAsObservable(owner : Skeleton2D) -> SignalObservable:
@@ -10429,7 +10430,7 @@ class RxSkeleton2D:
 	static func PropertyListChangedAsObservable(owner : Skeleton2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBone2D:
+class RxBone2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Bone2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Bone2D) -> SignalObservable:
@@ -10457,7 +10458,7 @@ class RxBone2D:
 	static func PropertyListChangedAsObservable(owner : Bone2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLight2D:
+class RxLight2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Light2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Light2D) -> SignalObservable:
@@ -10485,7 +10486,7 @@ class RxLight2D:
 	static func PropertyListChangedAsObservable(owner : Light2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPointLight2D:
+class RxPointLight2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : PointLight2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : PointLight2D) -> SignalObservable:
@@ -10513,7 +10514,7 @@ class RxPointLight2D:
 	static func PropertyListChangedAsObservable(owner : PointLight2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDirectionalLight2D:
+class RxDirectionalLight2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : DirectionalLight2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : DirectionalLight2D) -> SignalObservable:
@@ -10541,7 +10542,7 @@ class RxDirectionalLight2D:
 	static func PropertyListChangedAsObservable(owner : DirectionalLight2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBackBufferCopy:
+class RxBackBufferCopy extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : BackBufferCopy) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : BackBufferCopy) -> SignalObservable:
@@ -10569,7 +10570,7 @@ class RxBackBufferCopy:
 	static func PropertyListChangedAsObservable(owner : BackBufferCopy) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCamera2D:
+class RxCamera2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Camera2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Camera2D) -> SignalObservable:
@@ -10597,7 +10598,7 @@ class RxCamera2D:
 	static func PropertyListChangedAsObservable(owner : Camera2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioListener2D:
+class RxAudioListener2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : AudioListener2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : AudioListener2D) -> SignalObservable:
@@ -10625,7 +10626,7 @@ class RxAudioListener2D:
 	static func PropertyListChangedAsObservable(owner : AudioListener2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJoint2D:
+class RxJoint2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Joint2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Joint2D) -> SignalObservable:
@@ -10653,7 +10654,7 @@ class RxJoint2D:
 	static func PropertyListChangedAsObservable(owner : Joint2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPinJoint2D:
+class RxPinJoint2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : PinJoint2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : PinJoint2D) -> SignalObservable:
@@ -10681,7 +10682,7 @@ class RxPinJoint2D:
 	static func PropertyListChangedAsObservable(owner : PinJoint2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGrooveJoint2D:
+class RxGrooveJoint2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : GrooveJoint2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : GrooveJoint2D) -> SignalObservable:
@@ -10709,7 +10710,7 @@ class RxGrooveJoint2D:
 	static func PropertyListChangedAsObservable(owner : GrooveJoint2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxDampedSpringJoint2D:
+class RxDampedSpringJoint2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : DampedSpringJoint2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : DampedSpringJoint2D) -> SignalObservable:
@@ -10737,7 +10738,7 @@ class RxDampedSpringJoint2D:
 	static func PropertyListChangedAsObservable(owner : DampedSpringJoint2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileSet:
+class RxTileSet extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileSet) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TileSet) -> SignalObservable:
@@ -10747,7 +10748,7 @@ class RxTileSet:
 	static func PropertyListChangedAsObservable(owner : TileSet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileSetSource:
+class RxTileSetSource extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileSetSource) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TileSetSource) -> SignalObservable:
@@ -10757,7 +10758,7 @@ class RxTileSetSource:
 	static func PropertyListChangedAsObservable(owner : TileSetSource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileSetAtlasSource:
+class RxTileSetAtlasSource extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileSetAtlasSource) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TileSetAtlasSource) -> SignalObservable:
@@ -10767,7 +10768,7 @@ class RxTileSetAtlasSource:
 	static func PropertyListChangedAsObservable(owner : TileSetAtlasSource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileSetScenesCollectionSource:
+class RxTileSetScenesCollectionSource extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileSetScenesCollectionSource) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TileSetScenesCollectionSource) -> SignalObservable:
@@ -10777,7 +10778,7 @@ class RxTileSetScenesCollectionSource:
 	static func PropertyListChangedAsObservable(owner : TileSetScenesCollectionSource) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileMapPattern:
+class RxTileMapPattern extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileMapPattern) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TileMapPattern) -> SignalObservable:
@@ -10787,7 +10788,7 @@ class RxTileMapPattern:
 	static func PropertyListChangedAsObservable(owner : TileMapPattern) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileData:
+class RxTileData extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileData) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func ScriptChangedAsObservable(owner : TileData) -> SignalObservable:
@@ -10795,7 +10796,7 @@ class RxTileData:
 	static func PropertyListChangedAsObservable(owner : TileData) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTileMap:
+class RxTileMap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TileMap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func DrawAsObservable(owner : TileMap) -> SignalObservable:
@@ -10825,7 +10826,7 @@ class RxTileMap:
 	static func PropertyListChangedAsObservable(owner : TileMap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxParallaxBackground:
+class RxParallaxBackground extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : ParallaxBackground) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : ParallaxBackground) -> SignalObservable:
@@ -10847,7 +10848,7 @@ class RxParallaxBackground:
 	static func PropertyListChangedAsObservable(owner : ParallaxBackground) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxParallaxLayer:
+class RxParallaxLayer extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : ParallaxLayer) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : ParallaxLayer) -> SignalObservable:
@@ -10875,7 +10876,7 @@ class RxParallaxLayer:
 	static func PropertyListChangedAsObservable(owner : ParallaxLayer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTouchScreenButton:
+class RxTouchScreenButton extends NodeAsObservableBuilder:
 	static func PressedAsObservable(owner : TouchScreenButton) -> SignalObservable:
 		return SignalObservable.new("pressed", owner, 0)
 	static func ReleasedAsObservable(owner : TouchScreenButton) -> SignalObservable:
@@ -10907,7 +10908,7 @@ class RxTouchScreenButton:
 	static func PropertyListChangedAsObservable(owner : TouchScreenButton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRemoteTransform2D:
+class RxRemoteTransform2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : RemoteTransform2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : RemoteTransform2D) -> SignalObservable:
@@ -10935,7 +10936,7 @@ class RxRemoteTransform2D:
 	static func PropertyListChangedAsObservable(owner : RemoteTransform2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModificationStack2D:
+class RxSkeletonModificationStack2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModificationStack2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModificationStack2D) -> SignalObservable:
@@ -10945,7 +10946,7 @@ class RxSkeletonModificationStack2D:
 	static func PropertyListChangedAsObservable(owner : SkeletonModificationStack2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2D:
+class RxSkeletonModification2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2D) -> SignalObservable:
@@ -10955,7 +10956,7 @@ class RxSkeletonModification2D:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DLookAt:
+class RxSkeletonModification2DLookAt extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DLookAt) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DLookAt) -> SignalObservable:
@@ -10965,7 +10966,7 @@ class RxSkeletonModification2DLookAt:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DLookAt) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DCCDIK:
+class RxSkeletonModification2DCCDIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DCCDIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DCCDIK) -> SignalObservable:
@@ -10975,7 +10976,7 @@ class RxSkeletonModification2DCCDIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DCCDIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DFABRIK:
+class RxSkeletonModification2DFABRIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DFABRIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DFABRIK) -> SignalObservable:
@@ -10985,7 +10986,7 @@ class RxSkeletonModification2DFABRIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DFABRIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DJiggle:
+class RxSkeletonModification2DJiggle extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DJiggle) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DJiggle) -> SignalObservable:
@@ -10995,7 +10996,7 @@ class RxSkeletonModification2DJiggle:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DJiggle) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DTwoBoneIK:
+class RxSkeletonModification2DTwoBoneIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DTwoBoneIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DTwoBoneIK) -> SignalObservable:
@@ -11005,7 +11006,7 @@ class RxSkeletonModification2DTwoBoneIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DTwoBoneIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DStackHolder:
+class RxSkeletonModification2DStackHolder extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DStackHolder) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DStackHolder) -> SignalObservable:
@@ -11015,7 +11016,7 @@ class RxSkeletonModification2DStackHolder:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DStackHolder) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicalBone2D:
+class RxPhysicalBone2D extends NodeAsObservableBuilder:
 	static func BodyShapeEnteredAsObservable(owner : PhysicalBone2D) -> SignalObservable:
 		return SignalObservable.new("body_shape_entered", owner, 4)
 	static func BodyShapeExitedAsObservable(owner : PhysicalBone2D) -> SignalObservable:
@@ -11063,7 +11064,7 @@ class RxPhysicalBone2D:
 	static func PropertyListChangedAsObservable(owner : PhysicalBone2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification2DPhysicalBones:
+class RxSkeletonModification2DPhysicalBones extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification2DPhysicalBones) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification2DPhysicalBones) -> SignalObservable:
@@ -11073,7 +11074,7 @@ class RxSkeletonModification2DPhysicalBones:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification2DPhysicalBones) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxParticlesMaterial:
+class RxParticlesMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ParticlesMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ParticlesMaterial) -> SignalObservable:
@@ -11083,7 +11084,7 @@ class RxParticlesMaterial:
 	static func PropertyListChangedAsObservable(owner : ParticlesMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGradientTexture1D:
+class RxGradientTexture1D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GradientTexture1D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GradientTexture1D) -> SignalObservable:
@@ -11093,7 +11094,7 @@ class RxGradientTexture1D:
 	static func PropertyListChangedAsObservable(owner : GradientTexture1D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxProceduralSkyMaterial:
+class RxProceduralSkyMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ProceduralSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ProceduralSkyMaterial) -> SignalObservable:
@@ -11103,7 +11104,7 @@ class RxProceduralSkyMaterial:
 	static func PropertyListChangedAsObservable(owner : ProceduralSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPanoramaSkyMaterial:
+class RxPanoramaSkyMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PanoramaSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PanoramaSkyMaterial) -> SignalObservable:
@@ -11113,7 +11114,7 @@ class RxPanoramaSkyMaterial:
 	static func PropertyListChangedAsObservable(owner : PanoramaSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPhysicalSkyMaterial:
+class RxPhysicalSkyMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PhysicalSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PhysicalSkyMaterial) -> SignalObservable:
@@ -11123,7 +11124,7 @@ class RxPhysicalSkyMaterial:
 	static func PropertyListChangedAsObservable(owner : PhysicalSkyMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxArrayMesh:
+class RxArrayMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ArrayMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ArrayMesh) -> SignalObservable:
@@ -11133,7 +11134,7 @@ class RxArrayMesh:
 	static func PropertyListChangedAsObservable(owner : ArrayMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderMesh:
+class RxPlaceholderMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderMesh) -> SignalObservable:
@@ -11143,7 +11144,7 @@ class RxPlaceholderMesh:
 	static func PropertyListChangedAsObservable(owner : PlaceholderMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImmediateMesh:
+class RxImmediateMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ImmediateMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ImmediateMesh) -> SignalObservable:
@@ -11153,19 +11154,19 @@ class RxImmediateMesh:
 	static func PropertyListChangedAsObservable(owner : ImmediateMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSurfaceTool:
+class RxSurfaceTool extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : SurfaceTool) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : SurfaceTool) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMeshDataTool:
+class RxMeshDataTool extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : MeshDataTool) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : MeshDataTool) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPrimitiveMesh:
+class RxPrimitiveMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PrimitiveMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PrimitiveMesh) -> SignalObservable:
@@ -11175,7 +11176,7 @@ class RxPrimitiveMesh:
 	static func PropertyListChangedAsObservable(owner : PrimitiveMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBoxMesh:
+class RxBoxMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : BoxMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : BoxMesh) -> SignalObservable:
@@ -11185,7 +11186,7 @@ class RxBoxMesh:
 	static func PropertyListChangedAsObservable(owner : BoxMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCapsuleMesh:
+class RxCapsuleMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CapsuleMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CapsuleMesh) -> SignalObservable:
@@ -11195,7 +11196,7 @@ class RxCapsuleMesh:
 	static func PropertyListChangedAsObservable(owner : CapsuleMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCylinderMesh:
+class RxCylinderMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CylinderMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CylinderMesh) -> SignalObservable:
@@ -11205,7 +11206,7 @@ class RxCylinderMesh:
 	static func PropertyListChangedAsObservable(owner : CylinderMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaneMesh:
+class RxPlaneMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaneMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaneMesh) -> SignalObservable:
@@ -11215,7 +11216,7 @@ class RxPlaneMesh:
 	static func PropertyListChangedAsObservable(owner : PlaneMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPrismMesh:
+class RxPrismMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PrismMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PrismMesh) -> SignalObservable:
@@ -11225,7 +11226,7 @@ class RxPrismMesh:
 	static func PropertyListChangedAsObservable(owner : PrismMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxQuadMesh:
+class RxQuadMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : QuadMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : QuadMesh) -> SignalObservable:
@@ -11235,7 +11236,7 @@ class RxQuadMesh:
 	static func PropertyListChangedAsObservable(owner : QuadMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSphereMesh:
+class RxSphereMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SphereMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SphereMesh) -> SignalObservable:
@@ -11245,7 +11246,7 @@ class RxSphereMesh:
 	static func PropertyListChangedAsObservable(owner : SphereMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextMesh:
+class RxTextMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TextMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TextMesh) -> SignalObservable:
@@ -11255,7 +11256,7 @@ class RxTextMesh:
 	static func PropertyListChangedAsObservable(owner : TextMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTubeTrailMesh:
+class RxTubeTrailMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : TubeTrailMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : TubeTrailMesh) -> SignalObservable:
@@ -11265,7 +11266,7 @@ class RxTubeTrailMesh:
 	static func PropertyListChangedAsObservable(owner : TubeTrailMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRibbonTrailMesh:
+class RxRibbonTrailMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : RibbonTrailMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : RibbonTrailMesh) -> SignalObservable:
@@ -11275,7 +11276,7 @@ class RxRibbonTrailMesh:
 	static func PropertyListChangedAsObservable(owner : RibbonTrailMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPointMesh:
+class RxPointMesh extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PointMesh) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PointMesh) -> SignalObservable:
@@ -11285,7 +11286,7 @@ class RxPointMesh:
 	static func PropertyListChangedAsObservable(owner : PointMesh) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBaseMaterial3D:
+class RxBaseMaterial3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : BaseMaterial3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : BaseMaterial3D) -> SignalObservable:
@@ -11295,7 +11296,7 @@ class RxBaseMaterial3D:
 	static func PropertyListChangedAsObservable(owner : BaseMaterial3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStandardMaterial3D:
+class RxStandardMaterial3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StandardMaterial3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StandardMaterial3D) -> SignalObservable:
@@ -11305,7 +11306,7 @@ class RxStandardMaterial3D:
 	static func PropertyListChangedAsObservable(owner : StandardMaterial3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxORMMaterial3D:
+class RxORMMaterial3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ORMMaterial3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ORMMaterial3D) -> SignalObservable:
@@ -11315,7 +11316,7 @@ class RxORMMaterial3D:
 	static func PropertyListChangedAsObservable(owner : ORMMaterial3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderMaterial:
+class RxPlaceholderMaterial extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderMaterial) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderMaterial) -> SignalObservable:
@@ -11325,7 +11326,7 @@ class RxPlaceholderMaterial:
 	static func PropertyListChangedAsObservable(owner : PlaceholderMaterial) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMeshLibrary:
+class RxMeshLibrary extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : MeshLibrary) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : MeshLibrary) -> SignalObservable:
@@ -11335,7 +11336,7 @@ class RxMeshLibrary:
 	static func PropertyListChangedAsObservable(owner : MeshLibrary) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSeparationRayShape3D:
+class RxSeparationRayShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SeparationRayShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SeparationRayShape3D) -> SignalObservable:
@@ -11345,7 +11346,7 @@ class RxSeparationRayShape3D:
 	static func PropertyListChangedAsObservable(owner : SeparationRayShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSphereShape3D:
+class RxSphereShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SphereShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SphereShape3D) -> SignalObservable:
@@ -11355,7 +11356,7 @@ class RxSphereShape3D:
 	static func PropertyListChangedAsObservable(owner : SphereShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxBoxShape3D:
+class RxBoxShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : BoxShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : BoxShape3D) -> SignalObservable:
@@ -11365,7 +11366,7 @@ class RxBoxShape3D:
 	static func PropertyListChangedAsObservable(owner : BoxShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCapsuleShape3D:
+class RxCapsuleShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CapsuleShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CapsuleShape3D) -> SignalObservable:
@@ -11375,7 +11376,7 @@ class RxCapsuleShape3D:
 	static func PropertyListChangedAsObservable(owner : CapsuleShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCylinderShape3D:
+class RxCylinderShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CylinderShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CylinderShape3D) -> SignalObservable:
@@ -11385,7 +11386,7 @@ class RxCylinderShape3D:
 	static func PropertyListChangedAsObservable(owner : CylinderShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxHeightMapShape3D:
+class RxHeightMapShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : HeightMapShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : HeightMapShape3D) -> SignalObservable:
@@ -11395,7 +11396,7 @@ class RxHeightMapShape3D:
 	static func PropertyListChangedAsObservable(owner : HeightMapShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWorldBoundaryShape3D:
+class RxWorldBoundaryShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : WorldBoundaryShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : WorldBoundaryShape3D) -> SignalObservable:
@@ -11405,7 +11406,7 @@ class RxWorldBoundaryShape3D:
 	static func PropertyListChangedAsObservable(owner : WorldBoundaryShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConvexPolygonShape3D:
+class RxConvexPolygonShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ConvexPolygonShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ConvexPolygonShape3D) -> SignalObservable:
@@ -11415,7 +11416,7 @@ class RxConvexPolygonShape3D:
 	static func PropertyListChangedAsObservable(owner : ConvexPolygonShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConcavePolygonShape3D:
+class RxConcavePolygonShape3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ConcavePolygonShape3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ConcavePolygonShape3D) -> SignalObservable:
@@ -11425,7 +11426,7 @@ class RxConcavePolygonShape3D:
 	static func PropertyListChangedAsObservable(owner : ConcavePolygonShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModificationStack3D:
+class RxSkeletonModificationStack3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModificationStack3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModificationStack3D) -> SignalObservable:
@@ -11435,7 +11436,7 @@ class RxSkeletonModificationStack3D:
 	static func PropertyListChangedAsObservable(owner : SkeletonModificationStack3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3D:
+class RxSkeletonModification3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3D) -> SignalObservable:
@@ -11445,7 +11446,7 @@ class RxSkeletonModification3D:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DLookAt:
+class RxSkeletonModification3DLookAt extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DLookAt) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DLookAt) -> SignalObservable:
@@ -11455,7 +11456,7 @@ class RxSkeletonModification3DLookAt:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DLookAt) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DCCDIK:
+class RxSkeletonModification3DCCDIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DCCDIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DCCDIK) -> SignalObservable:
@@ -11465,7 +11466,7 @@ class RxSkeletonModification3DCCDIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DCCDIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DFABRIK:
+class RxSkeletonModification3DFABRIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DFABRIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DFABRIK) -> SignalObservable:
@@ -11475,7 +11476,7 @@ class RxSkeletonModification3DFABRIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DFABRIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DJiggle:
+class RxSkeletonModification3DJiggle extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DJiggle) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DJiggle) -> SignalObservable:
@@ -11485,7 +11486,7 @@ class RxSkeletonModification3DJiggle:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DJiggle) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DTwoBoneIK:
+class RxSkeletonModification3DTwoBoneIK extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DTwoBoneIK) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DTwoBoneIK) -> SignalObservable:
@@ -11495,7 +11496,7 @@ class RxSkeletonModification3DTwoBoneIK:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DTwoBoneIK) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSkeletonModification3DStackHolder:
+class RxSkeletonModification3DStackHolder extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SkeletonModification3DStackHolder) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SkeletonModification3DStackHolder) -> SignalObservable:
@@ -11505,13 +11506,13 @@ class RxSkeletonModification3DStackHolder:
 	static func PropertyListChangedAsObservable(owner : SkeletonModification3DStackHolder) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVelocityTracker3D:
+class RxVelocityTracker3D extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : VelocityTracker3D) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : VelocityTracker3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedTexture2D:
+class RxCompressedTexture2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedTexture2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedTexture2D) -> SignalObservable:
@@ -11521,7 +11522,7 @@ class RxCompressedTexture2D:
 	static func PropertyListChangedAsObservable(owner : CompressedTexture2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPortableCompressedTexture2D:
+class RxPortableCompressedTexture2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PortableCompressedTexture2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PortableCompressedTexture2D) -> SignalObservable:
@@ -11531,7 +11532,7 @@ class RxPortableCompressedTexture2D:
 	static func PropertyListChangedAsObservable(owner : PortableCompressedTexture2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImageTexture:
+class RxImageTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ImageTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ImageTexture) -> SignalObservable:
@@ -11541,7 +11542,7 @@ class RxImageTexture:
 	static func PropertyListChangedAsObservable(owner : ImageTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAtlasTexture:
+class RxAtlasTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AtlasTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AtlasTexture) -> SignalObservable:
@@ -11551,7 +11552,7 @@ class RxAtlasTexture:
 	static func PropertyListChangedAsObservable(owner : AtlasTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMeshTexture:
+class RxMeshTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : MeshTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : MeshTexture) -> SignalObservable:
@@ -11561,7 +11562,7 @@ class RxMeshTexture:
 	static func PropertyListChangedAsObservable(owner : MeshTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGradientTexture2D:
+class RxGradientTexture2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GradientTexture2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GradientTexture2D) -> SignalObservable:
@@ -11571,7 +11572,7 @@ class RxGradientTexture2D:
 	static func PropertyListChangedAsObservable(owner : GradientTexture2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxProxyTexture:
+class RxProxyTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ProxyTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ProxyTexture) -> SignalObservable:
@@ -11581,7 +11582,7 @@ class RxProxyTexture:
 	static func PropertyListChangedAsObservable(owner : ProxyTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimatedTexture:
+class RxAnimatedTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AnimatedTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AnimatedTexture) -> SignalObservable:
@@ -11591,7 +11592,7 @@ class RxAnimatedTexture:
 	static func PropertyListChangedAsObservable(owner : AnimatedTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCameraTexture:
+class RxCameraTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CameraTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CameraTexture) -> SignalObservable:
@@ -11601,7 +11602,7 @@ class RxCameraTexture:
 	static func PropertyListChangedAsObservable(owner : CameraTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImageTextureLayered:
+class RxImageTextureLayered extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ImageTextureLayered) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ImageTextureLayered) -> SignalObservable:
@@ -11611,7 +11612,7 @@ class RxImageTextureLayered:
 	static func PropertyListChangedAsObservable(owner : ImageTextureLayered) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxImageTexture3D:
+class RxImageTexture3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ImageTexture3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ImageTexture3D) -> SignalObservable:
@@ -11621,7 +11622,7 @@ class RxImageTexture3D:
 	static func PropertyListChangedAsObservable(owner : ImageTexture3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedTexture3D:
+class RxCompressedTexture3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedTexture3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedTexture3D) -> SignalObservable:
@@ -11631,7 +11632,7 @@ class RxCompressedTexture3D:
 	static func PropertyListChangedAsObservable(owner : CompressedTexture3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCubemapArray:
+class RxCubemapArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CubemapArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CubemapArray) -> SignalObservable:
@@ -11641,7 +11642,7 @@ class RxCubemapArray:
 	static func PropertyListChangedAsObservable(owner : CubemapArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedTextureLayered:
+class RxCompressedTextureLayered extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedTextureLayered) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedTextureLayered) -> SignalObservable:
@@ -11651,7 +11652,7 @@ class RxCompressedTextureLayered:
 	static func PropertyListChangedAsObservable(owner : CompressedTextureLayered) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedCubemap:
+class RxCompressedCubemap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedCubemap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedCubemap) -> SignalObservable:
@@ -11661,7 +11662,7 @@ class RxCompressedCubemap:
 	static func PropertyListChangedAsObservable(owner : CompressedCubemap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedCubemapArray:
+class RxCompressedCubemapArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedCubemapArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedCubemapArray) -> SignalObservable:
@@ -11671,7 +11672,7 @@ class RxCompressedCubemapArray:
 	static func PropertyListChangedAsObservable(owner : CompressedCubemapArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCompressedTexture2DArray:
+class RxCompressedTexture2DArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CompressedTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CompressedTexture2DArray) -> SignalObservable:
@@ -11681,7 +11682,7 @@ class RxCompressedTexture2DArray:
 	static func PropertyListChangedAsObservable(owner : CompressedTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderTexture2D:
+class RxPlaceholderTexture2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderTexture2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderTexture2D) -> SignalObservable:
@@ -11691,7 +11692,7 @@ class RxPlaceholderTexture2D:
 	static func PropertyListChangedAsObservable(owner : PlaceholderTexture2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderTexture3D:
+class RxPlaceholderTexture3D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderTexture3D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderTexture3D) -> SignalObservable:
@@ -11701,7 +11702,7 @@ class RxPlaceholderTexture3D:
 	static func PropertyListChangedAsObservable(owner : PlaceholderTexture3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderTextureLayered:
+class RxPlaceholderTextureLayered extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderTextureLayered) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderTextureLayered) -> SignalObservable:
@@ -11711,7 +11712,7 @@ class RxPlaceholderTextureLayered:
 	static func PropertyListChangedAsObservable(owner : PlaceholderTextureLayered) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderTexture2DArray:
+class RxPlaceholderTexture2DArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderTexture2DArray) -> SignalObservable:
@@ -11721,7 +11722,7 @@ class RxPlaceholderTexture2DArray:
 	static func PropertyListChangedAsObservable(owner : PlaceholderTexture2DArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderCubemap:
+class RxPlaceholderCubemap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderCubemap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderCubemap) -> SignalObservable:
@@ -11731,7 +11732,7 @@ class RxPlaceholderCubemap:
 	static func PropertyListChangedAsObservable(owner : PlaceholderCubemap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPlaceholderCubemapArray:
+class RxPlaceholderCubemapArray extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PlaceholderCubemapArray) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PlaceholderCubemapArray) -> SignalObservable:
@@ -11741,7 +11742,7 @@ class RxPlaceholderCubemapArray:
 	static func PropertyListChangedAsObservable(owner : PlaceholderCubemapArray) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimation:
+class RxAnimation extends NodeAsObservableBuilder:
 	static func TracksChangedAsObservable(owner : Animation) -> SignalObservable:
 		return SignalObservable.new("tracks_changed", owner, 0)
 	static func ChangedAsObservable(owner : Animation) -> SignalObservable:
@@ -11753,7 +11754,7 @@ class RxAnimation:
 	static func PropertyListChangedAsObservable(owner : Animation) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationLibrary:
+class RxAnimationLibrary extends NodeAsObservableBuilder:
 	static func AnimationAddedAsObservable(owner : AnimationLibrary) -> SignalObservable:
 		return SignalObservable.new("animation_added", owner, 1)
 	static func AnimationRemovedAsObservable(owner : AnimationLibrary) -> SignalObservable:
@@ -11769,7 +11770,7 @@ class RxAnimationLibrary:
 	static func PropertyListChangedAsObservable(owner : AnimationLibrary) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFontData:
+class RxFontData extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : FontData) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : FontData) -> SignalObservable:
@@ -11779,19 +11780,19 @@ class RxFontData:
 	static func PropertyListChangedAsObservable(owner : FontData) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextLine:
+class RxTextLine extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextLine) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextLine) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxTextParagraph:
+class RxTextParagraph extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : TextParagraph) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : TextParagraph) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStyleBox:
+class RxStyleBox extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StyleBox) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StyleBox) -> SignalObservable:
@@ -11801,7 +11802,7 @@ class RxStyleBox:
 	static func PropertyListChangedAsObservable(owner : StyleBox) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStyleBoxEmpty:
+class RxStyleBoxEmpty extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StyleBoxEmpty) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StyleBoxEmpty) -> SignalObservable:
@@ -11811,7 +11812,7 @@ class RxStyleBoxEmpty:
 	static func PropertyListChangedAsObservable(owner : StyleBoxEmpty) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStyleBoxTexture:
+class RxStyleBoxTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StyleBoxTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StyleBoxTexture) -> SignalObservable:
@@ -11821,7 +11822,7 @@ class RxStyleBoxTexture:
 	static func PropertyListChangedAsObservable(owner : StyleBoxTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStyleBoxFlat:
+class RxStyleBoxFlat extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StyleBoxFlat) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StyleBoxFlat) -> SignalObservable:
@@ -11831,7 +11832,7 @@ class RxStyleBoxFlat:
 	static func PropertyListChangedAsObservable(owner : StyleBoxFlat) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxStyleBoxLine:
+class RxStyleBoxLine extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : StyleBoxLine) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : StyleBoxLine) -> SignalObservable:
@@ -11841,7 +11842,7 @@ class RxStyleBoxLine:
 	static func PropertyListChangedAsObservable(owner : StyleBoxLine) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPolygonPathFinder:
+class RxPolygonPathFinder extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PolygonPathFinder) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PolygonPathFinder) -> SignalObservable:
@@ -11851,7 +11852,7 @@ class RxPolygonPathFinder:
 	static func PropertyListChangedAsObservable(owner : PolygonPathFinder) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlayer:
+class RxAudioStreamPlayer extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : AudioStreamPlayer) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func ReadyAsObservable(owner : AudioStreamPlayer) -> SignalObservable:
@@ -11873,7 +11874,7 @@ class RxAudioStreamPlayer:
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlayer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlayer2D:
+class RxAudioStreamPlayer2D extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : AudioStreamPlayer2D) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func DrawAsObservable(owner : AudioStreamPlayer2D) -> SignalObservable:
@@ -11903,7 +11904,7 @@ class RxAudioStreamPlayer2D:
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlayer2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlayer3D:
+class RxAudioStreamPlayer3D extends NodeAsObservableBuilder:
 	static func FinishedAsObservable(owner : AudioStreamPlayer3D) -> SignalObservable:
 		return SignalObservable.new("finished", owner, 0)
 	static func VisibilityChangedAsObservable(owner : AudioStreamPlayer3D) -> SignalObservable:
@@ -11927,7 +11928,7 @@ class RxAudioStreamPlayer3D:
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlayer3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamSample:
+class RxAudioStreamSample extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamSample) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamSample) -> SignalObservable:
@@ -11937,7 +11938,7 @@ class RxAudioStreamSample:
 	static func PropertyListChangedAsObservable(owner : AudioStreamSample) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWorldBoundaryShape2D:
+class RxWorldBoundaryShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : WorldBoundaryShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : WorldBoundaryShape2D) -> SignalObservable:
@@ -11947,7 +11948,7 @@ class RxWorldBoundaryShape2D:
 	static func PropertyListChangedAsObservable(owner : WorldBoundaryShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSegmentShape2D:
+class RxSegmentShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SegmentShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SegmentShape2D) -> SignalObservable:
@@ -11957,7 +11958,7 @@ class RxSegmentShape2D:
 	static func PropertyListChangedAsObservable(owner : SegmentShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSeparationRayShape2D:
+class RxSeparationRayShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : SeparationRayShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : SeparationRayShape2D) -> SignalObservable:
@@ -11967,7 +11968,7 @@ class RxSeparationRayShape2D:
 	static func PropertyListChangedAsObservable(owner : SeparationRayShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCircleShape2D:
+class RxCircleShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CircleShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CircleShape2D) -> SignalObservable:
@@ -11977,7 +11978,7 @@ class RxCircleShape2D:
 	static func PropertyListChangedAsObservable(owner : CircleShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRectangleShape2D:
+class RxRectangleShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : RectangleShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : RectangleShape2D) -> SignalObservable:
@@ -11987,7 +11988,7 @@ class RxRectangleShape2D:
 	static func PropertyListChangedAsObservable(owner : RectangleShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCapsuleShape2D:
+class RxCapsuleShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : CapsuleShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : CapsuleShape2D) -> SignalObservable:
@@ -11997,7 +11998,7 @@ class RxCapsuleShape2D:
 	static func PropertyListChangedAsObservable(owner : CapsuleShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConvexPolygonShape2D:
+class RxConvexPolygonShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ConvexPolygonShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ConvexPolygonShape2D) -> SignalObservable:
@@ -12007,7 +12008,7 @@ class RxConvexPolygonShape2D:
 	static func PropertyListChangedAsObservable(owner : ConvexPolygonShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxConcavePolygonShape2D:
+class RxConcavePolygonShape2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : ConcavePolygonShape2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : ConcavePolygonShape2D) -> SignalObservable:
@@ -12017,7 +12018,7 @@ class RxConcavePolygonShape2D:
 	static func PropertyListChangedAsObservable(owner : ConcavePolygonShape2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCurve2D:
+class RxCurve2D extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Curve2D) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Curve2D) -> SignalObservable:
@@ -12027,7 +12028,7 @@ class RxCurve2D:
 	static func PropertyListChangedAsObservable(owner : Curve2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPath2D:
+class RxPath2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : Path2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : Path2D) -> SignalObservable:
@@ -12055,7 +12056,7 @@ class RxPath2D:
 	static func PropertyListChangedAsObservable(owner : Path2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPathFollow2D:
+class RxPathFollow2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : PathFollow2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : PathFollow2D) -> SignalObservable:
@@ -12083,7 +12084,7 @@ class RxPathFollow2D:
 	static func PropertyListChangedAsObservable(owner : PathFollow2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationPolygon:
+class RxNavigationPolygon extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : NavigationPolygon) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : NavigationPolygon) -> SignalObservable:
@@ -12093,7 +12094,7 @@ class RxNavigationPolygon:
 	static func PropertyListChangedAsObservable(owner : NavigationPolygon) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationRegion2D:
+class RxNavigationRegion2D extends NodeAsObservableBuilder:
 	static func DrawAsObservable(owner : NavigationRegion2D) -> SignalObservable:
 		return SignalObservable.new("draw", owner, 0)
 	static func VisibilityChangedAsObservable(owner : NavigationRegion2D) -> SignalObservable:
@@ -12121,7 +12122,7 @@ class RxNavigationRegion2D:
 	static func PropertyListChangedAsObservable(owner : NavigationRegion2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationAgent2D:
+class RxNavigationAgent2D extends NodeAsObservableBuilder:
 	static func PathChangedAsObservable(owner : NavigationAgent2D) -> SignalObservable:
 		return SignalObservable.new("path_changed", owner, 0)
 	static func TargetReachedAsObservable(owner : NavigationAgent2D) -> SignalObservable:
@@ -12149,7 +12150,7 @@ class RxNavigationAgent2D:
 	static func PropertyListChangedAsObservable(owner : NavigationAgent2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNavigationObstacle2D:
+class RxNavigationObstacle2D extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : NavigationObstacle2D) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : NavigationObstacle2D) -> SignalObservable:
@@ -12169,13 +12170,13 @@ class RxNavigationObstacle2D:
 	static func PropertyListChangedAsObservable(owner : NavigationObstacle2D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSceneState:
+class RxSceneState extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : SceneState) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : SceneState) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxPackedScene:
+class RxPackedScene extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : PackedScene) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : PackedScene) -> SignalObservable:
@@ -12185,7 +12186,7 @@ class RxPackedScene:
 	static func PropertyListChangedAsObservable(owner : PackedScene) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSceneTree:
+class RxSceneTree extends NodeAsObservableBuilder:
 	static func TreeChangedAsObservable(owner : SceneTree) -> SignalObservable:
 		return SignalObservable.new("tree_changed", owner, 0)
 	static func TreeProcessModeChangedAsObservable(owner : SceneTree) -> SignalObservable:
@@ -12209,7 +12210,7 @@ class RxSceneTree:
 	static func PropertyListChangedAsObservable(owner : SceneTree) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxSceneTreeTimer:
+class RxSceneTreeTimer extends NodeAsObservableBuilder:
 	static func TimeoutAsObservable(owner : SceneTreeTimer) -> SignalObservable:
 		return SignalObservable.new("timeout", owner, 0)
 	static func ScriptChangedAsObservable(owner : SceneTreeTimer) -> SignalObservable:
@@ -12217,7 +12218,7 @@ class RxSceneTreeTimer:
 	static func PropertyListChangedAsObservable(owner : SceneTreeTimer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFastNoiseLite:
+class RxFastNoiseLite extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : FastNoiseLite) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : FastNoiseLite) -> SignalObservable:
@@ -12227,7 +12228,7 @@ class RxFastNoiseLite:
 	static func PropertyListChangedAsObservable(owner : FastNoiseLite) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGBox3D:
+class RxCSGBox3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGBox3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGBox3D) -> SignalObservable:
@@ -12249,7 +12250,7 @@ class RxCSGBox3D:
 	static func PropertyListChangedAsObservable(owner : CSGBox3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGCombiner3D:
+class RxCSGCombiner3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGCombiner3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGCombiner3D) -> SignalObservable:
@@ -12271,7 +12272,7 @@ class RxCSGCombiner3D:
 	static func PropertyListChangedAsObservable(owner : CSGCombiner3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGCylinder3D:
+class RxCSGCylinder3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGCylinder3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGCylinder3D) -> SignalObservable:
@@ -12293,7 +12294,7 @@ class RxCSGCylinder3D:
 	static func PropertyListChangedAsObservable(owner : CSGCylinder3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGMesh3D:
+class RxCSGMesh3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGMesh3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGMesh3D) -> SignalObservable:
@@ -12315,7 +12316,7 @@ class RxCSGMesh3D:
 	static func PropertyListChangedAsObservable(owner : CSGMesh3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGPolygon3D:
+class RxCSGPolygon3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGPolygon3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGPolygon3D) -> SignalObservable:
@@ -12337,7 +12338,7 @@ class RxCSGPolygon3D:
 	static func PropertyListChangedAsObservable(owner : CSGPolygon3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGPrimitive3D:
+class RxCSGPrimitive3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGPrimitive3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGPrimitive3D) -> SignalObservable:
@@ -12359,7 +12360,7 @@ class RxCSGPrimitive3D:
 	static func PropertyListChangedAsObservable(owner : CSGPrimitive3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGShape3D:
+class RxCSGShape3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGShape3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGShape3D) -> SignalObservable:
@@ -12381,7 +12382,7 @@ class RxCSGShape3D:
 	static func PropertyListChangedAsObservable(owner : CSGShape3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGSphere3D:
+class RxCSGSphere3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGSphere3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGSphere3D) -> SignalObservable:
@@ -12403,7 +12404,7 @@ class RxCSGSphere3D:
 	static func PropertyListChangedAsObservable(owner : CSGSphere3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxCSGTorus3D:
+class RxCSGTorus3D extends NodeAsObservableBuilder:
 	static func VisibilityChangedAsObservable(owner : CSGTorus3D) -> SignalObservable:
 		return SignalObservable.new("visibility_changed", owner, 0)
 	static func ReadyAsObservable(owner : CSGTorus3D) -> SignalObservable:
@@ -12425,13 +12426,13 @@ class RxCSGTorus3D:
 	static func PropertyListChangedAsObservable(owner : CSGTorus3D) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorNode3DGizmo:
+class RxEditorNode3DGizmo extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorNode3DGizmo) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorNode3DGizmo) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorNode3DGizmoPlugin:
+class RxEditorNode3DGizmoPlugin extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : EditorNode3DGizmoPlugin) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : EditorNode3DGizmoPlugin) -> SignalObservable:
@@ -12441,7 +12442,17 @@ class RxEditorNode3DGizmoPlugin:
 	static func PropertyListChangedAsObservable(owner : EditorNode3DGizmoPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFAnimation:
+class RxGLTFAccessor extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFAnimation extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFAnimation) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFAnimation) -> SignalObservable:
@@ -12451,7 +12462,7 @@ class RxGLTFAnimation:
 	static func PropertyListChangedAsObservable(owner : GLTFAnimation) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFBufferView:
+class RxGLTFBufferView extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFBufferView) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFBufferView) -> SignalObservable:
@@ -12461,87 +12472,7 @@ class RxGLTFBufferView:
 	static func PropertyListChangedAsObservable(owner : GLTFBufferView) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFCamera:
-	static func ChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFCamera) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFDocument:
-	static func ChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocument) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFDocumentExtension:
-	static func ChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFState:
-	static func ChangedAsObservable(owner : GLTFState) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFState) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFState) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFState) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFNode:
-	static func ChangedAsObservable(owner : GLTFNode) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFNode) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFNode) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFNode) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFDocumentExtensionConvertImporterMesh:
-	static func ChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFLight:
-	static func ChangedAsObservable(owner : GLTFLight) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFLight) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFLight) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFLight) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFMesh:
-	static func ChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
-		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFMesh) -> SignalObservable:
-		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
-		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
-		return SignalObservable.new("property_list_changed", owner, 0)
-
-class RxGLTFSkeleton:
+class RxGLTFSkeleton extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFSkeleton) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFSkeleton) -> SignalObservable:
@@ -12551,7 +12482,7 @@ class RxGLTFSkeleton:
 	static func PropertyListChangedAsObservable(owner : GLTFSkeleton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFSkin:
+class RxGLTFSkin extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFSkin) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFSkin) -> SignalObservable:
@@ -12561,7 +12492,7 @@ class RxGLTFSkin:
 	static func PropertyListChangedAsObservable(owner : GLTFSkin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFSpecGloss:
+class RxGLTFSpecGloss extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFSpecGloss) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFSpecGloss) -> SignalObservable:
@@ -12571,7 +12502,7 @@ class RxGLTFSpecGloss:
 	static func PropertyListChangedAsObservable(owner : GLTFSpecGloss) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFTexture:
+class RxGLTFTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : GLTFTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFTexture) -> SignalObservable:
@@ -12581,7 +12512,7 @@ class RxGLTFTexture:
 	static func PropertyListChangedAsObservable(owner : GLTFTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGridMap:
+class RxGridMap extends NodeAsObservableBuilder:
 	static func CellSizeChangedAsObservable(owner : GridMap) -> SignalObservable:
 		return SignalObservable.new("cell_size_changed", owner, 1)
 	static func VisibilityChangedAsObservable(owner : GridMap) -> SignalObservable:
@@ -12605,19 +12536,19 @@ class RxGridMap:
 	static func PropertyListChangedAsObservable(owner : GridMap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJSONRPC:
+class RxJSONRPC extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JSONRPC) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JSONRPC) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxLightmapperRD:
+class RxLightmapperRD extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : LightmapperRD) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : LightmapperRD) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamMP3:
+class RxAudioStreamMP3 extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamMP3) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamMP3) -> SignalObservable:
@@ -12627,7 +12558,7 @@ class RxAudioStreamMP3:
 	static func PropertyListChangedAsObservable(owner : AudioStreamMP3) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxMobileVRInterface:
+class RxMobileVRInterface extends NodeAsObservableBuilder:
 	static func PlayAreaChangedAsObservable(owner : MobileVRInterface) -> SignalObservable:
 		return SignalObservable.new("play_area_changed", owner, 1)
 	static func ScriptChangedAsObservable(owner : MobileVRInterface) -> SignalObservable:
@@ -12635,7 +12566,7 @@ class RxMobileVRInterface:
 	static func PropertyListChangedAsObservable(owner : MobileVRInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNoiseTexture:
+class RxNoiseTexture extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : NoiseTexture) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : NoiseTexture) -> SignalObservable:
@@ -12645,7 +12576,7 @@ class RxNoiseTexture:
 	static func PropertyListChangedAsObservable(owner : NoiseTexture) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxNoise:
+class RxNoise extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : Noise) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : Noise) -> SignalObservable:
@@ -12655,7 +12586,7 @@ class RxNoise:
 	static func PropertyListChangedAsObservable(owner : Noise) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxENetMultiplayerPeer:
+class RxENetMultiplayerPeer extends NodeAsObservableBuilder:
 	static func PeerConnectedAsObservable(owner : ENetMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("peer_connected", owner, 1)
 	static func PeerDisconnectedAsObservable(owner : ENetMultiplayerPeer) -> SignalObservable:
@@ -12671,29 +12602,99 @@ class RxENetMultiplayerPeer:
 	static func PropertyListChangedAsObservable(owner : ENetMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxENetConnection:
+class RxENetConnection extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ENetConnection) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ENetConnection) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxENetPacketPeer:
+class RxENetPacketPeer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : ENetPacketPeer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : ENetPacketPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxGLTFAccessor:
-	static func ChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+class RxGLTFCamera extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
-	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFCamera) -> SignalObservable:
 		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
-	static func ScriptChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+	static func ScriptChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
-	static func PropertyListChangedAsObservable(owner : GLTFAccessor) -> SignalObservable:
+	static func PropertyListChangedAsObservable(owner : GLTFCamera) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOGGPacketSequence:
+class RxGLTFDocument extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocument) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFDocument) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFDocumentExtension extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFDocumentExtension) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFState extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFState) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFState) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFState) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFState) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFNode extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFNode) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFNode) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFNode) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFNode) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFDocumentExtensionConvertImporterMesh extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFDocumentExtensionConvertImporterMesh) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFLight extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFLight) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFLight) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFLight) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFLight) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxGLTFMesh extends NodeAsObservableBuilder:
+	static func ChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
+		return SignalObservable.new("changed", owner, 0)
+	static func SetupLocalToSceneRequestedAsObservable(owner : GLTFMesh) -> SignalObservable:
+		return SignalObservable.new("setup_local_to_scene_requested", owner, 0)
+	static func ScriptChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
+		return SignalObservable.new("script_changed", owner, 0)
+	static func PropertyListChangedAsObservable(owner : GLTFMesh) -> SignalObservable:
+		return SignalObservable.new("property_list_changed", owner, 0)
+
+class RxOGGPacketSequence extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OGGPacketSequence) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OGGPacketSequence) -> SignalObservable:
@@ -12703,13 +12704,13 @@ class RxOGGPacketSequence:
 	static func PropertyListChangedAsObservable(owner : OGGPacketSequence) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOGGPacketSequencePlayback:
+class RxOGGPacketSequencePlayback extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : OGGPacketSequencePlayback) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : OGGPacketSequencePlayback) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRInterface:
+class RxOpenXRInterface extends NodeAsObservableBuilder:
 	static func SessionBegunAsObservable(owner : OpenXRInterface) -> SignalObservable:
 		return SignalObservable.new("session_begun", owner, 0)
 	static func SessionStoppingAsObservable(owner : OpenXRInterface) -> SignalObservable:
@@ -12727,7 +12728,7 @@ class RxOpenXRInterface:
 	static func PropertyListChangedAsObservable(owner : OpenXRInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRAction:
+class RxOpenXRAction extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OpenXRAction) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OpenXRAction) -> SignalObservable:
@@ -12737,7 +12738,7 @@ class RxOpenXRAction:
 	static func PropertyListChangedAsObservable(owner : OpenXRAction) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRActionSet:
+class RxOpenXRActionSet extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OpenXRActionSet) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OpenXRActionSet) -> SignalObservable:
@@ -12747,7 +12748,7 @@ class RxOpenXRActionSet:
 	static func PropertyListChangedAsObservable(owner : OpenXRActionSet) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRActionMap:
+class RxOpenXRActionMap extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OpenXRActionMap) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OpenXRActionMap) -> SignalObservable:
@@ -12757,7 +12758,7 @@ class RxOpenXRActionMap:
 	static func PropertyListChangedAsObservable(owner : OpenXRActionMap) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRInteractionProfile:
+class RxOpenXRInteractionProfile extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OpenXRInteractionProfile) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OpenXRInteractionProfile) -> SignalObservable:
@@ -12767,7 +12768,7 @@ class RxOpenXRInteractionProfile:
 	static func PropertyListChangedAsObservable(owner : OpenXRInteractionProfile) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxOpenXRIPBinding:
+class RxOpenXRIPBinding extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : OpenXRIPBinding) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : OpenXRIPBinding) -> SignalObservable:
@@ -12777,19 +12778,19 @@ class RxOpenXRIPBinding:
 	static func PropertyListChangedAsObservable(owner : OpenXRIPBinding) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRegExMatch:
+class RxRegExMatch extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RegExMatch) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RegExMatch) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxRegEx:
+class RxRegEx extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : RegEx) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : RegEx) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVideoStreamTheora:
+class RxVideoStreamTheora extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : VideoStreamTheora) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : VideoStreamTheora) -> SignalObservable:
@@ -12799,19 +12800,19 @@ class RxVideoStreamTheora:
 	static func PropertyListChangedAsObservable(owner : VideoStreamTheora) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxUPNP:
+class RxUPNP extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : UPNP) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : UPNP) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxUPNPDevice:
+class RxUPNPDevice extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : UPNPDevice) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : UPNPDevice) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamOGGVorbis:
+class RxAudioStreamOGGVorbis extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : AudioStreamOGGVorbis) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : AudioStreamOGGVorbis) -> SignalObservable:
@@ -12821,19 +12822,19 @@ class RxAudioStreamOGGVorbis:
 	static func PropertyListChangedAsObservable(owner : AudioStreamOGGVorbis) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAudioStreamPlaybackOGGVorbis:
+class RxAudioStreamPlaybackOGGVorbis extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AudioStreamPlaybackOGGVorbis) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AudioStreamPlaybackOGGVorbis) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebRTCDataChannel:
+class RxWebRTCDataChannel extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : WebRTCDataChannel) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : WebRTCDataChannel) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebRTCPeerConnectionExtension:
+class RxWebRTCPeerConnectionExtension extends NodeAsObservableBuilder:
 	static func SessionDescriptionCreatedAsObservable(owner : WebRTCPeerConnectionExtension) -> SignalObservable:
 		return SignalObservable.new("session_description_created", owner, 2)
 	static func IceCandidateCreatedAsObservable(owner : WebRTCPeerConnectionExtension) -> SignalObservable:
@@ -12845,13 +12846,13 @@ class RxWebRTCPeerConnectionExtension:
 	static func PropertyListChangedAsObservable(owner : WebRTCPeerConnectionExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebRTCDataChannelExtension:
+class RxWebRTCDataChannelExtension extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : WebRTCDataChannelExtension) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : WebRTCDataChannelExtension) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebRTCMultiplayerPeer:
+class RxWebRTCMultiplayerPeer extends NodeAsObservableBuilder:
 	static func PeerConnectedAsObservable(owner : WebRTCMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("peer_connected", owner, 1)
 	static func PeerDisconnectedAsObservable(owner : WebRTCMultiplayerPeer) -> SignalObservable:
@@ -12867,7 +12868,7 @@ class RxWebRTCMultiplayerPeer:
 	static func PropertyListChangedAsObservable(owner : WebRTCMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebSocketMultiplayerPeer:
+class RxWebSocketMultiplayerPeer extends NodeAsObservableBuilder:
 	static func PeerPacketAsObservable(owner : WebSocketMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("peer_packet", owner, 1)
 	static func PeerConnectedAsObservable(owner : WebSocketMultiplayerPeer) -> SignalObservable:
@@ -12885,7 +12886,7 @@ class RxWebSocketMultiplayerPeer:
 	static func PropertyListChangedAsObservable(owner : WebSocketMultiplayerPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebSocketServer:
+class RxWebSocketServer extends NodeAsObservableBuilder:
 	static func ClientCloseRequestAsObservable(owner : WebSocketServer) -> SignalObservable:
 		return SignalObservable.new("client_close_request", owner, 3)
 	static func ClientDisconnectedAsObservable(owner : WebSocketServer) -> SignalObservable:
@@ -12911,7 +12912,7 @@ class RxWebSocketServer:
 	static func PropertyListChangedAsObservable(owner : WebSocketServer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebSocketClient:
+class RxWebSocketClient extends NodeAsObservableBuilder:
 	static func DataReceivedAsObservable(owner : WebSocketClient) -> SignalObservable:
 		return SignalObservable.new("data_received", owner, 0)
 	static func ConnectionEstablishedAsObservable(owner : WebSocketClient) -> SignalObservable:
@@ -12939,13 +12940,13 @@ class RxWebSocketClient:
 	static func PropertyListChangedAsObservable(owner : WebSocketClient) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebSocketPeer:
+class RxWebSocketPeer extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : WebSocketPeer) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : WebSocketPeer) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxWebXRInterface:
+class RxWebXRInterface extends NodeAsObservableBuilder:
 	static func SessionSupportedAsObservable(owner : WebXRInterface) -> SignalObservable:
 		return SignalObservable.new("session_supported", owner, 2)
 	static func SessionStartedAsObservable(owner : WebXRInterface) -> SignalObservable:
@@ -12977,13 +12978,13 @@ class RxWebXRInterface:
 	static func PropertyListChangedAsObservable(owner : WebXRInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorPaths:
+class RxEditorPaths extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorPaths) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorPaths) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorPlugin:
+class RxEditorPlugin extends NodeAsObservableBuilder:
 	static func SceneChangedAsObservable(owner : EditorPlugin) -> SignalObservable:
 		return SignalObservable.new("scene_changed", owner, 1)
 	static func SceneClosedAsObservable(owner : EditorPlugin) -> SignalObservable:
@@ -13013,19 +13014,19 @@ class RxEditorPlugin:
 	static func PropertyListChangedAsObservable(owner : EditorPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorImportPlugin:
+class RxEditorImportPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorImportPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorImportPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorScript:
+class RxEditorScript extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorScript) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorScript) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSelection:
+class RxEditorSelection extends NodeAsObservableBuilder:
 	static func SelectionChangedAsObservable(owner : EditorSelection) -> SignalObservable:
 		return SignalObservable.new("selection_changed", owner, 0)
 	static func ScriptChangedAsObservable(owner : EditorSelection) -> SignalObservable:
@@ -13033,7 +13034,7 @@ class RxEditorSelection:
 	static func PropertyListChangedAsObservable(owner : EditorSelection) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorFileDialog:
+class RxEditorFileDialog extends NodeAsObservableBuilder:
 	static func FileSelectedAsObservable(owner : EditorFileDialog) -> SignalObservable:
 		return SignalObservable.new("file_selected", owner, 1)
 	static func FilesSelectedAsObservable(owner : EditorFileDialog) -> SignalObservable:
@@ -13091,7 +13092,7 @@ class RxEditorFileDialog:
 	static func PropertyListChangedAsObservable(owner : EditorFileDialog) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSettings:
+class RxEditorSettings extends NodeAsObservableBuilder:
 	static func SettingsChangedAsObservable(owner : EditorSettings) -> SignalObservable:
 		return SignalObservable.new("settings_changed", owner, 0)
 	static func ChangedAsObservable(owner : EditorSettings) -> SignalObservable:
@@ -13103,7 +13104,7 @@ class RxEditorSettings:
 	static func PropertyListChangedAsObservable(owner : EditorSettings) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorResourcePreview:
+class RxEditorResourcePreview extends NodeAsObservableBuilder:
 	static func PreviewInvalidatedAsObservable(owner : EditorResourcePreview) -> SignalObservable:
 		return SignalObservable.new("preview_invalidated", owner, 1)
 	static func ReadyAsObservable(owner : EditorResourcePreview) -> SignalObservable:
@@ -13125,13 +13126,13 @@ class RxEditorResourcePreview:
 	static func PropertyListChangedAsObservable(owner : EditorResourcePreview) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorResourcePreviewGenerator:
+class RxEditorResourcePreviewGenerator extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorResourcePreviewGenerator) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorResourcePreviewGenerator) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorFileSystem:
+class RxEditorFileSystem extends NodeAsObservableBuilder:
 	static func FilesystemChangedAsObservable(owner : EditorFileSystem) -> SignalObservable:
 		return SignalObservable.new("filesystem_changed", owner, 0)
 	static func SourcesChangedAsObservable(owner : EditorFileSystem) -> SignalObservable:
@@ -13159,19 +13160,19 @@ class RxEditorFileSystem:
 	static func PropertyListChangedAsObservable(owner : EditorFileSystem) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorFileSystemDirectory:
+class RxEditorFileSystemDirectory extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorFileSystemDirectory) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorFileSystemDirectory) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorVCSInterface:
+class RxEditorVCSInterface extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorVCSInterface) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorVCSInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptEditor:
+class RxScriptEditor extends NodeAsObservableBuilder:
 	static func EditorScriptChangedAsObservable(owner : ScriptEditor) -> SignalObservable:
 		return SignalObservable.new("editor_script_changed", owner, 1)
 	static func ScriptCloseAsObservable(owner : ScriptEditor) -> SignalObservable:
@@ -13225,7 +13226,7 @@ class RxScriptEditor:
 	static func PropertyListChangedAsObservable(owner : ScriptEditor) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptEditorBase:
+class RxScriptEditorBase extends NodeAsObservableBuilder:
 	static func NameChangedAsObservable(owner : ScriptEditorBase) -> SignalObservable:
 		return SignalObservable.new("name_changed", owner, 0)
 	static func EditedScriptChangedAsObservable(owner : ScriptEditorBase) -> SignalObservable:
@@ -13291,7 +13292,7 @@ class RxScriptEditorBase:
 	static func PropertyListChangedAsObservable(owner : ScriptEditorBase) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSyntaxHighlighter:
+class RxEditorSyntaxHighlighter extends NodeAsObservableBuilder:
 	static func ChangedAsObservable(owner : EditorSyntaxHighlighter) -> SignalObservable:
 		return SignalObservable.new("changed", owner, 0)
 	static func SetupLocalToSceneRequestedAsObservable(owner : EditorSyntaxHighlighter) -> SignalObservable:
@@ -13301,7 +13302,7 @@ class RxEditorSyntaxHighlighter:
 	static func PropertyListChangedAsObservable(owner : EditorSyntaxHighlighter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorInterface:
+class RxEditorInterface extends NodeAsObservableBuilder:
 	static func ReadyAsObservable(owner : EditorInterface) -> SignalObservable:
 		return SignalObservable.new("ready", owner, 0)
 	static func RenamedAsObservable(owner : EditorInterface) -> SignalObservable:
@@ -13321,31 +13322,31 @@ class RxEditorInterface:
 	static func PropertyListChangedAsObservable(owner : EditorInterface) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorExportPlugin:
+class RxEditorExportPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorExportPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorExportPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorResourceConversionPlugin:
+class RxEditorResourceConversionPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorResourceConversionPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorResourceConversionPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSceneFormatImporter:
+class RxEditorSceneFormatImporter extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorSceneFormatImporter) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorSceneFormatImporter) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorScenePostImportPlugin:
+class RxEditorScenePostImportPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorScenePostImportPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorScenePostImportPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorInspector:
+class RxEditorInspector extends NodeAsObservableBuilder:
 	static func PropertySelectedAsObservable(owner : EditorInspector) -> SignalObservable:
 		return SignalObservable.new("property_selected", owner, 1)
 	static func PropertyKeyedAsObservable(owner : EditorInspector) -> SignalObservable:
@@ -13417,13 +13418,13 @@ class RxEditorInspector:
 	static func PropertyListChangedAsObservable(owner : EditorInspector) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorInspectorPlugin:
+class RxEditorInspectorPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorInspectorPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorInspectorPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorProperty:
+class RxEditorProperty extends NodeAsObservableBuilder:
 	static func PropertyChangedAsObservable(owner : EditorProperty) -> SignalObservable:
 		return SignalObservable.new("property_changed", owner, 2)
 	static func MultiplePropertiesChangedAsObservable(owner : EditorProperty) -> SignalObservable:
@@ -13493,13 +13494,13 @@ class RxEditorProperty:
 	static func PropertyListChangedAsObservable(owner : EditorProperty) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxAnimationTrackEditPlugin:
+class RxAnimationTrackEditPlugin extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : AnimationTrackEditPlugin) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : AnimationTrackEditPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxScriptCreateDialog:
+class RxScriptCreateDialog extends NodeAsObservableBuilder:
 	static func ScriptCreatedAsObservable(owner : ScriptCreateDialog) -> SignalObservable:
 		return SignalObservable.new("script_created", owner, 1)
 	static func ConfirmedAsObservable(owner : ScriptCreateDialog) -> SignalObservable:
@@ -13553,13 +13554,13 @@ class RxScriptCreateDialog:
 	static func PropertyListChangedAsObservable(owner : ScriptCreateDialog) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorFeatureProfile:
+class RxEditorFeatureProfile extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorFeatureProfile) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorFeatureProfile) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSpinSlider:
+class RxEditorSpinSlider extends NodeAsObservableBuilder:
 	static func ValueChangedAsObservable(owner : EditorSpinSlider) -> SignalObservable:
 		return SignalObservable.new("value_changed", owner, 1)
 	static func ChangedAsObservable(owner : EditorSpinSlider) -> SignalObservable:
@@ -13609,7 +13610,7 @@ class RxEditorSpinSlider:
 	static func PropertyListChangedAsObservable(owner : EditorSpinSlider) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorResourcePicker:
+class RxEditorResourcePicker extends NodeAsObservableBuilder:
 	static func ResourceSelectedAsObservable(owner : EditorResourcePicker) -> SignalObservable:
 		return SignalObservable.new("resource_selected", owner, 2)
 	static func ResourceChangedAsObservable(owner : EditorResourcePicker) -> SignalObservable:
@@ -13663,7 +13664,7 @@ class RxEditorResourcePicker:
 	static func PropertyListChangedAsObservable(owner : EditorResourcePicker) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorScriptPicker:
+class RxEditorScriptPicker extends NodeAsObservableBuilder:
 	static func ResourceSelectedAsObservable(owner : EditorScriptPicker) -> SignalObservable:
 		return SignalObservable.new("resource_selected", owner, 2)
 	static func ResourceChangedAsObservable(owner : EditorScriptPicker) -> SignalObservable:
@@ -13717,7 +13718,7 @@ class RxEditorScriptPicker:
 	static func PropertyListChangedAsObservable(owner : EditorScriptPicker) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxFileSystemDock:
+class RxFileSystemDock extends NodeAsObservableBuilder:
 	static func InheritAsObservable(owner : FileSystemDock) -> SignalObservable:
 		return SignalObservable.new("inherit", owner, 1)
 	static func InstanceAsObservable(owner : FileSystemDock) -> SignalObservable:
@@ -13781,19 +13782,19 @@ class RxFileSystemDock:
 	static func PropertyListChangedAsObservable(owner : FileSystemDock) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorFileSystemImportFormatSupportQuery:
+class RxEditorFileSystemImportFormatSupportQuery extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorFileSystemImportFormatSupportQuery) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorFileSystemImportFormatSupportQuery) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorScenePostImport:
+class RxEditorScenePostImport extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorScenePostImport) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorScenePostImport) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorCommandPalette:
+class RxEditorCommandPalette extends NodeAsObservableBuilder:
 	static func ConfirmedAsObservable(owner : EditorCommandPalette) -> SignalObservable:
 		return SignalObservable.new("confirmed", owner, 0)
 	static func CancelledAsObservable(owner : EditorCommandPalette) -> SignalObservable:
@@ -13845,7 +13846,7 @@ class RxEditorCommandPalette:
 	static func PropertyListChangedAsObservable(owner : EditorCommandPalette) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorDebuggerPlugin:
+class RxEditorDebuggerPlugin extends NodeAsObservableBuilder:
 	static func StartedAsObservable(owner : EditorDebuggerPlugin) -> SignalObservable:
 		return SignalObservable.new("started", owner, 0)
 	static func StoppedAsObservable(owner : EditorDebuggerPlugin) -> SignalObservable:
@@ -13899,25 +13900,25 @@ class RxEditorDebuggerPlugin:
 	static func PropertyListChangedAsObservable(owner : EditorDebuggerPlugin) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSceneFormatImporterGLTF:
+class RxEditorSceneFormatImporterGLTF extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorSceneFormatImporterGLTF) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorSceneFormatImporterGLTF) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSceneFormatImporterBlend:
+class RxEditorSceneFormatImporterBlend extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorSceneFormatImporterBlend) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorSceneFormatImporterBlend) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxEditorSceneFormatImporterFBX:
+class RxEditorSceneFormatImporterFBX extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : EditorSceneFormatImporterFBX) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : EditorSceneFormatImporterFBX) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxVisualScriptCustomNodes:
+class RxVisualScriptCustomNodes extends NodeAsObservableBuilder:
 	static func CustomNodesUpdatedAsObservable(owner : VisualScriptCustomNodes) -> SignalObservable:
 		return SignalObservable.new("custom_nodes_updated", owner, 0)
 	static func ScriptChangedAsObservable(owner : VisualScriptCustomNodes) -> SignalObservable:
@@ -13925,31 +13926,31 @@ class RxVisualScriptCustomNodes:
 	static func PropertyListChangedAsObservable(owner : VisualScriptCustomNodes) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJavaClassWrapper:
+class RxJavaClassWrapper extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JavaClassWrapper) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JavaClassWrapper) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJNISingleton:
+class RxJNISingleton extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JNISingleton) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JNISingleton) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJavaClass:
+class RxJavaClass extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JavaClass) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JavaClass) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJavaScriptObject:
+class RxJavaScriptObject extends NodeAsObservableBuilder:
 	static func ScriptChangedAsObservable(owner : JavaScriptObject) -> SignalObservable:
 		return SignalObservable.new("script_changed", owner, 0)
 	static func PropertyListChangedAsObservable(owner : JavaScriptObject) -> SignalObservable:
 		return SignalObservable.new("property_list_changed", owner, 0)
 
-class RxJavaScript:
+class RxJavaScript extends NodeAsObservableBuilder:
 	static func PwaUpdateAvailableAsObservable(owner : JavaScript) -> SignalObservable:
 		return SignalObservable.new("pwa_update_available", owner, 0)
 	static func ScriptChangedAsObservable(owner : JavaScript) -> SignalObservable:

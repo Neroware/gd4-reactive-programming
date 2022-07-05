@@ -25,17 +25,18 @@ func _to_camel(s : String):
 
 func _codegen_signals():
 	_code = "### ================================================ ###\n"
-	_code += "# WARNING! Files was generated automatically!\n"
+	_code += "# WARNING! File was generated automatically!\n"
 	_code += "# DO NOT EDIT\n"
 	_code += "### ================================================ ###\n"
 	_code += "class_name _RxSignal\n"
+	_code += "class NodeAsObservableBuilder: pass\n"
 	for type in ClassDB.get_class_list():
 		if type in _class_exceptions:
 			continue
 		_codegen_class_signals_as_observables(type)
 
 func _codegen_class_signals_as_observables(type : String):
-	_code += "class Rx" + type + ":\n"
+	_code += "class Rx" + type + " extends NodeAsObservableBuilder:\n"
 	
 	var signals = ClassDB.class_get_signal_list(type)
 	for sig in signals:

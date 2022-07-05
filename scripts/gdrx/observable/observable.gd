@@ -1,5 +1,5 @@
 extends ObservableBase
-class_name Observable
+class_name _Observable
 
 
 var _lock : Mutex

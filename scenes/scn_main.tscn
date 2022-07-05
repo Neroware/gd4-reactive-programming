@@ -55,3 +55,6 @@ libraries = {
 [node name="Codegen" type="Node" parent="."]
 script = ExtResource("1_o0hmf")
 codegen_enabled = false
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
