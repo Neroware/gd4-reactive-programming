@@ -59,3 +59,6 @@ static func OnFrameProcessAsObservable() -> Observable:
 
 static func OnFramePhysicsAsObservable() -> Observable:
 	return RxSignal.RxSceneTree.PhysicsFrameAsObservable(GDRxSingleton.get_tree())
+
+static func Create(subscribe : Callable = func(observer : ObserverBase) -> DisposableBase: return Disposable.new()) -> CustomObservable:
+	return CustomObservable.new(subscribe)
