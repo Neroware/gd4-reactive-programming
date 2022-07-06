@@ -115,6 +115,11 @@ _global_script_classes=[{
 "path": "res://gdrx/item/packedstreamitem.gd"
 }, {
 "base": "Observable",
+"class": &"RangeObservable",
+"language": &"GDScript",
+"path": "res://gdrx/observable/rangeobservable.gd"
+}, {
+"base": "Observable",
 "class": &"ReactiveProperty",
 "language": &"GDScript",
 "path": "res://gdrx/observable/reactiveproperty/reactiveproperty.gd"
@@ -216,6 +221,7 @@ _global_script_class_icons={
 "Observer": "",
 "ObserverBase": "",
 "PackedStreamItem": "",
+"RangeObservable": "",
 "ReactiveProperty": "",
 "ReactivePropertyItem": "",
 "ReactiveSignal": "",

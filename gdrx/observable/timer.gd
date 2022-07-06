@@ -15,3 +15,7 @@ func _init(tree : SceneTree, time_sec : float, process_always : bool = true):
 		return Disposable.new(func(): self._timer.disconnect("timeout", sub))
 	
 	super._init(Subscription.new(subscribe))
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("*")

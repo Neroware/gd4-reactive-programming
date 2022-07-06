@@ -32,3 +32,7 @@ func link_to(node : Node):
 		self.dispose()
 		#node.disconnect("tree_exiting", callback)
 	node.connect("tree_exiting", callback)
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("$")

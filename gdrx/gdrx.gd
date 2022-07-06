@@ -62,3 +62,6 @@ static func OnFramePhysicsAsObservable() -> Observable:
 
 static func Create(subscribe : Callable = func(observer : ObserverBase) -> DisposableBase: return Disposable.new()) -> CustomObservable:
 	return CustomObservable.new(subscribe)
+
+static func RangeAsObservable(timespan : TimeSpan = TimeSpan.OnProcess()) -> Observable:
+	return Never.new()
