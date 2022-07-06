@@ -9,4 +9,4 @@ static func IsUnit() -> bool:
 	return false
 
 static func GetUnit() -> Unit:
-	return load("res://scripts/gdrx/item/unit.gd").new()
+	return load("res://gdrx/item/unit.gd").new()

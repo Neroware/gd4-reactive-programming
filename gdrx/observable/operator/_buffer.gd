@@ -36,7 +36,9 @@ func _init(obs : ObservableBase, time_span : TimeSpan = TimeSpan.new(TimeSpan.ET
 				var buf = self._buffer_data.duplicate()
 				_buffer_data.clear()
 				_buffer_lock.unlock()
-				observer.on_next(buf), observer.on_error, observer.on_completed
+				if not buf.is_empty(): observer.on_next(buf), 
+				observer.on_error, 
+				observer.on_completed
 		)
 		
 		return Disposable.new(func():

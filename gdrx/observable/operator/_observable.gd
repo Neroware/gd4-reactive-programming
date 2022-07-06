@@ -3,11 +3,11 @@
 extends _Observable
 class_name Observable
 
-var _never = load("res://scripts/gdrx/observable/operator/_never.gd")
-var _forward = load("res://scripts/gdrx/observable/operator/_forward.gd")
-var _select = load("res://scripts/gdrx/observable/operator/_select.gd")
-var _where = load("res://scripts/gdrx/observable/operator/_where.gd")
-var _buffer = load("res://scripts/gdrx/observable/operator/_buffer.gd")
+var _never = load("res://gdrx/observable/operator/_never.gd")
+var _forward = load("res://gdrx/observable/operator/_forward.gd")
+var _select = load("res://gdrx/observable/operator/_select.gd")
+var _where = load("res://gdrx/observable/operator/_where.gd")
+var _buffer = load("res://gdrx/observable/operator/_buffer.gd")
 
 func never() -> Observable:
 	return _never.new()

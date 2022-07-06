@@ -24,3 +24,15 @@ func get_time() -> float:
 
 func get_time_unit_type():
 	return self._unit_type
+
+static func OnProcess() -> TimeSpan:
+	return TimeSpan.new(ETimeSpanType.PROCESS)
+
+static func OnPhysics() -> TimeSpan:
+	return TimeSpan.new(ETimeSpanType.PHYSICS)
+
+static func TimeSec(t_sec : float):
+	return TimeSpan.new(ETimeSpanType.INTERVAL, t_sec, ETimeUnit.SEC)
+
+static func TimeMillisec(time_ms : float):
+	return TimeSpan.new(ETimeSpanType.INTERVAL, time_ms, ETimeUnit.MS)
