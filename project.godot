@@ -9,10 +9,30 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "DisposableBase",
+"class": &"BooleanDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/booleandisposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"CompositedDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/compositeddisposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"Disposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/disposable.gd"
+}, {
 "base": "RefCounted",
 "class": &"DisposableBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/disposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"MultipleAssignmentDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/multiassignmentdisposable.gd"
 }, {
 "base": "RefCounted",
 "class": &"ObservableBase",
@@ -29,10 +49,30 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/periodicscheduler.gd"
 }, {
+"base": "DisposableBase",
+"class": &"RefCountDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/refcountdisposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"ScheduledDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/scheduleddisposable.gd"
+}, {
 "base": "RefCounted",
 "class": &"SchedulerBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/scheduler.gd"
+}, {
+"base": "DisposableBase",
+"class": &"SerialDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/serialdisposable.gd"
+}, {
+"base": "DisposableBase",
+"class": &"SingleAssignmentDisposable",
+"language": &"GDScript",
+"path": "res://reactivex/disposable/singleassignmentdisposable.gd"
 }, {
 "base": "RefCounted",
 "class": &"StartableBase",
@@ -45,11 +85,19 @@ _global_script_classes=[{
 "path": "res://reactivex/abc/subject.gd"
 }]
 _global_script_class_icons={
+"BooleanDisposable": "",
+"CompositedDisposable": "",
+"Disposable": "",
 "DisposableBase": "",
+"MultipleAssignmentDisposable": "",
 "ObservableBase": "",
 "ObserverBase": "",
 "PeriodicSchedulerBase": "",
+"RefCountDisposable": "",
+"ScheduledDisposable": "",
 "SchedulerBase": "",
+"SerialDisposable": "",
+"SingleAssignmentDisposable": "",
 "StartableBase": "",
 "SubjectBase": ""
 }
