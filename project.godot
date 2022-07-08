@@ -35,14 +35,39 @@ _global_script_classes=[{
 "path": "res://reactivex/disposable/multiassignmentdisposable.gd"
 }, {
 "base": "RefCounted",
+"class": &"Notification",
+"language": &"GDScript",
+"path": "res://reactivex/notification/notification.gd"
+}, {
+"base": "RefCounted",
 "class": &"ObservableBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/observable.gd"
+}, {
+"base": "ObserverBase",
+"class": &"Observer",
+"language": &"GDScript",
+"path": "res://reactivex/observer/observer.gd"
 }, {
 "base": "RefCounted",
 "class": &"ObserverBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/observer.gd"
+}, {
+"base": "Notification",
+"class": &"OnCompletedNotification",
+"language": &"GDScript",
+"path": "res://reactivex/notification/oncompleted.gd"
+}, {
+"base": "Notification",
+"class": &"OnErrorNotification",
+"language": &"GDScript",
+"path": "res://reactivex/notification/onerror.gd"
+}, {
+"base": "Notification",
+"class": &"OnNextNotification",
+"language": &"GDScript",
+"path": "res://reactivex/notification/onnext.gd"
 }, {
 "base": "RefCounted",
 "class": &"PeriodicSchedulerBase",
@@ -80,6 +105,11 @@ _global_script_classes=[{
 "path": "res://reactivex/abc/startable.gd"
 }, {
 "base": "RefCounted",
+"class": &"StreamItem",
+"language": &"GDScript",
+"path": "res://reactivex/item/streamitem.gd"
+}, {
+"base": "RefCounted",
 "class": &"SubjectBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/subject.gd"
@@ -90,8 +120,13 @@ _global_script_class_icons={
 "Disposable": "",
 "DisposableBase": "",
 "MultipleAssignmentDisposable": "",
+"Notification": "",
 "ObservableBase": "",
+"Observer": "",
 "ObserverBase": "",
+"OnCompletedNotification": "",
+"OnErrorNotification": "",
+"OnNextNotification": "",
 "PeriodicSchedulerBase": "",
 "RefCountDisposable": "",
 "ScheduledDisposable": "",
@@ -99,6 +134,7 @@ _global_script_class_icons={
 "SerialDisposable": "",
 "SingleAssignmentDisposable": "",
 "StartableBase": "",
+"StreamItem": "",
 "SubjectBase": ""
 }
 
@@ -106,8 +142,8 @@ _global_script_class_icons={
 
 config/name="gd-reacprog"
 run/main_scene="res://scenes/scn_main.tscn"
-config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
+config/icon="res://icon.png"
 
 [autoload]
 
