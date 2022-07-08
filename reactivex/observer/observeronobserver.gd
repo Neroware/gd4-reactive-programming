@@ -1,11 +1,14 @@
-extends Node
+extends ScheduledObserver
+class_name ObserveOnObserver
 
+func _on_next_core(i):
+	super._on_next_core(i)
+	self.ensure_active()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_error_core(e):
+	super._on_error_core(e)
+	self.ensure_active()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_completed_core():
+	super._on_completed_core()
+	self.ensure_active()

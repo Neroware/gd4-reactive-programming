@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "ObserverBase",
+"class": &"AutoDetachObserver",
+"language": &"GDScript",
+"path": "res://reactivex/observer/autodetachobserver.gd"
+}, {
 "base": "DisposableBase",
 "class": &"BooleanDisposable",
 "language": &"GDScript",
@@ -39,10 +44,20 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/notification/notification.gd"
 }, {
+"base": "ObservableBase",
+"class": &"Observable",
+"language": &"GDScript",
+"path": "res://reactivex/observable/observable.gd"
+}, {
 "base": "RefCounted",
 "class": &"ObservableBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/observable.gd"
+}, {
+"base": "ScheduledObserver",
+"class": &"ObserveOnObserver",
+"language": &"GDScript",
+"path": "res://reactivex/observer/observeronobserver.gd"
 }, {
 "base": "ObserverBase",
 "class": &"Observer",
@@ -84,6 +99,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/disposable/scheduleddisposable.gd"
 }, {
+"base": "Observer",
+"class": &"ScheduledObserver",
+"language": &"GDScript",
+"path": "res://reactivex/observer/scheduledobserver.gd"
+}, {
 "base": "RefCounted",
 "class": &"SchedulerBase",
 "language": &"GDScript",
@@ -115,13 +135,16 @@ _global_script_classes=[{
 "path": "res://reactivex/abc/subject.gd"
 }]
 _global_script_class_icons={
+"AutoDetachObserver": "",
 "BooleanDisposable": "",
 "CompositedDisposable": "",
 "Disposable": "",
 "DisposableBase": "",
 "MultipleAssignmentDisposable": "",
 "Notification": "",
+"Observable": "",
 "ObservableBase": "",
+"ObserveOnObserver": "",
 "Observer": "",
 "ObserverBase": "",
 "OnCompletedNotification": "",
@@ -130,6 +153,7 @@ _global_script_class_icons={
 "PeriodicSchedulerBase": "",
 "RefCountDisposable": "",
 "ScheduledDisposable": "",
+"ScheduledObserver": "",
 "SchedulerBase": "",
 "SerialDisposable": "",
 "SingleAssignmentDisposable": "",

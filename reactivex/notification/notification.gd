@@ -27,9 +27,19 @@ func _accept(
 func _accept_observer(observer : ObserverBase):
 	push_error("No implementation here!")
 
-func to_observable(): # -> Observable:
-	# TODO
-	return null
+func to_observable(scheduler : SchedulerBase = null) -> ObservableBase:
+	var _scheduler = scheduler if scheduler != null else null# TODO: Schedulers.ImmediateScheduler
+	
+	var subscribe = func(observer : ObserverBase, scheduler : SchedulerBase = null) -> DisposableBase:
+		var action = func(scheduler : SchedulerBase, state):
+			self._accept_observer(observer)
+			if self._kind == "N":
+				observer.on_completed()
+			
+		var __scheduler = scheduler if scheduler != null else _scheduler
+		return __scheduler.schedule(action)
+	
+	return Observable.new(subscribe)
 
 func equals(other : Notification) -> bool:
 	var other_string = "" if other == null else str(other)
