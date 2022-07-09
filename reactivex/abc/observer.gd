@@ -9,3 +9,7 @@ func on_error(e):
 
 func on_completed():
 	push_error("No implementation here!")
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("Delete::ObserverBase")

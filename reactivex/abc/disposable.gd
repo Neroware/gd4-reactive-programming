@@ -6,4 +6,4 @@ func dispose():
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
-		self.dispose()
+		print("Delete::DisposableBase")

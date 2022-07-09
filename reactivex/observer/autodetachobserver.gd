@@ -5,6 +5,7 @@ var _on_next : Callable
 var _on_error : Callable
 var _on_completed : Callable
 
+var _is_stopped : bool
 var _subscription : SingleAssignmentDisposable
 
 func _init(

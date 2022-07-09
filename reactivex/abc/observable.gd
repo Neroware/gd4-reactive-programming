@@ -8,3 +8,7 @@ func subscribe(
 	scheduler : SchedulerBase = null) -> DisposableBase:
 		push_error("No implementation here!")
 		return null
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("Delete::ObservableBase")

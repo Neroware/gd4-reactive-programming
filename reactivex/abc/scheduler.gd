@@ -22,3 +22,7 @@ func schedule_absolute(duetime, action : Callable, state = null) -> DisposableBa
 static func to_seconds(datetime : Dictionary) -> float:
 	push_error("No implementation here!")
 	return -1.0
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("Delete::SchedulerBase")
