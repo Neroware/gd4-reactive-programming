@@ -3,7 +3,7 @@ class_name ScheduledObserver
 
 var _scheduler : SchedulerBase
 var _observer : ObserverBase
-var _lock : Mutex
+var _lock : RLock
 var _is_acquired : bool
 var _has_faulted : bool
 var _queue : Array[Callable]
@@ -14,7 +14,7 @@ func _init(scheduler : SchedulerBase, observer : ObserverBase):
 	
 	self._scheduler = scheduler
 	self._observer = observer
-	self._lock = Mutex.new()
+	self._lock = RLock.new()
 	self._is_acquired = false
 	self._has_faulted = false
 	self._queue = []

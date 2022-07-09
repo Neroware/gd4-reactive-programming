@@ -4,12 +4,12 @@ class_name RefCountDisposable
 class InnerDisposable extends DisposableBase:
 	var _parent : RefCountDisposable
 	var _is_disposed : bool
-	var _lock : Mutex
+	var _lock : RLock
 	
 	func _init(parent : RefCountDisposable):
 		self._parent = parent
 		self._is_disposed = false
-		self._lock = Mutex.new()
+		self._lock = RLock.new()
 	
 	func dispose():
 		self._lock.lock()
@@ -23,14 +23,14 @@ class InnerDisposable extends DisposableBase:
 var _underlying_disposable : DisposableBase
 var _is_primary_disposed : bool
 var _is_disposed : bool
-var _lock : Mutex
+var _lock : RLock
 var _count : int
 
 func _init(disposable : DisposableBase):
 	self._underlying_disposable = disposable
 	self._is_primary_disposed = false
 	self._is_disposed = false
-	self._lock = Mutex.new()
+	self._lock = RLock.new()
 	self._count = 0
 
 func dispose():

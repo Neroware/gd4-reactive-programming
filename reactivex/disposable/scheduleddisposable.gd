@@ -4,13 +4,13 @@ class_name ScheduledDisposable
 
 var _scheduler : SchedulerBase
 var _disposable : SingleAssignmentDisposable
-var _lock : Mutex
+var _lock : RLock
 
 func _init(scheduler : SchedulerBase, disposable : DisposableBase):
 	self._scheduler = scheduler
 	self._disposable = SingleAssignmentDisposable.new()
 	self._disposable.set_disposable(disposable)
-	self._lock = Mutex.new()
+	self._lock = RLock.new()
 
 func is_dispose() -> bool:
 	return self._disposable._is_disposed
