@@ -3,7 +3,7 @@ class_name CompositedDisposable
 
 var _disposable : Array
 var _is_disposed : bool
-var _lock : RLock
+var _lock : Mutex
 
 
 func _init(args):
@@ -13,7 +13,7 @@ func _init(args):
 		self._disposable = [args]
 	
 	self._is_disposed = false
-	self._lock = RLock.new()
+	self._lock = Mutex.new()
 
 func add(item : DisposableBase):
 	var should_dispose = false

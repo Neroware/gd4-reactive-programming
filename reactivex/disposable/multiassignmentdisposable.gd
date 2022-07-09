@@ -4,12 +4,12 @@ class_name MultipleAssignmentDisposable
 
 var _current : DisposableBase
 var _is_disposed : bool
-var _lock : RLock
+var _lock : Mutex
 
 func _init():
 	self._current = null
 	self._is_disposed = false
-	self._lock = RLock.new()
+	self._lock = Mutex.new()
 
 func get_disposable() -> DisposableBase:
 	return self._current

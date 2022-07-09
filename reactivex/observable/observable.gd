@@ -1,12 +1,12 @@
 extends ObservableBase
 class_name Observable
 
-var _lock : RLock
+var _lock : Mutex
 var _subscribe : Callable
 
 func _init(subscribe : Callable = func(observer : ObserverBase, scheduler : SchedulerBase = null) -> DisposableBase: 
 	return Disposable.new()):
-		self._lock = RLock.new()
+		self._lock = Mutex.new()
 		self._subscribe = subscribe
 
 func _subscribe_core(

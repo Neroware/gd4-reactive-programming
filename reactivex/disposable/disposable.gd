@@ -3,12 +3,12 @@ class_name Disposable
 
 var _is_disposed : bool
 var _action : Callable
-var _lock : RLock
+var _lock : Mutex
 
 func _init(action : Callable = func(): return):
 	self._is_disposed = false
 	self._action = action
-	self._lock = RLock.new()
+	self._lock = Mutex.new()
 
 func dispose():
 	var dispose = false
