@@ -28,7 +28,7 @@ func _accept_observer(observer : ObserverBase):
 	push_error("No implementation here!")
 
 func to_observable(scheduler : SchedulerBase = null) -> ObservableBase:
-	var _scheduler = scheduler if scheduler != null else null# TODO: Schedulers.ImmediateScheduler
+	var _scheduler = scheduler if scheduler != null else GDRx.ImmediateScheduler_
 	
 	var subscribe = func(observer : ObserverBase, scheduler : SchedulerBase = null) -> DisposableBase:
 		var action = func(scheduler : SchedulerBase, state):

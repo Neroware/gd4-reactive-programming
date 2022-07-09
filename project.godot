@@ -34,6 +34,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/disposable.gd"
 }, {
+"base": "Node",
+"class": &"GDRxSingleton",
+"language": &"GDScript",
+"path": "res://reactivex/gdrxsingleton.gd"
+}, {
+"base": "Scheduler",
+"class": &"ImmediateScheduler",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/immediatescheduler.gd"
+}, {
 "base": "DisposableBase",
 "class": &"MultipleAssignmentDisposable",
 "language": &"GDScript",
@@ -84,7 +94,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/notification/onnext.gd"
 }, {
-"base": "RefCounted",
+"base": "Scheduler",
 "class": &"PeriodicSchedulerBase",
 "language": &"GDScript",
 "path": "res://reactivex/abc/periodicscheduler.gd"
@@ -93,6 +103,16 @@ _global_script_classes=[{
 "class": &"RefCountDisposable",
 "language": &"GDScript",
 "path": "res://reactivex/disposable/refcountdisposable.gd"
+}, {
+"base": "RefCounted",
+"class": &"RxBsc",
+"language": &"GDScript",
+"path": "res://reactivex/internal/basic.gd"
+}, {
+"base": "RefCounted",
+"class": &"RxErr",
+"language": &"GDScript",
+"path": "res://reactivex/internal/errors.gd"
 }, {
 "base": "DisposableBase",
 "class": &"ScheduledDisposable",
@@ -103,6 +123,11 @@ _global_script_classes=[{
 "class": &"ScheduledObserver",
 "language": &"GDScript",
 "path": "res://reactivex/observer/scheduledobserver.gd"
+}, {
+"base": "SchedulerBase",
+"class": &"Scheduler",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/scheduler.gd"
 }, {
 "base": "RefCounted",
 "class": &"SchedulerBase",
@@ -140,6 +165,8 @@ _global_script_class_icons={
 "CompositedDisposable": "",
 "Disposable": "",
 "DisposableBase": "",
+"GDRxSingleton": "",
+"ImmediateScheduler": "",
 "MultipleAssignmentDisposable": "",
 "Notification": "",
 "Observable": "",
@@ -152,8 +179,11 @@ _global_script_class_icons={
 "OnNextNotification": "",
 "PeriodicSchedulerBase": "",
 "RefCountDisposable": "",
+"RxBsc": "",
+"RxErr": "",
 "ScheduledDisposable": "",
 "ScheduledObserver": "",
+"Scheduler": "",
 "SchedulerBase": "",
 "SerialDisposable": "",
 "SingleAssignmentDisposable": "",
@@ -171,7 +201,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GDRxSingleton="*res://gdrx/singleton/singleton.gd"
+GDRx="*res://reactivex/gdrxsingleton.gd"
 
 [input]
 

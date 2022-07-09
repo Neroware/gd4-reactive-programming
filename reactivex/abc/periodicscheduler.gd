@@ -1,3 +1,4 @@
+extends Scheduler
 class_name PeriodicSchedulerBase
 
 
