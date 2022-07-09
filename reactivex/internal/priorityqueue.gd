@@ -2,7 +2,7 @@ class_name PriorityQueue
 
 var _Heap = load("res://reactivex/internal/heap.gd")
 
-const MIN_COUNT = 2 ** 13# Maybe 9223372036854775807 ?
+const MIN_COUNT = 2 ** 13 # Maybe 9223372036854775807 ?
 
 var _items : Array[Tuple]
 var _count : int
