@@ -34,7 +34,7 @@ func unlock():
 	self._lock.unlock()
 
 func try_lock() -> bool:
-	return self._counter == 0 or self._blocking_thread == OS.get_thread_caller_id()
+	return not (self._counter == 0 or self._blocking_thread == OS.get_thread_caller_id())
 
 func is_locking_thread() -> bool:
 	var id = OS.get_thread_caller_id()

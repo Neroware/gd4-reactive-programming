@@ -6,6 +6,9 @@ class_name GDRxSingleton
 ### ======================================================================= ###
 var ImmediateScheduler_ : ImmediateScheduler = ImmediateScheduler.new("GDRx")
 
+var CurrentThreadScheduler_global_ : Dictionary
+var CurrentThreadScheduler_local_ = CurrentThreadScheduler._Local.new()
+
 ### ======================================================================= ###
 #   Observable Constructors
 ### ======================================================================= ###
@@ -19,4 +22,7 @@ static func Throw(err, scheduler : SchedulerBase = null) -> Observable:
 	return load("res://reactivex/observable/never.gd").throw_(err, scheduler)
 
 static func ReturnValue(value, scheduler : SchedulerBase = null) -> Observable:
-	return load("res://reactivex/observable/never.gd").return_value_(value, scheduler)
+	return load("res://reactivex/observable/returnvalue.gd").return_value_(value, scheduler)
+
+static func FromCallback(supplier : Callable, scheduler : SchedulerBase = null) -> Observable:
+	return load("res://reactivex/observable/returnvalue.gd").from_callback_(supplier, scheduler)

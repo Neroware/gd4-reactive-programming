@@ -1,10 +1,10 @@
 class_name Lock
 
-var _aquired_thread : int
+var _aquired_thread
 var _lock : Mutex
 
 func _init():
-	self._aquired_thread == null
+	self._aquired_thread = null
 	self._lock = Mutex.new()
 
 func lock():
@@ -28,7 +28,7 @@ func unlock():
 	self._lock.unlock()
 
 func try_lock() -> bool:
-	return self._aquired_thread == null
+	return self._aquired_thread != null
 
 func is_locking_thread() -> bool:
 	var id = OS.get_thread_caller_id()

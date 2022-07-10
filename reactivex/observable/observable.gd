@@ -44,12 +44,10 @@ func subscribe(
 			var subscriber = self._subscribe_core(auto_detach_observer, scheduler)
 			auto_detach_observer.set_disposable(fix_subscriber.call(subscriber))
 		
-		### TODO Add singleton 'Schedulers'!!!
-		#var current_thread_scheduler = Schedulers.CurrentThreadScheduler
-		#if current_thread_scheduler.schedule_required():
-		#	current_thread_scheduler.schedule(set_disposable)
-		#else:
-		#	set_disposable.call()
-		set_disposable.call()
+		var current_thread_scheduler = CurrentThreadScheduler.singleton()
+		if current_thread_scheduler.schedule_required():
+			current_thread_scheduler.schedule(set_disposable)
+		else:
+			set_disposable.call()
 		
 		return Disposable.new(auto_detach_observer.dispose)

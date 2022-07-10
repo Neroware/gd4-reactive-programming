@@ -34,6 +34,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/conditionallock.gd"
 }, {
+"base": "TrampolineScheduler",
+"class": &"CurrentThreadScheduler",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/currentthreadscheduler.gd"
+}, {
 "base": "DisposableBase",
 "class": &"Disposable",
 "language": &"GDScript",
@@ -144,6 +149,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/disposable/scheduleddisposable.gd"
 }, {
+"base": "Comparable",
+"class": &"ScheduledItem",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/scheduleditem.gd"
+}, {
 "base": "Observer",
 "class": &"ScheduledObserver",
 "language": &"GDScript",
@@ -184,6 +194,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/subject.gd"
 }, {
+"base": "RefCounted",
+"class": &"Trampoline",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/trampoline.gd"
+}, {
+"base": "Scheduler",
+"class": &"TrampolineScheduler",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/trampolinescheduler.gd"
+}, {
 "base": "Comparable",
 "class": &"Tuple",
 "language": &"GDScript",
@@ -195,6 +215,7 @@ _global_script_class_icons={
 "Comparable": "",
 "CompositedDisposable": "",
 "ConditionalLock": "",
+"CurrentThreadScheduler": "",
 "Disposable": "",
 "DisposableBase": "",
 "GDRxSingleton": "",
@@ -217,6 +238,7 @@ _global_script_class_icons={
 "RxBsc": "",
 "RxErr": "",
 "ScheduledDisposable": "",
+"ScheduledItem": "",
 "ScheduledObserver": "",
 "Scheduler": "",
 "SchedulerBase": "",
@@ -225,6 +247,8 @@ _global_script_class_icons={
 "StartableBase": "",
 "StreamItem": "",
 "SubjectBase": "",
+"Trampoline": "",
+"TrampolineScheduler": "",
 "Tuple": ""
 }
 
