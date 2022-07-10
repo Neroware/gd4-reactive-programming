@@ -119,7 +119,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/priorityqueue.gd"
 }, {
-"base": "Mutex",
+"base": "RefCounted",
 "class": &"RLock",
 "language": &"GDScript",
 "path": "res://reactivex/internal/rlock.gd"

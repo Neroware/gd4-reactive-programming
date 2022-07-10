@@ -21,7 +21,11 @@ func lock():
 			break
 
 func unlock():
-	self._aquired_thread = null
+	var id = OS.get_thread_caller_id()
+	self._lock.lock()
+	if self._aquired_thread == id:
+		self._aquired_thread = null
+	self._lock.unlock()
 
 func try_lock() -> bool:
 	return self._aquired_thread == null
