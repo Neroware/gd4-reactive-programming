@@ -1,6 +1,6 @@
 # gd4-reactive-programming
 
-An implementation of ReactiveX for Python (RxPY) for Godot Engine version 4 (GDRx)
+An port of ReactiveX for Python (RxPY) to Godot Engine version 4 (GDRx)
 
 See: https://github.com/ReactiveX/RxPY
 
