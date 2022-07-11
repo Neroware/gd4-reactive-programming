@@ -213,6 +213,11 @@ _global_script_classes=[{
 "class": &"Tuple",
 "language": &"GDScript",
 "path": "res://reactivex/internal/tuple.gd"
+}, {
+"base": "RefCounted",
+"class": &"WeakRefDictionary",
+"language": &"GDScript",
+"path": "res://reactivex/internal/weakrefdictionary.gd"
 }]
 _global_script_class_icons={
 "AutoDetachObserver": "",
@@ -255,7 +260,8 @@ _global_script_class_icons={
 "SubjectBase": "",
 "Trampoline": "",
 "TrampolineScheduler": "",
-"Tuple": ""
+"Tuple": "",
+"WeakRefDictionary": ""
 }
 
 [application]
