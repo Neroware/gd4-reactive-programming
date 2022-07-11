@@ -27,7 +27,8 @@ func wait(time_sec : float = -1.0):
 		var timer : SceneTreeTimer = GDRx.get_tree().create_timer(time_sec)
 		timer.connect("timeout", func(): 
 			timeout_ = true
-			timer.disconnect("timeout", timer.timeout.get_connections()[0])
+			for conn in timer.timeout.get_connections():
+				timer.timeout.disconnect(conn)
 		)
 		
 	

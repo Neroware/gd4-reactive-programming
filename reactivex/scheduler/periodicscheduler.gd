@@ -1,5 +1,5 @@
 extends PeriodicSchedulerBase
-class_name PeiodicScheduler
+class_name PeriodicScheduler
 
 
 func schedule_periodic(
@@ -10,40 +10,25 @@ func schedule_periodic(
 		var disp : MultipleAssignmentDisposable = MultipleAssignmentDisposable.new()
 		var seconds = period # to_seconds(period)
 		
-		var periodic = func(scheduler : SchedulerBase, state = null):
+		var periodic : Callable = func(scheduler : SchedulerBase, state = null, periodic_ : Callable = func(__, ___, ____): return) -> Disposable:
 			if disp._is_disposed:
 				return null
 			
 			var now : float = scheduler.now()
+			
 			state = action.call(state)
 			if state is RxErr.GDRxErr:
 				disp.dispose()
 				push_error(state)
+				return
 			
-			var time = seconds - (scheduler.now() - now)
-			disp.set_disposable(scheduler.schedule_relative(
-				time, 
-				func(scheduler : SchedulerBase, state = null): _perodic_factory(disp, seconds, scheduler, action, state).call(scheduler, state),
-				state)
-			)
+			var time = seconds - to_seconds(scheduler.now() - now)
+			disp.set_disposable(scheduler.schedule_relative(time, periodic_, state))
 			
 			return null
 		
-		disp.set_disposable(schedule_relative(period, periodic, state))
+		### Weird binding because durng definition, periodic() is still empty...
+		periodic = periodic.bind(periodic)
+		
+		disp.set_disposable(self.schedule_relative(period, periodic, state))
 		return disp
-
-func _perodic_factory(disp : MultipleAssignmentDisposable, seconds : float, scheduler : SchedulerBase, action : Callable, state) -> Callable:
-	var periodic = func(scheduler : SchedulerBase, state = null):
-		if disp._is_disposed:
-			return null
-		
-		var now : float = scheduler.now()
-		state = action.call(state)
-		if state is RxErr.GDRxErr:
-			disp.dispose()
-			push_error(state)
-		
-		var time = seconds - (scheduler.now() - now)
-		disp.set_disposable(scheduler.schedule_relative(time, _perodic_factory(disp, seconds, scheduler, action, state), state))
-	
-	return periodic

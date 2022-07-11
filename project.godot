@@ -25,9 +25,9 @@ _global_script_classes=[{
 "path": "res://reactivex/abc/comparable.gd"
 }, {
 "base": "DisposableBase",
-"class": &"CompositedDisposable",
+"class": &"CompositeDisposable",
 "language": &"GDScript",
-"path": "res://reactivex/disposable/compositeddisposable.gd"
+"path": "res://reactivex/disposable/compositedisposable.gd"
 }, {
 "base": "RefCounted",
 "class": &"ConditionalLock",
@@ -115,7 +115,7 @@ _global_script_classes=[{
 "path": "res://reactivex/notification/onnext.gd"
 }, {
 "base": "PeriodicSchedulerBase",
-"class": &"PeiodicScheduler",
+"class": &"PeriodicScheduler",
 "language": &"GDScript",
 "path": "res://reactivex/scheduler/periodicscheduler.gd"
 }, {
@@ -199,6 +199,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/subject.gd"
 }, {
+"base": "PeriodicScheduler",
+"class": &"TimeoutScheduler",
+"language": &"GDScript",
+"path": "res://reactivex/scheduler/timeoutscheduler.gd"
+}, {
 "base": "RefCounted",
 "class": &"Trampoline",
 "language": &"GDScript",
@@ -223,7 +228,7 @@ _global_script_class_icons={
 "AutoDetachObserver": "",
 "BooleanDisposable": "",
 "Comparable": "",
-"CompositedDisposable": "",
+"CompositeDisposable": "",
 "ConditionalLock": "",
 "CurrentThreadScheduler": "",
 "Disposable": "",
@@ -241,7 +246,7 @@ _global_script_class_icons={
 "OnCompletedNotification": "",
 "OnErrorNotification": "",
 "OnNextNotification": "",
-"PeiodicScheduler": "",
+"PeriodicScheduler": "",
 "PeriodicSchedulerBase": "",
 "PriorityQueue": "",
 "RLock": "",
@@ -258,6 +263,7 @@ _global_script_class_icons={
 "StartableBase": "",
 "StreamItem": "",
 "SubjectBase": "",
+"TimeoutScheduler": "",
 "Trampoline": "",
 "TrampolineScheduler": "",
 "Tuple": "",

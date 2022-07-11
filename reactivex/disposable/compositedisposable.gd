@@ -1,5 +1,5 @@
 extends DisposableBase
-class_name CompositedDisposable
+class_name CompositeDisposable
 
 var _disposable : Array
 var _is_disposed : bool
