@@ -6,7 +6,7 @@ class_name GDRxSingleton
 ### ======================================================================= ###
 var ImmediateScheduler_ : ImmediateScheduler = ImmediateScheduler.new("GDRx")
 
-var CurrentThreadScheduler_global_ : Dictionary
+var CurrentThreadScheduler_global_ : WeakRefDictionary = WeakRefDictionary.new()
 var CurrentThreadScheduler_local_ = CurrentThreadScheduler._Local.new()
 
 ### ======================================================================= ###

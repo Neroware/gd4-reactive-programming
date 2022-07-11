@@ -7,7 +7,7 @@ func _init(from : Dictionary = {}):
 	for key in from.keys():
 		var item = from[key]
 		if not item is Object:
-			push_warning("Godot only supports WeakRef to classes extending Object!")
+			push_error("Godot only supports WeakRef to classes extending Object!")
 			continue
 		else:
 			self._data[key] = weakref(item)
@@ -29,9 +29,9 @@ func get(key, default = null) -> Variant:
 		return ret.get_ref()
 	return ret
 
-func set(key, value):
+func set_pair(key, value):
 	if not value is Object:
-		push_warning("Godot only supports WeakRef to classes extending Object!")
+		push_error("Godot only supports WeakRef to classes extending Object!")
 		return
 	self._data[key] = weakref(value)
 
