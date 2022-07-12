@@ -28,7 +28,7 @@ func wait(time_sec : float = -1.0):
 		timer.connect("timeout", func(): 
 			timeout_ = true
 			for conn in timer.timeout.get_connections():
-				timer.timeout.disconnect(conn)
+				timer.timeout.disconnect(conn["callable"])
 		)
 		
 	

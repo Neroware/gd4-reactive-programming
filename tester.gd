@@ -1,10 +1,11 @@
 extends Node
 
+@export var tests = "6"
 
 func _ready():
-	for i in range(1024):
-		if has_method("_test_" + str(i)):
-			call("_test_" + str(i))
+	for i in tests.split(","):
+		if has_method("_test_" + i):
+			call("_test_" + i)
 
 func _test_0():
 	var obs : Observable = GDRx.Empty()
@@ -30,3 +31,18 @@ func _test_3():
 			foo_.bind(foo_).call(x - 1)
 	foo = foo.bind(foo)
 	foo.call(100)
+
+func _test_4():
+	var timers = load("res://reactivex/observable/timer.gd")
+	var obs : Observable = timers.timer_(3.0, false)
+	obs.subscribe(func(__): print("[ReactiveX]: Timer expired!"))
+
+func _test_5():
+	var timers = load("res://reactivex/observable/timer.gd")
+	var obs : Observable = timers.timer_(3.0, false, 3.0)
+	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
+
+func _test_6():
+	var timers = load("res://reactivex/observable/timer.gd")
+	var obs : Observable = timers.timer_(1.0, false, 5.0)
+	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))

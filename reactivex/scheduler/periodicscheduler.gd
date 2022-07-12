@@ -22,7 +22,7 @@ func schedule_periodic(
 				push_error(state)
 				return
 			
-			var time = seconds - to_seconds(scheduler.now() - now)
+			var time = seconds - (scheduler.now() - now)
 			disp.set_disposable(scheduler.schedule_relative(time, periodic_.bind(periodic_), state))
 			
 			return null
