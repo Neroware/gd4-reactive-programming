@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "6"
+@export var tests = "8"
 
 func _ready():
 	for i in tests.split(","):
@@ -46,3 +46,19 @@ func _test_6():
 	var timers = load("res://reactivex/observable/timer.gd")
 	var obs : Observable = timers.timer_(1.0, false, 5.0)
 	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
+
+func _test_7():
+	var dt = 4.0
+	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
+	var duetime = t_now + dt
+	var timers = load("res://reactivex/observable/timer.gd")
+	var obs : Observable = timers.timer_(duetime, true)
+	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer expired!"))
+
+func _test_8():
+	var dt = 3.0
+	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
+	var duetime = t_now + dt
+	var timers = load("res://reactivex/observable/timer.gd")
+	var obs : Observable = timers.timer_(duetime, true, 10.0)
+	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer with period expired!"))

@@ -11,7 +11,7 @@ static func observable_timer_date(duetime : float, scheduler : SchedulerBase = n
 		
 		return _scheduler.schedule_absolute(duetime, action)
 	
-	return Observable.new()
+	return Observable.new(subscribe)
 
 static func observable_timer_duetime_and_period(duetime : float, time_absolute : bool, period : float, scheduler : SchedulerBase = null, ) -> Observable:
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
