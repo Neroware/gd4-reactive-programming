@@ -19,3 +19,14 @@ func _test_2():
 	var the_answer = func(): return 42
 	var obs : Observable = GDRx.FromCallback(the_answer)
 	obs.subscribe(func(i): print("[ReactiveX]: " + str(i)))
+
+func _test_3():
+	var foo : Callable 
+	foo = func(x, foo_ : Callable):
+		if x == 0:
+			print(":)")
+		else:
+			#print("!> ", foo_.get_object_id())
+			foo_.bind(foo_).call(x - 1)
+	foo = foo.bind(foo)
+	foo.call(100)

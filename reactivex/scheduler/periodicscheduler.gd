@@ -23,10 +23,9 @@ func schedule_periodic(
 				return
 			
 			var time = seconds - to_seconds(scheduler.now() - now)
-			disp.set_disposable(scheduler.schedule_relative(time, periodic_, state))
+			disp.set_disposable(scheduler.schedule_relative(time, periodic_.bind(periodic_), state))
 			
 			return null
-		
 		### Weird binding because durng definition, periodic() is still empty...
 		periodic = periodic.bind(periodic)
 		

@@ -13,12 +13,15 @@ static func observable_timer_date(duetime : float, scheduler : SchedulerBase = n
 	
 	return Observable.new()
 
-static func observable_timer_duetime_and_period(duetime : float, period : float, scheduler : SchedulerBase = null) -> Observable:
+static func observable_timer_duetime_and_period(duetime : float, time_absolute : bool, period : float, scheduler : SchedulerBase = null, ) -> Observable:
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
 		var _scheduler : SchedulerBase = null
 		if scheduler != null: _scheduler = scheduler
 		elif scheduler_ != null: _scheduler = scheduler_
 		else: _scheduler = TimeoutScheduler.singleton()
+		
+		if not time_absolute:
+			duetime = _scheduler.now() + duetime
 		
 		var p = max(0.0, period)
 		var mad = MultipleAssignmentDisposable.new()
@@ -37,7 +40,7 @@ static func observable_timer_duetime_and_period(duetime : float, period : float,
 			
 			observer.on_next(count_)
 			count_ += 1
-			mad.set_disposable(scheduler.schedule_absolute(dt_, action_))
+			mad.set_disposable(scheduler.schedule_absolute(dt_, action_.bind(action_)))
 		action = action.bind(action)
 		
 		mad.set_disposable(_scheduler.schedule_absolute(dt, action))
@@ -85,7 +88,7 @@ static func observable_timer_timespan_and_period(duetime : float, period : float
 			return periodic_scheduler.schedule_periodic(period, action, 0)
 		
 		return Observable.new(subscribe)
-	return observable_timer_duetime_and_period(duetime, period, scheduler)
+	return observable_timer_duetime_and_period(duetime, false, period, scheduler)
 
 static func timer_(duetime : float, time_absolute : bool, period = null, scheduler : SchedulerBase = null) -> Observable:
 	if time_absolute:
@@ -93,7 +96,7 @@ static func timer_(duetime : float, time_absolute : bool, period = null, schedul
 			return observable_timer_date(duetime, scheduler)
 		else:
 			var fperiod : float = period
-			return observable_timer_duetime_and_period(duetime, fperiod, scheduler)
+			return observable_timer_duetime_and_period(duetime, true, fperiod, scheduler)
 	
 	if period == null:
 		return observable_timer_timespan(duetime, scheduler)
