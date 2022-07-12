@@ -27,3 +27,22 @@ static func ReturnValue(value, scheduler : SchedulerBase = null) -> Observable:
 
 static func FromCallback(supplier : Callable, scheduler : SchedulerBase = null) -> Observable:
 	return load("res://reactivex/observable/returnvalue.gd").from_callback_(supplier, scheduler)
+
+### ======================================================================= ###
+#   Observable Timer Constructors
+### ======================================================================= ###
+
+static func StartTimespan(timespan_sec : float) -> Observable:
+	return load("res://reactivex/observable/timer.gd").timer_(timespan_sec, false)
+
+static func StartPeriodicTimer(period_sec : float) -> Observable:
+	return load("res://reactivex/observable/timer.gd").timer_(period_sec, false, period_sec)
+
+static func StartPeriodicTimerAfterTimespan(timespan_sec : float, period_sec : float) -> Observable:
+	return load("res://reactivex/observable/timer.gd").timer_(timespan_sec, false, period_sec)
+
+static func ScheduleDatetime(datetime_sec : float) -> Observable:
+	return load("res://reactivex/observable/timer.gd").timer_(datetime_sec, true)
+
+static func StartPeriodicTimerAtDatetime(datetime_sec : float, period_sec : float) -> Observable:
+	return load("res://reactivex/observable/timer.gd").timer_(datetime_sec, true, period_sec)
