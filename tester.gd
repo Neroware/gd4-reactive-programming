@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "0"
+@export var tests = "10"
 
 func _ready():
 	for i in tests.split(","):
@@ -69,3 +69,12 @@ func _test_9():
 		print("[ReactiveX]: Killing subscription!")
 		__disp_t9.dispose()
 	)
+
+func _test_10():
+	var obs1 = GDRx.StartPeriodicTimer(0.25)
+	var obs2 = GDRx.StartPeriodicTimer(0.5)
+	var obs3 = GDRx.ReturnValue("I'm shy")
+	var obs_arr : Array[Observable] = [obs1, obs2, obs3]
+	var obs4 = GDRx.WinnerOf(obs_arr)
+	
+	obs4.subscribe(func(i): print("[ReactiveX]: Test is only successful with ONE print!"))

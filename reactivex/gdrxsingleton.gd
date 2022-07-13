@@ -42,11 +42,9 @@ func ReturnValue(value, scheduler : SchedulerBase = null) -> Observable:
 	return ReturnValue_.return_value_(value, scheduler)
 func FromCallback(supplier : Callable, scheduler : SchedulerBase = null) -> Observable:
 	return ReturnValue_.from_callback_(supplier, scheduler)
-
-### ======================================================================= ###
-#   Observable Timer Constructors
-### ======================================================================= ###
-
+func WinnerOf(observables : Array[Observable]) -> Observable:
+	return Amb_.amb_(observables)
+## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
 func StartPeriodicTimer(period_sec : float) -> Observable:
