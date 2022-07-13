@@ -1,6 +1,6 @@
 class_name PriorityQueue
 
-var _Heap = load("res://reactivex/internal/heap.gd")
+var _Heap = GDRx.Heap_
 
 const MIN_COUNT = 65536 # Maybe 9223372036854775807 ?
 

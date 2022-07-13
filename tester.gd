@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "9"
+@export var tests = "0"
 
 func _ready():
 	for i in tests.split(","):
@@ -33,34 +33,29 @@ func _test_3():
 	foo.call(100)
 
 func _test_4():
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(3.0, false)
+	var obs : Observable = GDRx.StartTimespan(3.0)
 	obs.subscribe(func(__): print("[ReactiveX]: Timer expired!"))
 
 func _test_5():
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(3.0, false, 3.0)
+	var obs : Observable = GDRx.StartPeriodicTimer(3.0)
 	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
 
 func _test_6():
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(1.0, false, 5.0)
+	var obs : Observable = GDRx.StartPeriodicTimerAfterTimespan(1.0, 5.0)
 	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
 
 func _test_7():
 	var dt = 4.0
 	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
 	var duetime = t_now + dt
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(duetime, true)
+	var obs : Observable = GDRx.ScheduleDatetime(duetime)
 	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer expired!"))
 
 func _test_8():
 	var dt = 3.0
 	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
 	var duetime = t_now + dt
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(duetime, true, 10.0)
+	var obs : Observable = GDRx.StartPeriodicTimerAtDatetime(duetime, 10.0)
 	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer with period expired!"))
 
 var __disp_t9 : Disposable 
@@ -68,8 +63,7 @@ func _test_9():
 	var dt = 3.0
 	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
 	var duetime = t_now + dt
-	var timers = load("res://reactivex/observable/timer.gd")
-	var obs : Observable = timers.timer_(duetime, true, 10.0)
+	var obs : Observable = GDRx.StartPeriodicTimerAtDatetime(duetime, 10.0)
 	
 	__disp_t9 = obs.subscribe(func(__): 
 		print("[ReactiveX]: Killing subscription!")

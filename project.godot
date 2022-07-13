@@ -49,11 +49,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/disposable.gd"
 }, {
-"base": "Node",
-"class": &"GDRxSingleton",
-"language": &"GDScript",
-"path": "res://reactivex/gdrxsingleton.gd"
-}, {
 "base": "RefCounted",
 "class": &"GDRx_Basic",
 "language": &"GDScript",
@@ -63,6 +58,11 @@ _global_script_classes=[{
 "class": &"GDRx_Error",
 "language": &"GDScript",
 "path": "res://reactivex/internal/errors.gd"
+}, {
+"base": "Node",
+"class": &"GDRx_Singleton",
+"language": &"GDScript",
+"path": "res://reactivex/gdrxsingleton.gd"
 }, {
 "base": "Scheduler",
 "class": &"ImmediateScheduler",
@@ -233,9 +233,9 @@ _global_script_class_icons={
 "CurrentThreadScheduler": "",
 "Disposable": "",
 "DisposableBase": "",
-"GDRxSingleton": "",
 "GDRx_Basic": "",
 "GDRx_Error": "",
+"GDRx_Singleton": "",
 "ImmediateScheduler": "",
 "Lock": "",
 "MultipleAssignmentDisposable": "",

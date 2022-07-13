@@ -47,10 +47,10 @@ func equals(other : Notification) -> bool:
 
 static func from_notifier(handler : Callable) -> Observer:
 	var _on_next = func(value):
-		return handler.call(load("res://reactivex/notification/onnext.gd").new(value))
+		return handler.call(GDRx.NotificationOnNext_.new(value))
 	var _on_error = func(err):
-		return handler.call(load("res://reactivex/notification/onerror.gd").new(err))
+		return handler.call(GDRx.NotificationOnError_.new(err))
 	var _on_completed = func():
-		return handler.call(load("res://reactivex/notification/oncompleted.gd").new())
+		return handler.call(GDRx.NotificationOnCompleted_.new())
 	
 	return Observer.new(_on_next, _on_error, _on_completed)
