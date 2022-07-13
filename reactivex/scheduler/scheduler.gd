@@ -5,7 +5,7 @@ const UTC_ZERO = 0 # Yep, zero
 const DELTA_ZERO = 0
 
 func now() -> float:
-	return self.to_seconds(RxBsc.default_now())
+	return self.to_seconds(GDRx_Basic.default_now())
 
 func invoke_action(action : Callable, state = null) -> DisposableBase:
 	var ret = action.call(self, state)

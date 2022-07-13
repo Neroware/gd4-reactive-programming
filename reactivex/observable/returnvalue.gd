@@ -22,7 +22,7 @@ static func from_callback_(supplier : Callable, scheduler : SchedulerBase = null
 		
 		var action = func(__ : SchedulerBase, ___ = null):
 			var res_ = supplier.call()
-			if res_ is RxErr.GDRxErr:
+			if res_ is GDRx_Error.Error:
 				observer.on_error(res_)
 			else:
 				observer.on_next(res_)

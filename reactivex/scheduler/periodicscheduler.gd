@@ -17,7 +17,7 @@ func schedule_periodic(
 			var now : float = scheduler.now()
 			
 			state = action.call(state)
-			if state is RxErr.GDRxErr:
+			if state is GDRx_Error.Error:
 				disp.dispose()
 				push_error(state)
 				return
