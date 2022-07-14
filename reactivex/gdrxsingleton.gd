@@ -10,6 +10,7 @@ var Never_ = load("res://reactivex/observable/never.gd")
 var ReturnValue_ = load("res://reactivex/observable/returnvalue.gd")
 var Throw_ = load("res://reactivex/observable/throw.gd")
 var Timer_ = load("res://reactivex/observable/timer.gd")
+var Defer_ = load("res://reactivex/observable/defer.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -44,6 +45,8 @@ func FromCallback(supplier : Callable, scheduler : SchedulerBase = null) -> Obse
 	return ReturnValue_.from_callback_(supplier, scheduler)
 func WinnerOf(observables : Array[Observable]) -> Observable:
 	return Amb_.amb_(observables)
+func BuildDeferred(factory : Callable = func(scheduler : SchedulerBase) -> Observable: return null) -> Observable:
+	return Defer_.defer_(factory)
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
