@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "5"
+@export var tests = "10"
 
 func _ready():
 	for i in tests.split(","):
@@ -34,29 +34,29 @@ func _test_3():
 
 func _test_4():
 	var obs : Observable = GDRx.StartTimespan(3.0)
-	obs.subscribe(func(__): print("[ReactiveX]: Timer expired!"))
+	obs.subscribe(func(i): print("[ReactiveX]: Timer expired: " + str(i)))
 
 func _test_5():
 	var obs : Observable = GDRx.StartPeriodicTimer(3.0)
-	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
+	obs.subscribe(func(i): print("[ReactiveX]: Periodic Timer expired: " + str(i)))
 
 func _test_6():
 	var obs : Observable = GDRx.StartPeriodicTimerAfterTimespan(1.0, 5.0)
-	obs.subscribe(func(__): print("[ReactiveX]: Periodic Timer expired!"))
+	obs.subscribe(func(i): print("[ReactiveX]: Periodic Timer expired: " + str(i)))
 
 func _test_7():
 	var dt = 4.0
 	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
 	var duetime = t_now + dt
 	var obs : Observable = GDRx.ScheduleDatetime(duetime)
-	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer expired!"))
+	obs.subscribe(func(i): print("[ReactiveX]: Absolute Timer expired: " + str(i)))
 
 func _test_8():
 	var dt = 3.0
 	var t_now = Scheduler.to_seconds(Time.get_datetime_dict_from_system(true))
 	var duetime = t_now + dt
 	var obs : Observable = GDRx.StartPeriodicTimerAtDatetime(duetime, 10.0)
-	obs.subscribe(func(__): print("[ReactiveX]: Absolute Timer with period expired!"))
+	obs.subscribe(func(i): print("[ReactiveX]: Absolute Timer with period expired: " + str(i)))
 
 var __disp_t9 : Disposable 
 func _test_9():
@@ -77,4 +77,4 @@ func _test_10():
 	var obs_arr : Array[Observable] = [obs1, obs2, obs3]
 	var obs4 = GDRx.WinnerOf(obs_arr)
 	
-	obs4.subscribe(func(i): print("[ReactiveX]: Test is only successful with ONE print!"))
+	obs4.subscribe(func(__): print("[ReactiveX]: Test is only successful with ONE print!"))

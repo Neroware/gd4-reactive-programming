@@ -28,20 +28,17 @@ static func observable_timer_duetime_and_period(duetime : float, time_absolute :
 		var dt = duetime
 		var count = 0
 		
-		var action = func(scheduler : SchedulerBase, state, action_):
-			var dt_ = dt
-			var count_ = count
-			
+		var action = func(scheduler : SchedulerBase, state, action_, count_):
 			if p > 0.0:
 				var now = scheduler.now()
-				dt_ = dt_ + p
-				if dt_ <= now:
-					dt_ = now + p
+				dt = dt + p
+				if dt <= now:
+					dt = now + p
 			
 			observer.on_next(count_)
 			count_ += 1
-			mad.set_disposable(scheduler.schedule_absolute(dt_, action_.bind(action_)))
-		action = action.bind(action)
+			mad.set_disposable(scheduler.schedule_absolute(dt, action_.bind(action_, count_)))
+		action = action.bind(action, count)
 		
 		mad.set_disposable(_scheduler.schedule_absolute(dt, action))
 		return mad
