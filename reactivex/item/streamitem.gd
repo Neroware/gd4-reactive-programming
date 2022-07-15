@@ -4,7 +4,7 @@ var _payload
 
 class _Unit extends StreamItem:
 	func _init():
-		self._payload = null
+		self._payload = self
 	
 	func is_unit() -> bool:
 		return true
