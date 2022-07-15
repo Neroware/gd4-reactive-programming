@@ -26,3 +26,8 @@ class FactoryFailedException extends GDRx_Error.Error:
 	
 	func get_produced_object():
 		return self._produced
+
+class BadMappingException extends GDRx_Error.Error:
+	func _init(msg = null):
+		if msg != null: super._init(str(msg))
+		else: super._init("A mapping did not succeed!")

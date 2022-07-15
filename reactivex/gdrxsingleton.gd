@@ -11,6 +11,7 @@ var ReturnValue_ = load("res://reactivex/observable/returnvalue.gd")
 var Throw_ = load("res://reactivex/observable/throw.gd")
 var Timer_ = load("res://reactivex/observable/timer.gd")
 var Defer_ = load("res://reactivex/observable/defer.gd")
+var Case_ = load("res://reactivex/observable/case.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -47,6 +48,8 @@ func WinnerOf(observables : Array[Observable]) -> Observable:
 	return Amb_.amb_(observables)
 func BuildDeferred(factory : Callable = func(scheduler : SchedulerBase) -> Observable: return null) -> Observable:
 	return Defer_.defer_(factory)
+func SwitchCase(mapper : Callable, sources : Dictionary, default_source : Observable = null) -> Observable:
+	return Case_.case_(mapper, sources, default_source)
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
