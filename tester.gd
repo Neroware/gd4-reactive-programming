@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "10"
+@export var tests = "11"
 
 func _ready():
 	for i in tests.split(","):
@@ -78,3 +78,18 @@ func _test_10():
 	var obs4 = GDRx.WinnerOf(obs_arr)
 	
 	obs4.subscribe(func(__): print("[ReactiveX]: Test is only successful with ONE print!"))
+
+func __test_11_cb():
+	var count = RefValue.Set(0)
+	var funref = RefValue.Set()
+	var fun = func():
+		count.v += 1
+		print("> ", count.v)
+		if count.v < 10:
+			funref.v.call()
+	funref.v = fun
+	return fun
+func _test_11():
+	var count = RefValue.Set(0)
+	var fun = __test_11_cb()
+	fun.call()
