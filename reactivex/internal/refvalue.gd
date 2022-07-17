@@ -13,6 +13,9 @@ func _init(v : Variant = null):
 static func Set(v : Variant = null) -> RefValue:
 	return RefValue.new(v)
 
+static func Null() -> RefValue:
+	return RefValue.new()
+
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
 		print("Delete::RefValue")

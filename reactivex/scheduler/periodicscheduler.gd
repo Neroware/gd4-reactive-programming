@@ -10,7 +10,8 @@ func schedule_periodic(
 		var disp : MultipleAssignmentDisposable = MultipleAssignmentDisposable.new()
 		var seconds = period # to_seconds(period)
 		
-		var periodic : Callable = func(scheduler : SchedulerBase, state = null, periodic_ : Callable = func(__, ___, ____): return) -> Disposable:
+		var periodic_funref : RefValue = RefValue.Null()
+		var periodic : Callable = func(scheduler : SchedulerBase, state = null) -> Disposable:
 			if disp._is_disposed:
 				return null
 			
@@ -23,11 +24,10 @@ func schedule_periodic(
 				return
 			
 			var time = seconds - (scheduler.now() - now)
-			disp.set_disposable(scheduler.schedule_relative(time, periodic_.bind(periodic_), state))
+			disp.set_disposable(scheduler.schedule_relative(time, periodic_funref.v, state))
 			
 			return null
-		### Weird binding because durng definition, periodic() is still empty...
-		periodic = periodic.bind(periodic)
+		periodic_funref.v = periodic
 		
 		disp.set_disposable(self.schedule_relative(period, periodic, state))
 		return disp

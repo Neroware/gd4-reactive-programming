@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "11"
+@export var tests = "10"
 
 func _ready():
 	for i in tests.split(","):
@@ -93,3 +93,8 @@ func _test_11():
 	var count = RefValue.Set(0)
 	var fun = __test_11_cb()
 	fun.call()
+
+var __disp_12 : Disposable
+func _test_12():
+	var obs : Observable = GDRx.StartPeriodicTimer(3.0)
+	__disp_12 = obs.subscribe(func(i): print("[ReactiveX]: Killing subscription!") ; __disp_12.dispose())

@@ -97,7 +97,7 @@ _global_script_classes=[{
 "base": "ScheduledObserver",
 "class": &"ObserveOnObserver",
 "language": &"GDScript",
-"path": "res://reactivex/observer/observeronobserver.gd"
+"path": "res://reactivex/observer/observeonobserver.gd"
 }, {
 "base": "ObserverBase",
 "class": &"Observer",
