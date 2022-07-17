@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "10"
+@export var tests = "12"
 
 func _ready():
 	for i in tests.split(","):
@@ -41,7 +41,7 @@ func _test_5():
 	obs.subscribe(func(i): print("[ReactiveX]: Periodic Timer expired: " + str(i)))
 
 func _test_6():
-	var obs : Observable = GDRx.StartPeriodicTimerAfterTimespan(1.0, 5.0)
+	var obs : Observable = GDRx.StartPeriodicTimerAfterTimespan(5.0, 0.25)
 	obs.subscribe(func(i): print("[ReactiveX]: Periodic Timer expired: " + str(i)))
 
 func _test_7():
@@ -97,4 +97,12 @@ func _test_11():
 var __disp_12 : Disposable
 func _test_12():
 	var obs : Observable = GDRx.StartPeriodicTimer(3.0)
-	__disp_12 = obs.subscribe(func(i): print("[ReactiveX]: Killing subscription!") ; __disp_12.dispose())
+	__disp_12 = obs.subscribe(func(i): print("[ReactiveX]: Killing subscription!") ; __disp_12.dispose() ; __disp_12 = null)
+	
+
+func _test_13():
+	var foo = 0
+	var bar = func():
+		foo += 1
+	bar.call()
+	assert(foo == 0) # Succeeds...
