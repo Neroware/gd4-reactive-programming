@@ -14,6 +14,7 @@ static func observable_timer_date(duetime : float, scheduler : SchedulerBase = n
 	return Observable.new(subscribe)
 
 static func observable_timer_duetime_and_period(duetime : float, time_absolute : bool, period : float, scheduler : SchedulerBase = null, ) -> Observable:
+	var duetime_ref = RefValue.Set(duetime)
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
 		var _scheduler : SchedulerBase = null
 		if scheduler != null: _scheduler = scheduler
@@ -21,26 +22,26 @@ static func observable_timer_duetime_and_period(duetime : float, time_absolute :
 		else: _scheduler = TimeoutScheduler.singleton()
 		
 		if not time_absolute:
-			duetime = _scheduler.now() + duetime
+			duetime_ref.v = _scheduler.now() + duetime_ref.v
 		
 		var p = max(0.0, period)
 		var mad = MultipleAssignmentDisposable.new()
-		var dt = duetime
-		var count = 0
+		var dt = RefValue.Set(duetime_ref.v)
+		var count = RefValue.Set(0)
 		
-		var action = func(scheduler : SchedulerBase, state, action_, count_):
+		var action = func(scheduler : SchedulerBase, state, action_):
 			if p > 0.0:
 				var now = scheduler.now()
-				dt = dt + p
-				if dt <= now:
-					dt = now + p
+				dt.v = dt.v + p
+				if dt.v <= now:
+					dt.v = now + p
 			
-			observer.on_next(count_)
-			count_ += 1
-			mad.set_disposable(scheduler.schedule_absolute(dt, action_.bind(action_, count_)))
-		action = action.bind(action, count)
+			observer.on_next(count.v)
+			count.v += 1
+			mad.set_disposable(scheduler.schedule_absolute(dt.v, action_.bind(action_)))
+		action = action.bind(action)
 		
-		mad.set_disposable(_scheduler.schedule_absolute(dt, action))
+		mad.set_disposable(_scheduler.schedule_absolute(dt.v, action))
 		return mad
 	
 	return Observable.new(subscribe)
