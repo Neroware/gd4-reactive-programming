@@ -5,21 +5,21 @@ static func catch_with_generator_(sources : Callable) -> Observable:
 		
 		var subscription = SerialDisposable.new()
 		var cancelable = SerialDisposable.new()
-		var last_exception = null
-		var is_disposed = false
+		var last_exception = RefValue.Null()
+		var is_disposed = RefValue.Set(false)
 		
 		var action = func(scheduler : SchedulerBase, state = null, action_ : Callable = func(__, ___, ____): return):
 			var on_error = func(exn):
-				last_exception = exn
+				last_exception.v = exn
 				cancelable.set_disposable(_scheduler.schedule(action_.bind(action_)))
 			
-			if is_disposed:
+			if is_disposed.v:
 				return
 			
 			var current = sources.call()
 			if not current is Observable:
-				if last_exception != null:
-					observer.on_error(last_exception)
+				if last_exception.v != null:
+					observer.on_error(last_exception.v)
 				elif current is GDRx_Error.Error:
 					observer.on_error(current)
 				else:
@@ -38,7 +38,7 @@ static func catch_with_generator_(sources : Callable) -> Observable:
 		cancelable.set_disposable(_scheduler.schedule(action))
 		
 		var dispose = func():
-			is_disposed = true
+			is_disposed.v = true
 		
 		return CompositeDisposable.new([subscription, cancelable, Disposable.new(dispose)])
 	
