@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "15"
+@export var tests = "16"
 
 func _ready():
 	for i in tests.split(","):
@@ -123,7 +123,21 @@ func _test_15():
 	var obs1 : Observable = GDRx.StartPeriodicTimer(2.5)
 	var obs2 : Observable = GDRx.StartPeriodicTimer(10.0)
 	var obs3 : Observable = GDRx.StartTimespan(6.0)
-	var obs4 : Observable = GDRx.ConcatStreams([obs3, obs1, obs2])
+	var obs4 : Observable = GDRx.ReturnValue("foo")
+	var obs5 : Observable = GDRx.ConcatStreams([obs3, obs4, obs1, obs2])
+	obs5.subscribe(
+		func(i): print("[ReactiveX]: Concat is tested... Check: " + str(i)),
+		func(e): print("ERROR: ", e),
+		func(): print(":/")
+	)
+
+func _test_16():
+	var obs1 : Observable = GDRx.Throw(GDRx_Error.FactoryFailedException.new())
+	var obs2 : Observable = GDRx.StartPeriodicTimer(2.5)
+	var obs3 : Observable = GDRx.StartPeriodicTimer(100.0)
+	var obs4 : Observable = GDRx.CatchAndContinueWith([obs1, obs2, obs3])
 	obs4.subscribe(
-		func(i): print("[ReactiveX]: Concat ist tested... Check: " + str(i))
+		func(i): print("[ReactiveX]: Catch is tested... Check: " + str(i)),
+		func(e): print("ERROR: ", e),
+		func(): print(":/")
 	)

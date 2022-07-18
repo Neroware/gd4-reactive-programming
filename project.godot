@@ -12,7 +12,7 @@ _global_script_classes=[{
 "base": "IterableBase",
 "class": &"ArrayIterator",
 "language": &"GDScript",
-"path": "res://reactivex/internal/iterator.gd"
+"path": "res://reactivex/internal/arrayiterator.gd"
 }, {
 "base": "ObserverBase",
 "class": &"AutoDetachObserver",

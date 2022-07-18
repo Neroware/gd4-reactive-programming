@@ -1,4 +1,5 @@
 static func concat_with_iterable_(sources : IterableBase) -> Observable:
+	
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
 		var _scheduler = scheduler_ if scheduler_ != null else CurrentThreadScheduler.singleton()
 		
@@ -25,7 +26,7 @@ static func concat_with_iterable_(sources : IterableBase) -> Observable:
 				d.set_disposable(current.subscribe(
 					observer.on_next,
 					observer.on_error,
-					observer.on_completed,
+					on_completed,
 					scheduler_
 				))
 		action = action.bind(action)

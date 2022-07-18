@@ -27,7 +27,7 @@ func set_disposable(value : DisposableBase):
 	self._lock.unlock()
 	
 	if old != null:
-		old.dipose()
+		old.dispose()
 	
 	if should_dispose and value != null:
 		value.dispose()
