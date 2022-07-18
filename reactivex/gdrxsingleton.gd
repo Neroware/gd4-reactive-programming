@@ -27,8 +27,8 @@ var Heap_ = load("res://reactivex/internal/heap.gd")
 ### ======================================================================= ###
 #   Create an iterator onto a given array
 ### ======================================================================= ###
-func Iter(x : Array, start : int = 0, end : int = -1) -> Callable:
-	return ArrayIterator.iter(x, start, end)
+func Iter(x : Array, start : int = 0, end : int = -1) -> IterableBase:
+	return ArrayIterator.new(x, start, end)
 
 ### ======================================================================= ###
 #   Scheduler Singletons
@@ -59,7 +59,7 @@ func BuildDeferred(factory : Callable = func(scheduler : SchedulerBase) -> Obser
 func SwitchCase(mapper : Callable, sources : Dictionary, default_source : Observable = null) -> Observable:
 	return Case_.case_(mapper, sources, default_source)
 func CatchAndContinueWith(sources : Array[Observable]) -> Observable:
-	return Catch_.catch_with_generator_(Iter(sources))
+	return Catch_.catch_with_iterable_(Iter(sources))
 func CombineLatestOf(sources : Array[Observable]) -> Observable:
 	if sources.is_empty():
 		return Empty()
@@ -67,7 +67,7 @@ func CombineLatestOf(sources : Array[Observable]) -> Observable:
 		return sources[0]
 	return CombineLatest_.combine_latest_(sources)
 func ConcatStreams(sources : Array[Observable]) -> Observable:
-	return Concat_.concat_with_generator_(Iter(sources))
+	return Concat_.concat_with_iterable_(Iter(sources))
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)

@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "14"
+@export var tests = "15"
 
 func _ready():
 	for i in tests.split(","):
@@ -117,4 +117,13 @@ func _test_14():
 		func(i): print(">>> ", i) ; if i.at(0) >= 20: __disp_14.dispose(),
 		func(e): return,
 		func(): print(":)")
+	)
+
+func _test_15():
+	var obs1 : Observable = GDRx.StartPeriodicTimer(2.5)
+	var obs2 : Observable = GDRx.StartPeriodicTimer(10.0)
+	var obs3 : Observable = GDRx.StartTimespan(6.0)
+	var obs4 : Observable = GDRx.ConcatStreams([obs3, obs1, obs2])
+	obs4.subscribe(
+		func(i): print("[ReactiveX]: Concat ist tested... Check: " + str(i))
 	)

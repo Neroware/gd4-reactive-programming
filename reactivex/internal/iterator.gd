@@ -1,3 +1,4 @@
+extends IterableBase
 class_name ArrayIterator
 
 var _x : Array
@@ -19,5 +20,6 @@ func next() -> Variant:
 	self._index += 1
 	return self._x[self._index - 1]
 
-static func iter(x : Array, start : int = 0, end : int = -1) -> Callable:
-	return ArrayIterator.new(x, start, end).next
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("Delete::Iterator")

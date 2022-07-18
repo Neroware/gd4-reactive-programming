@@ -1,4 +1,4 @@
-static func concat_with_generator_(sources : Callable) -> Observable:
+static func concat_with_iterable_(sources : IterableBase) -> Observable:
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
 		var _scheduler = scheduler_ if scheduler_ != null else CurrentThreadScheduler.singleton()
 		
@@ -13,7 +13,7 @@ static func concat_with_generator_(sources : Callable) -> Observable:
 			var on_completed = func():
 				cancelable.set_disposable(_scheduler.schedule(action_.bind(action_)))
 			
-			var current = sources.call()
+			var current = sources.next()
 			if not current is Observable:
 				if current is GDRx_Error.Error:
 					observer.on_error(current)

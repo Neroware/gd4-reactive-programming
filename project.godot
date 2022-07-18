@@ -9,7 +9,7 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "RefCounted",
+"base": "IterableBase",
 "class": &"ArrayIterator",
 "language": &"GDScript",
 "path": "res://reactivex/internal/iterator.gd"
@@ -73,6 +73,11 @@ _global_script_classes=[{
 "class": &"ImmediateScheduler",
 "language": &"GDScript",
 "path": "res://reactivex/scheduler/immediatescheduler.gd"
+}, {
+"base": "RefCounted",
+"class": &"IterableBase",
+"language": &"GDScript",
+"path": "res://reactivex/abc/iterable.gd"
 }, {
 "base": "RefCounted",
 "class": &"Lock",
@@ -248,6 +253,7 @@ _global_script_class_icons={
 "GDRx_Error": "",
 "GDRx_Singleton": "",
 "ImmediateScheduler": "",
+"IterableBase": "",
 "Lock": "",
 "MultipleAssignmentDisposable": "",
 "Notification": "",

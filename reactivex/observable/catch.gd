@@ -1,4 +1,4 @@
-static func catch_with_generator_(sources : Callable) -> Observable:
+static func catch_with_iterable_(sources : IterableBase) -> Observable:
 	
 	var subscribe = func(observer : ObserverBase, scheduler_ : SchedulerBase = null) -> DisposableBase:
 		var _scheduler = scheduler_ if scheduler_ != null else CurrentThreadScheduler.singleton()
@@ -16,7 +16,7 @@ static func catch_with_generator_(sources : Callable) -> Observable:
 			if is_disposed.v:
 				return
 			
-			var current = sources.call()
+			var current = sources.next()
 			if not current is Observable:
 				if last_exception.v != null:
 					observer.on_error(last_exception.v)
