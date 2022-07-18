@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "RefCounted",
+"class": &"ArrayIterator",
+"language": &"GDScript",
+"path": "res://reactivex/internal/iterator.gd"
+}, {
 "base": "ObserverBase",
 "class": &"AutoDetachObserver",
 "language": &"GDScript",
@@ -230,6 +235,7 @@ _global_script_classes=[{
 "path": "res://reactivex/internal/weakrefdictionary.gd"
 }]
 _global_script_class_icons={
+"ArrayIterator": "",
 "AutoDetachObserver": "",
 "BooleanDisposable": "",
 "Comparable": "",

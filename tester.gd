@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "13"
+@export var tests = "14"
 
 func _ready():
 	for i in tests.split(","):
@@ -106,3 +106,15 @@ func _test_13():
 		foo += 1
 	bar.call()
 	assert(foo == 0) # Succeeds...
+
+var __disp_14 : Disposable
+func _test_14():
+	var obs1 : Observable = GDRx.StartPeriodicTimer(2.5)
+	var obs2 : Observable = GDRx.StartPeriodicTimer(10.0)
+	var obs3 : Observable = GDRx.StartPeriodicTimer(5.0)
+	var obs4 : Observable = GDRx.CombineLatestOf([obs1, obs2, obs3])
+	__disp_14 = obs4.subscribe(
+		func(i): print(">>> ", i) ; if i.at(0) >= 20: __disp_14.dispose(),
+		func(e): return,
+		func(): print(":)")
+	)

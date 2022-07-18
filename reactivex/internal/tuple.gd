@@ -6,6 +6,13 @@ var _x : Array
 func _init(x : Array):
 	self._x = x
 
+func _to_string():
+	var s = "( "
+	for elem in self._x:
+		s += str(elem) + " "
+	s += ")"
+	return s
+
 func at(i : int):
 	return _x[i]
 

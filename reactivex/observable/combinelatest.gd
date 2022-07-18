@@ -7,10 +7,10 @@ static func combine_latest_(sources : Array[Observable]) -> Observable:
 	) -> CompositeDisposable:
 		
 		var n = sources.size()
-		var has_value = [false] * n
+		var has_value = [] ; for __ in range(n): has_value.append(false)
 		var has_value_all = [false]
-		var is_done = [false] * n
-		var values = [null] * n
+		var is_done = [] ; for __ in range(n): is_done.append(false)
+		var values = [] ; for __ in range(n): values.append(null)
 		
 		var _next = func(i):
 			has_value[i] = true
@@ -19,12 +19,14 @@ static func combine_latest_(sources : Array[Observable]) -> Observable:
 				var res = Tuple.new(values)
 				observer.on_next(res)
 			
+			# I wish myself list arithmetic!
 			# elif all([x for j, x in enumerate(is_done) if j != i]):
 			else:
 				var completed = true
 				var j = 0
 				for x in is_done:
 					if j == i:
+						j += 1
 						continue
 					if not x:
 						completed = false
@@ -40,8 +42,7 @@ static func combine_latest_(sources : Array[Observable]) -> Observable:
 			if is_done.all(func(elem): return elem):
 				observer.on_completed()
 		
-		var subscriptions : Array[SingleAssignmentDisposable] = [null] * n
-		
+		var subscriptions = [] ; for __ in range(n): subscriptions.append(null)
 		var fun = func(i):
 			subscriptions[i] = SingleAssignmentDisposable.new()
 			

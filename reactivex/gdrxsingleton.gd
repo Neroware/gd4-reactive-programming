@@ -13,6 +13,8 @@ var Timer_ = load("res://reactivex/observable/timer.gd")
 var Defer_ = load("res://reactivex/observable/defer.gd")
 var Case_ = load("res://reactivex/observable/case.gd")
 var Catch_ = load("res://reactivex/observable/catch.gd")
+var CombineLatest_ = load("res://reactivex/observable/combinelatest.gd")
+var Concat_ = load("res://reactivex/observable/concat.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -22,6 +24,11 @@ var NotificationOnCompleted_ = load("res://reactivex/notification/oncompleted.gd
 ## Data Structures ##
 var Heap_ = load("res://reactivex/internal/heap.gd")
 
+### ======================================================================= ###
+#   Create an iterator onto a given array
+### ======================================================================= ###
+func Iter(x : Array, start : int = 0, end : int = -1) -> Callable:
+	return ArrayIterator.iter(x, start, end)
 
 ### ======================================================================= ###
 #   Scheduler Singletons
@@ -51,8 +58,16 @@ func BuildDeferred(factory : Callable = func(scheduler : SchedulerBase) -> Obser
 	return Defer_.defer_(factory)
 func SwitchCase(mapper : Callable, sources : Dictionary, default_source : Observable = null) -> Observable:
 	return Case_.case_(mapper, sources, default_source)
-func CatchAndContinueWith(sources : Callable) -> Observable:
-	return Catch_.catch_with_generator_(sources)
+func CatchAndContinueWith(sources : Array[Observable]) -> Observable:
+	return Catch_.catch_with_generator_(Iter(sources))
+func CombineLatestOf(sources : Array[Observable]) -> Observable:
+	if sources.is_empty():
+		return Empty()
+	if sources.size() == 1:
+		return sources[0]
+	return CombineLatest_.combine_latest_(sources)
+func ConcatStreams(sources : Array[Observable]) -> Observable:
+	return Concat_.concat_with_generator_(Iter(sources))
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
