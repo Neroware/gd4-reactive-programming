@@ -39,6 +39,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/conditionallock.gd"
 }, {
+"base": "Observable",
+"class": &"ConnectableObservable",
+"language": &"GDScript",
+"path": "res://reactivex/observable/connectableobservable.gd"
+}, {
 "base": "TrampolineScheduler",
 "class": &"CurrentThreadScheduler",
 "language": &"GDScript",
@@ -251,6 +256,7 @@ _global_script_class_icons={
 "Comparable": "",
 "CompositeDisposable": "",
 "ConditionalLock": "",
+"ConnectableObservable": "",
 "CurrentThreadScheduler": "",
 "Disposable": "",
 "DisposableBase": "",
