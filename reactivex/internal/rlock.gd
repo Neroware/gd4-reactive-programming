@@ -1,40 +1,32 @@
+extends LockBase
 class_name RLock
 
-var _blocking_thread : int
+var _aquired_thread
 var _counter : int
-var _lock : Mutex
+var _mutex : Mutex
 
 func _init():
-	_blocking_thread = -1
-	_counter = 0
-	_lock = Mutex.new()
+	self._aquired_thread = null
+	self._counter = 0
+	self._mutex = Mutex.new()
 
 func lock():
-	var id = OS.get_thread_caller_id()
-	while true:
-		self._lock.lock()
-		var can_continue = false
-		if self._counter == 0:
-			self._blocking_thread = id
-			self._counter = 1
-			can_continue = true
-		elif self._blocking_thread == id:
-			self._counter += 1
-			can_continue = true
-		self._lock.unlock()
-		
-		if can_continue: 
-			break
+	self._mutex.lock()
+	self._counter += 1
+	self._aquired_thread = OS.get_thread_caller_id()
 
 func unlock():
-	var id = OS.get_thread_caller_id()
-	self._lock.lock()
-	if self._counter > 0 and self._blocking_thread == id:
-		self._counter -= 1
-	self._lock.unlock()
+	self._counter -= 1
+	if self._counter < 0:
+		push_error("Warning! Only release RLock as many times as you aquire it!")
+		self._counter = 0
+		return
+	if self._counter == 0:
+		self._aquired_thread = null
+	self._mutex.unlock()
 
 func try_lock() -> bool:
-	return not (self._counter == 0 or self._blocking_thread == OS.get_thread_caller_id())
+	return self._mutex.try_lock() == OK
 
 func is_locking_thread() -> bool:
 	var id = OS.get_thread_caller_id()

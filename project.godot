@@ -79,10 +79,15 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/iterable.gd"
 }, {
-"base": "RefCounted",
+"base": "LockBase",
 "class": &"Lock",
 "language": &"GDScript",
 "path": "res://reactivex/internal/lock.gd"
+}, {
+"base": "RefCounted",
+"class": &"LockBase",
+"language": &"GDScript",
+"path": "res://reactivex/abc/lock.gd"
 }, {
 "base": "DisposableBase",
 "class": &"MultipleAssignmentDisposable",
@@ -149,7 +154,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/priorityqueue.gd"
 }, {
-"base": "RefCounted",
+"base": "LockBase",
 "class": &"RLock",
 "language": &"GDScript",
 "path": "res://reactivex/internal/rlock.gd"
@@ -255,6 +260,7 @@ _global_script_class_icons={
 "ImmediateScheduler": "",
 "IterableBase": "",
 "Lock": "",
+"LockBase": "",
 "MultipleAssignmentDisposable": "",
 "Notification": "",
 "Observable": "",
