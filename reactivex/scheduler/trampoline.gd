@@ -3,13 +3,13 @@ class_name Trampoline
 var _idle : bool
 var _queue : PriorityQueue
 var _lock : Lock
-var _condition : ConditionalLock
+var _condition : ConditionalVariable
 
 func _init():
 	self._idle = true
 	self._queue = PriorityQueue.new()
 	self._lock = Lock.new()
-	self._condition = ConditionalLock.new(self._lock)
+	self._condition = ConditionalVariable.new(self._lock)
 
 func idle() -> bool:
 	var ret : bool

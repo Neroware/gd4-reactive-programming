@@ -35,9 +35,9 @@ _global_script_classes=[{
 "path": "res://reactivex/disposable/compositedisposable.gd"
 }, {
 "base": "RefCounted",
-"class": &"ConditionalLock",
+"class": &"ConditionalVariable",
 "language": &"GDScript",
-"path": "res://reactivex/internal/conditionallock.gd"
+"path": "res://reactivex/internal/conditionalvariable.gd"
 }, {
 "base": "Observable",
 "class": &"ConnectableObservable",
@@ -255,7 +255,7 @@ _global_script_class_icons={
 "BooleanDisposable": "",
 "Comparable": "",
 "CompositeDisposable": "",
-"ConditionalLock": "",
+"ConditionalVariable": "",
 "ConnectableObservable": "",
 "CurrentThreadScheduler": "",
 "Disposable": "",

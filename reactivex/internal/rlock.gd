@@ -15,7 +15,7 @@ func lock():
 	self._mutex.lock()
 	while self._counter > 0 and self._aquired_thread != id:
 		self._mutex.unlock()
-		OS.delay_usec(randi() % 10)
+		OS.delay_usec((randi() % 10) + 1)
 		self._mutex.lock()
 	self._aquired_thread = id
 	self._counter += 1

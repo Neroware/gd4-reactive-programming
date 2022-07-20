@@ -12,7 +12,7 @@ func lock():
 	self._mutex.lock()
 	while self._aquired_thread != null:
 		self._mutex.unlock()
-		OS.delay_usec(randi() % 10)
+		OS.delay_usec((randi() % 10) + 1)
 		self._mutex.lock()
 	self._aquired_thread = OS.get_thread_caller_id()
 	self._mutex.unlock()
