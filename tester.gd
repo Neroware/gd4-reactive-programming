@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "14"
+@export var tests = "17"
 
 func _ready():
 	for i in tests.split(","):
@@ -142,10 +142,21 @@ func _test_16():
 		func(): print(":/")
 	)
 
+var m : RLock
 func _test_17():
-	var lock : LockBase = RLock.new()
-	lock.lock()
-	#lock.lock()
-	print(">>> ", lock.is_locking_thread() , " ;; ", lock.try_lock())
-	lock.unlock()
-	#lock.unlock()
+	m = RLock.new()
+	m.lock()
+	var t = Thread.new()
+	t.start(_test_17_thread2)
+	m.lock()
+	print("World!")
+	m.unlock()
+	m.unlock()
+	t.wait_to_finish()
+	pass
+
+func _test_17_thread2() -> int:
+	m.lock()
+	print("Hello, ")
+	m.unlock()
+	return 0

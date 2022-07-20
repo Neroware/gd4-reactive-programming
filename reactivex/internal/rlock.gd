@@ -11,23 +11,39 @@ func _init():
 	self._mutex = Mutex.new()
 
 func lock():
+	var id = OS.get_thread_caller_id()
 	self._mutex.lock()
+	while self._counter > 0 and self._aquired_thread != id:
+		self._mutex.unlock()
+		OS.delay_usec(randi() % 10)
+		self._mutex.lock()
+	self._aquired_thread = id
 	self._counter += 1
-	self._aquired_thread = OS.get_thread_caller_id()
+	self._mutex.unlock()
 
 func unlock():
-	self._counter -= 1
-	if self._counter < 0:
-		push_error("Warning! Only release RLock as many times as you aquire it!")
-		self._counter = 0
+	self._mutex.lock()
+	if self._counter == 0:
+		push_error("RLock has not been aquired by any thread yet!")
+		self._mutex.unlock()
 		return
+	self._counter -= 1
 	if self._counter == 0:
 		self._aquired_thread = null
 	self._mutex.unlock()
 
 func try_lock() -> bool:
-	return self._mutex.try_lock() == OK
+	var result : bool
+	var id = OS.get_thread_caller_id()
+	self._mutex.lock()
+	result = self._counter == 0 or self._aquired_thread == id
+	self._mutex.unlock()
+	return result
 
 func is_locking_thread() -> bool:
 	var id = OS.get_thread_caller_id()
-	return self._aquired_thread == id
+	var result : bool
+	self._mutex.lock()
+	result = self._counter > 0 and self._aquired_thread == id
+	self._mutex.unlock()
+	return result

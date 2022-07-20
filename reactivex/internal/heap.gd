@@ -30,7 +30,7 @@ static func heappushpop(heap : Array[Comparable], item):
 
 static func heapify(x : Array[Comparable]):
 	var n = len(x)
-	var rang_ = range(int(n / 2.0)).reverse()
+	var rang_ = range(int(n / 2.0)) ; rang_.reverse()
 	for i in rang_:
 		_siftup(x, i)
 

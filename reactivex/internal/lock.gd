@@ -12,20 +12,28 @@ func lock():
 	self._mutex.lock()
 	while self._aquired_thread != null:
 		self._mutex.unlock()
-		# Wait !!?
-		# await GDRx.get_tree().create_timer(1.0 / 60.0).timeout
+		OS.delay_usec(randi() % 10)
 		self._mutex.lock()
 	self._aquired_thread = OS.get_thread_caller_id()
 	self._mutex.unlock()
 
 func unlock():
 	self._mutex.lock()
+	if self._aquired_thread == null:
+		push_error("Lock was released but nobody aquired it!")
 	self._aquired_thread = null
 	self._mutex.unlock()
 
 func try_lock() -> bool:
-	return self._aquired_thread == null
+	var result : bool
+	self._mutex.lock()
+	result = self._aquired_thread == null
+	self._mutex.unlock()
+	return result
 
 func is_locking_thread() -> bool:
-	var id = OS.get_thread_caller_id()
-	return self._aquired_thread == id
+	var result : bool
+	self._mutex.lock()
+	result = OS.get_thread_caller_id() == self._aquired_thread
+	self._mutex.unlock()
+	return result
