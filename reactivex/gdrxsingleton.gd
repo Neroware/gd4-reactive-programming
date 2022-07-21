@@ -21,6 +21,7 @@ var FromIterable_ = load("res://reactivex/observable/fromiterable.gd")
 var Generate_ = load("res://reactivex/observable/generate.gd")
 var GenerateWithRealtiveTime_ = load("res://reactivex/observable/generatewithrelativetime.gd")
 var IfThen_ = load("res://reactivex/observable/ifthen.gd")
+var Interval_ = load("res://reactivex/observable/interval.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -91,6 +92,8 @@ func IfThenElse(then_source : Observable, else_source : Observable, condition : 
 func IfThen(then_source : Observable, condition : Callable = func() -> bool: return true) -> Observable:
 	return IfThen_.if_then_(then_source, null, condition)
 ## Timers ##
+func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
+	return Interval_.interval_(period_sec, scheduler)
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
 func StartPeriodicTimer(period_sec : float) -> Observable:
