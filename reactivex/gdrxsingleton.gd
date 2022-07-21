@@ -22,6 +22,7 @@ var Generate_ = load("res://reactivex/observable/generate.gd")
 var GenerateWithRealtiveTime_ = load("res://reactivex/observable/generatewithrelativetime.gd")
 var IfThen_ = load("res://reactivex/observable/ifthen.gd")
 var Interval_ = load("res://reactivex/observable/interval.gd")
+var OnErrorResumeNext_ = load("res://reactivex/observable/onerrorresumenext.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -91,6 +92,8 @@ func IfThenElse(then_source : Observable, else_source : Observable, condition : 
 	return IfThen_.if_then_(then_source, else_source, condition)
 func IfThen(then_source : Observable, condition : Callable = func() -> bool: return true) -> Observable:
 	return IfThen_.if_then_(then_source, null, condition)
+func ResumeAfterTerminationWith(sources : Array) -> Observable:
+	return OnErrorResumeNext_.on_error_resume_next_(sources)
 ## Timers ##
 func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
 	return Interval_.interval_(period_sec, scheduler)
