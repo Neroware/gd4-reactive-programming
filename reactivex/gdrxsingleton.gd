@@ -20,6 +20,7 @@ var FromCallback_ = load("res://reactivex/observable/fromcallback.gd")
 var FromIterable_ = load("res://reactivex/observable/fromiterable.gd")
 var Generate_ = load("res://reactivex/observable/generate.gd")
 var GenerateWithRealtiveTime_ = load("res://reactivex/observable/generatewithrelativetime.gd")
+var IfThen_ = load("res://reactivex/observable/ifthen.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -85,6 +86,10 @@ func GenerateFrom(initial_state, condition : Callable, iterate : Callable) -> Ob
 	return Generate_.generate_(initial_state, condition, iterate)
 func GenerateWithRealtiveTime(initial_state, condition : Callable, iterate : Callable, time_mapper : Callable) -> Observable:
 	return GenerateWithRealtiveTime_.generate_with_relative_time_(initial_state, condition, iterate, time_mapper)
+func IfThenElse(then_source : Observable, else_source : Observable, condition : Callable = func() -> bool: return true) -> Observable:
+	return IfThen_.if_then_(then_source, else_source, condition)
+func IfThen(then_source : Observable, condition : Callable = func() -> bool: return true) -> Observable:
+	return IfThen_.if_then_(then_source, null, condition)
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
