@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "19"
+@export var tests = "20"
 
 func _ready():
 	for i in tests.split(","):
@@ -180,3 +180,7 @@ func _test_19():
 		func(e): print("ERROR: ", e),
 		func(): print(":)")
 	)
+
+func _test_20():
+	var obs : Observable = GDRx.FromRange(0, 42, 3)
+	obs.subscribe(func(i): print("[ReactiveX]: Next " + str(i)))
