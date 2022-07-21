@@ -18,6 +18,7 @@ var Concat_ = load("res://reactivex/observable/concat.gd")
 var ForkJoin_ = load("res://reactivex/observable/forkjoin.gd")
 var FromCallback_ = load("res://reactivex/observable/fromcallback.gd")
 var FromIterable_ = load("res://reactivex/observable/fromiterable.gd")
+var Generate_ = load("res://reactivex/observable/generate_.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -79,6 +80,8 @@ func FromArray(array : Array) -> Observable:
 	return FromIterable_.from_iterable_(Iter(array))
 func FromIterable(iterable : IterableBase) -> Observable:
 	return FromIterable_.from_iterable_(iterable)
+func GenerateFrom(initial_state, condition : Callable, iterate : Callable) -> Observable:
+	return Generate_.generate_(initial_state, condition, iterate)
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
