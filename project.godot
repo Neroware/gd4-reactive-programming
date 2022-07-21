@@ -74,6 +74,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/gdrxsingleton.gd"
 }, {
+"base": "Observable",
+"class": &"GroupedObservable",
+"language": &"GDScript",
+"path": "res://reactivex/observable/groupedobservable.gd"
+}, {
 "base": "Scheduler",
 "class": &"ImmediateScheduler",
 "language": &"GDScript",
@@ -263,6 +268,7 @@ _global_script_class_icons={
 "GDRx_Basic": "",
 "GDRx_Error": "",
 "GDRx_Singleton": "",
+"GroupedObservable": "",
 "ImmediateScheduler": "",
 "IterableBase": "",
 "Lock": "",
