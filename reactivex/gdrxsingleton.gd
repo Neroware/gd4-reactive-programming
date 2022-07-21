@@ -15,6 +15,8 @@ var Case_ = load("res://reactivex/observable/case.gd")
 var Catch_ = load("res://reactivex/observable/catch.gd")
 var CombineLatest_ = load("res://reactivex/observable/combinelatest.gd")
 var Concat_ = load("res://reactivex/observable/concat.gd")
+var ForkJoin_ = load("res://reactivex/observable/forkjoin.gd")
+var FromCallback_ = load("res://reactivex/observable/fromcallback.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -68,6 +70,10 @@ func CombineLatestOf(sources : Array[Observable]) -> Observable:
 	return CombineLatest_.combine_latest_(sources)
 func ConcatStreams(sources : Array[Observable]) -> Observable:
 	return Concat_.concat_with_iterable_(Iter(sources))
+func ForkJoin(sources : Array[Observable]) -> Observable:
+	return ForkJoin_.fork_join_(sources)
+func BuildFromCallback(args : Array, cb : Callable) -> Callable:
+	return FromCallback_.from_callback_(args, cb)
 ## Timers ##
 func StartTimespan(timespan_sec : float) -> Observable:
 	return Timer_.timer_(timespan_sec, false)
