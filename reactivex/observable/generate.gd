@@ -13,18 +13,18 @@ static func generate_(
 		var state = RefValue.Set(initial_state)
 		var mad = MultipleAssignmentDisposable.new()
 		
-		var action = func(scheduler : SchedulerBase, state, action_ : Callable):
+		var action = func(scheduler : SchedulerBase, state1, action_ : Callable):
 			var has_result = false
 			var result = null
 			
 			if first.v:
 				first.v = false
 			else:
-				state = iterate.call(state)
+				state.v = iterate.call(state.v)
 			
-			has_result = condition.call(state)
+			has_result = condition.call(state.v)
 			if has_result:
-				result = state
+				result = state.v
 			
 			if result is GDRx_Error.Error:
 				observer.on_error(result)
