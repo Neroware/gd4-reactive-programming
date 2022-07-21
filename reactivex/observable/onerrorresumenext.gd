@@ -38,7 +38,7 @@ static func on_error_resume_next_(
 				on_resume
 			))
 		
-		cancelable.set_disposable(scheduler.schedule(action.bind(action)))
+		cancelable.set_disposable(scheduler_.schedule(action.bind(action)))
 		return CompositeDisposable.new([subscription, cancelable])
 	
 	return Observable.new(subscribe)

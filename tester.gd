@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "18"
+@export var tests = "19"
 
 func _ready():
 	for i in tests.split(","):
@@ -164,6 +164,18 @@ func _test_17_thread2() -> int:
 func _test_18():
 	var obs1 : Observable = GDRx.FromArray([42, "Aloha", StreamItem.Unit(), 256])
 	obs1.subscribe(
+		func(i): print("[ReactiveX]: Next " + str(i)),
+		func(e): print("ERROR: ", e),
+		func(): print(":)")
+	)
+
+func _test_19():
+	var obs1 : Observable = GDRx.ReturnValue(42)
+	var obs2 : Observable = GDRx.Throw(GDRx_Error.BadMappingException.new())
+	var obs3 : Observable = GDRx.Throw(GDRx_Error.Error.new("Sabotage!"))
+	var obs4 : Observable = GDRx.ReturnValue(":)")
+	var obs5 : Observable = GDRx.ResumeAfterTerminationWith([obs1, obs2, obs3, obs4])
+	obs5.subscribe(
 		func(i): print("[ReactiveX]: Next " + str(i)),
 		func(e): print("ERROR: ", e),
 		func(): print(":)")
