@@ -37,3 +37,9 @@ func is_locking_thread() -> bool:
 	result = OS.get_thread_caller_id() == self._aquired_thread
 	self._mutex.unlock()
 	return result
+
+func _unlock_and_store_recursion_depth():
+	self.unlock()
+
+func _lock_and_restore_recursion_depth():
+	self.lock()

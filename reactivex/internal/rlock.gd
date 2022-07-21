@@ -47,3 +47,22 @@ func is_locking_thread() -> bool:
 	result = self._counter > 0 and self._aquired_thread == id
 	self._mutex.unlock()
 	return result
+
+# Internal interface to free the lock even though it was aquired more than once
+var _saved_recursion_depth : Dictionary
+
+func _unlock_and_store_recursion_depth():
+	var id = OS.get_thread_caller_id()
+	self._mutex.lock()
+	self._saved_recursion_depth[id] = self._counter
+	self._counter = 0
+	self._aquired_thread = null
+	self._mutex.unlock()
+
+func _lock_and_restore_recursion_depth():
+	self.lock()
+	var id = OS.get_thread_caller_id()
+	self._mutex.lock()
+	self._counter = self._saved_recursion_depth[id]
+	self._aquired_thread = id
+	self._mutex.unlock()

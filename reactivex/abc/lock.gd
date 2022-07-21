@@ -13,3 +13,9 @@ func try_lock() -> bool:
 func is_locking_thread() -> bool:
 	push_error("Not implemented here!")
 	return false
+
+func _unlock_and_store_recursion_depth():
+	push_error("Not implemented here!")
+
+func _lock_and_restore_recursion_depth():
+	push_error("Not implemented here!")
