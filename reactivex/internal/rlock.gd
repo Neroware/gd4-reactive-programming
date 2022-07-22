@@ -60,9 +60,9 @@ func _unlock_and_store_recursion_depth():
 	self._mutex.unlock()
 
 func _lock_and_restore_recursion_depth():
+	self._mutex.lock()
 	self.lock()
 	var id = OS.get_thread_caller_id()
-	self._mutex.lock()
 	self._counter = self._saved_recursion_depth[id]
 	self._aquired_thread = id
 	self._mutex.unlock()
