@@ -25,6 +25,7 @@ var Interval_ = load("res://reactivex/observable/interval.gd")
 var OnErrorResumeNext_ = load("res://reactivex/observable/onerrorresumenext.gd")
 var Range_ = load("res://reactivex/observable/range.gd")
 var Using_ = load("res://reactivex/observable/using.gd")
+var WithLatestFrom_ = load("res://reactivex/observable/withlatestfrom.gd")
 ## Operators ##
 var AmbOp_ = load("res://reactivex/operators/amb_.gd")
 ## Notifications ##
@@ -103,6 +104,8 @@ func BuildUsing(
 		observable_factory : Callable = func(disp : DisposableBase) -> DisposableBase: return GDRx.Empty()
 	) -> Observable:
 		return Using_.using_(resource_factory, observable_factory)
+func WithLatestFrom(parent : Observable, sources : Array[Observable]) -> Observable:
+	return WithLatestFrom_.with_latest_from_(parent, sources)
 ## Timers ##
 func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
 	return Interval_.interval_(period_sec, scheduler)
