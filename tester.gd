@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "21"
+@export var tests = "22"
 
 func _ready():
 	for i in tests.split(","):
@@ -191,4 +191,12 @@ func _test_21():
 	var obs_c2 = GDRx.StartPeriodicTimer(0.25)
 	var children : Array[Observable] = [obs_c1, obs_c2]
 	var obs = GDRx.WithLatestFrom(obs_p, children)
+	obs.subscribe(func(i): print("[ReactiveX]: " + str(i)))
+
+func _test_22():
+	var obs1 = GDRx.StartPeriodicTimer(2.0)
+	var obs2 = GDRx.StartPeriodicTimer(0.5)
+	var obs3 = GDRx.StartPeriodicTimer(1.0)
+	var children : Array[Observable] = [obs1, obs2, obs3]
+	var obs = GDRx.Zip(children)
 	obs.subscribe(func(i): print("[ReactiveX]: " + str(i)))
