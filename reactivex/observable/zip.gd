@@ -11,9 +11,7 @@ static func zip_(sources : Array[Observable]) -> Observable:
 		
 		var next_ = func(i : int):
 			lock.lock()
-			var all_ = true
-			for q in queues: if q.size() == 0: all_ = false ; break
-			if all_:
+			if queues.all(func(x): return x.size() > 0):
 				var queued_values = [] ; for x in queues: queued_values.append(x.pop_front())
 				var res = Tuple.new(queued_values)
 				

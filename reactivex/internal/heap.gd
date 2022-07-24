@@ -6,7 +6,7 @@ static func heappush(heap : Array[Comparable], item):
 	_siftdown(heap, 0, len(heap) - 1)
 
 static func heappop(heap : Array[Comparable]):
-	var lastelt = heap.pop_front()
+	var lastelt = heap.pop_back()
 	if heap != null and not heap.is_empty():
 		var returnitem = heap[0]
 		heap[0] = lastelt
@@ -34,27 +34,12 @@ static func heapify(x : Array[Comparable]):
 	for i in rang_:
 		_siftup(x, i)
 
-static func _heappop_max(heap : Array[Comparable]):
-	var lastelt = heap.pop_front()
-	if heap != null and not heap.is_empty():
-		var returnitem = heap[0]
-		heap[0] = lastelt
-		_siftup_max(heap, 0)
-		return returnitem
-	return lastelt
-
-static func _heapreplace_max(heap : Array[Comparable], item):
-	var returnitem = heap[0]
-	heap[0] = item
-	_siftup_max(heap, 0)
-	return returnitem
-
 static func _siftdown(heap : Array[Comparable], startpos, pos):
 	var newitem = heap[pos]
 	while pos > startpos:
 		var parentpos = (pos - 1) >> 1
 		var parent = heap[parentpos]
-		if newitem < parent:
+		if newitem.lt(parent):
 			pos = parentpos
 			continue
 		break
@@ -74,30 +59,3 @@ static func _siftup(heap : Array[Comparable], pos):
 		childpos = 2 * pos + 1
 	heap[pos] = newitem
 	_siftdown(heap, startpos, pos)
-
-static func _siftdown_max(heap : Array[Comparable], startpos, pos):
-	var newitem = heap[pos]
-	while pos > startpos:
-		var parentpos = (pos - 1) >> 1
-		var parent = heap[parentpos]
-		if parent < newitem:
-			heap[pos] = parent
-			pos = parentpos
-			continue
-		break
-	heap[pos] = newitem
-
-static func _siftup_max(heap : Array[Comparable], pos):
-	var endpos = len(heap)
-	var startpos = pos
-	var newitem = heap[pos]
-	var childpos = 2 * pos + 1
-	while childpos < endpos:
-		var rightpos = childpos + 1
-		if rightpos < endpos and not heap[rightpos].lt(heap[childpos]):
-			childpos = rightpos
-		heap[pos] = heap[childpos]
-		pos = childpos
-		childpos = 2 * pos + 1
-	heap[pos] = newitem
-	_siftdown_max(heap, startpos, pos)

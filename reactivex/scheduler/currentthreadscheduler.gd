@@ -29,7 +29,7 @@ func _init():
 func get_trampoline() -> Trampoline:
 	var thread = OS.get_thread_caller_id()
 	var tramp = self._tramps.get(thread)
-	if thread == null:
+	if tramp == null:
 		tramp = Trampoline.new()
 		self._tramps[thread] = tramp
 	return tramp

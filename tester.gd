@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "22"
+@export var tests = "23"
 
 func _ready():
 	for i in tests.split(","):
@@ -200,3 +200,15 @@ func _test_22():
 	var children : Array[Observable] = [obs1, obs2, obs3]
 	var obs = GDRx.Zip(children)
 	obs.subscribe(func(i): print("[ReactiveX]: " + str(i)))
+
+func _test_23():
+	var obs1 = GDRx.ReturnValue("Foo")
+	var obs2 = GDRx.ReturnValue("Bar")
+	var obs3 = GDRx.ReturnValue("42")
+	var children : Array[Observable] = [obs1, obs2, obs3]
+	var obs = GDRx.Zip(children)
+	obs.subscribe(func(i): print("[ReactiveX]: " + str(i)), func(e): print("!"), func(): print(":)"))
+
+#func _test_24():
+#	var arr = [[1], [1, 2], [1, 2, 3]]
+#	print(">>> ", arr.all(func(x): print("> ", x) ; return x.size() > 0))

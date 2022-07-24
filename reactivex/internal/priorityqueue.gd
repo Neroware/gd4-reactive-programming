@@ -2,7 +2,7 @@ class_name PriorityQueue
 
 var _Heap = GDRx.Heap_
 
-const MIN_COUNT = 65536 # Maybe 9223372036854775807 ?
+const MIN_COUNT = 0 #65536 # Maybe 9223372036854775807 ?
 
 var _items : Array[Comparable]
 var _count : int
@@ -28,10 +28,9 @@ func enqueue(item):
 	self._count += 1
 
 func remove(item) -> bool:
-	var index = -1
-	for _item in self._items:
-		index += 1
-		if _item.at(0) == item:
+	for index in range(self._items.size()):
+		var _item = self._items[index]
+		if self._item.at(0) == item:
 			self._items.pop_at(index)
 			_Heap.heapify(self._items)
 			return true

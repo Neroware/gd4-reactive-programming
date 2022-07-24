@@ -23,19 +23,19 @@ func gt(other) -> bool:
 	if not other is Tuple:
 		return false
 	if _x[0] is Comparable:
-		return _x[0].gt(other[0])
-	return _x[0] > other[0]
+		return _x[0].gt(other.at(0))
+	return _x[0] > other.at(0)
 
 func eq(other) -> bool:
 	if not other is Tuple:
 		return false
 	if _x[0] is Comparable:
-		return _x[0].eq(other[0])
-	return _x[0] == other[0]
+		return _x[0].eq(other.at(0))
+	return _x[0] == other.at(0)
 
 func lt(other) -> bool:
 	if not other is Tuple:
 		return false
 	if _x[0] is Comparable:
-		return _x[0].lt(other[0])
-	return _x[0] < other[0]
+		return _x[0].lt(other.at(0))
+	return _x[0] < other.at(0)
