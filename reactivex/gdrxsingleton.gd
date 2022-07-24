@@ -28,7 +28,7 @@ var Using_ = load("res://reactivex/observable/using.gd")
 var WithLatestFrom_ = load("res://reactivex/observable/withlatestfrom.gd")
 var Zip_ = load("res://reactivex/observable/zip.gd")
 ## Operators ##
-var AmbOp_ = load("res://reactivex/operators/amb_.gd")
+var AmbOp_ = load("res://reactivex/operators/_amb.gd")
 ## Notifications ##
 var NotificationOnNext_ = load("res://reactivex/notification/onnext.gd")
 var NotificationOnError_ = load("res://reactivex/notification/onerror.gd")
