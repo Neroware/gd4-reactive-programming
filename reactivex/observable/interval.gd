@@ -3,4 +3,4 @@ static func interval_(
 	scheduler : SchedulerBase = null
 ) -> ObservableBase:
 	
-	return GDRx.Timer_.timer_(period, period, scheduler)
+	return GDRx._Timer_.timer_(period, period, scheduler)
