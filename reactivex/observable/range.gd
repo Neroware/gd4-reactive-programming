@@ -43,7 +43,7 @@ static func range_(
 					action_.bind(action_), iterator
 				))
 		
-		sd.set_disposable(_scheduler.schedule(action.bind(action), GDRx.Iter(range_t)))
+		sd.set_disposable(_scheduler.schedule(action.bind(action), GDRx_Util.Iter(range_t)))
 		return sd
 	
 	return Observable.new(subscribe)

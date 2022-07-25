@@ -51,3 +51,91 @@ func subscribe(
 			set_disposable.call()
 		
 		return Disposable.new(auto_detach_observer.dispose)
+
+func pipe0() -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([]))
+
+func pipe1(__fn1 : Callable) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1]))
+
+func pipe2(
+	__fn1 : Callable,
+	__fn2 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2]))
+
+func pipe3( 
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3]))
+
+func pipe4( 
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4]))
+
+func pipe5(
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable,
+	__fn5 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5]))
+
+func pipe6(
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable,
+	__fn5 : Callable,
+	__fn6 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6]))
+
+func pipe7(
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable,
+	__fn5 : Callable,
+	__fn6 : Callable,
+	__fn7 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7]))
+
+func pipe8( 
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable,
+	__fn5 : Callable,
+	__fn6 : Callable,
+	__fn7 : Callable,
+	__fn8 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7, __fn8]))
+
+func pipe9(
+	__fn1 : Callable,
+	__fn2 : Callable,
+	__fn3 : Callable,
+	__fn4 : Callable,
+	__fn5 : Callable,
+	__fn6 : Callable,
+	__fn7 : Callable,
+	__fn8 : Callable,
+	__fn9 : Callable
+) -> Variant:
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7, __fn8, __fn9]))
+
+func pipea(arr : Array):
+	return GDRx_Pipe.pipe(self, GDRx_Util.Iter(arr))
+
+func pipe(fns : IterableBase) -> Variant:
+	return GDRx_Pipe.compose(fns).call(self)

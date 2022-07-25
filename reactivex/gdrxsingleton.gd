@@ -27,20 +27,16 @@ var _Range_ = load("res://reactivex/observable/range.gd")
 var _Using_ = load("res://reactivex/observable/using.gd")
 var _WithLatestFrom_ = load("res://reactivex/observable/withlatestfrom.gd")
 var _Zip_ = load("res://reactivex/observable/zip.gd")
+var _RepeatValue_ = load("res://reactivex/observable/repeat.gd")
 ## Operators ##
 var _AmbOp_ = load("res://reactivex/operators/_amb.gd")
+var _RepeatOp_ = load("res://reactivex/operators/_repeat.gd")
 ## Notifications ##
 var NotificationOnNext_ = load("res://reactivex/notification/onnext.gd")
 var NotificationOnError_ = load("res://reactivex/notification/onerror.gd")
 var NotificationOnCompleted_ = load("res://reactivex/notification/oncompleted.gd")
 ## Data Structures ##
 var Heap_ = load("res://reactivex/internal/heap.gd")
-
-### ======================================================================= ###
-#   Create an iterator onto a given array
-### ======================================================================= ###
-func Iter(x : Array, start : int = 0, end : int = -1) -> IterableBase:
-	return ArrayIterator.new(x, start, end)
 
 ### ======================================================================= ###
 #   Scheduler Singletons
@@ -71,7 +67,7 @@ func BuildDeferred(factory : Callable = func(scheduler : SchedulerBase) -> Obser
 func SwitchCase(mapper : Callable, sources : Dictionary, default_source : Observable = null) -> Observable:
 	return _Case_.case_(mapper, sources, default_source)
 func CatchAndContinueWith(sources : Array[Observable]) -> Observable:
-	return _Catch_.catch_with_iterable_(Iter(sources))
+	return _Catch_.catch_with_iterable_(GDRx_Util.Iter(sources))
 func CombineLatestOf(sources : Array[Observable]) -> Observable:
 	if sources.is_empty():
 		return Empty()
@@ -79,13 +75,15 @@ func CombineLatestOf(sources : Array[Observable]) -> Observable:
 		return sources[0]
 	return _CombineLatest_.combine_latest_(sources)
 func ConcatStreams(sources : Array[Observable]) -> Observable:
-	return _Concat_.concat_with_iterable_(Iter(sources))
+	return _Concat_.concat_with_iterable_(GDRx_Util.Iter(sources))
+func ConcatStreamsWithIterable(sources : IterableBase) -> Observable:
+	return _Concat_.concat_with_iterable_(sources)
 func ForkJoin(sources : Array[Observable]) -> Observable:
 	return _ForkJoin_.fork_join_(sources)
 func BuildFromCallback(args : Array, cb : Callable) -> Callable:
 	return _FromCallback_.from_callback_(args, cb)
 func FromArray(array : Array) -> Observable:
-	return _FromIterable_.from_iterable_(Iter(array))
+	return _FromIterable_.from_iterable_(GDRx_Util.Iter(array))
 func FromIterable(iterable : IterableBase) -> Observable:
 	return _FromIterable_.from_iterable_(iterable)
 func GenerateFrom(initial_state, condition : Callable, iterate : Callable) -> Observable:
@@ -109,6 +107,8 @@ func WithLatestFrom(parent : Observable, sources : Array[Observable]) -> Observa
 	return _WithLatestFrom_.with_latest_from_(parent, sources)
 func Zip(sources : Array[Observable]) -> Observable:
 	return _Zip_.zip_(sources)
+func RepeatValue(value, repeat_count = null) -> Observable:
+	return _RepeatValue_.repeat_value_(value, repeat_count)
 ## Timers ##
 func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
 	return _Interval_.interval_(period_sec, scheduler)

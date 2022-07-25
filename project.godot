@@ -69,6 +69,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/errors.gd"
 }, {
+"base": "RefCounted",
+"class": &"GDRx_Pipe",
+"language": &"GDScript",
+"path": "res://reactivex/pipe.gd"
+}, {
 "base": "Node",
 "class": &"GDRx_Singleton",
 "language": &"GDScript",
@@ -272,6 +277,7 @@ _global_script_class_icons={
 "DisposableBase": "",
 "GDRx_Basic": "",
 "GDRx_Error": "",
+"GDRx_Pipe": "",
 "GDRx_Singleton": "",
 "GDRx_Util": "",
 "GroupedObservable": "",

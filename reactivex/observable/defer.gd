@@ -1,4 +1,4 @@
-func defer_(factory : Callable = func(scheduler : SchedulerBase) -> Observable: return null) -> Observable:
+static func defer_(factory : Callable = func(scheduler : SchedulerBase) -> Observable: return null) -> Observable:
 	
 	var subscribe = func(
 		observer : ObserverBase, 
