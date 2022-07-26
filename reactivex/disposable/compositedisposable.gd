@@ -6,7 +6,7 @@ var _is_disposed : bool
 var _lock : RLock
 
 
-func _init(args):
+func _init(args = []):
 	if args is Array:
 		self._disposable = args
 	else:

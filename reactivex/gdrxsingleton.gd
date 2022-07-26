@@ -28,9 +28,11 @@ var _Using_ = load("res://reactivex/observable/using.gd")
 var _WithLatestFrom_ = load("res://reactivex/observable/withlatestfrom.gd")
 var _Zip_ = load("res://reactivex/observable/zip.gd")
 var _RepeatValue_ = load("res://reactivex/observable/repeat.gd")
+var _Merge_ = load("res://reactivex/observable/merge.gd")
 ## Operators ##
 var _AmbOp_ = load("res://reactivex/operators/_amb.gd")
 var _RepeatOp_ = load("res://reactivex/operators/_repeat.gd")
+var _MergeOp_ = load("res://reactivex/operators/_merge.gd")
 ## Notifications ##
 var NotificationOnNext_ = load("res://reactivex/notification/onnext.gd")
 var NotificationOnError_ = load("res://reactivex/notification/onerror.gd")
@@ -109,6 +111,8 @@ func Zip(sources : Array[Observable]) -> Observable:
 	return _Zip_.zip_(sources)
 func RepeatValue(value, repeat_count = null) -> Observable:
 	return _RepeatValue_.repeat_value_(value, repeat_count)
+func Merge(sources : Array[Observable]) -> Observable:
+	return _Merge_.merge_(sources)
 ## Timers ##
 func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
 	return _Interval_.interval_(period_sec, scheduler)
