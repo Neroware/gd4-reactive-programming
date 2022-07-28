@@ -8,6 +8,6 @@ static func defer_(factory : Callable = func(scheduler : SchedulerBase) -> Obser
 		if not result is Observable:
 			return GDRx.Throw(GDRx_Error.FactoryFailedException.new(null, result)).subscribe(observer)
 		
-		return result.subscribe(observer, func(e): return, func(): return, scheduler)
+		return result.subscribe(observer, func(e):return, func():return, scheduler)
 	
 	return Observable.new(subscribe)

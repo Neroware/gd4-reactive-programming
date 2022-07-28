@@ -16,6 +16,5 @@ static func Set(v : Variant = null) -> RefValue:
 static func Null() -> RefValue:
 	return RefValue.new()
 
-func _notification(what):
-	if what == NOTIFICATION_PREDELETE:
-		print("Delete::RefValue")
+func _to_string():
+	return str(v)

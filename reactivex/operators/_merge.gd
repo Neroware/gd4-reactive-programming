@@ -89,7 +89,7 @@ static func merge_all_() -> Callable:
 						observer.on_completed()
 					source._lock.unlock()
 				
-				var on_next : Callable = GDRx_Conc.synchronized(source.lock, 1).call(observer.on_next)
+				var on_next : Callable = GDRx_Conc.synchronized(source._lock, 1).call(observer.on_next)
 				var on_error : Callable = GDRx_Conc.synchronized(source._lock, 0).call(observer.on_error)
 				var subscription = inner_source.subscribe(
 					on_next, on_error, on_completed,

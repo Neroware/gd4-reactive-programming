@@ -22,14 +22,17 @@ func subscribe(
 		
 		if on_next is ObserverBase:
 			var obv : ObserverBase = on_next
-			on_next = obv.on_next
-			on_error = obv.on_error
-			on_completed = obv.on_completed
+			on_next = func(i): obv.on_next.call(i)
+			on_error = func(e): obv.on_error.call(e)
+			on_completed = func(): obv.on_completed.call()
 		elif on_next is Object and on_next.has_method("on_next"):
 			var obv : Object = on_next
-			on_next = obv.on_next
-			if obv.has_method("on_error"): on_error = obv.on_error
-			if obv.has_method("on_completed"): on_completed = obv.on_completed
+			if obv.has_method("on_next"):
+				on_next = func(i): obv.on_next.call(i)
+			if obv.has_method("on_error"):
+				on_error = func(e): obv.on_error.call(e)
+			if obv.has_method("on_completed"):
+				on_completed = func(): obv.on_completed.call()
 		
 		var auto_detach_observer : AutoDetachObserver = AutoDetachObserver.new(
 			on_next, on_error, on_completed
