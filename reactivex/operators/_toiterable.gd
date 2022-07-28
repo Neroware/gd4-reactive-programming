@@ -17,7 +17,7 @@ static func to_iterable_() -> Callable:
 				queue.v = []
 				observer.on_completed()
 			
-			return source.subscribe(
+			return _source.v.subscribe(
 				on_next, observer.on_error, on_completed,
 				scheduler
 			)
