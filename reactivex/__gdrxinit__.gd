@@ -111,7 +111,11 @@ class _Obs_:
 #   Operators
 ### ======================================================================= ###
 class _Op_:
+	var _All_ = load("res://reactivex/operators/_all.gd")
 	var _Amb_ = load("res://reactivex/operators/_amb.gd")
+	var _AsObservable_ = load("res://reactivex/operators/_asobservable.gd")
+	var _Average_ = load("res://reactivex/operators/_average.gd")
+	
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
@@ -149,8 +153,17 @@ class _Op_:
 	var _WithLatestFrom_ = load("res://reactivex/operators/_withlatestfrom.gd")
 	var _Zip_ = load("res://reactivex/operators/_zip.gd")
 	
+	func all(predicate : Callable) -> Callable:
+		return _All_.all_(predicate)
+	
 	func amb(right_source : Observable) -> Callable:
 		return _Amb_.amb_(right_source)
+	
+	func as_observable() -> Callable:
+		return _AsObservable_.as_observable_()
+	
+	func average(key_mapper = null) -> Callable:
+		return _Average_.average_(key_mapper)
 	
 	func concat(sources : Array[Observable]) -> Callable:
 		return _Concat_.concat_(sources)
