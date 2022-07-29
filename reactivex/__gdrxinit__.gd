@@ -116,6 +116,7 @@ class _Op_:
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _TakeUnitilWithTime_ = load("res://reactivex/operators/_takeuntilwithtime.gd")
 	var _TakeWhile_ = load("res://reactivex/operators/_takewhile.gd")
 	var _TakeWithTime_ = load("res://reactivex/operators/_takewithtime.gd")
 	var _ThrottleFirst_ = load("res://reactivex/operators/_throttlefirst.gd")
@@ -151,6 +152,9 @@ class _Op_:
 	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func take_until_with_time(end_time : float, absolute : bool = false, scheduler : SchedulerBase = null) -> Callable:
+		return _TakeUnitilWithTime_.take_until_with_time_(end_time, absolute, scheduler)
 	
 	func take_while(predicate : Callable = func(value) -> bool: return true, inclusive : bool = false) -> Callable:
 		return _TakeWhile_.take_while_(predicate, inclusive)
