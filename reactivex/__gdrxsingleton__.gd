@@ -1,14 +1,14 @@
 extends Node
-class_name GDRx_Singleton
+class_name __GDRx_Singleton__
 
 ### ======================================================================= ###
 #   Init script database
 ### ======================================================================= ###
-var _Init_ = load("res://reactivex/__gdrxinit__.gd").new()
+var _Init_ = __GDRx_Init__.new()
 ## Observables ##
-var obs = _Init_._Obs_.new()
+var obs : __GDRx_Init__._Obs_ = __GDRx_Init__._Obs_.new()
 ## Operators ##
-var op = _Init_._Op_.new()
+var op : __GDRx_Init__._Op_ = __GDRx_Init__._Op_.new()
 ## Notifications ##
 var NotificationOnNext = _Init_._NotificationOnNext_
 var NotificationOnError = _Init_._NotificationOnError_
@@ -64,8 +64,8 @@ func ConcatStreamsWithIterable(sources : IterableBase) -> Observable:
 	return obs.concat_with_iterable(sources)
 func ForkJoin(sources : Array[Observable]) -> Observable:
 	return obs.fork_join(sources)
-func BuildFromCallback(args : Array, cb : Callable) -> Callable:
-	return obs.from_callback(args, cb)
+func BuildFromCallback(fun : Callable = func(args : Array, cb : Callable): return, mapper : Callable = func(args): return args) -> Callable:
+	return obs.from_callback(fun, mapper)
 func FromArray(array : Array) -> Observable:
 	return obs.from_iterable(GDRx.util.Iter(array))
 func FromIterable(iterable : IterableBase) -> Observable:

@@ -64,11 +64,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/abc/disposable.gd"
 }, {
-"base": "Node",
-"class": &"GDRx_Singleton",
-"language": &"GDScript",
-"path": "res://reactivex/__gdrxsingleton__.gd"
-}, {
 "base": "Observable",
 "class": &"GroupedObservable",
 "language": &"GDScript",
@@ -248,6 +243,16 @@ _global_script_classes=[{
 "class": &"WeakRefDictionary",
 "language": &"GDScript",
 "path": "res://reactivex/internal/weakrefdictionary.gd"
+}, {
+"base": "RefCounted",
+"class": &"__GDRx_Init__",
+"language": &"GDScript",
+"path": "res://reactivex/__gdrxinit__.gd"
+}, {
+"base": "Node",
+"class": &"__GDRx_Singleton__",
+"language": &"GDScript",
+"path": "res://reactivex/__gdrxsingleton__.gd"
 }]
 _global_script_class_icons={
 "ArrayIterator": "",
@@ -261,7 +266,6 @@ _global_script_class_icons={
 "CurrentThreadScheduler": "",
 "Disposable": "",
 "DisposableBase": "",
-"GDRx_Singleton": "",
 "GroupedObservable": "",
 "ImmediateScheduler": "",
 "IterableBase": "",
@@ -297,7 +301,9 @@ _global_script_class_icons={
 "Trampoline": "",
 "TrampolineScheduler": "",
 "Tuple": "",
-"WeakRefDictionary": ""
+"WeakRefDictionary": "",
+"__GDRx_Init__": "",
+"__GDRx_Singleton__": ""
 }
 
 [application]

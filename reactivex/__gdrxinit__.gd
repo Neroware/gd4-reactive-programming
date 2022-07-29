@@ -1,3 +1,4 @@
+class_name __GDRx_Init__
 ### ======================================================================= ###
 #   Observables
 ### ======================================================================= ###
@@ -144,6 +145,9 @@ class _Op_:
 	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func timestamp(scheduler : SchedulerBase = null) -> Callable:
+		return _TimeStamp_.timestamp_(scheduler)
 	
 	func to_dict(key_mapper : Callable, element_mapper : Callable = func(v): return v) -> Callable:
 		return _ToDict_.to_dict_(key_mapper, element_mapper)
