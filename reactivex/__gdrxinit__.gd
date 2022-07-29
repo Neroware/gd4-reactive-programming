@@ -116,6 +116,7 @@ class _Op_:
 	var _AsObservable_ = load("res://reactivex/operators/_asobservable.gd")
 	var _Average_ = load("res://reactivex/operators/_average.gd")
 	
+	var _CombineLatest_ = load("res://reactivex/operators/_combine_latest.gd")
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
@@ -164,6 +165,9 @@ class _Op_:
 	
 	func average(key_mapper = null) -> Callable:
 		return _Average_.average_(key_mapper)
+	
+	func combine_latest(others : Array[Observable]) -> Callable:
+		return _CombineLatest_.combine_latest_(others)
 	
 	func concat(sources : Array[Observable]) -> Callable:
 		return _Concat_.concat_(sources)
