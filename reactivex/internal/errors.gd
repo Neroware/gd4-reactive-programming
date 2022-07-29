@@ -26,3 +26,13 @@ class BadMappingException extends Error:
 	func _init(msg = null):
 		if msg != null: super._init(str(msg))
 		else: super._init("A mapping did not succeed!")
+
+class BadPredicateError extends Error:
+	func _init(msg = null):
+		if msg != null: super._init(str(msg))
+		else: super._init("A predicate failed!")
+
+class SequenceContainsNoElementsException extends Error:
+	func _init(msg = null):
+		if msg != null: super._init(str(msg))
+		else: super._init("The given sequence is empty!")

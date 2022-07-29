@@ -113,9 +113,15 @@ class _Obs_:
 class _Op_:
 	var _Amb_ = load("res://reactivex/operators/_amb.gd")
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
+	var _Filter_ = load("res://reactivex/operators/_filter.gd")
+	var _Last_ = load("res://reactivex/operators/_last.gd")
+	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
+	var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _Scan_ = load("res://reactivex/operators/_scan.gd")
+	var _Sum_ = load("res://reactivex/operators/_sum.gd")
 	var _SwitchLatest_ = load("res://reactivex/operators/_switchlatest.gd")
 	var _TakeLast_ = load("res://reactivex/operators/_takelast.gd")
 	var _Take_ = load("res://reactivex/operators/_take.gd")
@@ -144,6 +150,21 @@ class _Op_:
 	func concat(sources : Array[Observable]) -> Callable:
 		return _Concat_.concat_(sources)
 	
+	func filter(predicate : Callable = func(x): return true) -> Callable:
+		return _Filter_.filter_(predicate)
+	
+	func filter_indexed(predicate : Callable = func(x, index): return true) -> Callable:
+		return _Filter_.filter_indexed_(predicate)
+	
+	func last(predicate = null) -> Callable:
+		return _Last_.last_(predicate)
+	
+	func last_or_default_async(source : Observable, has_default : bool = false, default_value = null) -> Observable:
+		return _LastOrDefault_.last_or_default_async(source, has_default, default_value)
+	
+	func last_or_default(default_value = null, predicate = null) -> Callable:
+		return _LastOrDefault_.last_or_default_(default_value, predicate)
+	
 	func map(mapper : Callable = GDRx.util.identity) -> Callable:
 		return _Map_.map_(mapper)
 	
@@ -156,8 +177,17 @@ class _Op_:
 	func merge_all() -> Callable:
 		return _Merge_.merge_all_()
 	
+	func reduce(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
+		return _Reduce_.reduce_(accumulator, seed)
+	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func scan(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
+		return _Scan_.scan_(accumulator, seed)
+	
+	func sum(key_mapper = null) -> Callable:
+		return _Sum_.sum_(key_mapper)
 	
 	func switch_latest() -> Callable:
 		return _SwitchLatest_.switch_latest_()

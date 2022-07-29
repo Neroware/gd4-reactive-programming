@@ -30,7 +30,7 @@ static func map_indexed_(
 ) -> Callable:
 	var _mapper_indexed = mapper_indexed
 	
-	return GDRx.pipe.compose(
+	return GDRx.pipe.compose2(
 		GDRx.op.zip_with_iterable(GDRx.util.Infinite()),
 		GDRx.op.map(func(i : Tuple): return _mapper_indexed.call(i.at(0), i.at(1)))
 	)
