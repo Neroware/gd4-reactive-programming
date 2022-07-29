@@ -1,3 +1,5 @@
+const MAX_SIZE = 9223372036854775807
+
 class NotSet extends Comparable:
 	func eq(other) -> bool:
 		return other is self

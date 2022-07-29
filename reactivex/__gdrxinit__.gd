@@ -121,6 +121,11 @@ class _Op_:
 	var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
 	var _Scan_ = load("res://reactivex/operators/_scan.gd")
+	var _Skip_ = load("res://reactivex/operators/_skip.gd")
+	var _Slice_ = load("res://reactivex/operators/_slice.gd")
+	var _Some_ = load("res://reactivex/operators/_some.gd")
+	var _StartWith_ = load("res://reactivex/operators/_startswith.gd")
+	var _SubscribeOn_ = load("res://reactivex/operators/_subscribe_on.gd")
 	var _Sum_ = load("res://reactivex/operators/_sum.gd")
 	var _SwitchLatest_ = load("res://reactivex/operators/_switchlatest.gd")
 	var _TakeLast_ = load("res://reactivex/operators/_takelast.gd")
@@ -185,6 +190,21 @@ class _Op_:
 	
 	func scan(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
 		return _Scan_.scan_(accumulator, seed)
+	
+	func skip(count : int) -> Callable:
+		return _Skip_.skip_(count)
+	
+	func slice(start : int = 0, stop : int = GDRx.util.MAX_SIZE, step : int = 1) -> Callable:
+		return GDRx.slice_(start, stop, step)
+	
+	func some(predicate = null) -> Callable:
+		return _Some_.some_(predicate)
+	
+	func start_with(args : Array) -> Callable:
+		return _StartWith_.start_with_(args)
+	
+	func subscribe_on(scheduler : SchedulerBase) -> Callable:
+		return _SubscribeOn_.subscribe_on_(scheduler)
 	
 	func sum(key_mapper = null) -> Callable:
 		return _Sum_.sum_(key_mapper)
