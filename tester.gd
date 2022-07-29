@@ -132,7 +132,7 @@ func _test_15():
 	)
 
 func _test_16():
-	var obs1 : Observable = GDRx.Throw(GDRx_Error.FactoryFailedException.new())
+	var obs1 : Observable = GDRx.Throw(GDRx.err.FactoryFailedException.new())
 	var obs2 : Observable = GDRx.StartPeriodicTimer(2.5)
 	var obs3 : Observable = GDRx.StartPeriodicTimer(100.0)
 	var obs4 : Observable = GDRx.CatchAndContinueWith([obs1, obs2, obs3])
@@ -171,8 +171,8 @@ func _test_18():
 
 func _test_19():
 	var obs1 : Observable = GDRx.ReturnValue(42)
-	var obs2 : Observable = GDRx.Throw(GDRx_Error.BadMappingException.new())
-	var obs3 : Observable = GDRx.Throw(GDRx_Error.Error.new("Sabotage!"))
+	var obs2 : Observable = GDRx.Throw(GDRx.err.BadMappingException.new())
+	var obs3 : Observable = GDRx.Throw(GDRx.err.Error.new("Sabotage!"))
 	var obs4 : Observable = GDRx.ReturnValue(":)")
 	var obs5 : Observable = GDRx.ResumeAfterTerminationWith([obs1, obs2, obs3, obs4])
 	obs5.subscribe(

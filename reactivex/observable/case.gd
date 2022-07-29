@@ -15,7 +15,7 @@ static func case_(
 			result = sources[key_]
 		
 		if not result is Observable:
-			return GDRx.Throw(GDRx_Error.BadMappingException.new())
+			return GDRx.Throw(GDRx.err.BadMappingException.new())
 		
 		return result
 	

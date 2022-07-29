@@ -26,7 +26,7 @@ static func generate_(
 			if has_result:
 				result = state.v
 			
-			if result is GDRx_Error.Error:
+			if result is GDRx.err.Error:
 				observer.on_error(result)
 				return
 			

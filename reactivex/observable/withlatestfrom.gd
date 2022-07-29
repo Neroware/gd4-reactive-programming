@@ -1,7 +1,7 @@
 static func with_latest_from_(
 	parent : Observable, sources : Array[Observable]
 ) -> Observable:
-	var NO_VALUE = GDRx_Util.NotSet.new()
+	var NO_VALUE = GDRx.util.NotSet.new()
 	
 	var subscribe = func(
 		observer : ObserverBase,

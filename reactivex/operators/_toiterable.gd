@@ -13,7 +13,7 @@ static func to_iterable_() -> Callable:
 				queue.v.append(item)
 			
 			var on_completed = func():
-				observer.on_next(GDRx.Iter(queue.v))
+				observer.on_next(GDRx.util.Iter(queue.v))
 				queue.v = []
 				observer.on_completed()
 			

@@ -16,7 +16,7 @@ static func concat_with_iterable_(sources : IterableBase) -> Observable:
 			
 			var current = sources.next()
 			if not current is Observable:
-				if current is GDRx_Error.Error:
+				if current is GDRx.err.Error:
 					observer.on_error(current)
 				else:
 					observer.on_completed()

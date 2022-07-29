@@ -32,7 +32,7 @@ static func generate_with_relative_time_(
 				result.v = state.v
 				time.v = time_mapper.call(state.v)
 			
-			if result.v is GDRx_Error.Error:
+			if result.v is GDRx.err.Error:
 				observer.on_error(result.v)
 				return
 			

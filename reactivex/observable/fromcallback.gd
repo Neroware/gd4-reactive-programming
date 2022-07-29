@@ -12,7 +12,7 @@ static func from_callback(
 		) -> DisposableBase:
 			var handler = func(args : Array):
 				var results = mapper.call(args)
-				if results is GDRx_Error.Error:
+				if results is GDRx.err.Error:
 					observer.on_error(results)
 					return
 				observer.on_next(results)

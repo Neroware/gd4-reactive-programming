@@ -3,7 +3,7 @@ static func while_do_(
 ) -> Callable:
 	var while_do = func(source : Observable) -> Observable:
 		var obs = source
-		var it : IterableBase = GDRx_Util.TakeWhile(condition, GDRx_Util.Infinite(obs))
+		var it : IterableBase = GDRx.util.TakeWhile(condition, GDRx.util.Infinite(obs))
 		return GDRx.ConcatStreamsWithIterable(it)
 	
 	return while_do

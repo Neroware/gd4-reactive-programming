@@ -1,8 +1,3 @@
-class_name GDRx_Error
-
-func _init():
-	push_error("Please do not instance function container 'GDRx_Error'!")
-
 class Error:
 	var _msg : String
 	func _init(msg : String):
@@ -11,12 +6,12 @@ class Error:
 	func _to_string() -> String:
 		return "[GDRX Error::" + _msg + "]"
 
-class WouldBlockException extends GDRx_Error.Error:
+class WouldBlockException extends Error:
 	func _init(msg = null):
 		if msg != null: super._init(str(msg))
 		else: super._init("Would block")
 
-class FactoryFailedException extends GDRx_Error.Error:
+class FactoryFailedException extends Error:
 	var _produced
 	
 	func _init(msg = null, produced = null):
@@ -27,7 +22,7 @@ class FactoryFailedException extends GDRx_Error.Error:
 	func get_produced_object():
 		return self._produced
 
-class BadMappingException extends GDRx_Error.Error:
+class BadMappingException extends Error:
 	func _init(msg = null):
 		if msg != null: super._init(str(msg))
 		else: super._init("A mapping did not succeed!")

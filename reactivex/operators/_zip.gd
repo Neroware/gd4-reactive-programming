@@ -16,7 +16,7 @@ static func zip_with_iterable(seq : IterableBase) -> Callable:
 			
 			var on_next = func(left):
 				var right = second.next()
-				if right is GDRx_Error.Error:
+				if right is GDRx.err.Error:
 					observer.on_error(right)
 				elif right is second.End:
 					observer.on_completed()

@@ -1,8 +1,3 @@
-class_name GDRx_Conc
-
-func _init():
-	push_error("Please do not instance function container 'GDRx_Conc'!")
-
 class StartableThread:
 	var _thread : Thread
 	var _target : Callable

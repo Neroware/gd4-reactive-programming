@@ -1,6 +1,6 @@
 class_name PriorityQueue
 
-var _Heap = GDRx.Heap_
+var _Heap = GDRx.heap
 
 const MIN_COUNT = 0 #65536 # Maybe 9223372036854775807 ?
 

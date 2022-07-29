@@ -33,8 +33,8 @@ static func merge_(
 							observer.on_completed()
 					source._lock.unlock()
 				
-				var on_next = GDRx_Conc.synchronized(source._lock, 1).call(observer.on_next)
-				var on_error = GDRx_Conc.synchronized(source._lock, 0).call(observer.on_error)
+				var on_next = GDRx.concur.synchronized(source._lock, 1).call(observer.on_next)
+				var on_error = GDRx.concur.synchronized(source._lock, 0).call(observer.on_error)
 				subscription.set_disposable(xs.subscribe(
 					on_next, on_error, on_completed,
 					scheduler
@@ -89,8 +89,8 @@ static func merge_all_() -> Callable:
 						observer.on_completed()
 					source._lock.unlock()
 				
-				var on_next : Callable = GDRx_Conc.synchronized(source._lock, 1).call(observer.on_next)
-				var on_error : Callable = GDRx_Conc.synchronized(source._lock, 0).call(observer.on_error)
+				var on_next : Callable = GDRx.concur.synchronized(source._lock, 1).call(observer.on_next)
+				var on_error : Callable = GDRx.concur.synchronized(source._lock, 0).call(observer.on_error)
 				var subscription = inner_source.subscribe(
 					on_next, on_error, on_completed,
 					scheduler

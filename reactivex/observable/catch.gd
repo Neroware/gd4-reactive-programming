@@ -20,7 +20,7 @@ static func catch_with_iterable_(sources : IterableBase) -> Observable:
 			if not current is Observable:
 				if last_exception.v != null:
 					observer.on_error(last_exception.v)
-				elif current is GDRx_Error.Error:
+				elif current is GDRx.err.Error:
 					observer.on_error(current)
 				else:
 					observer.on_completed()

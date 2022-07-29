@@ -13,12 +13,12 @@ static func to_dict_(
 			
 			var on_next = func(x):
 				var key = key_mapper.call(x)
-				if key is GDRx_Error.Error:
+				if key is GDRx.err.Error:
 					observer.on_error(key)
 					return
 				
 				var element = element_mapper.call(x)
-				if key is GDRx_Error.Error:
+				if key is GDRx.err.Error:
 					observer.on_error(key)
 					return
 				

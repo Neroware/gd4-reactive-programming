@@ -12,7 +12,7 @@ static func using_(
 		var resource = resource_factory.call()
 		if resource is DisposableBase:
 			disp = resource
-		elif resource is GDRx_Error.Error:
+		elif resource is GDRx.err.Error:
 			var d = GDRx.Throw(resource).subscribe(observer, func(e): return, func(): return, scheduler)
 			return CompositeDisposable.new([d, disp])
 		

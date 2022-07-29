@@ -1,8 +1,3 @@
-class_name GDRx_Basic
-
-func _init():
-	push_error("Please do not instance function container 'GDRx_Basic'!")
-
 static func noop(__ = null, ___ = null):
 	pass
 

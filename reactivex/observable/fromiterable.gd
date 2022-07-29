@@ -21,7 +21,7 @@ static func from_iterable_(
 				if value is IterableBase.End:
 					observer.on_completed()
 					break
-				elif value is GDRx_Error.Error:
+				elif value is GDRx.err.Error:
 					observer.on_error(value)
 					break
 				else:
