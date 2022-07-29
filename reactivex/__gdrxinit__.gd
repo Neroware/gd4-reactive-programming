@@ -116,6 +116,7 @@ class _Op_:
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _TimeInterval_ = load("res://reactivex/operators/_timeinterval.gd")
 	var _Timeout_ = load("res://reactivex/operators/_timeout.gd")
 	var _TimeoutWithMapper_ = load("res://reactivex/operators/_timeoutwithmapper.gd")
 	var _TimeStamp_ = load("res://reactivex/operators/_timestamp.gd")
@@ -147,6 +148,9 @@ class _Op_:
 	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func time_interval(scheduler : SchedulerBase = null) -> Callable:
+		return _TimeInterval_.time_interval_(scheduler)
 	
 	func timeout(duetime : float, absolute : bool = false, other : Observable = null, scheduler : SchedulerBase = null) -> Callable:
 		return _Timeout_.timeout_(duetime, absolute, other, scheduler)

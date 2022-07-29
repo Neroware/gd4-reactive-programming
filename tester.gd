@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "24"
+@export var tests = "27"
 
 func _ready():
 	for i in tests.split(","):
@@ -221,3 +221,26 @@ func _test_25():
 	var obs4 : Observable = GDRx.StartPeriodicTimer(0.5)
 	var obs_merged = GDRx.Merge([obs1, obs2, obs3, obs4])
 	obs_merged.subscribe(func(i): print("[ReactiveX]: "  + str(i)), func(e): print("!> ", e), func(): print(":)"))
+
+func _test_26():
+	var obs1 : Observable = GDRx.StartPeriodicTimer(1.0).pipe4(
+		GDRx.op.map(func(i): return "<" + str(i) + ">"),
+		GDRx.op.map(func(i): return "<" + str(i) + ">"),
+		GDRx.op.map(func(i): return "<" + str(i) + ">"),
+		GDRx.op.map(func(i): return "<" + str(i) + ">")
+	)
+	obs1.subscribe(
+		func(i): print("[ReactiveX]: " + str(i)),
+		func(e): print("> ", e), 
+		func(): print(":)")
+	)
+
+func _test_27():
+	var obs1 : Observable = GDRx.StartPeriodicTimer(3).pipe1(
+		GDRx.op.time_interval()
+	)
+	obs1.subscribe(
+		func(i): print("[ReactiveX]: " + str(i)),
+		func(e): print("> ", e), 
+		func(): print(":)")
+	)
