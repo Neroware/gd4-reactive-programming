@@ -67,7 +67,7 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"GDRx_Singleton",
 "language": &"GDScript",
-"path": "res://reactivex/gdrxsingleton.gd"
+"path": "res://reactivex/__gdrxsingleton__.gd"
 }, {
 "base": "Observable",
 "class": &"GroupedObservable",
@@ -309,7 +309,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GDRx="*res://reactivex/gdrxsingleton.gd"
+GDRx="*res://reactivex/__gdrxsingleton__.gd"
 
 [input]
 
