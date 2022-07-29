@@ -116,6 +116,7 @@ class _Op_:
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _Timeout_ = load("res://reactivex/operators/_timeout.gd")
 	var _TimeoutWithMapper_ = load("res://reactivex/operators/_timeoutwithmapper.gd")
 	var _TimeStamp_ = load("res://reactivex/operators/_timestamp.gd")
 	var _ToDict_ = load("res://reactivex/operators/_todict.gd")
@@ -146,6 +147,9 @@ class _Op_:
 	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func timeout(duetime : float, absolute : bool = false, other : Observable = null, scheduler : SchedulerBase = null) -> Callable:
+		return _Timeout_.timeout_(duetime, absolute, other, scheduler)
 	
 	func timeout_with_mapper(first_timeout : Observable = null, timeout_duration_mapper : Callable = func(__) -> Observable: return GDRx.Never(), other : Observable = null) -> Callable:
 		return _TimeoutWithMapper_.timeout_with_mapper_(first_timeout, timeout_duration_mapper, other)
