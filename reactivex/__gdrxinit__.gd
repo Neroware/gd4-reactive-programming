@@ -116,6 +116,7 @@ class _Op_:
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _SwitchLatest_ = load("res://reactivex/operators/_switchlatest.gd")
 	var _TakeLast_ = load("res://reactivex/operators/_takelast.gd")
 	var _Take_ = load("res://reactivex/operators/_take.gd")
 	var _TakeLastBuffer_ = load("res://reactivex/operators/_takelastbuffer.gd")
@@ -157,6 +158,9 @@ class _Op_:
 	
 	func repeat(repeat_count = null) -> Callable:
 		return _Repeat_.repeat_(repeat_count)
+	
+	func switch_latest() -> Callable:
+		return _SwitchLatest_.switch_latest_()
 	
 	func take(count : int) -> Callable:
 		return _Take_.take_(count)
