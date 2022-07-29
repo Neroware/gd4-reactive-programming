@@ -111,20 +111,63 @@ class _Obs_:
 ### ======================================================================= ###
 class _Op_:
 	var _Amb_ = load("res://reactivex/operators/_amb.gd")
-	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _Concat_ = load("res://reactivex/operators/_concat.gd")
+	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
+	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+	var _TimeStamp_ = load("res://reactivex/operators/_timestamp.gd")
+	var _ToDict_ = load("res://reactivex/operators/_todict.gd")
+	var _ToIterable_ = load("res://reactivex/operators/_toiterable.gd")
+	var _ToList_ = load("res://reactivex/operators/_tolist.gd")
+	var _ToSet_ = load("res://reactivex/operators/_toset.gd")
+	var _WhileDo_ = load("res://reactivex/operators/_whiledo.gd")
+	var _WithLatestFrom_ = load("res://reactivex/operators/_withlatestfrom.gd")
+	var _Zip_ = load("res://reactivex/operators/_zip.gd")
 	
 	func amb(right_source : Observable) -> Callable:
 		return _Amb_.amb_(right_source)
 	
-	func repeat(repeat_count = null) -> Callable:
-		return _Repeat_.repeat_(repeat_count)
+	func concat(sources : Array[Observable]) -> Callable:
+		return _Concat_.concat_(sources)
+	
+	func map(mapper : Callable = GDRx.util.identity) -> Callable:
+		return _Map_.map_(mapper)
+	
+	func map_indexed(mapper_indexed : Callable = func(value, idx : int): return value) -> Callable:
+		return _Map_.map_indexed_(mapper_indexed)
 	
 	func merge(sources : Array[Observable], max_concorrent : int = -1) -> Callable:
 		return _Merge_.merge_(sources, max_concorrent)
 	
 	func merge_all() -> Callable:
 		return _Merge_.merge_all_()
+	
+	func repeat(repeat_count = null) -> Callable:
+		return _Repeat_.repeat_(repeat_count)
+	
+	func to_dict(key_mapper : Callable, element_mapper : Callable = func(v): return v) -> Callable:
+		return _ToDict_.to_dict_(key_mapper, element_mapper)
+	
+	func to_iterable() -> Callable:
+		return _ToIterable_.to_iterable_()
+	
+	func to_list() -> Callable:
+		return _ToList_.to_list_()
+	
+	func to_set() -> Callable:
+		return _ToSet_.to_set_()
+	
+	func while_do(condition : Callable = func(): return true) -> Callable:
+		return _WhileDo_.while_do_(condition)
+	
+	func with_latest_from(sources : Array[Observable]) -> Callable:
+		return _WithLatestFrom_.with_latest_from_(sources)
+	
+	func zip(args : Array[Observable]) -> Callable:
+		return _Zip_.zip_(args)
+	
+	func zip_with_iterable(seq : IterableBase) -> Callable:
+		return _Zip_.zip_with_iterable_(seq)
 
 ### ======================================================================= ###
 #   Notification

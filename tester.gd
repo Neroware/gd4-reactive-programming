@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "25"
+@export var tests = "24"
 
 func _ready():
 	for i in tests.split(","):

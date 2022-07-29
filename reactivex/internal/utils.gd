@@ -4,10 +4,15 @@ class NotSet extends Comparable:
 
 class InfiniteIterator extends IterableBase:
 	var _infval
-	func _init(infval = null):
+	var _counter : int
+	func _init(infval = GDRx.util.GetNotSet()):
 		self._infval = infval
+		self._counter = 0
 	func next() -> Variant:
-		return self._infval
+		self._counter += 1
+		if not self._infval is GDRx.util.NotSet:
+			return self._infval
+		return self._counter
 
 class WhileIterator extends IterableBase:
 	var _it : IterableBase
