@@ -115,6 +115,8 @@ class _Obs_:
 #   Operators
 ### ======================================================================= ###
 class _Op_:
+	var _RefCount_ = load("res://reactivex/operators/connectable/_refcount.gd")
+	
 	var _All_ = load("res://reactivex/operators/_all.gd")
 	var _Amb_ = load("res://reactivex/operators/_amb.gd")
 	var _AsObservable_ = load("res://reactivex/operators/_asobservable.gd")
@@ -130,6 +132,7 @@ class _Op_:
 	var _Delay_ = load("res://reactivex/operators/_delay.gd")
 	var _DelaySubscription_ = load("res://reactivex/operators/_delaysubscription.gd")
 	var _DelayWithMapper_ = load("res://reactivex/operators/_delaywithmapper.gd")
+	var _Dematerialize_ = load("res://reactivex/operators/_dematerialize.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -167,6 +170,9 @@ class _Op_:
 	var _WithLatestFrom_ = load("res://reactivex/operators/_withlatestfrom.gd")
 	var _Zip_ = load("res://reactivex/operators/_zip.gd")
 	
+	func ref_count() -> Callable:
+		return _RefCount_.ref_count_()
+	
 	func all(predicate : Callable) -> Callable:
 		return _All_.all_(predicate)
 	
@@ -196,6 +202,9 @@ class _Op_:
 	
 	func debounce(duetime : float, scheduler : SchedulerBase = null) -> Callable:
 		return _Debounce_.debounce_(duetime, scheduler)
+	
+	func dematerialize() -> Callable:
+		return _Dematerialize_.dematerialize()
 	
 	func throttle_with_mapper(throttle_duration_mapper : Callable) -> Callable:
 		return _Debounce_.throttle_with_mapper_(throttle_duration_mapper)
