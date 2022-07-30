@@ -120,6 +120,7 @@ class _Op_:
 	var _AsObservable_ = load("res://reactivex/operators/_asobservable.gd")
 	var _Average_ = load("res://reactivex/operators/_average.gd")
 	
+	var _Catch_ = load("res://reactivex/operators/_catch.gd")
 	var _CombineLatest_ = load("res://reactivex/operators/_combinelatest.gd")
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
@@ -169,6 +170,9 @@ class _Op_:
 	
 	func average(key_mapper = null) -> Callable:
 		return _Average_.average_(key_mapper)
+	
+	func catch(handler) -> Callable:
+		return _Catch_.catch_(handler)
 	
 	func combine_latest(others : Array[Observable]) -> Callable:
 		return _CombineLatest_.combine_latest_(others)
