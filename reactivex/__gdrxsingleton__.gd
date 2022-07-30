@@ -95,6 +95,8 @@ func RepeatValue(value, repeat_count = null) -> Observable:
 	return obs.repeat_value(value, repeat_count)
 func Merge(sources : Array[Observable]) -> Observable:
 	return obs.merge(sources)
+func ToAsync(fun : Callable, scheduler : SchedulerBase = null) -> Callable:
+		return obs.to_async(fun, scheduler)
 ## Timers ##
 func Interval(period_sec : float, scheduler : SchedulerBase = null) -> Observable:
 	return obs.interval(period_sec, scheduler)

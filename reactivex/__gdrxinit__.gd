@@ -25,6 +25,7 @@ class _Obs_:
 	var _ReturnValue_ = load("res://reactivex/observable/returnvalue.gd")
 	var _Throw_ = load("res://reactivex/observable/throw.gd")
 	var _Timer_ = load("res://reactivex/observable/timer.gd")
+	var _ToAsync_ = load("res://reactivex/observable/toasync.gd")
 	var _Using_ = load("res://reactivex/observable/using.gd")
 	var _WithLatestFrom_ = load("res://reactivex/observable/withlatestfrom.gd")
 	var _Zip_ = load("res://reactivex/observable/zip.gd")
@@ -98,6 +99,9 @@ class _Obs_:
 	func timer(duetime : float, time_absolute : bool, period = null, scheduler : SchedulerBase = null) -> Observable:
 		return _Timer_.timer_(duetime, time_absolute, period, scheduler)
 	
+	func to_async(fun : Callable, scheduler : SchedulerBase = null) -> Callable:
+		return _ToAsync_.to_async_(fun, scheduler)
+	
 	func using(resource_factory : Callable, observable_factory : Callable,) -> Observable:
 		return _Using_.using_(resource_factory, observable_factory)
 	
@@ -116,7 +120,7 @@ class _Op_:
 	var _AsObservable_ = load("res://reactivex/operators/_asobservable.gd")
 	var _Average_ = load("res://reactivex/operators/_average.gd")
 	
-	var _CombineLatest_ = load("res://reactivex/operators/_combine_latest.gd")
+	var _CombineLatest_ = load("res://reactivex/operators/_combinelatest.gd")
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")

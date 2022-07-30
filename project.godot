@@ -19,6 +19,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/set.gd"
 }, {
+"base": "Subject",
+"class": &"AsyncSubject",
+"language": &"GDScript",
+"path": "res://reactivex/subject/asyncsubject.gd"
+}, {
 "base": "ObserverBase",
 "class": &"AutoDetachObserver",
 "language": &"GDScript",
@@ -73,6 +78,11 @@ _global_script_classes=[{
 "class": &"ImmediateScheduler",
 "language": &"GDScript",
 "path": "res://reactivex/scheduler/immediatescheduler.gd"
+}, {
+"base": "DisposableBase",
+"class": &"InnerSubscription",
+"language": &"GDScript",
+"path": "res://reactivex/subject/innersubscription.gd"
 }, {
 "base": "RefCounted",
 "class": &"IterableBase",
@@ -214,6 +224,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/item/streamitem.gd"
 }, {
+"base": "SubjectBase",
+"class": &"Subject",
+"language": &"GDScript",
+"path": "res://reactivex/subject/subject.gd"
+}, {
 "base": "RefCounted",
 "class": &"SubjectBase",
 "language": &"GDScript",
@@ -257,6 +272,7 @@ _global_script_classes=[{
 _global_script_class_icons={
 "ArrayIterator": "",
 "ArraySet": "",
+"AsyncSubject": "",
 "AutoDetachObserver": "",
 "BooleanDisposable": "",
 "Comparable": "",
@@ -268,6 +284,7 @@ _global_script_class_icons={
 "DisposableBase": "",
 "GroupedObservable": "",
 "ImmediateScheduler": "",
+"InnerSubscription": "",
 "IterableBase": "",
 "Lock": "",
 "LockBase": "",
@@ -296,6 +313,7 @@ _global_script_class_icons={
 "SingleAssignmentDisposable": "",
 "StartableBase": "",
 "StreamItem": "",
+"Subject": "",
 "SubjectBase": "",
 "TimeoutScheduler": "",
 "Trampoline": "",

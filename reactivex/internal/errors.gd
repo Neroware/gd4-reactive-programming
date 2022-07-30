@@ -36,3 +36,8 @@ class SequenceContainsNoElementsException extends Error:
 	func _init(msg = null):
 		if msg != null: super._init(str(msg))
 		else: super._init("The given sequence is empty!")
+
+class DisposedException extends Error:
+	func _init(msg = null):
+		if msg != null: super._init(str(msg))
+		else: super._init("The requested element was disposed!")

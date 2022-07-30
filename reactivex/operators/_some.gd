@@ -20,8 +20,9 @@ static func some_(
 			)
 		
 		if predicate != null:
+			var predicate_ : Callable = predicate
 			return source.pipe2(
-				GDRx.op.filter(predicate),
+				GDRx.op.filter(predicate_),
 				some_()
 			)
 		

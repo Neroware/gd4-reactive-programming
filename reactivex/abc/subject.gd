@@ -8,3 +8,7 @@ func observer() -> ObserverBase:
 func observable() -> ObservableBase:
 	push_error("No implementation here!")
 	return null
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		print("Delete::SubjectBase")
