@@ -126,9 +126,11 @@ class _Op_:
 	var _Contains_ = load("res://reactivex/operators/_contains.gd")
 	var _Count_ = load("res://reactivex/operators/_count.gd")
 	var _Debounce_ = load("res://reactivex/operators/_debounce.gd")
+	var _DefaultIfEmpty_ = load("res://reactivex/operators/_defaultifempty.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
+	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
 	var _Map_ = load("res://reactivex/operators/_map.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
 	var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
@@ -192,6 +194,9 @@ class _Op_:
 	func debounce(duetime : float, scheduler : SchedulerBase = null) -> Callable:
 		return _Debounce_.debounce_(duetime, scheduler)
 	
+	func default_if_empty(default_value = null) -> Callable:
+		return _DefaultIfEmpty_.default_if_empty_(default_value)
+	
 	func throttle_with_mapper(throttle_duration_mapper : Callable) -> Callable:
 		return _Debounce_.throttle_with_mapper_(throttle_duration_mapper)
 	
@@ -212,6 +217,9 @@ class _Op_:
 	
 	func map(mapper : Callable = GDRx.util.identity) -> Callable:
 		return _Map_.map_(mapper)
+	
+	func materialize() -> Callable:
+		return _Materialize_.materialize_()
 	
 	func map_indexed(mapper_indexed : Callable = func(value, idx : int): return value) -> Callable:
 		return _Map_.map_indexed_(mapper_indexed)
