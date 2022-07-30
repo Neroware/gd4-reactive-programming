@@ -128,6 +128,8 @@ class _Op_:
 	var _Debounce_ = load("res://reactivex/operators/_debounce.gd")
 	var _DefaultIfEmpty_ = load("res://reactivex/operators/_defaultifempty.gd")
 	var _Delay_ = load("res://reactivex/operators/_delay.gd")
+	var _DelaySubscription_ = load("res://reactivex/operators/_delaysubscription.gd")
+	var _DelayWithMapper_ = load("res://reactivex/operators/_delaywithmapper.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -203,6 +205,12 @@ class _Op_:
 	
 	func delay(duetime : float, scheduler : SchedulerBase = null) -> Callable:
 		return _Delay_.delay_(duetime, scheduler)
+	
+	func delay_subscription(duetime : float, time_absolute : bool = false, scheduler : SchedulerBase = null) -> Callable:
+		return _DelaySubscription_.delay_subscription_(duetime, time_absolute, scheduler)
+	
+	func delay_with_mapper(subscription_delay = null, delay_duration_mapper = null) -> Callable:
+		return _DelayWithMapper_.delay_with_mapper_(subscription_delay, delay_duration_mapper)
 	
 	func filter(predicate : Callable = func(x): return true) -> Callable:
 		return _Filter_.filter_(predicate)
