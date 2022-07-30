@@ -123,6 +123,8 @@ class _Op_:
 	var _Catch_ = load("res://reactivex/operators/_catch.gd")
 	var _CombineLatest_ = load("res://reactivex/operators/_combinelatest.gd")
 	var _Concat_ = load("res://reactivex/operators/_concat.gd")
+	var _Contains_ = load("res://reactivex/operators/_contains.gd")
+	var _Count_ = load("res://reactivex/operators/_count.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -179,6 +181,12 @@ class _Op_:
 	
 	func concat(sources : Array[Observable]) -> Callable:
 		return _Concat_.concat_(sources)
+	
+	func contains(value, comparer = GDRx.basic.default_comparer) -> Callable:
+		return _Contains_.contains_(value, comparer)
+	
+	func count(predicate = null) -> Callable:
+		return _Count_.count_(predicate)
 	
 	func filter(predicate : Callable = func(x): return true) -> Callable:
 		return _Filter_.filter_(predicate)
