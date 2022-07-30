@@ -29,6 +29,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/observer/autodetachobserver.gd"
 }, {
+"base": "Subject",
+"class": &"BehaviorSubject",
+"language": &"GDScript",
+"path": "res://reactivex/subject/behaviorsubject.gd"
+}, {
 "base": "DisposableBase",
 "class": &"BooleanDisposable",
 "language": &"GDScript",
@@ -179,6 +184,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/internal/refvalue.gd"
 }, {
+"base": "Subject",
+"class": &"ReplaySubject",
+"language": &"GDScript",
+"path": "res://reactivex/subject/replaysubject.gd"
+}, {
 "base": "DisposableBase",
 "class": &"ScheduledDisposable",
 "language": &"GDScript",
@@ -274,6 +284,7 @@ _global_script_class_icons={
 "ArraySet": "",
 "AsyncSubject": "",
 "AutoDetachObserver": "",
+"BehaviorSubject": "",
 "BooleanDisposable": "",
 "Comparable": "",
 "CompositeDisposable": "",
@@ -304,6 +315,7 @@ _global_script_class_icons={
 "RLock": "",
 "RefCountDisposable": "",
 "RefValue": "",
+"ReplaySubject": "",
 "ScheduledDisposable": "",
 "ScheduledItem": "",
 "ScheduledObserver": "",
