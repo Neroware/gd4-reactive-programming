@@ -97,7 +97,7 @@ static func observable_delay_timespan(
 	
 	return Observable.new(subscribe)
 
-func delay_(
+static func delay_(
 	duetime : float, scheduler : SchedulerBase = null
 ) -> Callable:
 	var delay = func(source : Observable) -> Observable:

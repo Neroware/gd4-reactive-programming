@@ -1,6 +1,6 @@
 extends Node
 
-@export var tests = "32"
+@export var tests = "33"
 
 func _ready():
 	for i in tests.split(","):
@@ -293,6 +293,16 @@ func _test_31():
 func _test_32():
 	var obs = GDRx.FromRange(42).pipe1(
 		GDRx.op.count()
+	)
+	obs.subscribe(
+		func(i): print("[ReactiveX]: " + str(i)),
+		func(e): print("> ", e), 
+		func(): print(":)")
+	)
+
+func _test_33():
+	var obs = GDRx.ReturnValue("Delayed!").pipe1(
+		GDRx.op.delay(5.0)
 	)
 	obs.subscribe(
 		func(i): print("[ReactiveX]: " + str(i)),
