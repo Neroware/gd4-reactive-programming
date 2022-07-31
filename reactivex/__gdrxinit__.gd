@@ -135,6 +135,7 @@ class _Op_:
 	var _Dematerialize_ = load("res://reactivex/operators/_dematerialize.gd")
 	var _Distinct_ = load("res://reactivex/operators/_distinct.gd")
 	var _DistinctUntilChanged_ = load("res://reactivex/operators/_distinctuntilchanged.gd")
+	var _Do_ = load("res://reactivex/operators/_do.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -228,6 +229,24 @@ class _Op_:
 	
 	func distinct_until_changed(key_mapper : Callable = GDRx.basic.identity, comparer : Callable = GDRx.basic.default_comparer) -> Callable:
 		return _DistinctUntilChanged_.distinct_until_changed_(key_mapper, comparer)
+	
+	func do_action(on_next = null, on_error = null, on_completed = null) -> Callable:
+		return _Do_.do_action_(on_next, on_error, on_completed)
+	
+	func do(observer : ObserverBase) -> Callable:
+		return _Do_.do_(observer)
+	
+	func do_on_dispose(source : Observable, on_dispose : Callable) -> Observable:
+		return _Do_.do_on_dispose(source, on_dispose)
+	
+	func do_on_terminate(source : Observable, on_terminate : Callable) -> Observable:
+		return _Do_.do_on_terminate(source, on_terminate)
+	
+	func do_after_terminate(source : Observable, after_terminate : Callable) -> Observable:
+		return _Do_.do_after_terminate(source, after_terminate)
+	
+	func do_finally(finally_action : Callable) -> Callable:
+		return _Do_.do_dinally(finally_action)
 	
 	func filter(predicate : Callable = func(x): return true) -> Callable:
 		return _Filter_.filter_(predicate)

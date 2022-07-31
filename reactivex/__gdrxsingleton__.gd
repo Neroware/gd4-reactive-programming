@@ -34,6 +34,8 @@ var CurrentThreadScheduler_local_ = CurrentThreadScheduler._Local.new()
 ### ======================================================================= ###
 #   Observable Constructors
 ### ======================================================================= ###
+func Create(subscribe : Callable = func(observer : ObserverBase, scheduler : SchedulerBase = null) -> DisposableBase: return Disposable.new()) -> Observable:
+	return Observable.new(subscribe)
 func Empty(scheduler : SchedulerBase = null) -> Observable:
 	return obs.empty(scheduler)
 func Never(scheduler : SchedulerBase = null) -> Observable:
