@@ -41,3 +41,8 @@ class DisposedException extends Error:
 	func _init(msg = null):
 		if msg != null: super._init(str(msg))
 		else: super._init("The requested element was disposed!")
+
+class ArgumentOutOfRangeException extends Error:
+	func _init(msg = null):
+		if msg != null: super._init(str(msg))
+		else: super._init("Argument out of range!")

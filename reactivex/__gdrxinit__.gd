@@ -136,6 +136,10 @@ class _Op_:
 	var _Distinct_ = load("res://reactivex/operators/_distinct.gd")
 	var _DistinctUntilChanged_ = load("res://reactivex/operators/_distinctuntilchanged.gd")
 	var _Do_ = load("res://reactivex/operators/_do.gd")
+	var _DoWhile_ = load("res://reactivex/operators/_dowhile.gd")
+	var _ElementAtOrDefault_ = load("res://reactivex/operators/_elementatordefault.gd")
+	var _Exclusive_ = load("res://reactivex/operators/_exclusive.gd")
+	var _Expand_ = load("res://reactivex/operators/_expand.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -246,7 +250,19 @@ class _Op_:
 		return _Do_.do_after_terminate(source, after_terminate)
 	
 	func do_finally(finally_action : Callable) -> Callable:
-		return _Do_.do_dinally(finally_action)
+		return _Do_.do_finally(finally_action)
+	
+	func do_while(condition : Callable) -> Callable:
+		return _DoWhile_.do_while_(condition)
+	
+	func element_at_or_default(index : int, has_default : bool = false, default_value = GDRx.util.GetNotSet()) -> Callable:
+		return _ElementAtOrDefault_.element_at_or_default_(index, has_default, default_value)
+	
+	func exclusive() -> Callable:
+		return _Exclusive_.exclusive_()
+	
+	func expand(mapper : Callable) -> Callable:
+		return _Expand_.expand_(mapper)
 	
 	func filter(predicate : Callable = func(x): return true) -> Callable:
 		return _Filter_.filter_(predicate)
