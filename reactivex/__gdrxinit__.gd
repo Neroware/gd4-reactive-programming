@@ -133,6 +133,7 @@ class _Op_:
 	var _DelaySubscription_ = load("res://reactivex/operators/_delaysubscription.gd")
 	var _DelayWithMapper_ = load("res://reactivex/operators/_delaywithmapper.gd")
 	var _Dematerialize_ = load("res://reactivex/operators/_dematerialize.gd")
+	var _Distinct_ = load("res://reactivex/operators/_distinct.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
@@ -203,9 +204,6 @@ class _Op_:
 	func debounce(duetime : float, scheduler : SchedulerBase = null) -> Callable:
 		return _Debounce_.debounce_(duetime, scheduler)
 	
-	func dematerialize() -> Callable:
-		return _Dematerialize_.dematerialize()
-	
 	func throttle_with_mapper(throttle_duration_mapper : Callable) -> Callable:
 		return _Debounce_.throttle_with_mapper_(throttle_duration_mapper)
 	
@@ -220,6 +218,12 @@ class _Op_:
 	
 	func delay_with_mapper(subscription_delay = null, delay_duration_mapper = null) -> Callable:
 		return _DelayWithMapper_.delay_with_mapper_(subscription_delay, delay_duration_mapper)
+	
+	func dematerialize() -> Callable:
+		return _Dematerialize_.dematerialize()
+	
+	func distinct(key_mapper : Callable = GDRx.basic.identity, comparer : Callable = GDRx.basic.default_comparer) -> Callable:
+		return _Distinct_.distinct_(key_mapper, comparer)
 	
 	func filter(predicate : Callable = func(x): return true) -> Callable:
 		return _Filter_.filter_(predicate)
