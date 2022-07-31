@@ -143,6 +143,8 @@ class _Op_:
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
 	var _FinallyAction_ = load("res://reactivex/operators/_finallyaction.gd")
 	var _Find_ = load("res://reactivex/operators/_find.gd")
+	var _First_ = load("res://reactivex/operators/_first.gd")
+	var _FirstOrDefault_ = load("res://reactivex/operators/_firstordefault.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
@@ -277,6 +279,15 @@ class _Op_:
 	
 	func find_value(predicate : Callable, yield_index : bool) -> Callable:
 		return _Find_.find_value_(predicate, yield_index)
+	
+	func first(predicate = null) -> Callable:
+		return _First_.first_(predicate)
+	
+	func first_or_default_async(has_default : bool = false, default_value = null) -> Callable:
+		return _FirstOrDefault_.first_or_default_async_(has_default, default_value)
+	
+	func first_or_default(predicate = null, default_value = null) -> Callable:
+		return _FirstOrDefault_.first_or_default_(predicate, default_value)
 	
 	func last(predicate = null) -> Callable:
 		return _Last_.last_(predicate)
