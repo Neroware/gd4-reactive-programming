@@ -146,6 +146,7 @@ class _Op_:
 	var _First_ = load("res://reactivex/operators/_first.gd")
 	var _FirstOrDefault_ = load("res://reactivex/operators/_firstordefault.gd")
 	var _FlatMap_ = load("res://reactivex/operators/_flatmap.gd")
+	var _ForkJoin_ = load("res://reactivex/operators/_forkjoin.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
@@ -298,6 +299,9 @@ class _Op_:
 	
 	func flat_map_latest(mapper = null) -> Callable:
 		return _FlatMap_.flat_map_latest_(mapper)
+	
+	func fork_join(args : Array[Observable]) -> Callable:
+		return _ForkJoin_.fork_join(args)
 	
 	func last(predicate = null) -> Callable:
 		return _Last_.last_(predicate)
