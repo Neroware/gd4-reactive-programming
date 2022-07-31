@@ -145,6 +145,7 @@ class _Op_:
 	var _Find_ = load("res://reactivex/operators/_find.gd")
 	var _First_ = load("res://reactivex/operators/_first.gd")
 	var _FirstOrDefault_ = load("res://reactivex/operators/_firstordefault.gd")
+	var _FlatMap_ = load("res://reactivex/operators/_flatmap.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
@@ -288,6 +289,15 @@ class _Op_:
 	
 	func first_or_default(predicate = null, default_value = null) -> Callable:
 		return _FirstOrDefault_.first_or_default_(predicate, default_value)
+	
+	func flat_map(mapper = null) -> Callable:
+		return _FlatMap_.flat_map_(mapper)
+	
+	func flat_map_indexed(mapper_indexed = null) -> Callable:
+		return _FlatMap_.flat_map_indexed_(mapper_indexed)
+	
+	func flat_map_latest(mapper = null) -> Callable:
+		return _FlatMap_.flat_map_latest_(mapper)
 	
 	func last(predicate = null) -> Callable:
 		return _Last_.last_(predicate)
