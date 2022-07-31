@@ -141,6 +141,8 @@ class _Op_:
 	var _Exclusive_ = load("res://reactivex/operators/_exclusive.gd")
 	var _Expand_ = load("res://reactivex/operators/_expand.gd")
 	var _Filter_ = load("res://reactivex/operators/_filter.gd")
+	var _FinallyAction_ = load("res://reactivex/operators/_finallyaction.gd")
+	var _Find_ = load("res://reactivex/operators/_find.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
@@ -269,6 +271,12 @@ class _Op_:
 	
 	func filter_indexed(predicate : Callable = func(x, index): return true) -> Callable:
 		return _Filter_.filter_indexed_(predicate)
+	
+	func finally_action(action : Callable) -> Callable:
+		return _FinallyAction_.finally_action_(action)
+	
+	func find_value(predicate : Callable, yield_index : bool) -> Callable:
+		return _Find_.find_value_(predicate, yield_index)
 	
 	func last(predicate = null) -> Callable:
 		return _Last_.last_(predicate)
