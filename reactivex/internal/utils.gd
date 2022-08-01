@@ -38,3 +38,15 @@ static func TakeWhile(cond : Callable, it : IterableBase) -> IterableBase:
 
 static func GetNotSet() -> NotSet:
 	return NotSet.new()
+
+static func AddRef(xs : Observable, r : RefCountDisposable) -> Observable:
+	var subscribe = func(
+		observer : ObserverBase,
+		scheduler : SchedulerBase = null
+	) -> DisposableBase:
+		return CompositeDisposable.new([
+			r.disposable(), 
+			xs.subscribe(observer)
+		])
+	
+	return Observable.new(subscribe)

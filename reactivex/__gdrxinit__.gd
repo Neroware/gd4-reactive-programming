@@ -147,7 +147,9 @@ class _Op_:
 	var _FirstOrDefault_ = load("res://reactivex/operators/_firstordefault.gd")
 	var _FlatMap_ = load("res://reactivex/operators/_flatmap.gd")
 	var _ForkJoin_ = load("res://reactivex/operators/_forkjoin.gd")
+	var _GroupBy_ = load("res://reactivex/operators/_groupby.gd")
 	var _GroupByUntil_ = load("res://reactivex/operators/_groupbyuntil.gd")
+	var _GroupJoin_ = load("res://reactivex/operators/_groupjoin.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
 	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
@@ -304,8 +306,14 @@ class _Op_:
 	func fork_join(args : Array[Observable]) -> Callable:
 		return _ForkJoin_.fork_join(args)
 	
+	func group_by(key_mapper : Callable, element_mapper = null, subject_mapper = null) -> Callable:
+		return _GroupBy_.group_by_(key_mapper, element_mapper, subject_mapper)
+	
 	func group_by_until(key_mapper : Callable, duration_mapper : Callable, element_mapper = null, subject_mapper = null) -> Callable:
 		return _GroupByUntil_.group_by_until_(key_mapper, duration_mapper, element_mapper, subject_mapper)
+	
+	func group_join(right : Observable, left_duration_mapper : Callable, right_duration_mapper : Callable) -> Callable:
+		return _GroupJoin_.group_join_(right, left_duration_mapper, right_duration_mapper)
 	
 	func last(predicate = null) -> Callable:
 		return _Last_.last_(predicate)
