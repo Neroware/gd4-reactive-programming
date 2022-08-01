@@ -86,7 +86,7 @@ func FromRange(start : int, stop = null, step = null, scheduler : SchedulerBase 
 	return obs.range(start, stop, step, scheduler)
 func BuildUsing(
 		resource_factory : Callable = func() -> DisposableBase: return null, 
-		observable_factory : Callable = func(disp : DisposableBase) -> DisposableBase: return GDRx.Empty()
+		observable_factory : Callable = func(disp : DisposableBase) -> DisposableBase: return GDRx.obs.empty()
 	) -> Observable:
 		return obs.using(resource_factory, observable_factory)
 func WithLatestFrom(parent : Observable, sources : Array[Observable]) -> Observable:

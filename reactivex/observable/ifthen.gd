@@ -4,9 +4,9 @@ static func if_then_(
 	condition : Callable = func() -> bool: return true
 ) -> Observable:
 	
-	var else_source_ = else_source if else_source != null else GDRx.Empty()
+	var else_source_ = else_source if else_source != null else GDRx.obs.empty()
 	
 	var factory = func(__ : SchedulerBase) -> Observable:
 		return then_source if condition.call() else else_source_
 	
-	return GDRx.BuildDeferred(factory)
+	return GDRx.obs.defer(factory)

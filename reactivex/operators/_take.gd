@@ -5,7 +5,7 @@ static func take_(count : int) -> Callable:
 	
 	var take = func(source : Observable) -> Observable:
 		if count == 0:
-			return GDRx.Empty()
+			return GDRx.obs.empty()
 		
 		var subscribe = func(
 			observer : ObserverBase,

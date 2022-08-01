@@ -36,6 +36,6 @@ static func catch_(handler) -> Callable:
 		if handler is Callable:
 			return catch_handler(source, handler)
 		else:
-			return GDRx.CatchAndContinueWith([source, handler])
+			return GDRx.obs.catch_with_iterable(GDRx.util.Iter([source, handler]))
 	
 	return catch

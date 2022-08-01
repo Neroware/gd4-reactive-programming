@@ -6,7 +6,7 @@ static func merge_(
 		
 		if max_concorrent < 0:
 			var sources_ : Array[Observable] = [source] + sources
-			return GDRx.Merge(sources_)
+			return GDRx.obs.merge(sources_)
 		
 		var subscribe = func(
 			observer : ObserverBase,

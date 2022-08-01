@@ -20,6 +20,6 @@ static func scan_(
 			
 			return source.pipe1(GDRx.op.map(projection))
 		
-		return GDRx.BuildDeferred(factory)
+		return GDRx.obs.defer(factory)
 	
 	return scan

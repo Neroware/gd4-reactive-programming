@@ -9,12 +9,12 @@ static func _flat_map_internal(
 		if mapper_result is Observable:
 			result = mapper_result
 		elif mapper_result is IterableBase:
-			result = GDRx.FromIterable(mapper_result)
-		elif mapper_result is Array[Observable]:
-			result = GDRx.FromArray(mapper_result)
+			result = GDRx.obs.from_iterable(mapper_result)
+		elif mapper_result is Array:
+			result = GDRx.obs.from_iterable(GDRx.util.Iter(mapper_result))
 		else:
 			push_error("Mapper failed to produce a squence of observables!")
-			result = GDRx.Empty()
+			result = GDRx.obs.empty()
 		return result
 	
 	return source.pipe2(

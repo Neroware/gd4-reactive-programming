@@ -1,11 +1,11 @@
 static func timeout_with_mapper_(
 	first_timeout : Observable = null,
-	timeout_duration_mapper : Callable = func(__) -> Observable: return GDRx.Never(),
+	timeout_duration_mapper : Callable = func(__) -> Observable: return GDRx.obs.never(),
 	other : Observable = null
 ) -> Callable:
 	
-	var first_timeout_ = first_timeout if first_timeout != null else GDRx.Never()
-	var other_ = other if other != null else GDRx.Throw(GDRx.err.Error.new("Timeout"))
+	var first_timeout_ = first_timeout if first_timeout != null else GDRx.obs.never()
+	var other_ = other if other != null else GDRx.obs.throw(GDRx.err.Error.new("Timeout"))
 	
 	var timeout_with_mapper = func(source : Observable) -> Observable:
 		var subscribe = func(

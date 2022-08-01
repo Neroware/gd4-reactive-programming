@@ -1,6 +1,6 @@
 static func zip_(args : Array[Observable]) -> Callable:
 	var _zip = func(source : Observable) -> Observable:
-		return GDRx.Zip([source] + args)
+		return GDRx.obs.zip([source] + args)
 	return _zip
 
 static func zip_with_iterable(seq : IterableBase) -> Callable:

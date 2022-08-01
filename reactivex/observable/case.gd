@@ -4,7 +4,7 @@ static func case_(
 	default_source : Observable = null
 ) -> Observable:
 	
-	var default_source_ : Observable = default_source if default_source != null else GDRx.Empty()
+	var default_source_ : Observable = default_source if default_source != null else GDRx.obs.empty()
 	
 	var factory = func(__ : SchedulerBase) -> Observable:
 		var key_ = mapper.call()
@@ -15,8 +15,8 @@ static func case_(
 			result = sources[key_]
 		
 		if not result is Observable:
-			return GDRx.Throw(GDRx.err.BadMappingException.new())
+			return GDRx.obs.throw(GDRx.err.BadMappingException.new())
 		
 		return result
 	
-	return GDRx.BuildDeferred(factory)
+	return GDRx.obs.defer(factory)

@@ -340,7 +340,7 @@ class _Op_:
 		return _Skip_.skip_(count)
 	
 	func slice(start : int = 0, stop : int = GDRx.util.MAX_SIZE, step : int = 1) -> Callable:
-		return GDRx.slice_(start, stop, step)
+		return _Slice_.slice_(start, stop, step)
 	
 	func some(predicate = null) -> Callable:
 		return _Some_.some_(predicate)
@@ -393,7 +393,7 @@ class _Op_:
 	func timeout(duetime : float, absolute : bool = false, other : Observable = null, scheduler : SchedulerBase = null) -> Callable:
 		return _Timeout_.timeout_(duetime, absolute, other, scheduler)
 	
-	func timeout_with_mapper(first_timeout : Observable = null, timeout_duration_mapper : Callable = func(__) -> Observable: return GDRx.Never(), other : Observable = null) -> Callable:
+	func timeout_with_mapper(first_timeout : Observable = null, timeout_duration_mapper : Callable = func(__) -> Observable: return GDRx.obs.never(), other : Observable = null) -> Callable:
 		return _TimeoutWithMapper_.timeout_with_mapper_(first_timeout, timeout_duration_mapper, other)
 	
 	func timestamp(scheduler : SchedulerBase = null) -> Callable:

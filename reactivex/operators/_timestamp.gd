@@ -14,6 +14,6 @@ static func timestamp_(
 			
 			return source.pipe1(GDRx.op.map(mapper))
 		
-		return GDRx.BuildDeferred(factory)
+		return GDRx.obs.defer(factory)
 	
 	return timestamp

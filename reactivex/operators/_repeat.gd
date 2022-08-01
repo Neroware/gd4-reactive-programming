@@ -12,8 +12,8 @@ static func repeat_(
 			for __ in range(repeat_count_): repeats_.append(source)
 			gen = GDRx.util.Iter(repeats_)
 		
-		return GDRx.BuildDeferred(
-			func(__): return GDRx.ConcatStreamsWithIterable(gen)
+		return GDRx.obs.defer(
+			func(__): return GDRx.obs.concat_with_iterable(gen)
 		)
 	
 	return repeat

@@ -6,7 +6,7 @@ static func defer_(factory : Callable = func(scheduler : SchedulerBase) -> Obser
 	) -> DisposableBase:
 		var result = factory.call(scheduler if scheduler != null else ImmediateScheduler.singleton())
 		if not result is Observable:
-			return GDRx.Throw(GDRx.err.FactoryFailedException.new(null, result)).subscribe(observer)
+			return GDRx.obs.throw(GDRx.err.FactoryFailedException.new(null, result)).subscribe(observer)
 		
 		return result.subscribe(observer, func(e):return, func():return, scheduler)
 	

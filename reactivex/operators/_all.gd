@@ -7,6 +7,6 @@ static func all_(predicate : Callable) -> Callable:
 	
 	return GDRx.pipe.compose3(
 		GDRx.op.filter(filter),
-		GDRx.some(),
-		GDRx.map(mapping)
+		GDRx.op.some(),
+		GDRx.op.map(mapping)
 	)
