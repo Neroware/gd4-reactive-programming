@@ -4,23 +4,23 @@ class_name __GDRx_Singleton__
 ### ======================================================================= ###
 #   Init script database
 ### ======================================================================= ###
-var _Init_ = __GDRx_Init__.new()
+var __init__ : __GDRx_Init__ = __GDRx_Init__.new()
 ## Observables ##
-var obs : __GDRx_Init__._Obs_ = __GDRx_Init__._Obs_.new()
+var obs : __GDRx_Obs__ = __GDRx_Obs__.new()
 ## Operators ##
-var op : __GDRx_Init__._Op_ = __GDRx_Init__._Op_.new()
+var op : __GDRx_Op__ = __GDRx_Op__.new()
 ## Notifications ##
-var NotificationOnNext = _Init_._NotificationOnNext_
-var NotificationOnError = _Init_._NotificationOnError_
-var NotificationOnCompleted = _Init_._NotificationOnCompleted_
+var OnNext = __init__.NotificationOnNext_
+var OnError = __init__.NotificationOnError_
+var OnCompleted = __init__.NotificationOnCompleted_
 ## Internals ##
-var heap = _Init_._Heap_
-var err = _Init_._Error_
-var basic = _Init_._Basic_
-var concur = _Init_._Concurrency_
-var util = _Init_._Util_
+var heap = __init__.Heap_.new()
+var err = __init__.Error_.new()
+var basic = __init__.Basic_.new()
+var concur = __init__.Concurrency_.new()
+var util = __init__.Util_.new()
 ## Pipe ##
-var pipe = _Init_._Pipe_
+var pipe = __init__.Pipe_.new()
 
 ### ======================================================================= ###
 #   Scheduler Singletons

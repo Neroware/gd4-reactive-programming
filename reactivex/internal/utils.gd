@@ -27,19 +27,19 @@ class WhileIterator extends IterableBase:
 			return End.new()
 		return self._it.next()
 
-static func Iter(x : Array, start : int = 0, end : int = -1) -> IterableBase:
+func Iter(x : Array, start : int = 0, end : int = -1) -> IterableBase:
 	return ArrayIterator.new(x, start, end)
 
-static func Infinite(infval = null) -> IterableBase:
+func Infinite(infval = null) -> IterableBase:
 	return InfiniteIterator.new(infval)
 
-static func TakeWhile(cond : Callable, it : IterableBase) -> IterableBase:
+func TakeWhile(cond : Callable, it : IterableBase) -> IterableBase:
 	return WhileIterator.new(it, cond)
 
-static func GetNotSet() -> NotSet:
+func GetNotSet() -> NotSet:
 	return NotSet.new()
 
-static func AddRef(xs : Observable, r : RefCountDisposable) -> Observable:
+func AddRef(xs : Observable, r : RefCountDisposable) -> Observable:
 	var subscribe = func(
 		observer : ObserverBase,
 		scheduler : SchedulerBase = null

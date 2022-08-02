@@ -12,10 +12,10 @@ class StartableThread:
 	func start(priority = Thread.PRIORITY_NORMAL):
 		self._thread.start(self._target, priority)
 
-static func default_thread_factory(target : Callable) -> StartableThread:
+func default_thread_factory(target : Callable) -> StartableThread:
 	return StartableThread.new(target)
 
-static func synchronized(lock : RLock, n_args : int) -> Callable:
+func synchronized(lock : RLock, n_args : int) -> Callable:
 	var wrapper = func(fn : Callable) -> Callable:
 		var inner : Callable
 		match n_args:

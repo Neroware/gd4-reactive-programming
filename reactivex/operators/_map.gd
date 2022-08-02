@@ -1,5 +1,5 @@
 static func map_(
-	mapper : Callable = GDRx.util.identity
+	mapper : Callable = GDRx.basic.identity
 ) -> Callable:
 	var _mapper = mapper
 	

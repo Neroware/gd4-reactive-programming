@@ -16,9 +16,6 @@ static func extrema_by(
 			if key is GDRx.err.Error:
 				observer.on_error(key)
 				return
-			elif not key is Observable:
-				observer.on_error(GDRx.err.BadMappingException.new())
-				return
 			
 			var comparison = 0
 			
@@ -56,6 +53,6 @@ static func min_by_(
 	var cmp = comparer if comparer != null else GDRx.basic.default_sub_comparer
 	
 	var min_by = func(source : Observable) -> Observable:
-		return extrema_by(source, key_mapper, func(x, y): -cmp.call(x, y))
+		return extrema_by(source, key_mapper, func(x, y): return -cmp.call(x, y))
 	
 	return min_by

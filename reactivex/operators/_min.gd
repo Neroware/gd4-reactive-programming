@@ -9,5 +9,5 @@ static func min_(
 	
 	return GDRx.pipe.compose2(
 		GDRx.op.min_by(GDRx.basic.identity, comparer),
-		GDRx.op.map(first_only)
+		GDRx.op.map(func(x): return first_only(x))
 	)

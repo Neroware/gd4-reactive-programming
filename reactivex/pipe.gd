@@ -1,4 +1,4 @@
-static func reduce(fun : Callable, it : IterableBase, initial = GDRx.util.GetNotSet()):
+func reduce(fun : Callable, it : IterableBase, initial = GDRx.util.GetNotSet()):
 	var next_ = it.next()
 	var value_ = initial
 	while not next_ is it.End:
@@ -6,20 +6,20 @@ static func reduce(fun : Callable, it : IterableBase, initial = GDRx.util.GetNot
 		next_ = it.next()
 	return value_
 
-static func compose1(__op1 : Callable) -> Callable:
+func compose1(__op1 : Callable) -> Callable:
 	return compose(GDRx.util.Iter([__op1]))
 
-static func compose2(__op1 : Callable, __op2 : Callable) -> Callable:
+func compose2(__op1 : Callable, __op2 : Callable) -> Callable:
 	return compose(GDRx.util.Iter([__op1, __op2]))
 
-static func compose3(
+func compose3(
 	__op1 : Callable, 
 	__op2 : Callable,
 	__op3 : Callable
 ) -> Callable:
 	return compose(GDRx.util.Iter([__op1, __op2, __op3]))
 
-static func compose4(
+func compose4(
 	__op1 : Callable, 
 	__op2 : Callable,
 	__op3 : Callable,
@@ -27,7 +27,7 @@ static func compose4(
 ) -> Callable:
 	return compose(GDRx.util.Iter([__op1, __op2, __op3, __op4]))
 
-static func compose5(
+func compose5(
 	__op1 : Callable, 
 	__op2 : Callable,
 	__op3 : Callable,
@@ -36,7 +36,7 @@ static func compose5(
 ) -> Callable:
 	return compose(GDRx.util.Iter([__op1, __op2, __op3, __op4, __op5]))
 
-static func compose6(
+func compose6(
 	__op1 : Callable, 
 	__op2 : Callable,
 	__op3 : Callable,
@@ -46,28 +46,28 @@ static func compose6(
 ) -> Callable:
 	return compose(GDRx.util.Iter([__op1, __op2, __op3, __op4, __op5, __op6]))
 
-static func composea(operators : Array[Callable]) -> Callable:
+func composea(operators : Array[Callable]) -> Callable:
 	return compose(GDRx.util.Iter(operators))
 
-static func compose(operators : IterableBase) -> Callable:
+func compose(operators : IterableBase) -> Callable:
 	var _compose = func(source):
 		return reduce(func(obs, op): return op.call(obs), operators, source)
 	return _compose
 
-static func pipe0(_value) -> Variant:
+func pipe0(_value) -> Variant:
 	return pipe(_value, GDRx.util.Iter([]))
 
-static func pipe1(__value : Variant, __fn1 : Callable) -> Variant:
+func pipe1(__value : Variant, __fn1 : Callable) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1]))
 
-static func pipe2(
+func pipe2(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2]))
 
-static func pipe3(
+func pipe3(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -75,7 +75,7 @@ static func pipe3(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3]))
 
-static func pipe4(
+func pipe4(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -84,7 +84,7 @@ static func pipe4(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4]))
 
-static func pipe5(
+func pipe5(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -94,7 +94,7 @@ static func pipe5(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5]))
 
-static func pipe6(
+func pipe6(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -105,7 +105,7 @@ static func pipe6(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6]))
 
-static func pipe7(
+func pipe7(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -117,7 +117,7 @@ static func pipe7(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7]))
 
-static func pipe8(
+func pipe8(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -130,7 +130,7 @@ static func pipe8(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7, __fn8]))
 
-static func pipe9(
+func pipe9(
 	__value : Variant, 
 	__fn1 : Callable,
 	__fn2 : Callable,
@@ -144,8 +144,8 @@ static func pipe9(
 ) -> Variant:
 	return pipe(__value, GDRx.util.Iter([__fn1, __fn2, __fn3, __fn4, __fn5, __fn6, __fn7, __fn8, __fn9]))
 
-static func pipea(__value, arr : Array):
+func pipea(__value, arr : Array):
 	return pipe(__value, GDRx.util.Iter(arr))
 
-static func pipe(__value : Variant, fns : IterableBase) -> Variant:
+func pipe(__value : Variant, fns : IterableBase) -> Variant:
 	return compose(fns).call(__value)

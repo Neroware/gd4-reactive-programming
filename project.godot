@@ -274,6 +274,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://reactivex/__gdrxinit__.gd"
 }, {
+"base": "RefCounted",
+"class": &"__GDRx_Obs__",
+"language": &"GDScript",
+"path": "res://reactivex/__gdrxobs__.gd"
+}, {
+"base": "RefCounted",
+"class": &"__GDRx_Op__",
+"language": &"GDScript",
+"path": "res://reactivex/__gdrxop__.gd"
+}, {
 "base": "Node",
 "class": &"__GDRx_Singleton__",
 "language": &"GDScript",
@@ -333,6 +343,8 @@ _global_script_class_icons={
 "Tuple": "",
 "WeakRefDictionary": "",
 "__GDRx_Init__": "",
+"__GDRx_Obs__": "",
+"__GDRx_Op__": "",
 "__GDRx_Singleton__": ""
 }
 
