@@ -50,8 +50,18 @@ var _Max_ = load("res://reactivex/operators/_max.gd")
 var _MaxBy_ = load("res://reactivex/operators/_maxby.gd")
 var _Min_ = load("res://reactivex/operators/_min.gd")
 var _MinBy_ = load("res://reactivex/operators/_minby.gd")
+var _Multicast_ = load("res://reactivex/operators/_multicast.gd")
+var _ObserveOn_ = load("res://reactivex/operators/_observeon.gd")
+var _OnErrorResumeNext_ = load("res://reactivex/operators/_onerrorresumenext.gd")
+var _Pairwise_ = load("res://reactivex/operators/_pairwise.gd")
+var _Partition_ = load("res://reactivex/operators/_partition.gd")
+var _Pluck_ = load("res://reactivex/operators/_pluck.gd")
+var _Publish_ = load("res://reactivex/operators/_publish.gd")
+var _PublishValue_ = load("res://reactivex/operators/_publishvalue.gd")
 var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
 var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
+var _Replay_ = load("res://reactivex/operators/_replay.gd")
+var _Retry_ = load("res://reactivex/operators/_retry.gd")
 var _Scan_ = load("res://reactivex/operators/_scan.gd")
 var _Skip_ = load("res://reactivex/operators/_skip.gd")
 var _Slice_ = load("res://reactivex/operators/_slice.gd")
@@ -255,11 +265,50 @@ func min(comparer = null) -> Callable:
 func min_by(key_mapper : Callable, comparer = null) -> Callable:
 	return _MinBy_.min_by_(key_mapper, comparer)
 
+func multicast(subject : SubjectBase = null, subject_factory = null, mapper = null) -> Callable:
+	return _Multicast_.multicast_(subject, subject_factory, mapper)
+
+func observe_on(scheduler : SchedulerBase) -> Callable:
+	return _ObserveOn_.observe_on_(scheduler)
+
+func on_error_resume_next(second : Observable) -> Callable:
+	return _OnErrorResumeNext_.on_error_resume_next_(second)
+
+func pairwise() -> Callable:
+	return _Pairwise_.pairwise_()
+
+func partition(predicate : Callable = func(x): return true) -> Callable:
+	return _Partition_.partition_(predicate)
+
+func partition_indexed(predicate_indexed : Callable = func(x, i : int): return true) -> Callable:
+	return _Partition_.partition_indexed_(predicate_indexed)
+
+func pluck(key) -> Callable:
+	return _Pluck_.pluck_(key)
+
+func pluck_attr_(prop : String) -> Callable:
+	return _Pluck_.pluck_attr_(prop)
+
+func publish(mapper = null) -> Callable:
+	return _Publish_.publish_(mapper)
+
+func share() -> Callable:
+	return _Publish_.share_()
+
+func publish_value(initial_value, mapper = null) -> Callable:
+	return _PublishValue_.publish_value_(initial_value, mapper)
+
 func reduce(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
 	return _Reduce_.reduce_(accumulator, seed)
 
 func repeat(repeat_count = null) -> Callable:
 	return _Repeat_.repeat_(repeat_count)
+
+func replay(mapper = null, buffer_size = null, window = null, scheduler : SchedulerBase = null) -> Callable:
+	return _Replay_.replay_(mapper, buffer_size, window, scheduler)
+
+func retry(retry_count : int = -1) -> Callable:
+	return _Retry_.retry_(retry_count)
 
 func scan(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
 	return _Scan_.scan_(accumulator, seed)
