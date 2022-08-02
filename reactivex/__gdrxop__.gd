@@ -62,7 +62,11 @@ var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
 var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
 var _Replay_ = load("res://reactivex/operators/_replay.gd")
 var _Retry_ = load("res://reactivex/operators/_retry.gd")
+var _Sample_ = load("res://reactivex/operators/_sample.gd")
 var _Scan_ = load("res://reactivex/operators/_scan.gd")
+var _SequenceEqual_ = load("res://reactivex/operators/_sequenceequal.gd")
+var _Single_ = load("res://reactivex/operators/_single.gd")
+var _SingleOrDefault_ = load("res://reactivex/operators/_singleordefault.gd")
 var _Skip_ = load("res://reactivex/operators/_skip.gd")
 var _Slice_ = load("res://reactivex/operators/_slice.gd")
 var _Some_ = load("res://reactivex/operators/_some.gd")
@@ -310,8 +314,23 @@ func replay(mapper = null, buffer_size = null, window = null, scheduler : Schedu
 func retry(retry_count : int = -1) -> Callable:
 	return _Retry_.retry_(retry_count)
 
+func sample(sampler : Observable, sampler_time : float = NAN, scheduler : SchedulerBase = null) -> Callable:
+	return _Sample_.sample_(sampler, sampler_time, scheduler)
+
 func scan(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
 	return _Scan_.scan_(accumulator, seed)
+
+func sequence_equal(second : Observable, comparer  = null, second_it : IterableBase = null) -> Callable:
+	return _SequenceEqual_.sequence_equal_(second, comparer, second_it)
+
+func single(predicate = null) -> Callable:
+	return _Single_.single_(predicate)
+
+func single_or_default_async(has_default : bool = false, default_value = null) -> Callable:
+	return _SingleOrDefault_.single_or_default_async_(has_default, default_value)
+
+func single_or_default(predicate = null, default_value = null) -> Callable:
+	return _SingleOrDefault_.single_or_default_(predicate, default_value)
 
 func skip(count : int) -> Callable:
 	return _Skip_.skip_(count)
