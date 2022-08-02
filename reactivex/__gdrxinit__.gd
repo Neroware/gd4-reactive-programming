@@ -155,9 +155,13 @@ class _Op_:
 	var _Join_ = load("res://reactivex/operators/_join.gd")
 	var _Last_ = load("res://reactivex/operators/_last.gd")
 	var _LastOrDefault_ = load("res://reactivex/operators/_lastordefault.gd")
-	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
 	var _Map_ = load("res://reactivex/operators/_map.gd")
+	var _Materialize_ = load("res://reactivex/operators/_materialize.gd")
 	var _Merge_ = load("res://reactivex/operators/_merge.gd")
+	var _Max_ = load("res://reactivex/operators/_max.gd")
+	var _MaxBy_ = load("res://reactivex/operators/_maxby.gd")
+	var _Min_ = load("res://reactivex/operators/_min.gd")
+	var _MinBy_ = load("res://reactivex/operators/_minby.gd")
 	var _Reduce_ = load("res://reactivex/operators/_reduce.gd")
 	var _Repeat_ = load("res://reactivex/operators/_repeat.gd")
 	var _Scan_ = load("res://reactivex/operators/_scan.gd")
@@ -165,7 +169,7 @@ class _Op_:
 	var _Slice_ = load("res://reactivex/operators/_slice.gd")
 	var _Some_ = load("res://reactivex/operators/_some.gd")
 	var _StartWith_ = load("res://reactivex/operators/_startswith.gd")
-	var _SubscribeOn_ = load("res://reactivex/operators/_subscribe_on.gd")
+	var _SubscribeOn_ = load("res://reactivex/operators/_subscribeon.gd")
 	var _Sum_ = load("res://reactivex/operators/_sum.gd")
 	var _SwitchLatest_ = load("res://reactivex/operators/_switchlatest.gd")
 	var _TakeLast_ = load("res://reactivex/operators/_takelast.gd")
@@ -339,17 +343,29 @@ class _Op_:
 	func map(mapper : Callable = GDRx.util.identity) -> Callable:
 		return _Map_.map_(mapper)
 	
+	func map_indexed(mapper_indexed : Callable = func(value, idx : int): return value) -> Callable:
+		return _Map_.map_indexed_(mapper_indexed)
+	
 	func materialize() -> Callable:
 		return _Materialize_.materialize_()
 	
-	func map_indexed(mapper_indexed : Callable = func(value, idx : int): return value) -> Callable:
-		return _Map_.map_indexed_(mapper_indexed)
+	func max(comparer = null) -> Callable:
+		return _Max_.max_(comparer)
+	
+	func max_by(key_mapper : Callable, comparer = null) -> Callable:
+		return _MaxBy_.max_by_(key_mapper, comparer)
 	
 	func merge(sources : Array[Observable], max_concorrent : int = -1) -> Callable:
 		return _Merge_.merge_(sources, max_concorrent)
 	
 	func merge_all() -> Callable:
 		return _Merge_.merge_all_()
+	
+	func min(comparer = null) -> Callable:
+		return _Min_.min_(comparer)
+	
+	func min_by(key_mapper : Callable, comparer = null) -> Callable:
+		return _MinBy_.min_by_(key_mapper, comparer)
 	
 	func reduce(accumulator : Callable, seed = GDRx.util.GetNotSet()) -> Callable:
 		return _Reduce_.reduce_(accumulator, seed)
